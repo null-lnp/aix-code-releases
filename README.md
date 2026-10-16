@@ -1,6 +1,6 @@
-# aix Code releases
+# Aix Code releases
 
-Releases of **aix Code**, the desktop app, and the **aix CLI**, the terminal coding agent. The
+Releases of **Aix Code**, the desktop app, and the **aix CLI**, the terminal coding agent. The
 source repositories are private. This public repository holds the installers, the binaries and the
 update manifests both apps read.
 
@@ -9,13 +9,13 @@ update manifests both apps read.
 <!-- latest:start -->
 | Product | Version | Released | Downloads |
 | --- | --- | --- | --- |
-| aix Code | [0.7.1](https://github.com/null-lnp/aix-code-releases/releases/tag/app-v0.7.1) | 2026-10-16 | [aix-code-0.7.1-x64-setup.exe](https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.7.1/aix-code-0.7.1-x64-setup.exe) · [aix-code-0.7.1-x64.msi](https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.7.1/aix-code-0.7.1-x64.msi) |
+| Aix Code | [0.7.1](https://github.com/null-lnp/aix-code-releases/releases/tag/app-v0.7.1) | 2026-10-16 | [aix-code-0.7.1-x64-setup.exe](https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.7.1/aix-code-0.7.1-x64-setup.exe) · [aix-code-0.7.1-x64.msi](https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.7.1/aix-code-0.7.1-x64.msi) |
 | aix CLI | [2.12.0](https://github.com/null-lnp/aix-code-releases/releases/tag/cli-v2.12.0) | 2026-10-16 | [aix-2.12.0-windows-x86_64.exe](https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.12.0/aix-2.12.0-windows-x86_64.exe) |
 <!-- latest:end -->
 
 ## Install
 
-- **aix Code (Windows):** download `aix-code-<version>-x64-setup.exe` (or the `.msi`) from the
+- **Aix Code (Windows):** download `aix-code-<version>-x64-setup.exe` (or the `.msi`) from the
   [latest app release](https://github.com/null-lnp/aix-code-releases/releases?q=app-v&expanded=true)
   and run it. The app updates itself from then on.
 - **aix CLI (Windows):** download `aix-<version>-windows-x86_64.exe` from the
@@ -26,7 +26,7 @@ update manifests both apps read.
 
 | | Manifest | Release tags |
 | --- | --- | --- |
-| aix Code | [`app/latest.json`](app/latest.json), read by the Tauri updater | `app-vX.Y.Z` |
+| Aix Code | [`app/latest.json`](app/latest.json), read by the Tauri updater | `app-vX.Y.Z` |
 | aix CLI | [`cli/latest.json`](cli/latest.json), read by `aix update` and the startup check | `cli-vX.Y.Z` |
 
 - The apps read the manifests from
@@ -44,7 +44,7 @@ release, uploads the signed assets, rewrites `<product>/latest.json` and the cha
 this repository:
 
 ```powershell
-# aix Code: after the signed `tauri build`
+# Aix Code: after the signed `tauri build`
 node scripts/release.mjs          # in aix-code-app
 # aix CLI: builds, signs and publishes aix.exe
 node scripts/release.mjs          # in aix-cli

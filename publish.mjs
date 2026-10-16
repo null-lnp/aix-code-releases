@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Publishes a release of aix Code (product "app") or the aix CLI (product "cli") to this public
+// Publishes a release of Aix Code (product "app") or the aix CLI (product "cli") to this public
 // repository, the only place installed apps can read updates from (the source repos are private):
 //
 //   1. uploads the assets to a draft GitHub release <product>-v<version>, then publishes it,
@@ -36,7 +36,7 @@ import { fileURLToPath } from 'node:url';
 const REPO = 'null-lnp/aix-code-releases';
 const BRANCH = 'main';
 const root = path.dirname(fileURLToPath(import.meta.url));
-const TITLES = { app: 'aix Code', cli: 'aix CLI' };
+const TITLES = { app: 'Aix Code', cli: 'aix CLI' };
 const SAFE_NAME = /^[A-Za-z0-9._+-]+$/;
 
 // ── arguments ────────────────────────────────────────────────────────────────────────────────
