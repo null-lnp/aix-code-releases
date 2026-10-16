@@ -10,6 +10,7 @@ update manifests both apps read.
 | Product | Version | Released | Downloads |
 | --- | --- | --- | --- |
 | aix Code | [0.5.2](https://github.com/null-lnp/aix-code-releases/releases/tag/app-v0.5.2) | 2026-10-16 | [aix-code-0.5.2-x64-setup.exe](https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.5.2/aix-code-0.5.2-x64-setup.exe) · [aix-code-0.5.2-x64.msi](https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.5.2/aix-code-0.5.2-x64.msi) |
+| aix CLI | [2.10.0](https://github.com/null-lnp/aix-code-releases/releases/tag/cli-v2.10.0) | 2026-10-16 | [aix-2.10.0-windows-x86_64.exe](https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.10.0/aix-2.10.0-windows-x86_64.exe) |
 <!-- latest:end -->
 
 ## Install

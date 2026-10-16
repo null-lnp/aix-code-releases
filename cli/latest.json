@@ -1,0 +1,14 @@
+{
+  "product": "cli",
+  "version": "2.10.0",
+  "notes": "- **Updates come from the public releases repository.** On the default channel aix reads\n  `cli/latest.json` from [null-lnp/aix-code-releases](https://github.com/null-lnp/aix-code-releases)\n  first (version, plus per platform a prebuilt binary's URL, minisign signature and SHA-256); only\n  when it cannot be read does it fall back to the source repository (raw `Cargo.toml`, then `git`).\n  Builds from a source checkout, which follow their Git branch, keep reading that branch.\n- **Signed prebuilt updates.** With a binary for this platform (Windows x64 for now), **Update now**\n  and `aix update` download it, verify its signature against the public key built into aix (the\n  same key as aix Code's updater), that it was signed as an aix release binary (not another\n  product's file) and its SHA-256, check that it reports a newer version, then swap it into place\n  and restart as before. A binary that fails a check is refused; no Cargo or Rust is needed.\n  Other platforms still rebuild with `cargo install --git`.\n- **Updates in place wherever aix lives.** A prebuilt binary replaces the running `aix` in any\n  location, not only a Cargo install (a source checkout's `target/` build is left alone), so the\n  launch prompt and the \"restart aix to install it\" notice now apply to those installs too. The\n  update cache remembers the binary; caches from older versions still load.\n- `scripts/release.mjs` builds the release binary (with no Git branch recorded, so it follows the\n  public manifest), signs it with the updater key and publishes it through the releases\n  repository's `publish.mjs` (`--no-build`, `--releases <dir>`, `--dry-run`).",
+  "pub_date": "2026-10-16T15:49:47.145Z",
+  "tag": "cli-v2.10.0",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajdUd0RjZXVlcVQydVNZWnJJbmE2STlSOXlJZmF0TEU3WERvMmNTSnBsVnhEMXBvYlpOMjZvWlZLZ1ZrVFZ3bUUvVVE1MURXdnVtNjhRNWpZZjJEbHc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMTY1Nzg3CWZpbGU6YWl4LTIuMTAuMC13aW5kb3dzLXg4Nl82NC5leGUKSHZkdjlOV2dWMUh5WkFYdElOQXorU21RYkNqSkFpZmg4TS80TGM3N25BS05uUFVNWGVTQ2xaellLb05oU0pTYmtTM1FwQUN6VUMvcDFLY3JQQVZMQ1E9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.10.0/aix-2.10.0-windows-x86_64.exe",
+      "sha256": "f580a49ce1b323623ad96b8e006faa940a0636255af1358e55533201be12d549"
+    }
+  }
+}
