@@ -1,5 +1,44 @@
 # Changelog
 
+## v0.8.1 — 2026-10-16
+
+- **The window behaves like a normal Windows window again.** All three fixes are in
+  `src-tauri/src/focus.rs`. Three symptoms, one cause:
+  - **Dragging the title bar** used to leave the window where it was and then jump it to the
+    drop point on release. Now it follows the mouse, with Aero Snap.
+  - **Clicking Aix Code while another window covered it** used to leave it behind that window.
+    The click reached the app and typing worked, but the window didn't come to the front. Now
+    any visible part you click (title bar, sidebar, chat, composer) brings it up.
+  - **Alt+Tab or the taskbar** used to bring the window back without the keyboard: you had to
+    click into it before typing. Now typing goes straight to where you left the cursor.
+- **The cause:** WebView2 puts its browser window inside ours without the `WS_CHILD` style, so
+  Windows treats it as a separate top-level window. It doesn't share our input state the way a
+  real child window would. The page kept the mouse capture from its mousedown, so the system
+  move loop got no mouse moves until the button came up. A click activated that inner window
+  rather than ours, and Windows only raises the window that was activated.
+- **The fixes:**
+  - **Shared input:** our UI thread's input is attached to the browser window's thread
+    (`AttachThreadInput`), which is what Windows does for real child windows. It is re-attached
+    if WebView2 restarts.
+  - **Raise on click:** a foreground hook raises the app window when the page takes the
+    activation while another window covers it. It makes the window topmost and then not topmost;
+    a plain move to the top is refused across processes. It doesn't touch the activation, so the
+    keyboard, selection and drags keep working. It does nothing when no window covers the app.
+  - **Edge resizes:** a click on the resize border leaves the activation with the page.
+    Otherwise WebView2 moves the focus back into the page mid-resize, and that activation change
+    ends the resize at once.
+  - `AIX_CODE_NO_FOCUS_FIX=1` turns all three off for comparison.
+- **Measured** with real mouse and keyboard input and a cover window: 13 of 13 checks pass, 10
+  of them failed without the fix.
+  - Title-bar drags follow the mouse in front and from behind (0 of 4 before).
+  - Clicks from behind raise the window (0 of 5 before).
+  - Typing after Alt+Tab-style activation reaches the composer (failed before).
+  - Typing right after a click, buttons clicked from behind, and edge resizes in front and from
+    behind keep working.
+- **QA:** `scripts/qa/focus-check.ps1` (with `scripts/qa/focus/*.cs`) runs these checks against
+  the QA instance with real input. Window activation is the one thing the CDP probe can't drive.
+  `AGENTS.md` says when to run it.
+
 ## v0.8.0 — 2026-10-16
 
 - **Diagrams, not ASCII art.** A ```` ```mermaid ```` block in a reply now renders as an
