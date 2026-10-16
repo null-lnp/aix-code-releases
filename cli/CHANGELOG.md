@@ -1,5 +1,26 @@
 # Changelog
 
+## v2.12.0 — 2026-10-16
+
+- **A finished plan clears when the next task starts.** The plan (`update_plan` / `todo_write`)
+  used to outlive its work: after every step was done, the next message brought the old
+  checklist back in the TUI dock and in Aix Code. Now a regular user turn first clears a plan
+  whose steps are all completed (`agent::tools::plan::clear_finished_plan`): the todo list, the
+  plan state and the saved session plan are emptied and an empty `PlanUpdate` tells the
+  front-ends to drop it. An unfinished plan stays, since the new message may continue it.
+  - **TUI:** the dock also hides a finished plan as soon as the turn is over, and a resumed
+    session no longer shows a plan that was finished before a later message (`last_plan`).
+  - **`aix exec --json`:** an empty plan update with no open todo list emits nothing.
+- **Front-ends can tell the model what they render.** A new context section,
+  `<display_capabilities>` (`agent::context::display`), is sent once per session (and again only
+  when it changes) by front-ends that register themselves with `display::set_client`. Aix Code
+  registers as the desktop client: the model learns that ```mermaid blocks render there as
+  interactive diagrams (pan, zoom, full screen) and draws flowcharts, architecture and dependency
+  graphs, sequence/state/class/ER diagrams, timelines, gantt charts, mindmaps and simple charts
+  as mermaid instead of ASCII art. The terminal sends nothing, so TUI prompts are unchanged; a
+  desktop session resumed in the terminal gets a one-line notice that diagrams no longer render.
+  The system prompt stays byte-identical for every client.
+- **Aix Code** is the desktop app's new name (it was "aix Code"); comments and docs follow.
 ## v2.11.0 — 2026-10-16
 
 - **Per-response tok/s history in the core meter.** `agent::throughput::Throughput` now keeps the
