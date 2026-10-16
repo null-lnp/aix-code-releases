@@ -1,5 +1,27 @@
 # Changelog
 
+## v2.11.0 — 2026-10-16
+
+- **Per-response tok/s history in the core meter.** `agent::throughput::Throughput` now keeps the
+  last 120 responses (`HISTORY_CAP`) as `ResponseSample`s: output tokens, request time, time to
+  first token (`ResponseStarted` → first streamed delta), generation speed and the model that
+  produced it (`set_model`, `ModelSwitched`). Subagent meters are labelled with their model too.
+  - **Generation speed** is tokens over the request time minus the time to first token. It uses
+    the whole request time when nothing streamed, when less than 500 ms of generation remains
+    (`MIN_GENERATION`), or when the model reasoned without streaming its thinking (those hidden
+    tokens were generated before the first delta).
+  - **Very short requests:** requests under 250 ms (`MIN_SAMPLE`) count toward the average but
+    leave no sample, so a reply served in milliseconds can't read as thousands of tok/s.
+  - **`Throughput::snapshot()`** returns everything in one serialisable value (camelCase JSON), so
+    the TUI and aix Code show identical numbers: live rate, average, peak, `sample_average` (the
+    samples' token-weighted generation speed), streaming state, streamed tokens and the samples.
+- **Header sparkline.** On wide terminals (120+ columns, when the model and cost still fit) the
+  header shows the last 8 responses' speeds after `avg N.N tok/s` as a dim `▁▂▃▄▅▆▇█` sparkline,
+  from the second response on.
+- **The history survives a model switch.** Picking another model (or a router/fallback switch)
+  still starts a fresh average, but keeps the samples (`Throughput::model_changed`); `/clear`,
+  `/new` and resuming a session reset everything as before.
+
 ## v2.10.0 — 2026-10-16
 
 - **Updates come from the public releases repository.** On the default channel aix reads
