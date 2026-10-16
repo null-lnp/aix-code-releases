@@ -1,5 +1,35 @@
 # Changelog
 
+## v0.6.0 — 2026-10-16
+
+- **Response speed, at a glance.** The composer shows a small bar graph: one bar per model
+  response, its tokens per second, and the current rate next to it. While a response streams, a
+  pulsing bar and the number show the live rate.
+- **Hover for the full picture:**
+  - the rate now, or for the last response;
+  - a larger graph of the last 40 responses with the average as a dashed line (hover a bar for
+    that response's tokens, duration, time to first token, age and model);
+  - average, peak, average time to first token and the number of responses;
+  - the session's input (with the share served from cache), output (with reasoning), cost and
+    what caching saved.
+  - Click to keep the card open.
+- **The numbers match the terminal app.** They come from aix's own speed meter (aix 2.11), the
+  same one the `aix` header uses.
+  - Each bar is a response's generation speed, measured from its first streamed token, so time to
+    first token is reported separately. Hidden reasoning counts as generation.
+  - The dashed line and "average" are the token-weighted mean of the bars.
+  - Requests under 250 ms leave no bar.
+  - Switching models keeps the graph.
+  - A router or fallback model switch now also becomes the session's model, as in the terminal
+    app, so the next turn doesn't start on the old one.
+- **Turn footer:** "Worked for 1m 20s · ↑24k ↓1.6k · $0.04": the turn's input and output tokens
+  and its cost. Hover it for the breakdown (cache share, reasoning tokens).
+- **Now in the app:** before this, the desktop app showed none of the session totals the
+  terminal app has (speed, tokens, cost, cache savings).
+- **QA:** `make-speed-scenario.mjs` writes `qa_speed` (seven responses at different speeds).
+  `speed.mjs` drives it: live samples, the card, bar hover, closing on leave, the turn footer and
+  console errors.
+
 ## v0.5.2 — 2026-10-16
 
 - **Auto-update works.** The source repo is private, so the app's anonymous request for the
