@@ -1,0 +1,24 @@
+{
+  "product": "app",
+  "version": "0.5.2",
+  "notes": "- **Auto-update works.** The source repo is private, so the app's anonymous request for the\n  update manifest got a 404. The check failed silently and no update was ever announced. Releases\n  are now published to the public\n  [aix-code-releases](https://github.com/null-lnp/aix-code-releases) repo, which holds both aix\n  Code and the aix CLI, and the updater reads `app/latest.json` from there. Installers are still\n  verified with the app's update key before they install.\n  - **One manual install needed:** versions up to 0.5.1 still look in the private repo. Install\n    0.5.2 once from the releases page; from then on the app updates itself.\n- **You hear about updates.**\n  - The app checks shortly after start, every two hours (it used to be six), and when you come\n    back to the window after half an hour or more.\n  - A new version shows the banner and, once per version, a system notification (when\n    notifications are on). **Later** hides the banner until the next version comes out.\n  - A failed download shows **Retry** and a link to download the installer.\n  - *Settings → About* shows when the last check ran, the error of a failed check, and a link to\n    the releases.\n- **Releases:** `scripts/release.mjs` now publishes through the releases repo's `publish.mjs`. That\n  creates the `app-vX.Y.Z` release with the NSIS + MSI installers and signatures, writes\n  `app/latest.json` + `app/CHANGELOG.md` and pushes the repo.",
+  "pub_date": "2026-10-16T15:37:26.091Z",
+  "tag": "app-v0.5.2",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajZieTQrYU5ZSjViUVBVMDVyekFVeU9xcThJMHoyL3pBZDNNZldiWDlrK3JuYkZPSnlqSzlZSmlPZzQzVUhYUUh6RGY4am1GOEF1dGQwZEhzUGFGTVFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMTY1MDE5CWZpbGU6YWl4IENvZGVfMC41LjJfeDY0LXNldHVwLmV4ZQl2ZXJzaW9uOjAuNS4yCmwzUmszRS9oL05kM0NPUzgrSWV1c2J3dHVsenNEOFd0aXk0Z0trNFdNYWlOVGVuVExlbzMrNW0yejcxM0hlSEtZcHVRcU52N2w3Y2xMTWVjbjl4ZkFRPT0K",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.5.2/aix-code-0.5.2-x64-setup.exe",
+      "sha256": "052d8743e2b00f0938aa972474582230736076f513d4a3843e90e03c35f9e01d"
+    },
+    "windows-x86_64-nsis": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajZieTQrYU5ZSjViUVBVMDVyekFVeU9xcThJMHoyL3pBZDNNZldiWDlrK3JuYkZPSnlqSzlZSmlPZzQzVUhYUUh6RGY4am1GOEF1dGQwZEhzUGFGTVFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMTY1MDE5CWZpbGU6YWl4IENvZGVfMC41LjJfeDY0LXNldHVwLmV4ZQl2ZXJzaW9uOjAuNS4yCmwzUmszRS9oL05kM0NPUzgrSWV1c2J3dHVsenNEOFd0aXk0Z0trNFdNYWlOVGVuVExlbzMrNW0yejcxM0hlSEtZcHVRcU52N2w3Y2xMTWVjbjl4ZkFRPT0K",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.5.2/aix-code-0.5.2-x64-setup.exe",
+      "sha256": "052d8743e2b00f0938aa972474582230736076f513d4a3843e90e03c35f9e01d"
+    },
+    "windows-x86_64-msi": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aai90TndZMDBRVk50bmdCYlZ6dzVzbWh6R1ptRk8vaG1TdzFuenNZUndkaUFWZW5qeHlrQiswb2VnOVFaMndxUURvaWs0SEVvTlk4NjJ3RGlnYWx0cVFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMTY1MDE5CWZpbGU6YWl4IENvZGVfMC41LjJfeDY0X2VuLVVTLm1zaQl2ZXJzaW9uOjAuNS4yCkFncVhlbXRsdGNSWGZUcnFQRTFTWDJTQXp0bVZRL2loVUNIUUdMaUNRdGtTWTFUSzFtK2ZCQzZma2M5QVhqRW4wRVg0Sitqa3dodzZDL2tyaHlteEJBPT0K",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.5.2/aix-code-0.5.2-x64.msi",
+      "sha256": "5836583fe50339ca85f38239fe453f73b0b47d9b25bf67e80568a616d5f6ef9b"
+    }
+  }
+}

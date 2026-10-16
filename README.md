@@ -7,6 +7,9 @@ update manifests both apps read.
 ## Latest versions
 
 <!-- latest:start -->
+| Product | Version | Released | Downloads |
+| --- | --- | --- | --- |
+| aix Code | [0.5.2](https://github.com/null-lnp/aix-code-releases/releases/tag/app-v0.5.2) | 2026-10-16 | [aix-code-0.5.2-x64-setup.exe](https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.5.2/aix-code-0.5.2-x64-setup.exe) · [aix-code-0.5.2-x64.msi](https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.5.2/aix-code-0.5.2-x64.msi) |
 <!-- latest:end -->
 
 ## Install
