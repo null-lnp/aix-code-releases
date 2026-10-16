@@ -1,5 +1,31 @@
 # Changelog
 
+## v0.7.0 — 2026-10-16
+
+- **Finishing a task feels like it.** When a step in the task list completes:
+  - its check slams in with a ring and a burst of green sparks;
+  - the row flashes green;
+  - a line draws through the text from left to right;
+  - the counter ticks over.
+  - When the last step completes, the checks ripple in a wave and the bar flares. Steps that were
+    already done when you open a session don't animate.
+- **The progress line greens up.** It starts as a pale wash and turns full green, with a growing
+  glow, as the plan fills. The width springs forward, each completion sends a pulse from its
+  leading edge, and a shine runs along the line, faster near the end.
+- **Effort is a slider now, and it goes wild.** The pill shows a 5-bar power meter in the level's
+  colour. The bars pulse at Extra high, flicker at Max and shimmer at Ultra. Clicking it opens a
+  slider; drag it, use the arrow keys or click a label. Each level has its own energy:
+  - **Colour:** the track heats up from calm blue through violet and hot pink to orange-red, with
+    racing stripes and a throbbing, glowing thumb.
+  - **Particles:** the thumb throws sparks; Max adds rising embers and a heat-wave label; Ultra
+    adds lightning, orbiting plasma and a spinning pink/blue rim.
+  - **Turning it up:** a spark burst and shockwave, the card shakes harder the higher you go, and
+    the label rolls in.
+  - **Turning it down:** it fizzles out in grey smoke.
+  - Reduced motion keeps the slider and drops the show.
+- **QA:** `effort-tasks.mjs` covers every level (keyboard), dragging, Esc, frame cost at Ultra,
+  and the task animations (just-done, sparks, all-done, the bar's colour by progress).
+
 ## v0.6.0 — 2026-10-16
 
 - **Response speed, at a glance.** The composer shows a small bar graph: one bar per model
