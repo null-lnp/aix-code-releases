@@ -1,5 +1,25 @@
 # Changelog
 
+## v0.7.1 — 2026-10-16
+
+- **Typing no longer makes the chat jump or flicker.** The composer used to resize itself on
+  every keystroke by collapsing to one line, measuring and growing back. That collapse was
+  invisible, but it let the chat above clamp its scroll position. Once the message was a few
+  lines long, the chat slipped up by the composer's height. While aix was streaming it bounced
+  up and down and then stopped following the answer, because the jump looked like you had
+  scrolled up.
+  - **The fix:** the composer now sizes itself to its text in CSS (`field-sizing: content`), with
+    no collapse.
+  - The chat only lets go of the bottom when you scroll it yourself (wheel, touch, keys,
+    scrollbar or a text-selection drag). If the layout moves it while it follows the bottom, it
+    snaps straight back.
+  - Measured with the new QA flow: while typing four lines, 0 frames off the bottom and 0 scroll
+    reversals, both idle and while an answer streams (before: 540 frames off the bottom, up to
+    813 px, and 69 reversals). Scrolling up by hand still detaches, and scrolling back down
+    re-attaches.
+- **QA:** `typing-flicker.mjs` samples the transcript's scroll position, size and the composer's
+  height on every frame while typing (idle and streaming), and checks hand scrolling.
+
 ## v0.7.0 — 2026-10-16
 
 - **Finishing a task feels like it.** When a step in the task list completes:

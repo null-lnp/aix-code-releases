@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.7.0",
-  "notes": "- **Finishing a task feels like it.** When a step in the task list completes:\n  - its check slams in with a ring and a burst of green sparks;\n  - the row flashes green;\n  - a line draws through the text from left to right;\n  - the counter ticks over.\n  - When the last step completes, the checks ripple in a wave and the bar flares. Steps that were\n    already done when you open a session don't animate.\n- **The progress line greens up.** It starts as a pale wash and turns full green, with a growing\n  glow, as the plan fills. The width springs forward, each completion sends a pulse from its\n  leading edge, and a shine runs along the line, faster near the end.\n- **Effort is a slider now, and it goes wild.** The pill shows a 5-bar power meter in the level's\n  colour. The bars pulse at Extra high, flicker at Max and shimmer at Ultra. Clicking it opens a\n  slider; drag it, use the arrow keys or click a label. Each level has its own energy:\n  - **Colour:** the track heats up from calm blue through violet and hot pink to orange-red, with\n    racing stripes and a throbbing, glowing thumb.\n  - **Particles:** the thumb throws sparks; Max adds rising embers and a heat-wave label; Ultra\n    adds lightning, orbiting plasma and a spinning pink/blue rim.\n  - **Turning it up:** a spark burst and shockwave, the card shakes harder the higher you go, and\n    the label rolls in.\n  - **Turning it down:** it fizzles out in grey smoke.\n  - Reduced motion keeps the slider and drops the show.\n- **QA:** `effort-tasks.mjs` covers every level (keyboard), dragging, Esc, frame cost at Ultra,\n  and the task animations (just-done, sparks, all-done, the bar's colour by progress).",
-  "pub_date": "2026-10-16T17:20:20.827Z",
-  "tag": "app-v0.7.0",
+  "version": "0.7.1",
+  "notes": "- **Typing no longer makes the chat jump or flicker.** The composer used to resize itself on\n  every keystroke by collapsing to one line, measuring and growing back. That collapse was\n  invisible, but it let the chat above clamp its scroll position. Once the message was a few\n  lines long, the chat slipped up by the composer's height. While aix was streaming it bounced\n  up and down and then stopped following the answer, because the jump looked like you had\n  scrolled up.\n  - **The fix:** the composer now sizes itself to its text in CSS (`field-sizing: content`), with\n    no collapse.\n  - The chat only lets go of the bottom when you scroll it yourself (wheel, touch, keys,\n    scrollbar or a text-selection drag). If the layout moves it while it follows the bottom, it\n    snaps straight back.\n  - Measured with the new QA flow: while typing four lines, 0 frames off the bottom and 0 scroll\n    reversals, both idle and while an answer streams (before: 540 frames off the bottom, up to\n    813 px, and 69 reversals). Scrolling up by hand still detaches, and scrolling back down\n    re-attaches.\n- **QA:** `typing-flicker.mjs` samples the transcript's scroll position, size and the composer's\n  height on every frame while typing (idle and streaming), and checks hand scrolling.",
+  "pub_date": "2026-10-16T17:30:36.081Z",
+  "tag": "app-v0.7.1",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajYycEIwNGswVFppSVRHOWpkQmtHRlBEaXAzbnRYeTE1dUltR1hucEdsSmRhN1AwNjlJWXgyOUp1cEc4UE1aRTZtNy95cmJIbnVyOGRvVWxkaFViU3drPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMTcxMjEyCWZpbGU6YWl4IENvZGVfMC43LjBfeDY0LXNldHVwLmV4ZQl2ZXJzaW9uOjAuNy4wCjB5VWd1cVVHb3BOTElkeFlreTVmUkhrQnJBQklSc2ZHMS8wa044TldPYmNpZ0hrbjVVMWVPS3RBWGtybHdhQVBIS044Z0JwMFNseERIRWhRM1JCK0FnPT0K",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.7.0/aix-code-0.7.0-x64-setup.exe",
-      "sha256": "5192634173842517b3e81d3c3b1dbe0174f3c6e1096b5da4d171f0981d00badf"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajlXY0pFcFVsR0J5aHA1dTc0dVJKcTM4eFdYKzVaek4vVy9sSnFHMGRWTFloMGtNZEtFVGRUdGVjY2t2bDZqVGdsZklienB1bWU4a2g4MG1VUkV6WXd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMTcxODI1CWZpbGU6YWl4IENvZGVfMC43LjFfeDY0LXNldHVwLmV4ZQl2ZXJzaW9uOjAuNy4xCmxvUWt3cFhCcUoxYmc5bXkwb3lSS1I0a2NESnk0R09mbTY3djNOVS90eGJ1eUZCK21wQjNjZ01BOUh2aGZkT2xVZzJ5cG9YelhRYzJ6VkJFVEo5QkJRPT0K",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.7.1/aix-code-0.7.1-x64-setup.exe",
+      "sha256": "12dcb5e9beb469a7c141e82af612186543274a39ec793497aa39897e019d84ee"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajYycEIwNGswVFppSVRHOWpkQmtHRlBEaXAzbnRYeTE1dUltR1hucEdsSmRhN1AwNjlJWXgyOUp1cEc4UE1aRTZtNy95cmJIbnVyOGRvVWxkaFViU3drPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMTcxMjEyCWZpbGU6YWl4IENvZGVfMC43LjBfeDY0LXNldHVwLmV4ZQl2ZXJzaW9uOjAuNy4wCjB5VWd1cVVHb3BOTElkeFlreTVmUkhrQnJBQklSc2ZHMS8wa044TldPYmNpZ0hrbjVVMWVPS3RBWGtybHdhQVBIS044Z0JwMFNseERIRWhRM1JCK0FnPT0K",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.7.0/aix-code-0.7.0-x64-setup.exe",
-      "sha256": "5192634173842517b3e81d3c3b1dbe0174f3c6e1096b5da4d171f0981d00badf"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajlXY0pFcFVsR0J5aHA1dTc0dVJKcTM4eFdYKzVaek4vVy9sSnFHMGRWTFloMGtNZEtFVGRUdGVjY2t2bDZqVGdsZklienB1bWU4a2g4MG1VUkV6WXd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMTcxODI1CWZpbGU6YWl4IENvZGVfMC43LjFfeDY0LXNldHVwLmV4ZQl2ZXJzaW9uOjAuNy4xCmxvUWt3cFhCcUoxYmc5bXkwb3lSS1I0a2NESnk0R09mbTY3djNOVS90eGJ1eUZCK21wQjNjZ01BOUh2aGZkT2xVZzJ5cG9YelhRYzJ6VkJFVEo5QkJRPT0K",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.7.1/aix-code-0.7.1-x64-setup.exe",
+      "sha256": "12dcb5e9beb469a7c141e82af612186543274a39ec793497aa39897e019d84ee"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajlVM2Z0KzBHNzdDbDBwR1NJVnIwQ0taVEthTjdYSWtrVmkrbFlrTkZubVZxYVVncnVYV0FEZkxzK3U5Z2xzN3c2REQ2ZDBlNnZZZFo0TEZ6dU9SK3cwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMTcxMjEyCWZpbGU6YWl4IENvZGVfMC43LjBfeDY0X2VuLVVTLm1zaQl2ZXJzaW9uOjAuNy4wCi81cS9pRko1UVF0c1FvYW9UTnVUdlpwc3NGMGhXMERONnJ0TmtJVVJqb3doemxnZnd3clN1bDN5U2xIMHRJcVdyUlFFMlFiQ2ZJTEExMjRUTWNZZkRnPT0K",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.7.0/aix-code-0.7.0-x64.msi",
-      "sha256": "3986e5e6623e916d1a8d020461f07308ec1f870aad92786ff39c645deeee6088"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajdPbmZmZlpWMytJZ2tvVzBTL1hKTG5tSER0L0x4YytKb2k1WGJqNmhBN0hlc3VuQjJxN2ZuOW5MTndrR1BWMGtVSUM3eEZIV1BLWFQrYWhxdXFmMlFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMTcxODI1CWZpbGU6YWl4IENvZGVfMC43LjFfeDY0X2VuLVVTLm1zaQl2ZXJzaW9uOjAuNy4xClFhQVhxaXNZL1ZRMWVLMEc1dGhkNk5wUEpJemxlVHdFVG9zUndjQ2llRm9kT3NHbzNwbTFxMGlwd1VocjFqR003NElxbUgrdk54T3pOcTZlWEU5UkJ3PT0K",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.7.1/aix-code-0.7.1-x64.msi",
+      "sha256": "8bf716231f5b3f85fdeb2cbb537398edb420777ec95b9727b2707efcae6e074c"
     }
   }
 }
