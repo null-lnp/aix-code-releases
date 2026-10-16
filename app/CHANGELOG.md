@@ -1,5 +1,38 @@
 # Changelog
 
+## v0.8.0 — 2026-10-16
+
+- **Diagrams, not ASCII art.** A ```` ```mermaid ```` block in a reply now renders as an
+  interactive diagram instead of code:
+  - **Drag** to pan, **scroll** to zoom at the cursor, **double-click** to zoom in (Shift to zoom
+    out), `+` / `-` / `0` / arrow keys, zoom buttons with the current %, *Fit*, *Actual size*.
+  - So the chat still scrolls normally, the wheel zooms once you click into a diagram (it gets
+    an accent ring); before that a hint says so, and Ctrl+wheel or a trackpad pinch always zooms.
+  - **Full screen** (Esc closes), a **source** toggle and **copy**.
+  - Flowcharts, architecture and dependency graphs, sequence, class, state and ER diagrams,
+    timelines, gantt charts, mind maps, git graphs, pie and bar/line charts. Labels come from the
+    diagram type or its front-matter title.
+  - Themed from the app's light and dark tokens: neutral nodes, soft shadows, Apple-like chart
+    colours, a dotted canvas. Switching themes redraws them.
+  - While a block is still streaming, it shows its source under "Writing flowchart…" and draws
+    once the fence closes. A broken block shows the parse error with its source.
+  - Mermaid loads on first use (its own chunk), draws one diagram at a time and caches the
+    results, so scrolling and re-renders cost nothing. `securityLevel: strict`: no scripts and no
+    click handlers.
+- **The agent knows.** The app registers itself with the aix core as the desktop client
+  (aix 2.12.0, `<display_capabilities>`), so the model draws graphs and charts as mermaid here
+  instead of ASCII art. The terminal is unchanged.
+- **A finished plan clears itself.** When every step is done, the plan dock plays its finale and
+  then leaves, even while the summary is still being written. Your next message no longer brings
+  the old checklist back: the core clears a finished plan when a new task starts, and the app
+  drops it as soon as you send. An unfinished plan stays.
+- **Aix Code.** The app is now called *Aix Code* (it was "aix Code"), and the agent is *Aix* in
+  the app's text. Installs and updates are unaffected: the install folder, registry keys and data
+  stay the same (Windows treats them case-insensitively), and the MSI upgrade code is pinned to
+  the old value so MSI installs upgrade in place.
+- **QA:** `diagrams.mjs` (with the `qa_diagrams` scenario) checks streaming, rendering, the
+  error card, wheel and focus, drag, keys, buttons, the source toggle, full screen, both themes,
+  and that a second message never shows the finished plan.
 ## v0.7.1 — 2026-10-16
 
 - **Typing no longer makes the chat jump or flicker.** The composer used to resize itself on
