@@ -50,4 +50,15 @@ node scripts/release.mjs          # in aix-code-app
 node scripts/release.mjs          # in aix-cli
 ```
 
+Then it mirrors the release into the product's own source repository (`vX.Y.Z` in
+null-lnp/aix-code-app or null-lnp/aix-cli, marked Latest, the same assets) with
+[`mirror.mjs`](mirror.mjs), and the release scripts finish with [`status.mjs`](status.mjs), which
+checks that the latest version is everywhere: the source clone, the manifest, the public release
+and the source repository's Latest release.
+
+```powershell
+node status.mjs                                               # what lags behind, if anything
+node mirror.mjs --product app --version 0.8.1 --commit <sha>  # repair or backfill a mirror
+```
+
 Don't edit the manifests by hand.

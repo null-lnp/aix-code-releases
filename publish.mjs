@@ -6,7 +6,9 @@
 //   2. writes <product>/latest.json — the manifest the updaters read through
 //      https://raw.githubusercontent.com/null-lnp/aix-code-releases/main/<product>/latest.json —
 //      and copies the product's changelog to <product>/CHANGELOG.md (+ the README's version table),
-//   3. commits and pushes this repository.
+//   3. commits and pushes this repository,
+//   4. mirrors the release into the product's source repository (release vX.Y.Z there, marked
+//      Latest, same installers — see mirror.mjs), so its GitHub "Releases" box is never stale.
 //
 // The manifest changes only after every asset is uploaded and the release is public, so it never
 // points at a missing file. Publishing a version that isn't newer than the current manifest's, or
@@ -14,7 +16,7 @@
 //
 //   node publish.mjs --product app|cli --version X.Y.Z --changelog <CHANGELOG.md>
 //                    --platform <key>=<file> [--platform …] [--asset <file> …]
-//                    [--name <file>=<name> …] [--force] [--dry-run]
+//                    [--name <file>=<name> …] [--commit <sha>] [--no-mirror] [--force] [--dry-run]
 //
 //   --platform  an updater asset for a platform key (Tauri naming: windows-x86_64,
 //               windows-x86_64-nsis, windows-x86_64-msi, linux-x86_64, darwin-aarch64…).
@@ -23,6 +25,9 @@
 //   --asset     an extra file attached to the release (not in the manifest).
 //   --name      upload <file> under <name> (default: its file name). Names must be plain
 //               (letters, digits, . _ + -): GitHub rewrites other characters.
+//   --commit    the source repository's commit for the mirror's tag vX.Y.Z (default: its
+//               default branch)
+//   --no-mirror skip step 4 (run `node mirror.mjs` later)
 //   --dry-run   prints the manifest and writes it to a temp folder; touches nothing else.
 //
 // The GitHub token comes from `git credential fill` (the same login git push uses); it is never printed.
@@ -32,6 +37,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { mirrorRelease, SOURCE_REPOS } from './mirror.mjs';
 
 const REPO = 'null-lnp/aix-code-releases';
 const BRANCH = 'main';
@@ -41,7 +47,7 @@ const SAFE_NAME = /^[A-Za-z0-9._+-]+$/;
 
 // ── arguments ────────────────────────────────────────────────────────────────────────────────
 const args = process.argv.slice(2);
-const opt = { platforms: [], assets: [], names: new Map(), dry: false, force: false };
+const opt = { platforms: [], assets: [], names: new Map(), dry: false, force: false, mirror: true };
 for (let i = 0; i < args.length; i++) {
   const a = args[i];
   const next = () => {
@@ -65,6 +71,8 @@ for (let i = 0; i < args.length; i++) {
     opt.names.set(path.resolve(v.slice(0, eq)), v.slice(eq + 1));
   } else if (a === '--dry-run') opt.dry = true;
   else if (a === '--force') opt.force = true;
+  else if (a === '--commit') opt.commit = next();
+  else if (a === '--no-mirror') opt.mirror = false;
   else throw new Error(`unknown argument ${a}`);
 }
 if (!TITLES[opt.product]) throw new Error('--product must be app or cli');
@@ -132,6 +140,7 @@ if (opt.dry) {
   fs.writeFileSync(path.join(out, 'latest.json'), JSON.stringify(manifest, null, 2) + '\n');
   console.log(`dry run: ${path.join(out, 'latest.json')} (nothing uploaded, the releases repo untouched)`);
   for (const [name, file] of files) console.log(`  would upload ${name}  ←  ${file}`);
+  if (opt.mirror) console.log(`  would mirror ${tag} to ${SOURCE_REPOS[product]} as v${version}${opt.commit ? ` (tag at ${opt.commit})` : ''}`);
   process.exit(0);
 }
 
@@ -221,6 +230,16 @@ try {
 }
 console.log(`published ${title}: ${rel.html_url}`);
 console.log(`manifest: https://raw.githubusercontent.com/${REPO}/${BRANCH}/${product}/latest.json (raw caches ~5 min)`);
+
+// ── mirror into the source repository ────────────────────────────────────────────────────────
+if (opt.mirror) {
+  try {
+    await mirrorRelease({ product, version, commit: opt.commit, force: opt.force });
+  } catch (e) {
+    console.error(`the release is up, but mirroring it to ${SOURCE_REPOS[product]} failed — run \`node ${path.join(root, 'mirror.mjs')} --product ${product} --version ${version}\`:\n${e.message}`);
+    process.exitCode = 1;
+  }
+}
 
 /** The "Latest versions" table between the markers in README.md. */
 function updateReadme() {
