@@ -1,9 +1,8 @@
 # aix Code releases
 
-Releases of **[aix Code](https://github.com/null-lnp/aix-code-app)**, the desktop app, and the
-**[aix CLI](https://github.com/null-lnp/aix-cli)**, the terminal coding agent. The source repositories
-are private. This public repository holds the installers, the binaries and the update manifests both
-apps read.
+Releases of **aix Code**, the desktop app, and the **aix CLI**, the terminal coding agent. The
+source repositories are private. This public repository holds the installers, the binaries and the
+update manifests both apps read.
 
 ## Latest versions
 
