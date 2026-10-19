@@ -1,5 +1,44 @@
 # Changelog
 
+## v0.11.0 — 2026-10-19
+
+- **The office is 3D now.** The Office pane used to be a small, mostly static pixel drawing. It is
+  now a living isometric diorama rendered with three.js (`src/lib/office3d/`):
+  - **Voxel characters.** Axo and every helper are built voxel by voxel from their pixel art (same
+    seed → same look as in the terminal), with plush depth, squash and stretch, blinking eye
+    glints, speech and thought bubbles, and a hover outline.
+  - **A real room.** Plank floor, walls with windows whose sky follows your local time (day with
+    drifting clouds, sunset, a starry night over a skyline), light shafts with dust motes, a door
+    that swings open, a wall clock on real time, a neon sign showing whether agents can talk, a
+    server rack whose LEDs speed up with the work, plants, a whiteboard, a water cooler. Cozy
+    evening lighting in the dark theme, bright daylight in the light one.
+  - **Desks with live monitors.** Each screen shows what its agent is doing — a brain wave while it
+    thinks, a scrolling terminal while it runs tools, text typing out while it writes, a check when
+    it's done, a red glitch when it failed — and new desks assemble themselves piece by piece.
+  - **Things happen.** Helpers walk in through the door and along the aisles; messages fly as paper
+    planes (with loops and barrel rolls) or the sender walks over; a message to everyone ripples
+    from the manager's desk; done → confetti, failed → a storm cloud; glyphs float up from busy
+    keyboards; a pink beacon when the manager needs you; lights dim and everyone dozes during a
+    rate-limit pause. *Agents can talk* off raises glass partitions between the desks.
+  - **Look around.** Drag to orbit, scroll or pinch to zoom, double-click or ↺ to reset; hover a
+    character for its name, activity and task; click one to open its inspector.
+  - **Light on resources.** three.js loads only when the pane opens (a separate chunk; the main
+    bundle is unchanged); ~35–55 draw calls with a full team; at most 60 fps, and nothing is drawn
+    while the pane is hidden. Reduced motion is honoured.
+  - **Classic stays.** ⊞ switches to the pixel office (remembered); it is also used automatically
+    where WebGL 2 isn't available or the GPU context is lost.
+- **Office mail no longer stops after 60 messages** (both offices). The backend sends the latest 60
+  `message_agent` notes and the office counted the list to find new ones — once it was full,
+  nothing new was ever delivered. New mail now comes from diffing the windows
+  (`lib/pixel/mail.ts`), and a burst isn't replayed in full.
+- Switching sessions with the Office open swaps the team at once (no parade of the old team leaving
+  and the new one walking in) and closes the inspector of the old session.
+- **Dev:** `dev/office3d/` has previews of every part (`engine.html` plays a 50-second storyboard of
+  the whole office) and `shot.mjs`, which screenshots them in headless Chromium.
+- **QA:** the `office` flow records the 3D stage's renderer, fps and draw calls with each shot and
+  checks the Classic toggle.
+- Desktop only: the terminal app's office is its mascot dock.
+
 ## v0.10.0 — 2026-10-19
 
 - **A goal no longer stops while it isn't achieved.** When a round came back with no answer —
