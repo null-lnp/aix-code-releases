@@ -1,5 +1,41 @@
 # Changelog
 
+## v2.14.0 — 2026-10-19
+
+- **`/goal` no longer stops while the goal isn't achieved.** A round that came back with no
+  answer — an empty response (Claude occasionally ends a turn with nothing, or a proxy drops the
+  stream), or a reply that kept hitting the output-token limit — ended the whole loop with
+  "goal loop stopped in round N: … — the goal is not achieved". Such a round is now no verdict:
+  the loop asks again from where the work stands ("round N: the model returned an empty response
+  — asking again (1/3)"; for the output limit it asks for smaller steps), and only
+  `goal::MAX_STALLED_ROUNDS` (3) of them in a row stop it — a stuck model or connection must not
+  loop forever. A cut-off reply that happens to end with `GOAL: ACHIEVED` still never counts.
+  Provider errors, safety refusals, Esc and `goal_max_rounds` stop it as before (a stalled round
+  counts toward the cap).
+  - The turn layer no longer reports these two ends itself: `TurnEnd::Empty` /
+    `OutputExhausted` carry their notice and `run_turn_inner` shows it, so every other caller
+    (turns, workflows, reviews, peers, subagents) behaves exactly as before. The empty-response
+    notice now tells a model that answered nothing apart from a stream that kept dropping (it
+    always said "after 0 retries").
+- **Questions and the subagent prompt answer themselves.** Both waited forever, so an
+  unattended run (a `/goal` loop, a long task) could hang on a prompt nobody was there to answer.
+  - `ask_question_to_user` waits `tools.request_user_input.timeout_secs` (default 300 s), then
+    tells the model the user did not reply and to go on with its best judgment and state its
+    assumption. This replaces the TUI's yolo-only five-minute auto-answer: it now lives in the
+    core and applies in every mode.
+  - "Launch a subagent?" waits `tools.agents.consent_timeout_secs` (default 120 s), then counts as
+    No. A No — given or by timeout — now holds for the rest of the request: later (or parallel)
+    spawns of it are refused without asking again. A prompt that went away unanswered because the
+    turn was stopped does not count.
+  - `0` waits as before. Front-ends learn the deadline from `CoreEvent::PromptDeadline
+    { request, until }`, sent right before the prompt (`request`: the approval's id, None for the
+    question that follows); when the core stops waiting it drops the prompt's receiver.
+  - **TUI:** the question modal's title counts down (`⏱ 4:59 left · then the agent decides`) and
+    the subagent prompt shows `⏱ 1:59 left · then No — the agent works without subagents` — dim,
+    amber in the last minute, red at the end. A prompt the core gave up on closes on the next tick
+    with a line saying what happened; a custom answer being typed stays in the input box.
+- Aix Code shows the same countdown on its question and permission cards (app v0.10.0).
+
 ## v2.13.0 — 2026-10-19
 
 - **`/fast` and `/ultrafast`.** A new core module, `agent::speed`, knows which providers and
