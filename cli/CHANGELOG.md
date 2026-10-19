@@ -1,5 +1,37 @@
 # Changelog
 
+## v2.13.0 — 2026-10-19
+
+- **`/fast` and `/ultrafast`.** A new core module, `agent::speed`, knows which providers and
+  models offer a faster response tier and asks for it: Anthropic fast mode (`speed: "fast"`) on
+  Claude Opus 5.5, and on Opus 5 / Opus 4.8 behind the `fast-mode-2026-02-01` preview beta;
+  OpenAI and Codex `service_tier: "priority"` (Fast) on GPT-5.6 / GPT-6 and `"ultrafast"` on
+  GPT-6.1 Sol and GPT-6 Astra. A ChatGPT plan's live model catalog (`additional_speed_tiers`,
+  `service_tiers`) overrides the built-in table, with the plan's own notes ("2x speed, increased
+  usage"). Proxies and compatible servers never get the field unless their provider entry opts in
+  with `"fast_mode": true` (`false` hides the tiers).
+  - **TUI:** `/fast [on|off|status]` and `/ultrafast [on|off|status]` toggle the tier, saved per
+    project (`speed` in settings.json; Codex's `service_tier` key is read too). Both commands are
+    only listed in the palette and `/help` where the model offers the tier. The header shows
+    `⚡ FAST` (amber) or `⚡⚡ ULTRAFAST` (red), dimmed with the time left while the tier rests, and
+    `/status` has a Speed row with the price (`Fast · 2× price ($8/$40 per MTok)`).
+  - **Refusals fall back by themselves.** A request the provider refuses at a faster tier (fast
+    capacity exhausted — a 429 —, the tier not enabled for the account, not offered for the model)
+    goes out again right away one tier slower, without pausing the session or switching accounts,
+    and that tier rests for `fast_mode_cooldown_ms` (default 5 min) so an account pays for the
+    refusal once. A response the provider served slower than asked (`usage.speed`,
+    `service_tier`) rests the tier the same way. Front-ends hear `CoreEvent::SpeedChanged` plus a
+    transcript line.
+  - **Costs include the premium.** `Usage.surcharge_usd` carries what faster tiers added (2× the
+    Standard price for Fast, 6× for Ultrafast, priced per response at the model that served it);
+    `Usage::cost` includes it and `/status` shows the share.
+  - A running job picks up `/fast` at its next request (`CoreState::set_speed`), subagents
+    included where their model offers the tier.
+- **Goal rounds are events.** `/goal` and `/peer-review-goal` send `CoreEvent::RoundStarted
+  { round }` (1-based) before each round's prompt. The TUI header shows `⚑ goal · round n` while a
+  goal loop runs and `/status` a Goal row; Aix Code draws its goal band and round markers from it.
+- **Mock API:** `dev/mock_api.py` echoes the tier a request asked for (`usage.speed`,
+  `service_tier`), and a reply's `served_speed` can report a slower one.
 ## v2.12.0 — 2026-10-16
 
 - **A finished plan clears when the next task starts.** The plan (`update_plan` / `todo_write`)
