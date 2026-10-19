@@ -1,5 +1,44 @@
 # Changelog
 
+## v0.9.0 — 2026-10-19
+
+- **Every aix command, in the `/` palette.** The message box now offers the terminal app's whole
+  command table (`src-tauri/src/slash.rs`; a test keeps it in step with aix): `/goal`,
+  `/peer-review-goal`, `/review`, `/workflow`, skills, `/status`, `/tokens`, `/agents`, `/tools`,
+  `/mcp`, `/stats`, `/system`, `/context-window`, `/cache`, `/router`, `/smart`, `/fallback`,
+  `/trim`, `/goto`, `/retry`, `/delegate`, `/tell`, `/agent-chat`, `/resume-claude`,
+  `/resume-codex`, `/import-claude`, `/peer-review-setup`, `/help` and the rest. Each one runs on
+  the session's live agent through the same core drivers the terminal uses.
+  - **The palette** lists commands with their arguments, then skills; typing an argument suggests
+    its choices (review targets, workflows, MCP servers, `on`/`off`). Enter runs a command that
+    needs nothing more, Tab completes. The start page lists the commands that start a session
+    (`/goal …` opens one and runs there) or need none.
+  - **Outcomes:** `/status`, `/tokens`, `/tools`… print a card in the conversation (a dialog on
+    the start page). `/clear`, `/trim` and `/goto` ask first. `/help` lists every command and key,
+    searchable. `/peer-review-setup` is a provider → key → model dialog; `/resume-claude` and
+    `/resume-codex` list that folder's Claude Code / Codex sessions and import the one you pick.
+    A command that fails comes back to the message box.
+  - Turns a command started show a badge (Goal, Peer-reviewed goal, Review, `/skill`, `/init`), and
+    rewinding one puts the command back (`/goal …`).
+- **`/fast` and `/ultrafast`** (aix 2.13). A **speed menu** next to the effort shows when the
+  model offers a faster tier: Claude Opus 5.5 (Opus 5 and 4.8 in preview) and GPT-5.6 / GPT-6 —
+  API or ChatGPT plan — for Fast, GPT-6.1 Sol and GPT-6 Astra for Ultrafast. It reads Standard,
+  turns amber for Fast and red for Ultrafast, and lists each tier's price (Fast is twice the
+  price: `$8/$40 per MTok` on Opus 5.5). `/fast` and `/ultrafast` toggle it; the choice is saved
+  for the folder and a running job switches at its next request. When the provider is out of
+  fast capacity Aix answers at standard speed by itself, says so in the conversation, and the
+  pill shows the tier resting until it is tried again. Turn costs and the session total include
+  the premium; `/status` shows the speed and its price.
+- **A clear "working on a goal" state.** While `/goal` or `/peer-review-goal` runs, a band above
+  the message box shows the goal, the round (`Round 2 of 10` with a cap), the time it has been at
+  it and Stop; each new round draws a "Round n" rule in the conversation, the sidebar marks the
+  session with a target, and a met goal ends with a green "Goal achieved" line. Workflows show
+  their step the same way.
+- **↑/↓ bring back what you sent.** In an empty message box, ↑ walks back through this session's
+  messages, then through every prompt you sent in Aix (aix's shared history); ↓ walks forward,
+  Esc puts your draft back. A command sent before comes back as the command.
+- **QA:** flows `goal`, `fast`, `recall`, `palette` and `dialogs`, scenarios `qa_goal`, `qa_fast`
+  and `qa_fast_busy`; the QA profile opts the mock into the speed tiers (`fast_mode`).
 ## v0.8.1 — 2026-10-16
 
 - **The window behaves like a normal Windows window again.** All three fixes are in
