@@ -1,5 +1,32 @@
 # Changelog
 
+## v0.10.0 — 2026-10-19
+
+- **A goal no longer stops while it isn't achieved.** When a round came back with no answer —
+  an empty response, or a reply that kept hitting the output-token limit — the goal loop ended
+  with "goal loop stopped in round N: … — the goal is not achieved". Such a round is now asked
+  again from where the work stands (a "round N: … — asking again (1/3)" line), and only three in a
+  row stop the loop. Core fix (aix v2.14.0), shared with the terminal app.
+- **Questions count down, then Aix decides.** A question card shows the time left — a pill and a
+  hairline that drains along the card's top edge, amber in the last minute and red at the end —
+  and says what happens without an answer ("No answer → Aix decides on its own"). After 5 minutes
+  Aix goes on with its best judgment and states its assumption; the card closes as *No answer —
+  Aix decided*. Before, a question waited forever, so a goal left running could sit there for
+  hours.
+- **"Launch a subagent?" counts down too.** After 2 minutes without an answer it counts as No —
+  *No answer — no subagents* — and Aix does the work itself, without asking again for that
+  request (a No you give holds for the request the same way).
+- The waits come from settings.json: `tools.request_user_input.timeout_secs` (300) and
+  `tools.agents.consent_timeout_secs` (120); `0` waits for you as before. The "needs your input"
+  notification says how long you have.
+- **Copy says it copied.** Every copy button — messages, code blocks, diagram source, error
+  details — turns its icon into a green check and shows *Copied* beside it for a moment, on the
+  side that moves nothing else (the message's action row stays up meanwhile). A copy that fails
+  says so.
+- **QA:** flow `prompts` (scenario `qa_prompts`): both timeouts and the copy mark.
+- Counterpart: aix v2.14.0 has the goal fix, the timeouts and the countdown in its prompts; the
+  copy feedback is desktop-only.
+
 ## v0.9.2 — 2026-10-19
 
 - **Pinned chats say which project they're in.** The Pinned group gathers chats from every
