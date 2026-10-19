@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.9.2 — 2026-10-19
+
+- **Pinned chats say which project they're in.** The Pinned group gathers chats from every
+  project, but its rows only showed the title, so the project had to be guessed from it. Each
+  pinned row now has a second line with the project's folder name — the same name its header has
+  in the Projects view — in both the Projects and Recents views:
+  - **Same-name projects** (`D:\work\app` and `D:\old\app`) also show their parent folder, as the
+    project headers do.
+  - **Worktree sessions** name the repository they came from, plus their branch, not the
+    worktree's own folder.
+  - Hovering a row shows the project's full path (and the worktree's, for a worktree session).
+- The collapsed sidebar's tooltips and the title bar name the project the same way; a worktree
+  session's title bar read the worktree folder's name.
+- **QA:** flow `pinned`.
+- Desktop only: aix-cli has no sidebar or pinned sessions.
 ## v0.9.1 — 2026-10-19
 
 - **The collapsed sidebar's session tiles are whole again.** Their list was exactly one tile wide

@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.9.1",
-  "notes": "- **The collapsed sidebar's session tiles are whole again.** Their list was exactly one tile wide\n  and clips what doesn't fit, so the selected tile's ring lost its sides and the status badges\n  their edges. The list now spans the rail. The selected tile is filled, with a ring separated by\n  a thin gap; badges sit on the tile's corner, cut out of it; a working session's badge is a thin\n  turning arc instead of a loader that read as a cog at that size.\n- **Attaching an image feels like it.** A pasted screenshot flashes the message box like a\n  shutter, and each new thumbnail drops in with a small bounce and a glint — several at once land\n  one after the other — while Axo looks up. A removed thumbnail shrinks away where it was and the\n  others slide over, and sent images settle into their bubble. Two quick pastes no longer lose one\n  of the images.\n- Lists that animate items out (the message queue, attachments) keep a leaving item in its place\n  and no longer drop it for a frame first.\n- **QA:** flows `rail` and `attach`, scenario `qa_slow` (a reply that keeps a session running).\n- Desktop only: the terminal has no rail and shows attachments as `[IMAGE #n]` tags.",
-  "pub_date": "2026-10-19T18:54:17.957Z",
-  "tag": "app-v0.9.1",
+  "version": "0.9.2",
+  "notes": "- **Pinned chats say which project they're in.** The Pinned group gathers chats from every\n  project, but its rows only showed the title, so the project had to be guessed from it. Each\n  pinned row now has a second line with the project's folder name — the same name its header has\n  in the Projects view — in both the Projects and Recents views:\n  - **Same-name projects** (`D:\\work\\app` and `D:\\old\\app`) also show their parent folder, as the\n    project headers do.\n  - **Worktree sessions** name the repository they came from, plus their branch, not the\n    worktree's own folder.\n  - Hovering a row shows the project's full path (and the worktree's, for a worktree session).\n- The collapsed sidebar's tooltips and the title bar name the project the same way; a worktree\n  session's title bar read the worktree folder's name.\n- **QA:** flow `pinned`.\n- Desktop only: aix-cli has no sidebar or pinned sessions.",
+  "pub_date": "2026-10-19T19:11:50.280Z",
+  "tag": "app-v0.9.2",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aaitscTROVTF3czRJYkVOTU9xQkd2dmZDdW1IQWlDczcwanNzWTBPQlBaU25OSG5xVmM1QTFhWE1obXEwU1MwajJvS0xtczF1all0bS9SQk9iMnFRcHc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNDM2MDM4CWZpbGU6QWl4IENvZGVfMC45LjFfeDY0LXNldHVwLmV4ZQl2ZXJzaW9uOjAuOS4xCmEwVzZxWGU0RjVBV0ZjODQvVDR5VENhTUtQZTZZL1RNNEtiM3BCQmIxaEw1L3Y4bCtNK0w5c0NGWXdnNmxZVU1BMW80VDQ5dkNaSEgrck5KYmRHV0FRPT0K",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.9.1/aix-code-0.9.1-x64-setup.exe",
-      "sha256": "2221d97f39d97b4f55fcc34efe00caff0d1e5cbf4076bda4e6604755ebae0a76"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajg1ZHlNWDNGejNza0g4aHluSjBaamEzMXV4dm5sVHpHeFRsYzdOOXIrVndySVA1T0NxRCtWYUpockIrSGwrdFZwTnNacTdiekVNekZVaG9IUlEyT0FRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNDM3MDk4CWZpbGU6QWl4IENvZGVfMC45LjJfeDY0LXNldHVwLmV4ZQl2ZXJzaW9uOjAuOS4yCm9FWkhtZ2JtUDVPT3JhSHp6cXltaVdrWXhFamJWT012Z29yQVZOM1VIakNkS0g1WUhEODQ1ZjBSY0lxc2FsNm9VTE04TWx1UFRsMnJHYWFyYitrWENBPT0K",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.9.2/aix-code-0.9.2-x64-setup.exe",
+      "sha256": "63b8930df2fa14e5e0a0f84ff40074e5d5ee30e2f564a820602e07175b1517f0"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aaitscTROVTF3czRJYkVOTU9xQkd2dmZDdW1IQWlDczcwanNzWTBPQlBaU25OSG5xVmM1QTFhWE1obXEwU1MwajJvS0xtczF1all0bS9SQk9iMnFRcHc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNDM2MDM4CWZpbGU6QWl4IENvZGVfMC45LjFfeDY0LXNldHVwLmV4ZQl2ZXJzaW9uOjAuOS4xCmEwVzZxWGU0RjVBV0ZjODQvVDR5VENhTUtQZTZZL1RNNEtiM3BCQmIxaEw1L3Y4bCtNK0w5c0NGWXdnNmxZVU1BMW80VDQ5dkNaSEgrck5KYmRHV0FRPT0K",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.9.1/aix-code-0.9.1-x64-setup.exe",
-      "sha256": "2221d97f39d97b4f55fcc34efe00caff0d1e5cbf4076bda4e6604755ebae0a76"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajg1ZHlNWDNGejNza0g4aHluSjBaamEzMXV4dm5sVHpHeFRsYzdOOXIrVndySVA1T0NxRCtWYUpockIrSGwrdFZwTnNacTdiekVNekZVaG9IUlEyT0FRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNDM3MDk4CWZpbGU6QWl4IENvZGVfMC45LjJfeDY0LXNldHVwLmV4ZQl2ZXJzaW9uOjAuOS4yCm9FWkhtZ2JtUDVPT3JhSHp6cXltaVdrWXhFamJWT012Z29yQVZOM1VIakNkS0g1WUhEODQ1ZjBSY0lxc2FsNm9VTE04TWx1UFRsMnJHYWFyYitrWENBPT0K",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.9.2/aix-code-0.9.2-x64-setup.exe",
+      "sha256": "63b8930df2fa14e5e0a0f84ff40074e5d5ee30e2f564a820602e07175b1517f0"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajBJODNaMXhBNmtKUzk4MUJjMDhaRk9LUWRnTmhuRFMrRUx5Zk1aWlNSMTIwaC9YL1FuSmxpRTZvbzY4MGlBajZrdlU4NVloYzFJWk9MYmNNTkpDS3cwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNDM2MDM5CWZpbGU6QWl4IENvZGVfMC45LjFfeDY0X2VuLVVTLm1zaQl2ZXJzaW9uOjAuOS4xCk1nWlQ4K0NVK2ZLYTlMREw4OGk5ZW1sS24yNlJPdUZydDRZVkdmMkt1d3FQV3NDY1p0eFdTTFF4Mk5ZNEFudW80cnU5aTFoS240M1E3azRzdm1kRkJnPT0K",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.9.1/aix-code-0.9.1-x64.msi",
-      "sha256": "171b8f5a311d90adb0d4cb3c43fbe855b7b2096b2f6823ded759b11454be1f55"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aai9UdXgwak1XbWlDZURDc3VQaWo5WTJLVnFBYThNY2IrN3ZTRXBFMUZyR1BuWUJrZnAzWTB5VFhrUmJSc01FaHF6UEVWZWgvRlk0L0Z2U01OZTQxd1FnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNDM3MDk4CWZpbGU6QWl4IENvZGVfMC45LjJfeDY0X2VuLVVTLm1zaQl2ZXJzaW9uOjAuOS4yCmVEME05cDhBYzAzMDQwZzY4TEVQYmZCZlRjZDhlWUMxUkpnRzY0ZklaUWRrN1pBVjFBeWhuZmxKWUtRcEM0ek10bFVzY2lxT0YzSC9nWE52QVVHbUJnPT0K",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.9.2/aix-code-0.9.2-x64.msi",
+      "sha256": "751817e83690f77781b8fd97b5b22477ac29b483eac724aa2517c979f9fe44f0"
     }
   }
 }
