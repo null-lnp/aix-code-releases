@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.9.1 — 2026-10-19
+
+- **The collapsed sidebar's session tiles are whole again.** Their list was exactly one tile wide
+  and clips what doesn't fit, so the selected tile's ring lost its sides and the status badges
+  their edges. The list now spans the rail. The selected tile is filled, with a ring separated by
+  a thin gap; badges sit on the tile's corner, cut out of it; a working session's badge is a thin
+  turning arc instead of a loader that read as a cog at that size.
+- **Attaching an image feels like it.** A pasted screenshot flashes the message box like a
+  shutter, and each new thumbnail drops in with a small bounce and a glint — several at once land
+  one after the other — while Axo looks up. A removed thumbnail shrinks away where it was and the
+  others slide over, and sent images settle into their bubble. Two quick pastes no longer lose one
+  of the images.
+- Lists that animate items out (the message queue, attachments) keep a leaving item in its place
+  and no longer drop it for a frame first.
+- **QA:** flows `rail` and `attach`, scenario `qa_slow` (a reply that keeps a session running).
+- Desktop only: the terminal has no rail and shows attachments as `[IMAGE #n]` tags.
 ## v0.9.0 — 2026-10-19
 
 - **Every aix command, in the `/` palette.** The message box now offers the terminal app's whole
