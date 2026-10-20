@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.16.1 — 2026-10-20
+
+- **Axo sleeps while a rate or usage limit pauses the session**: the status line and the working
+  row show `ʚ-ᴗ-ɞ` with a drifting `z` (gills still, no blinking) until the limit lifts. A pending
+  approval or question still takes precedence. (Aix Code 0.14.0 ships the desktop side: Axo naps on
+  the composer and walks into the office through a door.)
+
 ## v2.16.0 — 2026-10-20
 
 - **Sign in with Google (Antigravity), including Gemini 4 Argon.** New built-in provider
