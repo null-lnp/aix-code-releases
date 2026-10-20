@@ -1,5 +1,23 @@
 # Changelog
 
+## v0.12.0 — 2026-10-19
+
+- **/goal works like Codex's goals** (aix v2.15.0). Near a full context the model used to give up
+  or give shallow answers instead of working on the goal. Now every round restates the goal with
+  Codex's continuation prompt (keep the full objective, work from evidence, a no-progress check,
+  a requirement-by-requirement completion audit), and the goal ends only when the model confirms
+  it with its `update_goal` tool — complete, or blocked after the same blocker came back three
+  rounds in a row. The goal band, round markers and the success notice work as before; a blocked
+  goal ends with a warning saying why. `goals.max_goal_token_budget` in settings.json gives a goal
+  a token budget (one wrap-up round when it's spent); the `/goal` help shows it.
+- **The model is told nothing about its context window** (aix v2.15.0): no more "when you run
+  out of context…" in the system prompt; compaction happens underneath, as in Codex.
+- **A reply cut off by a full context window is no longer taken as the answer** (aix v2.15.0):
+  the partial reply is dropped, the conversation is compacted and the model asked again.
+- No more "Heads up: long sessions and multiple compactions…" warning after each compaction.
+- Stored sessions show goal rounds from both the new and the old round reminders.
+- **QA:** the `goal` scenario confirms the goal with `update_goal`.
+
 ## v0.11.0 — 2026-10-19
 
 - **The office is 3D now.** The Office pane used to be a small, mostly static pixel drawing. It is
