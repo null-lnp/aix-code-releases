@@ -1,5 +1,42 @@
 # Changelog
 
+## v2.16.0 — 2026-10-20
+
+- **Sign in with Google (Antigravity), including Gemini 4 Argon.** New built-in provider
+  `antigravity`: `aix login antigravity`, `aix accounts add antigravity`, `/accounts` and
+  `/add-provider` open Google's sign-in in your browser and use the models Google's Antigravity
+  IDE serves — **Gemini 4 Argon** (the default), Gemini 3.8 Flash, Gemini 3 Flash / Flash Lite,
+  Claude Opus / Sonnet 5.5 and 4.6, GPT-OSS 120B. Several Google accounts work like other
+  providers' accounts (a quota error pauses until the reset Google reports, or switches to the
+  next account). Effort maps to Gemini's thinking levels (Gemini 2.5 to a thinking budget), thought
+  signatures go back only to the model that wrote them, tool schemas are adapted to what the
+  gateway accepts (recursive `$ref`s bounded, free-form objects kept usable on Claude), and
+  malformed Gemini tool calls are asked for again. The full sign-in link is shown (wrapped) for
+  machines without a browser, Esc cancels a waiting sign-in, and removing a Google account revokes
+  it. **Unofficial:** it uses the Antigravity IDE's sign-in; Google may restrict accounts that use
+  it outside Antigravity. `AIX_NO_BROWSER=1` prints sign-in links instead of opening a browser.
+- **Edit and copy waiting messages.** Alt+↑ or Ctrl+↑ on an empty composer takes the last
+  waiting message (steer or queued) back to edit it, with its images; it isn't sent meanwhile and
+  stays in the crash journal. Enter puts it back the way it waited, in its place (an instant steer
+  stays instant); Esc puts it back unchanged without stopping the turn; Ctrl+U drops it. Alt+C
+  copies it, pasted blocks expanded. Cancelling an edit never sends anything.
+- **Ultra mode: choose the subagents' effort.** `/ultra subagents low|medium|high|xhigh|max`
+  (default xhigh, clamped to each subagent's model; also while a turn runs), or Tab on Ultra in
+  the `/effort` picker and ←/→. Saved as `tools.agents.ultra_effort` in ~/.aix/settings.json —
+  or in the project's `.aix/settings.json` when it sets its own. Running sessions use it for
+  their next subagents; the header shows `ULTRA · subagents <level>` on wide terminals.
+  `/ultra on|off` work too.
+- **Scrolled-up history stays put** while a reply streams in below; the view follows the newest
+  output only at the bottom.
+- The OAuth callback pages (ChatGPT and Google) escape what they show, and requests that don't
+  belong to the running sign-in are ignored instead of aborting it.
+- `credentials.json` / `accounts.json` keep fields written by newer aix versions. Versions before
+  2.16.0 still drop the `google` field when they rewrite the file.
+- Core API for UIs: `TurnInbox::edit_steer` / `put_back_steer`, `pending::edit`,
+  `Session::load_with_progress`, `config::save_ultra_effort` / `ultra_effort_in`, and a
+  process-wide lock around settings writes (Aix Code 0.13.0 uses them). The desktop app's new
+  "Loading session…" progress has no TUI counterpart: the TUI loads a session before it draws.
+
 ## v2.15.1 — 2026-10-20
 
 - **`/compact` while aix works is no longer ignored.** It used to wait silently in the composer;
