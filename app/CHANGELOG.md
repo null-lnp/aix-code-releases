@@ -1,5 +1,27 @@
 # Changelog
 
+## v0.14.0 — 2026-10-20
+
+- **Axo is one character.** Opening the Office sends the composer's Axo through a little pixel
+  door at the end of his track; the office's door swings open and he walks in to his desk (the
+  team turns to look). Leaving the Office brings him back out of the composer's door. He's never
+  in both places: while he's away his desk is empty — chair pushed in, monitor off. Interrupting
+  him mid-walk turns him around where he is; with reduced motion he simply switches places. Works
+  in the 3D and the classic office (whose door now swings open, with a puff, for everyone).
+- **Axo naps on a rate or usage limit**: he curls up and sleeps (with the odd stir or dream) and
+  wakes with a stretch when it lifts. New moods for reconnecting (patient, a little nervous) and
+  compacting (notes, typing, packing boxes).
+- **A calmer effort pill**: five even bars lit in one colour per level (neutral, accent, amber for
+  Max), hollow bars for Auto, and for Ultra an accent pill whose bars glow softly while a turn
+  runs. No more rainbow.
+- **The "Working…" row** shows a small activity indicator instead of a second Axo: accent dots
+  while working, dimmed and breathing while paused on a limit, the pink dot while it needs you.
+- Fixed: opening a session no longer cuts the top of the chat bar (and Axo, whose feet poked out
+  over it) — the loading card stays behind the composer.
+- Fixed: Axo's "zzz", "…", "?" and "!" were almost invisible in dark mode.
+- The TUI side (Axo sleeps in the status line during a rate limit) ships in aix v2.16.1; the door,
+  the walk and the office are desktop-only.
+
 ## v0.13.0 — 2026-10-20
 
 - **Sign in with Google — Gemini 4 Argon and the other Antigravity models** (aix v2.16.0).
