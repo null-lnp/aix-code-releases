@@ -1,5 +1,44 @@
 # Changelog
 
+## v2.15.0 — 2026-10-19
+
+- **/goal works like Codex's goals.** Near a full context the model gave up or gave shallow
+  answers instead of working on the goal. The goal loop now follows codex-rs `ext/goal`:
+  - Every round starts with Codex's continuation prompt: the objective (round 1 as the goal
+    message itself, later rounds as a "Goal round N" reminder that restates it), keep the full
+    objective and don't redefine success around a smaller task, work from evidence, a
+    no-progress check (status restatements and unexecuted plans are no progress), a
+    requirement-by-requirement completion audit, and a blocked audit.
+  - The model ends the goal with the new `update_goal` tool — `complete`, `blocked` (the same
+    blocker three rounds in a row) or `paused` (only when you ask) — and reads it with
+    `get_goal`. Both tools exist only while a goal runs. A round that ends with the goal still
+    active simply starts the next one. This replaces the `GOAL: ACHIEVED` / `NOT_ACHIEVED` final
+    line: a reply that merely says it's done settles nothing.
+  - `goals.max_goal_token_budget` (Codex's setting; none by default): the tokens a goal may
+    spend (uncached input + output, subagents included). Only with a budget does the model see
+    token numbers; when it's spent, one last round wraps up (Codex `budget_limit`) and the goal
+    stops.
+  - aix keeps its safety nets: three rounds in a row without an answer stop the loop,
+    `goal_max_rounds` (0 = unlimited), refusals and provider errors stop it, Esc stops it.
+- **The model is told nothing about its context window** (as in Codex). The system prompt's
+  "when you run out of context, the conversation is automatically summarized…" paragraph is gone
+  (a test keeps context, compaction and tokens out of it), and `spawn_agent` no longer mentions
+  a "fresh context window". After a compaction the summary's own prefix explains it, as in
+  Codex. Note: the Anthropic API itself tells Claude Sonnet 5 / 4.6 / 4.5 and Haiku 4.5 their
+  token budget; Opus 4.7+, Opus 5.x and Fable don't get it.
+- **A reply cut off by a full context window is no answer.** Claude 4.5+ accepts a request
+  whose input plus output cap exceed the window and stops with `model_context_window_exceeded`
+  when it fills up. aix took that cut-off reply as the turn's final answer — a /goal round near a
+  full window ended with a truncated, shallow reply and never compacted. Now the partial reply
+  is dropped, the history is compacted once (reactively, like any overflow) and the request goes
+  out again; still full right after → the turn stops with "aix ran out of room".
+- The "Heads up: long sessions and multiple compactions…" warning after every compaction is gone
+  (Codex dropped it too); the compaction notice remains.
+- An aborted `/goal` (Esc, or the desktop app's hard stop) no longer leaves the goal — and its
+  tools — behind for later turns; the status bar's goal chip goes on Esc too.
+- A resumed session shows a goal turn as `🎯 goal: …` instead of the whole goal prompt.
+- Aix Code v0.12.0 follows (goal rounds in stored sessions, the /goal help).
+
 ## v2.14.0 — 2026-10-19
 
 - **`/goal` no longer stops while the goal isn't achieved.** A round that came back with no
