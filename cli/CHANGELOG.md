@@ -1,5 +1,30 @@
 # Changelog
 
+## v2.15.1 — 2026-10-20
+
+- **`/compact` while aix works is no longer ignored.** It used to wait silently in the composer;
+  now it schedules a compaction the running turn (or goal round) does before its next request, then
+  goes on with the compacted history ("Compacting at the next step…"). A compaction scheduled
+  this way never runs after a turn's final reply (that would replace the result `/review` and the
+  peer goal read): the job ends and `/compact` starts. Esc cancels it; asking twice compacts once,
+  and a request made while a compaction runs is satisfied by it.
+- **Messages typed during a compaction wait for it.** The status reads *compacting* with its
+  timer and the pending lines say *sent after compaction*. When the compaction fails or is
+  stopped they are **not** sent on the uncompacted history: they wait in the queue (Enter on an
+  empty line sends them anyway). Steers a finished job never read are now sent as the next turn
+  instead of sitting in the "Steering…" preview forever; office mail and notes stay out of it.
+- **`/retry` after a failed `/compact` compacts again** (core `run_retry`) instead of continuing
+  on the history the compaction was meant to shrink.
+- **Sturdier compaction:** the summary request's output cap is sized to fit next to the history
+  (the old cap could make input + max_tokens overflow a nearly full window);
+  `input length and max_tokens exceed context limit` counts as a context overflow and
+  `model_context_window_exceeded` trims the oldest history and asks again; reconnects and
+  rate-limit waits during a compaction are shown instead of an endless "Working"; a stopped
+  compaction is reported as interrupted, not failed.
+- Core API for UIs: `CoreState::request_compaction` / `compaction_requested` /
+  `take_compaction_request`, `last_turn_kind`, `last_compaction_failed`, `record_interrupted`,
+  and `agent::run_retry` (Aix Code 0.12.1 uses them the same way).
+
 ## v2.15.0 — 2026-10-19
 
 - **/goal works like Codex's goals.** Near a full context the model gave up or gave shallow
