@@ -1,5 +1,30 @@
 # Changelog
 
+## v0.12.1 — 2026-10-20
+
+- **"Compact now" really compacts** (aix v2.15.1). Clicked while Aix was working, it failed
+  silently ("already working"), and what you sent next went out on the full history. Now:
+  - **While Aix works**, the button reads *Compact at next step*: the running turn (or goal round)
+    summarises the conversation before its next request and goes on with the compacted history.
+    The transcript says it's scheduled; Stop cancels it.
+  - **While it compacts**, the working row says *Summarising the conversation…* with its own
+    timer, the ring's button is disabled (*Compacting…*), and messages you send are labelled
+    *Sends after compaction*. They go out once the summary is in.
+  - **If the compaction fails or you stop it**, nothing is sent on the uncompacted history: what
+    you sent meanwhile is *held* (a notice says so). Send it as it is, discard it, or compact again —
+    a successful compaction sends it after itself. *Try again* on a failed compaction compacts
+    again instead of continuing the conversation.
+  - A stopped compaction reads *Compaction stopped* (it used to be reported as a failed turn).
+- **Sturdier compaction** (aix v2.15.1): the summary request leaves room for its own output on a
+  nearly full window (it could overflow and be rejected), *input length and max_tokens exceed
+  context limit* and a window that fills while the summary is written trim the oldest history and
+  try again, and a dropped connection during a compaction shows *Reconnecting…* instead of an
+  endless *Working…*.
+- Stop's 3-second hard stop could kill a job started right after it (a new message, a compaction);
+  it now only ends the job it was pressed for.
+- **QA:** the `compact` flow covers compacting when idle, a stopped compaction with a held
+  message, and *Compact at next step* during a running turn.
+
 ## v0.12.0 — 2026-10-19
 
 - **/goal works like Codex's goals** (aix v2.15.0). Near a full context the model used to give up
