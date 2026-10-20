@@ -1,5 +1,38 @@
 # Changelog
 
+## v0.13.0 — 2026-10-20
+
+- **Sign in with Google — Gemini 4 Argon and the other Antigravity models** (aix v2.16.0).
+  Settings → Providers (and Add provider) has **Sign in with Google** for *Google Antigravity*:
+  your browser opens to approve, a waiting state offers *Open sign-in page* and *Cancel*, and the
+  model picker lists Gemini 4 Argon, Gemini 3.8 Flash, Gemini Flash / Flash Lite, Claude Opus /
+  Sonnet 5.5 and 4.6 and GPT-OSS by name. Add several Google accounts; Aix switches to the next
+  one when a model's limit runs out. A note next to the button says it plainly: it's unofficial
+  (it uses the Antigravity IDE's sign-in) and Google may restrict accounts that use it outside
+  Antigravity.
+- **Copy and edit waiting messages.** Hover a waiting row for *Copy* (with the "Copied" mark) and
+  *Edit*: the text is edited in place and the message is held meanwhile, so it can't go out with
+  the old text. Saving keeps its place, kind and images; Esc or Cancel leaves it as it was and
+  never sends anything. Editing another row saves the open edit first; if a message goes out
+  anyway, your edited text lands in the message box. A window reload releases any holds it left.
+- **Ultra: choose the subagents' effort.** The effort card has a *Subagent effort* dial (Low →
+  Max, default Extra high, clamped to each subagent's model); `/ultra subagents <level>` and
+  `/ultra on|off` work too. It's saved for every project — or for the project when its
+  `.aix/settings.json` sets it, which the dial says — and open sessions use it right away.
+- **Scrolling up while Aix works is smooth.** The chat stays exactly where you leave it while the
+  reply keeps streaming (no more rubber-banding back to the bottom), and follows again once you
+  scroll back down or click *Follow along*. Messages Aix delivers from the queue no longer pull
+  you down; yours do. Long chats no longer jump while you scroll through their history or when
+  earlier messages load.
+- **"Loading session…" instead of "No messages yet."** Opening a session shows a card with a
+  live, animated progress bar — *Reading session… 37%*, then *Parsing messages… 1,240 / 3,980* —
+  that fades into the transcript; quick loads never flash it. A session that can't be opened says
+  why, with Retry. Messages sent while it loads get the right turn number, and events that arrive
+  meanwhile are kept without duplicates.
+- Fixed: messages that steer the running turn show up as your bubble again when Aix reads them.
+- The TUI side of these changes ships in aix v2.16.0; the loading card is desktop-only (the
+  terminal loads a session before it draws).
+
 ## v0.12.1 — 2026-10-20
 
 - **"Compact now" really compacts** (aix v2.15.1). Clicked while Aix was working, it failed
