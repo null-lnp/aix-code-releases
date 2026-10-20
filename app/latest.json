@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.14.0",
-  "notes": "- **Axo is one character.** Opening the Office sends the composer's Axo through a little pixel\n  door at the end of his track; the office's door swings open and he walks in to his desk (the\n  team turns to look). Leaving the Office brings him back out of the composer's door. He's never\n  in both places: while he's away his desk is empty — chair pushed in, monitor off. Interrupting\n  him mid-walk turns him around where he is; with reduced motion he simply switches places. Works\n  in the 3D and the classic office (whose door now swings open, with a puff, for everyone).\n- **Axo naps on a rate or usage limit**: he curls up and sleeps (with the odd stir or dream) and\n  wakes with a stretch when it lifts. New moods for reconnecting (patient, a little nervous) and\n  compacting (notes, typing, packing boxes).\n- **A calmer effort pill**: five even bars lit in one colour per level (neutral, accent, amber for\n  Max), hollow bars for Auto, and for Ultra an accent pill whose bars glow softly while a turn\n  runs. No more rainbow.\n- **The \"Working…\" row** shows a small activity indicator instead of a second Axo: accent dots\n  while working, dimmed and breathing while paused on a limit, the pink dot while it needs you.\n- Fixed: opening a session no longer cuts the top of the chat bar (and Axo, whose feet poked out\n  over it) — the loading card stays behind the composer.\n- Fixed: Axo's \"zzz\", \"…\", \"?\" and \"!\" were almost invisible in dark mode.\n- The TUI side (Axo sleeps in the status line during a rate limit) ships in aix v2.16.1; the door,\n  the walk and the office are desktop-only.",
-  "pub_date": "2026-10-20T21:44:34.004Z",
-  "tag": "app-v0.14.0",
+  "version": "0.14.1",
+  "notes": "- **A new effort glyph.** The pill under the message box no longer shows signal bars. It shows a\n  sparkle drawn like the footer's other icons (14 px, the same stroke) that grows with the level:\n  small at Low, plain at Medium, joined by one small star at High and two at Extra high, filled\n  amber at Max and filled accent at Ultra. Auto is a quiet dashed sparkle. Picking a level makes\n  it pop, and Ultra's small stars twinkle while a turn runs (no motion with reduced motion).\n- Desktop only: the terminal shows effort as text.",
+  "pub_date": "2026-10-20T22:00:40.042Z",
+  "tag": "app-v0.14.1",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajdUN2RYZkxNclpjWEZIbmJQNnE1R0RWMXdlYzZlSjliWEtDSlhpRmp5UEx0VFhXM0JXb0lNUVJvNTZTR05IOFNkM2Z1YVYySm5jbEc2cDI0OWFmWHdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTMyNjY3CWZpbGU6QWl4IENvZGVfMC4xNC4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE0LjAKbjFFTGROUUxHTWwvWHkrZktPZzBnT2xsRCtVMHhnUGxYdk14bnpkM3JHN0F4MjE4R1F5NE9oZ1BFZVk1SE1sSkREY0VjSW1NUUNGS1VHSVczVHBrQVE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.14.0/aix-code-0.14.0-x64-setup.exe",
-      "sha256": "8d941f9f639aeefe92c356bc01187664780a75f72810b8a6653d4b374a916d90"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajJhWmtKVzZORTVOTFZ0azZtWWdQNjlkVG5TYVc2VWVDcnFFaEhLZU9zNlFGd25oOGNYaWt3N2xRSlIxYTF6d2lDWnNaK0YySFVlTUZIMUx0ZXV4Nmc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTMzNjM0CWZpbGU6QWl4IENvZGVfMC4xNC4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE0LjEKci9KYitHV0xwbVl6dy96U2Q5SnFqc2JLVVR6aGdlQU9zelFHQnhrbFd5Z05wcHhMQ2dDUm5vOVpaQ3JzakpyQllOa3JBUkRxcmhjeGVUcEpGT1o0Q2c9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.14.1/aix-code-0.14.1-x64-setup.exe",
+      "sha256": "d0a2942b251717dfb5381c1b7c3e821286d10a4c3e9aa09c72137a37dd5f6c79"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajdUN2RYZkxNclpjWEZIbmJQNnE1R0RWMXdlYzZlSjliWEtDSlhpRmp5UEx0VFhXM0JXb0lNUVJvNTZTR05IOFNkM2Z1YVYySm5jbEc2cDI0OWFmWHdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTMyNjY3CWZpbGU6QWl4IENvZGVfMC4xNC4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE0LjAKbjFFTGROUUxHTWwvWHkrZktPZzBnT2xsRCtVMHhnUGxYdk14bnpkM3JHN0F4MjE4R1F5NE9oZ1BFZVk1SE1sSkREY0VjSW1NUUNGS1VHSVczVHBrQVE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.14.0/aix-code-0.14.0-x64-setup.exe",
-      "sha256": "8d941f9f639aeefe92c356bc01187664780a75f72810b8a6653d4b374a916d90"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajJhWmtKVzZORTVOTFZ0azZtWWdQNjlkVG5TYVc2VWVDcnFFaEhLZU9zNlFGd25oOGNYaWt3N2xRSlIxYTF6d2lDWnNaK0YySFVlTUZIMUx0ZXV4Nmc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTMzNjM0CWZpbGU6QWl4IENvZGVfMC4xNC4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE0LjEKci9KYitHV0xwbVl6dy96U2Q5SnFqc2JLVVR6aGdlQU9zelFHQnhrbFd5Z05wcHhMQ2dDUm5vOVpaQ3JzakpyQllOa3JBUkRxcmhjeGVUcEpGT1o0Q2c9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.14.1/aix-code-0.14.1-x64-setup.exe",
+      "sha256": "d0a2942b251717dfb5381c1b7c3e821286d10a4c3e9aa09c72137a37dd5f6c79"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajNMZUE3S3FsSDNPQll5MmJSb1dlSndXdXY2dmd6WW4rQk40ZFJ4MnhQZ1BMR1g3UlhpMXlCdm00TW1yS3ZkU2lBeUhka1ZLcUlFTmllUlJwUXpZSWcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTMyNjY3CWZpbGU6QWl4IENvZGVfMC4xNC4wX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjE0LjAKcFV0Y1p6QlVDU3FYWElhd0Vpa3dDbWhZUUk0Z1RsV2ZKNDZrR09NUnRDNnJsRmRjS05Edm1mZVpJckhSY3l2bFhWczBQQ0wwYS9RdTh3amtFNGxXQVE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.14.0/aix-code-0.14.0-x64.msi",
-      "sha256": "6edc340d13236f5571f71913a453da0eaa5ec747a37ac444beea80e32a396bb0"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajBTYnRWODg3RlN4bUdtOEJIKzlpRG1wN2g5S056UzZaVHk2aFZlSzkxTi8xaVdFZ1UremJ5RW82WmpXbHBFRHE4T1ZyVERGZTVWcVBMUW5mK2V3K3dVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTMzNjM0CWZpbGU6QWl4IENvZGVfMC4xNC4xX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjE0LjEKMUYzUmpibnA4aWhkM3BMcS9DUXhaK2FXUnFCRXV1T1Q4QjJBQkdEZ1FVSGxaNmlweDJBMjl6ZmgrNXFPaVVRV1g0aWtwSkFsMkZ0cFowQTdXdlNRQUE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.14.1/aix-code-0.14.1-x64.msi",
+      "sha256": "5f611afd99fe4de7febd3e53f7fe5e75090f6731dc2e007e064b447588ec91fd"
     }
   }
 }

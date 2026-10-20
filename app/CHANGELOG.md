@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.14.1 — 2026-10-20
+
+- **A new effort glyph.** The pill under the message box no longer shows signal bars. It shows a
+  sparkle drawn like the footer's other icons (14 px, the same stroke) that grows with the level:
+  small at Low, plain at Medium, joined by one small star at High and two at Extra high, filled
+  amber at Max and filled accent at Ultra. Auto is a quiet dashed sparkle. Picking a level makes
+  it pop, and Ultra's small stars twinkle while a turn runs (no motion with reduced motion).
+- Desktop only: the terminal shows effort as text.
+
 ## v0.14.0 — 2026-10-20
 
 - **Axo is one character.** Opening the Office sends the composer's Axo through a little pixel
