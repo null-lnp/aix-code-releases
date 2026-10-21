@@ -1,5 +1,15 @@
 # Changelog
 
+## v2.16.2 — 2026-10-20
+
+- **Model lists are ordered.** `/model`, `/fallback` and the peer setup used to show each
+  provider's models in whatever order its API returned them, so a model the ChatGPT catalog
+  doesn't list (GPT-6.1 Sol) ended up after everything else. Now each provider's models are grouped
+  by family, newest version first, then the bigger tier (Astra / Opus, then Sol / Pro, the plain
+  model, Terra / Sonnet, Luna / Flash / Haiku, Mini / Lite). Models without a version, like
+  `gpt-daybreak-blue-latest`, close their family. Core: `config::sort_models` (Aix Code 0.14.2 uses
+  it too).
+
 ## v2.16.1 — 2026-10-20
 
 - **Axo sleeps while a rate or usage limit pauses the session**: the status line and the working

@@ -1,14 +1,14 @@
 {
   "product": "cli",
-  "version": "2.16.1",
-  "notes": "- **Axo sleeps while a rate or usage limit pauses the session**: the status line and the working\n  row show `ʚ-ᴗ-ɞ` with a drifting `z` (gills still, no blinking) until the limit lifts. A pending\n  approval or question still takes precedence. (Aix Code 0.14.0 ships the desktop side: Axo naps on\n  the composer and walks into the office through a door.)",
-  "pub_date": "2026-10-20T21:37:09.939Z",
-  "tag": "cli-v2.16.1",
+  "version": "2.16.2",
+  "notes": "- **Model lists are ordered.** `/model`, `/fallback` and the peer setup used to show each\n  provider's models in whatever order its API returned them, so a model the ChatGPT catalog\n  doesn't list (GPT-6.1 Sol) ended up after everything else. Now each provider's models are grouped\n  by family, newest version first, then the bigger tier (Astra / Opus, then Sol / Pro, the plain\n  model, Terra / Sonnet, Luna / Flash / Haiku, Mini / Lite). Models without a version, like\n  `gpt-daybreak-blue-latest`, close their family. Core: `config::sort_models` (Aix Code 0.14.2 uses\n  it too).",
+  "pub_date": "2026-10-21T03:18:05.399Z",
+  "tag": "cli-v2.16.2",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanp4WTRiMnRkQ0ZKNFJFdi8za2VZd0JLMExQYUxnWU50MStva0o1YkU4RFJwc3F0eE51RFhCZ2t1V0VlcEoybDdRRkM1K0k1Q0Vqd0xDa2c4OVpYOHdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTMyMjI5CWZpbGU6YWl4LTIuMTYuMS13aW5kb3dzLXg4Nl82NC5leGUKd2hpN0Z4WUhxeVhqc2FTRkY5M0lBaVhSVjBMVzJyVitIelFaSytGOFYxVXFUSzFEOWFDYVF3NWFVWXMzTkNhNXZycVBuZjhoVjExRkJjT1p5djMxRHc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.16.1/aix-2.16.1-windows-x86_64.exe",
-      "sha256": "8c5f59a448352b0877a1c4227cb4511a1378bd988da95ff03d87c2f0a697f632"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanpheWFPT0dYbDRVWUo1TnFzdlA1U0FIWEpITmFSUTJydlZ5cldobE9VQ2FLSTVQOGYvSStGU2JxcDgrVlBYNGMvOXlFeE1LZkxqOVl3ZGthVTQ2RndZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTUyNjg1CWZpbGU6YWl4LTIuMTYuMi13aW5kb3dzLXg4Nl82NC5leGUKL0FJM2hmV1hjdzN1M2Nib3FQdFRzQ2FMMWUvYlMxbUtIcHpMRTVHOGNOeXRxWTBlL3FSUzlCWW5NcmJ2QnJVMjcyaUxNMFVwbVFyYTBYQVRNeE9lQlE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.16.2/aix-2.16.2-windows-x86_64.exe",
+      "sha256": "eb3ba095105420207c33a74c22f3d8084973069b41002761392223a921029837"
     }
   }
 }
