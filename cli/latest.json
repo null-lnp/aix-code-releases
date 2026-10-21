@@ -1,14 +1,14 @@
 {
   "product": "cli",
-  "version": "2.16.2",
-  "notes": "- **Model lists are ordered.** `/model`, `/fallback` and the peer setup used to show each\n  provider's models in whatever order its API returned them, so a model the ChatGPT catalog\n  doesn't list (GPT-6.1 Sol) ended up after everything else. Now each provider's models are grouped\n  by family, newest version first, then the bigger tier (Astra / Opus, then Sol / Pro, the plain\n  model, Terra / Sonnet, Luna / Flash / Haiku, Mini / Lite). Models without a version, like\n  `gpt-daybreak-blue-latest`, close their family. Core: `config::sort_models` (Aix Code 0.14.2 uses\n  it too).",
-  "pub_date": "2026-10-21T03:18:05.399Z",
-  "tag": "cli-v2.16.2",
+  "version": "2.17.0",
+  "notes": "- **Claude OAuth without installing Claude Code.** `aix login anthropic --oauth` opens a browser\n  approval link and accepts the returned authorization code. Each saved Claude account owns its\n  refreshable tokens; `/accounts` can add several sign-ins (`i` still adds an API key).\n  Proof keys remain private when copying an approval link; CSRF state is generated independently.\n  `aix login openai --oauth` explicitly selects ChatGPT sign-in. Aix Code 0.15.0 exposes both flows.\n- **Account failover and live switching.** Claude subscriptions join ChatGPT, Google and API-key\n  account rotation. Rate limits and exhausted API credits try another saved account of the same\n  provider and authentication/billing mode before waiting or failing. Partial streams are reset\n  before retrying, refreshed credentials stay attached to their account, and active-account changes\n  are picked up by existing clients. Subscription requests never silently switch to paid API keys.\n- **`/import-codex`** imports personal/project Codex and .agents skills, Codex prompts and compatible\n  cached plugins. Existing aix content is kept; credentials are not imported. `/resume-codex`\n  continues to import conversations. Both commands are available in Aix Code too.\n- **A model switch resumes a paused turn** on the new model and the existing history without\n  dropping queued follow-ups. Pauses remain scoped to the provider/model that hit its limit.\n- Desktop counterpart: Aix Code adds a System/Full/Reduced animation setting for its CSS and\n  canvas renderers; the terminal's existing motion preferences are unchanged.",
+  "pub_date": "2026-10-21T18:23:38.761Z",
+  "tag": "cli-v2.17.0",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanpheWFPT0dYbDRVWUo1TnFzdlA1U0FIWEpITmFSUTJydlZ5cldobE9VQ2FLSTVQOGYvSStGU2JxcDgrVlBYNGMvOXlFeE1LZkxqOVl3ZGthVTQ2RndZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTUyNjg1CWZpbGU6YWl4LTIuMTYuMi13aW5kb3dzLXg4Nl82NC5leGUKL0FJM2hmV1hjdzN1M2Nib3FQdFRzQ2FMMWUvYlMxbUtIcHpMRTVHOGNOeXRxWTBlL3FSUzlCWW5NcmJ2QnJVMjcyaUxNMFVwbVFyYTBYQVRNeE9lQlE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.16.2/aix-2.16.2-windows-x86_64.exe",
-      "sha256": "eb3ba095105420207c33a74c22f3d8084973069b41002761392223a921029837"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aaitWYkdXMVdqUzUzRSt3VGJLYmVPU1dvN0hWRlRmdmpWY2sxRWtBOTZPeE9kZG5TWFBUUm9acXJkelBlZDhDL1RPT0RUajJBd04ra0crdWtUQmo3MlFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjA3MDE4CWZpbGU6YWl4LTIuMTcuMC13aW5kb3dzLXg4Nl82NC5leGUKbkdPNUkxZm5uRWNydWxwOWwyZUQ4aEFpMkRSeVFkaENjMTFJZU04Y0ZSandjK1pYVk8wR1Z5RW15ZUl4STN3aGZ2UHYxS3FXaUVWeDFDb0QrSEZFRFE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.17.0/aix-2.17.0-windows-x86_64.exe",
+      "sha256": "99bca0cc41f1a84957442d5272848a2bdecad25e4a410053cdaa052b7a711d0b"
     }
   }
 }

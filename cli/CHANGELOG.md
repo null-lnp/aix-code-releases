@@ -1,5 +1,25 @@
 # Changelog
 
+## v2.17.0 — 2026-10-21
+
+- **Claude OAuth without installing Claude Code.** `aix login anthropic --oauth` opens a browser
+  approval link and accepts the returned authorization code. Each saved Claude account owns its
+  refreshable tokens; `/accounts` can add several sign-ins (`i` still adds an API key).
+  Proof keys remain private when copying an approval link; CSRF state is generated independently.
+  `aix login openai --oauth` explicitly selects ChatGPT sign-in. Aix Code 0.15.0 exposes both flows.
+- **Account failover and live switching.** Claude subscriptions join ChatGPT, Google and API-key
+  account rotation. Rate limits and exhausted API credits try another saved account of the same
+  provider and authentication/billing mode before waiting or failing. Partial streams are reset
+  before retrying, refreshed credentials stay attached to their account, and active-account changes
+  are picked up by existing clients. Subscription requests never silently switch to paid API keys.
+- **`/import-codex`** imports personal/project Codex and .agents skills, Codex prompts and compatible
+  cached plugins. Existing aix content is kept; credentials are not imported. `/resume-codex`
+  continues to import conversations. Both commands are available in Aix Code too.
+- **A model switch resumes a paused turn** on the new model and the existing history without
+  dropping queued follow-ups. Pauses remain scoped to the provider/model that hit its limit.
+- Desktop counterpart: Aix Code adds a System/Full/Reduced animation setting for its CSS and
+  canvas renderers; the terminal's existing motion preferences are unchanged.
+
 ## v2.16.2 — 2026-10-20
 
 - **Model lists are ordered.** `/model`, `/fallback` and the peer setup used to show each
