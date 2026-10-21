@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.14.1",
-  "notes": "- **A new effort glyph.** The pill under the message box no longer shows signal bars. It shows a\n  sparkle drawn like the footer's other icons (14 px, the same stroke) that grows with the level:\n  small at Low, plain at Medium, joined by one small star at High and two at Extra high, filled\n  amber at Max and filled accent at Ultra. Auto is a quiet dashed sparkle. Picking a level makes\n  it pop, and Ultra's small stars twinkle while a turn runs (no motion with reduced motion).\n- Desktop only: the terminal shows effort as text.",
-  "pub_date": "2026-10-20T22:00:40.042Z",
-  "tag": "app-v0.14.1",
+  "version": "0.14.2",
+  "notes": "- **The model picker is ordered** (aix v2.16.2). Each provider's models used to appear in whatever\n  order its API returned them, so GPT-6.1 Sol showed up after GPT-5.4 and the daybreak models. Now\n  they're grouped by family, newest version first, then the bigger tier (Astra / Opus, then Sol /\n  Pro, the plain model, Terra / Sonnet, Luna / Flash / Haiku, Mini / Lite). The peer picker uses\n  the same order.",
+  "pub_date": "2026-10-21T03:32:36.059Z",
+  "tag": "app-v0.14.2",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajJhWmtKVzZORTVOTFZ0azZtWWdQNjlkVG5TYVc2VWVDcnFFaEhLZU9zNlFGd25oOGNYaWt3N2xRSlIxYTF6d2lDWnNaK0YySFVlTUZIMUx0ZXV4Nmc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTMzNjM0CWZpbGU6QWl4IENvZGVfMC4xNC4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE0LjEKci9KYitHV0xwbVl6dy96U2Q5SnFqc2JLVVR6aGdlQU9zelFHQnhrbFd5Z05wcHhMQ2dDUm5vOVpaQ3JzakpyQllOa3JBUkRxcmhjeGVUcEpGT1o0Q2c9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.14.1/aix-code-0.14.1-x64-setup.exe",
-      "sha256": "d0a2942b251717dfb5381c1b7c3e821286d10a4c3e9aa09c72137a37dd5f6c79"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajFDRUNKRzRXL3JDZ3JyY1BWUVVjM3NyNUhoaExuK3J4cUJnRXJJZ05oN0g1TEp3SzBnQ3QwSngrRTdERi9hV0U0aDhOUnVlbTBPa3prWGh2R3liTXdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTUzNTM4CWZpbGU6QWl4IENvZGVfMC4xNC4yX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE0LjIKWWNYbGdhVHBUMWF0L2dMTnZ5UjcvQXNHaXBPWmhRcExYcVV1bzd2Ny9OYjF1dWszVG5pT21nZGNNQml1ZDQvM1NzZ0xhMkJpbUZEL1p6TlJxNC9uQUE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.14.2/aix-code-0.14.2-x64-setup.exe",
+      "sha256": "2c8ae828df51c7892f206d3301969241489c4a7b28d9ae513501fa829e3c56b6"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajJhWmtKVzZORTVOTFZ0azZtWWdQNjlkVG5TYVc2VWVDcnFFaEhLZU9zNlFGd25oOGNYaWt3N2xRSlIxYTF6d2lDWnNaK0YySFVlTUZIMUx0ZXV4Nmc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTMzNjM0CWZpbGU6QWl4IENvZGVfMC4xNC4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE0LjEKci9KYitHV0xwbVl6dy96U2Q5SnFqc2JLVVR6aGdlQU9zelFHQnhrbFd5Z05wcHhMQ2dDUm5vOVpaQ3JzakpyQllOa3JBUkRxcmhjeGVUcEpGT1o0Q2c9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.14.1/aix-code-0.14.1-x64-setup.exe",
-      "sha256": "d0a2942b251717dfb5381c1b7c3e821286d10a4c3e9aa09c72137a37dd5f6c79"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajFDRUNKRzRXL3JDZ3JyY1BWUVVjM3NyNUhoaExuK3J4cUJnRXJJZ05oN0g1TEp3SzBnQ3QwSngrRTdERi9hV0U0aDhOUnVlbTBPa3prWGh2R3liTXdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTUzNTM4CWZpbGU6QWl4IENvZGVfMC4xNC4yX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE0LjIKWWNYbGdhVHBUMWF0L2dMTnZ5UjcvQXNHaXBPWmhRcExYcVV1bzd2Ny9OYjF1dWszVG5pT21nZGNNQml1ZDQvM1NzZ0xhMkJpbUZEL1p6TlJxNC9uQUE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.14.2/aix-code-0.14.2-x64-setup.exe",
+      "sha256": "2c8ae828df51c7892f206d3301969241489c4a7b28d9ae513501fa829e3c56b6"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajBTYnRWODg3RlN4bUdtOEJIKzlpRG1wN2g5S056UzZaVHk2aFZlSzkxTi8xaVdFZ1UremJ5RW82WmpXbHBFRHE4T1ZyVERGZTVWcVBMUW5mK2V3K3dVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTMzNjM0CWZpbGU6QWl4IENvZGVfMC4xNC4xX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjE0LjEKMUYzUmpibnA4aWhkM3BMcS9DUXhaK2FXUnFCRXV1T1Q4QjJBQkdEZ1FVSGxaNmlweDJBMjl6ZmgrNXFPaVVRV1g0aWtwSkFsMkZ0cFowQTdXdlNRQUE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.14.1/aix-code-0.14.1-x64.msi",
-      "sha256": "5f611afd99fe4de7febd3e53f7fe5e75090f6731dc2e007e064b447588ec91fd"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aank2dmhJRG04clVZYTdzR3V3ekFNSzF0YTdsNXgzVG1rNmpOWFV5cFYvWE5XYnhYQ3RoYTIzNXRmblN6RTFSU3B3L0g3bXlyN2NnOGRLTGxzWXZ4bndjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTUzNTM4CWZpbGU6QWl4IENvZGVfMC4xNC4yX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjE0LjIKM1NQSytjamZPK3VieHA5cGhjZU9mQXNpYzI2amxYb2tKN1Z5RUJMVnZVaFhnQ1pJb1lZempFaWxXWWZpNnFnM3MwelhhRUk3ejRzbDd0QkNtSk1oQnc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.14.2/aix-code-0.14.2-x64.msi",
+      "sha256": "70df29908f65fd2ea1d5006fafae94460880cfadfdf8ff5c8fd951c54e2bb980"
     }
   }
 }

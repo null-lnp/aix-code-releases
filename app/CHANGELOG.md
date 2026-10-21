@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.14.2 — 2026-10-20
+
+- **The model picker is ordered** (aix v2.16.2). Each provider's models used to appear in whatever
+  order its API returned them, so GPT-6.1 Sol showed up after GPT-5.4 and the daybreak models. Now
+  they're grouped by family, newest version first, then the bigger tier (Astra / Opus, then Sol /
+  Pro, the plain model, Terra / Sonnet, Luna / Flash / Haiku, Mini / Lite). The peer picker uses
+  the same order.
+
 ## v0.14.1 — 2026-10-20
 
 - **A new effort glyph.** The pill under the message box no longer shows signal bars. It shows a
