@@ -1,5 +1,27 @@
 # Changelog
 
+## v0.15.0 — 2026-10-21
+
+- **Browser sign-in for OpenAI and Anthropic.** Providers now offers ChatGPT and Claude OAuth
+  alongside API keys, with a reopenable/copyable authorization link and cancellation. ChatGPT
+  returns through localhost; Claude asks for the browser's authorization code. Claude Code and
+  Codex do not need to be installed. Credentials and token refresh are shared with aix 2.17.0.
+  Proof keys stay private when sharing an authorization link; CSRF state is independent.
+- **Multiple subscription accounts.** Add several Claude or ChatGPT sign-ins as well as API
+  keys. A rate/usage limit tries the next saved account before pausing, without silently crossing
+  from subscription auth to paid API billing. Account changes reach open chats; settings and
+  environment overrides are called out. Exhausted API credits also try the next API account.
+- **`/import-codex`** imports Codex/.agents skills, prompts and compatible cached plugins without
+  overwriting existing aix content or copying credentials. `/resume-codex` imports conversations.
+- **Changing models unblocks paused chats.** The backend stops the old waiting request and
+  continues the same history on the selected model, preserving queued messages. An old model's
+  cooldown no longer leaves the new model, sidebar or Axo stuck in a paused state.
+- **One animation setting.** Settings → General → Animations offers System, Full and Reduced for
+  CSS effects, Axo, the agents/office and the home code background. Full overrides an OS request
+  for reduced motion; System still respects it, and changes apply without restarting. Release CSS
+  is flattened for older WebView2 runtimes rather than requiring native CSS nesting. This UI
+  preference is desktop-only; terminal motion settings are unchanged.
+
 ## v0.14.2 — 2026-10-20
 
 - **The model picker is ordered** (aix v2.16.2). Each provider's models used to appear in whatever

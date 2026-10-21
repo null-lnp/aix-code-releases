@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.14.2",
-  "notes": "- **The model picker is ordered** (aix v2.16.2). Each provider's models used to appear in whatever\n  order its API returned them, so GPT-6.1 Sol showed up after GPT-5.4 and the daybreak models. Now\n  they're grouped by family, newest version first, then the bigger tier (Astra / Opus, then Sol /\n  Pro, the plain model, Terra / Sonnet, Luna / Flash / Haiku, Mini / Lite). The peer picker uses\n  the same order.",
-  "pub_date": "2026-10-21T03:32:36.059Z",
-  "tag": "app-v0.14.2",
+  "version": "0.15.0",
+  "notes": "- **Browser sign-in for OpenAI and Anthropic.** Providers now offers ChatGPT and Claude OAuth\n  alongside API keys, with a reopenable/copyable authorization link and cancellation. ChatGPT\n  returns through localhost; Claude asks for the browser's authorization code. Claude Code and\n  Codex do not need to be installed. Credentials and token refresh are shared with aix 2.17.0.\n  Proof keys stay private when sharing an authorization link; CSRF state is independent.\n- **Multiple subscription accounts.** Add several Claude or ChatGPT sign-ins as well as API\n  keys. A rate/usage limit tries the next saved account before pausing, without silently crossing\n  from subscription auth to paid API billing. Account changes reach open chats; settings and\n  environment overrides are called out. Exhausted API credits also try the next API account.\n- **`/import-codex`** imports Codex/.agents skills, prompts and compatible cached plugins without\n  overwriting existing aix content or copying credentials. `/resume-codex` imports conversations.\n- **Changing models unblocks paused chats.** The backend stops the old waiting request and\n  continues the same history on the selected model, preserving queued messages. An old model's\n  cooldown no longer leaves the new model, sidebar or Axo stuck in a paused state.\n- **One animation setting.** Settings → General → Animations offers System, Full and Reduced for\n  CSS effects, Axo, the agents/office and the home code background. Full overrides an OS request\n  for reduced motion; System still respects it, and changes apply without restarting. Release CSS\n  is flattened for older WebView2 runtimes rather than requiring native CSS nesting. This UI\n  preference is desktop-only; terminal motion settings are unchanged.",
+  "pub_date": "2026-10-21T18:24:16.029Z",
+  "tag": "app-v0.15.0",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajFDRUNKRzRXL3JDZ3JyY1BWUVVjM3NyNUhoaExuK3J4cUJnRXJJZ05oN0g1TEp3SzBnQ3QwSngrRTdERi9hV0U0aDhOUnVlbTBPa3prWGh2R3liTXdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTUzNTM4CWZpbGU6QWl4IENvZGVfMC4xNC4yX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE0LjIKWWNYbGdhVHBUMWF0L2dMTnZ5UjcvQXNHaXBPWmhRcExYcVV1bzd2Ny9OYjF1dWszVG5pT21nZGNNQml1ZDQvM1NzZ0xhMkJpbUZEL1p6TlJxNC9uQUE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.14.2/aix-code-0.14.2-x64-setup.exe",
-      "sha256": "2c8ae828df51c7892f206d3301969241489c4a7b28d9ae513501fa829e3c56b6"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanp5NlJGeVdHYUV5bUdnUVIwckQzbnNsN2FrVlk2MndBUTQwdjRZS0E1dGg1SnlyODRHSDh1cWlZN3RNS2FlY1c0aE1vSTdCMDY0RTcxTitwMXRuWFFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjA2NjUzCWZpbGU6QWl4IENvZGVfMC4xNS4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE1LjAKUGRmd29ERkJMZW03Q1dkZUlLZlZ1dzBGbW4xVFlZQ21lNUtaeGdBSHo0S3pxM0RwaVZCbnFBOG43eXlsc2hWdzRZVlVqVURlcXZROEwwK2VJa2lRQ3c9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.15.0/aix-code-0.15.0-x64-setup.exe",
+      "sha256": "4fbf4ffd51d04ca21f0358356ecab11927444c8952a44442f7f8f988b5749103"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajFDRUNKRzRXL3JDZ3JyY1BWUVVjM3NyNUhoaExuK3J4cUJnRXJJZ05oN0g1TEp3SzBnQ3QwSngrRTdERi9hV0U0aDhOUnVlbTBPa3prWGh2R3liTXdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTUzNTM4CWZpbGU6QWl4IENvZGVfMC4xNC4yX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE0LjIKWWNYbGdhVHBUMWF0L2dMTnZ5UjcvQXNHaXBPWmhRcExYcVV1bzd2Ny9OYjF1dWszVG5pT21nZGNNQml1ZDQvM1NzZ0xhMkJpbUZEL1p6TlJxNC9uQUE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.14.2/aix-code-0.14.2-x64-setup.exe",
-      "sha256": "2c8ae828df51c7892f206d3301969241489c4a7b28d9ae513501fa829e3c56b6"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanp5NlJGeVdHYUV5bUdnUVIwckQzbnNsN2FrVlk2MndBUTQwdjRZS0E1dGg1SnlyODRHSDh1cWlZN3RNS2FlY1c0aE1vSTdCMDY0RTcxTitwMXRuWFFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjA2NjUzCWZpbGU6QWl4IENvZGVfMC4xNS4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE1LjAKUGRmd29ERkJMZW03Q1dkZUlLZlZ1dzBGbW4xVFlZQ21lNUtaeGdBSHo0S3pxM0RwaVZCbnFBOG43eXlsc2hWdzRZVlVqVURlcXZROEwwK2VJa2lRQ3c9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.15.0/aix-code-0.15.0-x64-setup.exe",
+      "sha256": "4fbf4ffd51d04ca21f0358356ecab11927444c8952a44442f7f8f988b5749103"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aank2dmhJRG04clVZYTdzR3V3ekFNSzF0YTdsNXgzVG1rNmpOWFV5cFYvWE5XYnhYQ3RoYTIzNXRmblN6RTFSU3B3L0g3bXlyN2NnOGRLTGxzWXZ4bndjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTUzNTM4CWZpbGU6QWl4IENvZGVfMC4xNC4yX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjE0LjIKM1NQSytjamZPK3VieHA5cGhjZU9mQXNpYzI2amxYb2tKN1Z5RUJMVnZVaFhnQ1pJb1lZempFaWxXWWZpNnFnM3MwelhhRUk3ejRzbDd0QkNtSk1oQnc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.14.2/aix-code-0.14.2-x64.msi",
-      "sha256": "70df29908f65fd2ea1d5006fafae94460880cfadfdf8ff5c8fd951c54e2bb980"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajU5NTM5L1h6bkFEWlc1UWxla0E0QnpLK09mNU80ZXhYc3VYSGdyTE5pZlVoUHpldVJYbDlid1Z6T2hPOUp0YXRrZTFCVGRzcVhuZWtHRG1mbWxHU3c0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjA2NjUzCWZpbGU6QWl4IENvZGVfMC4xNS4wX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjE1LjAKSlR1aUo1OVB6TEwyY0hESWM3ZzgvWXZVN0dSbkZ3Z2VCek42d3BUZnROMnpCMWlYRTBJQjZHNkFWQWM2WjVCVUh3MWU3Qldwa3dUc1BpR2M3RUFQQnc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.15.0/aix-code-0.15.0-x64.msi",
+      "sha256": "f8e910460ba982eb98358d98f3a837e1acd551e068f5178797649dcffbe7f397"
     }
   }
 }
