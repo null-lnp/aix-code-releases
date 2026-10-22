@@ -1,14 +1,14 @@
 {
   "product": "cli",
-  "version": "2.19.0",
-  "notes": "- **Free local prediction setup.** `/prediction setup` explains the ~520 MB download;\n  `/prediction install` downloads pinned Qwen2.5-0.5B Q4_K_M (Apache 2.0) and llama.cpp (MIT),\n  verifies SHA-256 hashes and installs a portable CPU runner. `/prediction status` reports progress,\n  `cancel` stops the download, and `free` enables the model after setup. No GPU, API key or\n  subscription is required. It uses roughly 0.5–1 GB RAM while loaded and unloads after two idle\n  minutes; disabling it or exiting stops the process. History remains the default.\n- **Optional ChatGPT-account predictions.** `/prediction chatgpt <provider> [model]` uses that\n  provider's active ChatGPT sign-in, never an API key. It consumes plan limits and sends bounded\n  recent conversation text to OpenAI, not the unsent draft. One cached next-message prediction\n  per conversation update/account, with a request throttle and no paid-provider fallback.\n  This uses the existing Codex provider, not OpenAI's private composer prediction service.\n- Aix Code 0.17.0 exposes the same choices with desktop-only download/source controls. Tab / Right\n  explicitly accepts suggestions; no prediction sends or executes a message. Local model quality\n  and speed vary with hardware and are not identical to OpenAI's closed predictor.",
-  "pub_date": "2026-10-22T03:36:58.575Z",
-  "tag": "cli-v2.19.0",
+  "version": "2.19.1",
+  "notes": "- **Rewound images retain their format.** Sending or queueing a restored image now detects its\n  original PNG/JPEG/GIF/WebP format instead of labelling every attachment as PNG, including images\n  originally sent from Aix Code. Existing rewind image tags and original data are preserved.\n- Aix Code 0.17.1 restores original attachments alongside text when rewinding, retains live\n  follow-up images in chat, and displays bounded cached previews for larger saved screenshots.\n  Preview generation is shared; composer thumbnails and chat placeholders are desktop-only UI.",
+  "pub_date": "2026-10-22T04:37:06.000Z",
+  "tag": "cli-v2.19.1",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajFrajFkOVJBTk1kdFVncnl5VTZhTGhSOHVCNGFXZGc4aDFZYnROaGlIbGpReGFEa0c0RDY0YWw0eklNU2pOdGtDYVVqNFFLdHU1YmREVEZuYVhPandrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjQwMjE4CWZpbGU6YWl4LTIuMTkuMC13aW5kb3dzLXg4Nl82NC5leGUKVDExbng3Yko4ZzNlUGIwVnV4cTEvNFhZSlp3VnRpZnRORVMrMXRjaVcxKzFGZFRRYitOSXBWOVY5cjJTL0YwSDhOZVNBQms5ZENIdXZYVlZ5SndhRGc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.19.0/aix-2.19.0-windows-x86_64.exe",
-      "sha256": "7786bb2a2b44292ed2e6e0735a269eb83a271a4a0fd0d701a814a3f3995bdd27"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aandMWW5mS0h4WktoK2R6TFBEdWNGb2hiYjdvNjFUQVljYmxhMHJqNVVaSWNiVEtrWEcxSGJHUGlZaGNlN0RQTHBVSmtFLzZxSitqOVIyM09OeTEybFFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjQzODI1CWZpbGU6YWl4LTIuMTkuMS13aW5kb3dzLXg4Nl82NC5leGUKV25LSW1YZTlaZFdGK2o4L2NkWFBINENOZUpITTA1U0hJaDVpUHltdnlOcURSby9jZWtLZmhUeDhaK1gyTHFNdTI3YVZ0eW5Eb0tVWXNDVFlJWWxEQ0E9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.19.1/aix-2.19.1-windows-x86_64.exe",
+      "sha256": "cecee5d93b8c6181bd63cfbd43eae871a3b2500f43bd648985889b9f2b008fe5"
     }
   }
 }

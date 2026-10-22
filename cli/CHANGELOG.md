@@ -1,5 +1,14 @@
 # Changelog
 
+## v2.19.1 — 2026-10-22
+
+- **Rewound images retain their format.** Sending or queueing a restored image now detects its
+  original PNG/JPEG/GIF/WebP format instead of labelling every attachment as PNG, including images
+  originally sent from Aix Code. Existing rewind image tags and original data are preserved.
+- Aix Code 0.17.1 restores original attachments alongside text when rewinding, retains live
+  follow-up images in chat, and displays bounded cached previews for larger saved screenshots.
+  Preview generation is shared; composer thumbnails and chat placeholders are desktop-only UI.
+
 ## v2.19.0 — 2026-10-22
 
 - **Free local prediction setup.** `/prediction setup` explains the ~520 MB download;
