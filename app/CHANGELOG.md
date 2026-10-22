@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.17.1 — 2026-10-22
+
+- **Rewind keeps image attachments.** Rewinding a sent message restores its text and every
+  embedded image to the composer, replacing any previous draft attachments. Resending uses the
+  original image data, order and formats—not the chat thumbnails. Image-only messages work too.
+- **Images stay visible in chat.** Larger screenshots now get bounded, cached thumbnails instead
+  of disappearing when a session is reopened. Unavailable previews show an attachment placeholder.
+  Images sent as live follow-ups are retained when their waiting messages are delivered.
+- Shared with aix 2.19.1: terminal resends preserve JPEG, GIF and WebP formats from rewound desktop
+  sessions. The composer thumbnails and chat attachment previews are desktop-only UI.
+
 ## v0.17.0 — 2026-10-22
 
 - **Choose how predictions run.** Settings → General offers offline history, optional free local

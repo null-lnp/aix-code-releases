@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.17.0",
-  "notes": "- **Choose how predictions run.** Settings → General offers offline history, optional free local\n  AI, and an existing ChatGPT sign-in. ChatGPT predictions consume plan limits and send recent\n  conversation text to OpenAI, never the unsent draft; they cannot fall back to API-key billing.\n  They use Aix's existing Codex provider, not OpenAI's private composer prediction endpoint.\n- **One-click free local AI.** Download Qwen2.5-0.5B Q4_K_M and a portable llama.cpp CPU runner\n  (~520 MB), with progress, cancellation, retry, pinned versions and SHA-256 verification.\n  No GPU or subscription is needed. The optional process uses roughly 0.5–1 GB RAM while loaded,\n  unloads after two idle minutes and stops when disabled or Aix exits. No model downloads or\n  hosted inference are enabled without an explicit choice.\n- **Quota-conscious next-message suggestions.** ChatGPT predictions are cached per conversation\n  update/account and throttled, not requested per keystroke. Suggestions are still accepted only\n  with Tab / Right, never auto-sent. Shared configuration and commands ship in aix 2.19.0;\n  the source picker and download controls are desktop-only. Open-weight and hosted-model output\n  will differ from ChatGPT's closed predictor.",
-  "pub_date": "2026-10-22T03:37:36.373Z",
-  "tag": "app-v0.17.0",
+  "version": "0.17.1",
+  "notes": "- **Rewind keeps image attachments.** Rewinding a sent message restores its text and every\n  embedded image to the composer, replacing any previous draft attachments. Resending uses the\n  original image data, order and formats—not the chat thumbnails. Image-only messages work too.\n- **Images stay visible in chat.** Larger screenshots now get bounded, cached thumbnails instead\n  of disappearing when a session is reopened. Unavailable previews show an attachment placeholder.\n  Images sent as live follow-ups are retained when their waiting messages are delivered.\n- Shared with aix 2.19.1: terminal resends preserve JPEG, GIF and WebP formats from rewound desktop\n  sessions. The composer thumbnails and chat attachment previews are desktop-only UI.",
+  "pub_date": "2026-10-22T04:37:40.385Z",
+  "tag": "app-v0.17.1",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aaitVL3J6bUFIbE9kZHFUV3hNb2pWdEZ6N0ZXNHM2VHd2RnZOVUo5UzFMVkhxakwvWWFHWkZrMDhyTmJWOEVUeE9XM1QwWkU0enkzMFFSUUxkdHpzZlFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjM5OTUzCWZpbGU6QWl4IENvZGVfMC4xNy4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE3LjAKNXcrSjhzWlg2WVBoNjhoSXYyVGpEbDFnZXlHSStWR1E3N3I3U1U2MWlCWmY2b2FOMXhuWkw4MGVWN2hTQmlta3MxZVZTS3UvNFFzNlV1T0QzS0ZaQ3c9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.17.0/aix-code-0.17.0-x64-setup.exe",
-      "sha256": "62f5b2e2119b9691f6b2cd93379c71337ae34da509da62c951adb9cea2a1eb83"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajdnRmNsK1BvVE1XVFROVGNZcXZDclZUbVdxNUJKMHdQbHNtV0l1NXRCQ0VKU21uREpsSlpMVFZJNUpHK3ZNcFNLRjBBaHgzVU0yejd5U3Rta2RZM3dvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjQzNjU5CWZpbGU6QWl4IENvZGVfMC4xNy4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE3LjEKNFBLNW9PdXVsaVhadk1Cd3luTkNPTFpHWXM5RTZ1L1ZtTjhVWXcyVG94MjZsSlArVDVmc2MyRENPYmJkOGlvRHVlQytiN1ovVCsyQnQ4MXNEc05GQmc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.17.1/aix-code-0.17.1-x64-setup.exe",
+      "sha256": "d3f70acb897f712cad3cea7ab048bec9efee11a9594bc3af4f88b2a8b2f1ed36"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aaitVL3J6bUFIbE9kZHFUV3hNb2pWdEZ6N0ZXNHM2VHd2RnZOVUo5UzFMVkhxakwvWWFHWkZrMDhyTmJWOEVUeE9XM1QwWkU0enkzMFFSUUxkdHpzZlFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjM5OTUzCWZpbGU6QWl4IENvZGVfMC4xNy4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE3LjAKNXcrSjhzWlg2WVBoNjhoSXYyVGpEbDFnZXlHSStWR1E3N3I3U1U2MWlCWmY2b2FOMXhuWkw4MGVWN2hTQmlta3MxZVZTS3UvNFFzNlV1T0QzS0ZaQ3c9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.17.0/aix-code-0.17.0-x64-setup.exe",
-      "sha256": "62f5b2e2119b9691f6b2cd93379c71337ae34da509da62c951adb9cea2a1eb83"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajdnRmNsK1BvVE1XVFROVGNZcXZDclZUbVdxNUJKMHdQbHNtV0l1NXRCQ0VKU21uREpsSlpMVFZJNUpHK3ZNcFNLRjBBaHgzVU0yejd5U3Rta2RZM3dvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjQzNjU5CWZpbGU6QWl4IENvZGVfMC4xNy4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE3LjEKNFBLNW9PdXVsaVhadk1Cd3luTkNPTFpHWXM5RTZ1L1ZtTjhVWXcyVG94MjZsSlArVDVmc2MyRENPYmJkOGlvRHVlQytiN1ovVCsyQnQ4MXNEc05GQmc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.17.1/aix-code-0.17.1-x64-setup.exe",
+      "sha256": "d3f70acb897f712cad3cea7ab048bec9efee11a9594bc3af4f88b2a8b2f1ed36"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajlqVlRGZTJkUEtxQzdML0pXTWh6R0duQkNiU2Rnckx5cFIwalJrM3dGZ3NRT3UraFJPSzZleGtsUjNJbXVtdmVYN29qN3U3Z05GT2pud3NCZFQ5N3dnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjM5OTUzCWZpbGU6QWl4IENvZGVfMC4xNy4wX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjE3LjAKSHY1K0lCTEszYkNCMm5MTm9BaGRXS3ZVWmJMS0swTXpieUJiUk81LzFQM2NIMVJWTGRnWHRxZm44WjZPdThYSGNtTFZORGRWczl3RVRTa09aT3hzRHc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.17.0/aix-code-0.17.0-x64.msi",
-      "sha256": "421bf55c09baeac9ed749b5e0fc0035a503d237e329fa5a03ada64a70b86614b"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aano5K2w1cWFzL2F6T2JFUmdqcDBwdFNhaFRzWXpXNzI3WHhkYlo5aFRoTFpETmwzRm1FdkhRblpTckdLektoU0pZRlcwbjFKbFI5Smd4NDNVMG4rR1FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjQzNjU5CWZpbGU6QWl4IENvZGVfMC4xNy4xX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjE3LjEKRDkrc3JBVTI1ZGJNOXdXWXNldE5rQVhZUDNQWnJKelViMFZUaFl4UVZpeGtLRy90VG9VbUp6OExSTkRsRm9CVms1Q3p2algxK0tJcG5oNzhZZVMvQXc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.17.1/aix-code-0.17.1-x64.msi",
+      "sha256": "88162ee38763fbeba002a8a2bd04ab85e192b3b4382718d5f3e029610a1e865a"
     }
   }
 }
