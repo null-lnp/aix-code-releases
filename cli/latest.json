@@ -1,14 +1,14 @@
 {
   "product": "cli",
-  "version": "2.18.0",
-  "notes": "- **Predictive typing, locally.** Idle composers can show a dim continuation from your prompt\n  history after three characters. Tab / Right Arrow accepts without submitting, Esc dismisses,\n  and command/file pickers, history recall and waiting-message edits keep priority. Tab while\n  working still queues. Aix Code 0.16.0 uses the same engine with an inline ghost-text overlay.\n- **Optional local-model inference.** `/prediction local <loopback-url> <downloaded-model>` can\n  suggest novel continuations or a next user message from the conversation. History is the\n  default and is not an AI model. `/prediction history`, `on` and `off` configure the shared\n  user-only setting; repositories cannot opt you in. No model download, ChatGPT subscription,\n  private prediction API, paid-provider fallback, tools or automatic submission is involved.\n- The predictor rejects remote/authenticated URLs, redirects and cloud-tagged models; it never\n  inherits provider credentials/headers. Draft/context/output sizes are bounded and stale work\n  is cancelled. Use a small locally hosted model; a local gateway that forwards to cloud is not\n  a free local model. This is an original alternative, not OpenAI's closed prediction engine.\n- Desktop-only counterpart: visual ghost-text/settings controls; shared matching, inference and\n  safety policy live in the core.",
-  "pub_date": "2026-10-22T00:22:52.055Z",
-  "tag": "cli-v2.18.0",
+  "version": "2.19.0",
+  "notes": "- **Free local prediction setup.** `/prediction setup` explains the ~520 MB download;\n  `/prediction install` downloads pinned Qwen2.5-0.5B Q4_K_M (Apache 2.0) and llama.cpp (MIT),\n  verifies SHA-256 hashes and installs a portable CPU runner. `/prediction status` reports progress,\n  `cancel` stops the download, and `free` enables the model after setup. No GPU, API key or\n  subscription is required. It uses roughly 0.5–1 GB RAM while loaded and unloads after two idle\n  minutes; disabling it or exiting stops the process. History remains the default.\n- **Optional ChatGPT-account predictions.** `/prediction chatgpt <provider> [model]` uses that\n  provider's active ChatGPT sign-in, never an API key. It consumes plan limits and sends bounded\n  recent conversation text to OpenAI, not the unsent draft. One cached next-message prediction\n  per conversation update/account, with a request throttle and no paid-provider fallback.\n  This uses the existing Codex provider, not OpenAI's private composer prediction service.\n- Aix Code 0.17.0 exposes the same choices with desktop-only download/source controls. Tab / Right\n  explicitly accepts suggestions; no prediction sends or executes a message. Local model quality\n  and speed vary with hardware and are not identical to OpenAI's closed predictor.",
+  "pub_date": "2026-10-22T03:36:58.575Z",
+  "tag": "cli-v2.19.0",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aai9WQ1l0YklMSEwxS2tlMWdoMVBnT1FhcjcwVllrMEo2ZG93aTVSTWhMUE1UTi80SDFUbytHUENKcUluZmVmY0JueDlKYWhsQmlmYi95VWI0dDdEZlFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjI4NTcxCWZpbGU6YWl4LTIuMTguMC13aW5kb3dzLXg4Nl82NC5leGUKSTl5UDJDUWhKd1FOQStTL1hFUHBmOUJnUWtKUWRybnh0eWtiNVRxd05ZZFlDdW1YZ0xQSHlaS3p3SmJJbWVzUWhBeU1xWnJSOEFhT0NYRk1hVmpVREE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.18.0/aix-2.18.0-windows-x86_64.exe",
-      "sha256": "f23611219ecdab327290cdbb720ad07a71e018b3309f78e058f5f5865aaf5b3f"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajFrajFkOVJBTk1kdFVncnl5VTZhTGhSOHVCNGFXZGc4aDFZYnROaGlIbGpReGFEa0c0RDY0YWw0eklNU2pOdGtDYVVqNFFLdHU1YmREVEZuYVhPandrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjQwMjE4CWZpbGU6YWl4LTIuMTkuMC13aW5kb3dzLXg4Nl82NC5leGUKVDExbng3Yko4ZzNlUGIwVnV4cTEvNFhZSlp3VnRpZnRORVMrMXRjaVcxKzFGZFRRYitOSXBWOVY5cjJTL0YwSDhOZVNBQms5ZENIdXZYVlZ5SndhRGc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.19.0/aix-2.19.0-windows-x86_64.exe",
+      "sha256": "7786bb2a2b44292ed2e6e0735a269eb83a271a4a0fd0d701a814a3f3995bdd27"
     }
   }
 }

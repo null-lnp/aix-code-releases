@@ -1,5 +1,22 @@
 # Changelog
 
+## v2.19.0 — 2026-10-22
+
+- **Free local prediction setup.** `/prediction setup` explains the ~520 MB download;
+  `/prediction install` downloads pinned Qwen2.5-0.5B Q4_K_M (Apache 2.0) and llama.cpp (MIT),
+  verifies SHA-256 hashes and installs a portable CPU runner. `/prediction status` reports progress,
+  `cancel` stops the download, and `free` enables the model after setup. No GPU, API key or
+  subscription is required. It uses roughly 0.5–1 GB RAM while loaded and unloads after two idle
+  minutes; disabling it or exiting stops the process. History remains the default.
+- **Optional ChatGPT-account predictions.** `/prediction chatgpt <provider> [model]` uses that
+  provider's active ChatGPT sign-in, never an API key. It consumes plan limits and sends bounded
+  recent conversation text to OpenAI, not the unsent draft. One cached next-message prediction
+  per conversation update/account, with a request throttle and no paid-provider fallback.
+  This uses the existing Codex provider, not OpenAI's private composer prediction service.
+- Aix Code 0.17.0 exposes the same choices with desktop-only download/source controls. Tab / Right
+  explicitly accepts suggestions; no prediction sends or executes a message. Local model quality
+  and speed vary with hardware and are not identical to OpenAI's closed predictor.
+
 ## v2.18.0 — 2026-10-21
 
 - **Predictive typing, locally.** Idle composers can show a dim continuation from your prompt
