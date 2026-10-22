@@ -1,5 +1,23 @@
 # Changelog
 
+## v2.18.0 — 2026-10-21
+
+- **Predictive typing, locally.** Idle composers can show a dim continuation from your prompt
+  history after three characters. Tab / Right Arrow accepts without submitting, Esc dismisses,
+  and command/file pickers, history recall and waiting-message edits keep priority. Tab while
+  working still queues. Aix Code 0.16.0 uses the same engine with an inline ghost-text overlay.
+- **Optional local-model inference.** `/prediction local <loopback-url> <downloaded-model>` can
+  suggest novel continuations or a next user message from the conversation. History is the
+  default and is not an AI model. `/prediction history`, `on` and `off` configure the shared
+  user-only setting; repositories cannot opt you in. No model download, ChatGPT subscription,
+  private prediction API, paid-provider fallback, tools or automatic submission is involved.
+- The predictor rejects remote/authenticated URLs, redirects and cloud-tagged models; it never
+  inherits provider credentials/headers. Draft/context/output sizes are bounded and stale work
+  is cancelled. Use a small locally hosted model; a local gateway that forwards to cloud is not
+  a free local model. This is an original alternative, not OpenAI's closed prediction engine.
+- Desktop-only counterpart: visual ghost-text/settings controls; shared matching, inference and
+  safety policy live in the core.
+
 ## v2.17.0 — 2026-10-21
 
 - **Claude OAuth without installing Claude Code.** `aix login anthropic --oauth` opens a browser
