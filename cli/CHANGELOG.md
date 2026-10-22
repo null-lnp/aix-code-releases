@@ -1,5 +1,20 @@
 # Changelog
 
+## v2.20.0 — 2026-10-22
+
+- **Live speed and effort changes.** `/fast`, `/ultrafast`, effort controls and Ultra helper-effort
+  changes reach active model requests and running subagents, including nested contexts. AIX
+  transparently restarts just the provider request, not the turn or completed tool work. Retry
+  waits wake immediately, partial output is replaced rather than duplicated, reported usage is
+  retained, and stale cache refreshes are cancelled. Already-incurred provider usage may be billed.
+- **Codex fast modes remain available.** Send the Codex model/tier routing hint alongside the
+  request body. Successful response-tier metadata no longer becomes an inferred five-minute
+  Fast/Ultrafast refusal; only explicit provider rejections trigger fallback/cooldown. Usage
+  estimates still use reported served tiers when present.
+- Aix Code 0.18.0 adds desktop-only long-transcript and streamed-Markdown rendering optimizations.
+  Its 1,201-item and 64 KB reply QA fixtures remove the measured long-task stalls without
+  truncating saved history or changing the model's context.
+
 ## v2.19.1 — 2026-10-22
 
 - **Rewound images retain their format.** Sending or queueing a restored image now detects its

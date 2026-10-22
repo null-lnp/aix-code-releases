@@ -1,14 +1,14 @@
 {
   "product": "cli",
-  "version": "2.19.1",
-  "notes": "- **Rewound images retain their format.** Sending or queueing a restored image now detects its\n  original PNG/JPEG/GIF/WebP format instead of labelling every attachment as PNG, including images\n  originally sent from Aix Code. Existing rewind image tags and original data are preserved.\n- Aix Code 0.17.1 restores original attachments alongside text when rewinding, retains live\n  follow-up images in chat, and displays bounded cached previews for larger saved screenshots.\n  Preview generation is shared; composer thumbnails and chat placeholders are desktop-only UI.",
-  "pub_date": "2026-10-22T04:37:06.000Z",
-  "tag": "cli-v2.19.1",
+  "version": "2.20.0",
+  "notes": "- **Live speed and effort changes.** `/fast`, `/ultrafast`, effort controls and Ultra helper-effort\n  changes reach active model requests and running subagents, including nested contexts. AIX\n  transparently restarts just the provider request, not the turn or completed tool work. Retry\n  waits wake immediately, partial output is replaced rather than duplicated, reported usage is\n  retained, and stale cache refreshes are cancelled. Already-incurred provider usage may be billed.\n- **Codex fast modes remain available.** Send the Codex model/tier routing hint alongside the\n  request body. Successful response-tier metadata no longer becomes an inferred five-minute\n  Fast/Ultrafast refusal; only explicit provider rejections trigger fallback/cooldown. Usage\n  estimates still use reported served tiers when present.\n- Aix Code 0.18.0 adds desktop-only long-transcript and streamed-Markdown rendering optimizations.\n  Its 1,201-item and 64 KB reply QA fixtures remove the measured long-task stalls without\n  truncating saved history or changing the model's context.",
+  "pub_date": "2026-10-22T18:11:44.355Z",
+  "tag": "cli-v2.20.0",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aandMWW5mS0h4WktoK2R6TFBEdWNGb2hiYjdvNjFUQVljYmxhMHJqNVVaSWNiVEtrWEcxSGJHUGlZaGNlN0RQTHBVSmtFLzZxSitqOVIyM09OeTEybFFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjQzODI1CWZpbGU6YWl4LTIuMTkuMS13aW5kb3dzLXg4Nl82NC5leGUKV25LSW1YZTlaZFdGK2o4L2NkWFBINENOZUpITTA1U0hJaDVpUHltdnlOcURSby9jZWtLZmhUeDhaK1gyTHFNdTI3YVZ0eW5Eb0tVWXNDVFlJWWxEQ0E9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.19.1/aix-2.19.1-windows-x86_64.exe",
-      "sha256": "cecee5d93b8c6181bd63cfbd43eae871a3b2500f43bd648985889b9f2b008fe5"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajRxcUVLSWE1ZlR6aTFMYjFmRUR4NkpkVk01K3pZMXFkcXhOZk9FNjN3YUNVQzh1MFRUeUtWM3YxRlZSY044SlhUZldJbzNOVjV2T25xMjN0Z0dYTlE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjkyNzA0CWZpbGU6YWl4LTIuMjAuMC13aW5kb3dzLXg4Nl82NC5leGUKZkZ4RTlRemloRDJCQTFBaVZaYnNXeXkvUTZPK3RZYXRMUDJWdk1CZkVDNjlwNVF6N3huam1tSm92WFRWNDFrbERJb1BET1BSaEpKL2Z2c2JqclRJRFE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.20.0/aix-2.20.0-windows-x86_64.exe",
+      "sha256": "40f0373b1290cb25f90244952267f02c2131ebc5a017e7b19327b330fa82043f"
     }
   }
 }
