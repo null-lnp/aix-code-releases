@@ -1,5 +1,22 @@
 # Changelog
 
+## v0.17.0 — 2026-10-22
+
+- **Choose how predictions run.** Settings → General offers offline history, optional free local
+  AI, and an existing ChatGPT sign-in. ChatGPT predictions consume plan limits and send recent
+  conversation text to OpenAI, never the unsent draft; they cannot fall back to API-key billing.
+  They use Aix's existing Codex provider, not OpenAI's private composer prediction endpoint.
+- **One-click free local AI.** Download Qwen2.5-0.5B Q4_K_M and a portable llama.cpp CPU runner
+  (~520 MB), with progress, cancellation, retry, pinned versions and SHA-256 verification.
+  No GPU or subscription is needed. The optional process uses roughly 0.5–1 GB RAM while loaded,
+  unloads after two idle minutes and stops when disabled or Aix exits. No model downloads or
+  hosted inference are enabled without an explicit choice.
+- **Quota-conscious next-message suggestions.** ChatGPT predictions are cached per conversation
+  update/account and throttled, not requested per keystroke. Suggestions are still accepted only
+  with Tab / Right, never auto-sent. Shared configuration and commands ship in aix 2.19.0;
+  the source picker and download controls are desktop-only. Open-weight and hosted-model output
+  will differ from ChatGPT's closed predictor.
+
 ## v0.16.0 — 2026-10-21
 
 - **Local-only predictive typing.** Gray ghost text can complete a prior prompt as you type.
