@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.17.1",
-  "notes": "- **Rewind keeps image attachments.** Rewinding a sent message restores its text and every\n  embedded image to the composer, replacing any previous draft attachments. Resending uses the\n  original image data, order and formats—not the chat thumbnails. Image-only messages work too.\n- **Images stay visible in chat.** Larger screenshots now get bounded, cached thumbnails instead\n  of disappearing when a session is reopened. Unavailable previews show an attachment placeholder.\n  Images sent as live follow-ups are retained when their waiting messages are delivered.\n- Shared with aix 2.19.1: terminal resends preserve JPEG, GIF and WebP formats from rewound desktop\n  sessions. The composer thumbnails and chat attachment previews are desktop-only UI.",
-  "pub_date": "2026-10-22T04:37:40.385Z",
-  "tag": "app-v0.17.1",
+  "version": "0.18.0",
+  "notes": "- **Live speed and effort controls.** Standard/Fast/Ultrafast and effort changes affect the\n  active turn and its running helpers without Stop or resending a chat message. AIX transparently\n  restarts only the in-flight model request, keeping completed tools, history and pending inputs.\n  Active Ultra subagent-effort overrides update helpers too; each model clamps unsupported levels.\n  Provider usage already incurred may still be billed; reported usage is retained.\n- **Codex fast-tier routing and false cooldown fix.** Codex requests now include the same\n  `x-codex-routing-hint` model/tier header as Codex. A successful response reporting a default or\n  slower tier no longer incorrectly disables Fast/Ultrafast for five minutes. Explicit provider\n  rejections still fall back normally; reported served tiers still drive usage estimates.\n- **Long-session responsiveness.** Historical rows stop rerendering on each token, code blocks\n  and diagrams retain stable renderers, and large streamed Markdown reuses completed sections.\n  Very large unfinished code blocks stay lightweight until completion. The same QA fixtures\n  improved p95 frame gaps from ~104 to ~13 ms at 1,201 transcript items and ~108 to ~4 ms for a\n  64 KB streamed reply, with no long tasks. History, copy, references and diagram behavior remain.\n- Shared live controls and tier fixes ship in aix 2.20.0. Transcript/Markdown rendering changes\n  and control-help text are desktop-only; no model context or saved history is discarded.",
+  "pub_date": "2026-10-22T18:12:36.246Z",
+  "tag": "app-v0.18.0",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajdnRmNsK1BvVE1XVFROVGNZcXZDclZUbVdxNUJKMHdQbHNtV0l1NXRCQ0VKU21uREpsSlpMVFZJNUpHK3ZNcFNLRjBBaHgzVU0yejd5U3Rta2RZM3dvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjQzNjU5CWZpbGU6QWl4IENvZGVfMC4xNy4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE3LjEKNFBLNW9PdXVsaVhadk1Cd3luTkNPTFpHWXM5RTZ1L1ZtTjhVWXcyVG94MjZsSlArVDVmc2MyRENPYmJkOGlvRHVlQytiN1ovVCsyQnQ4MXNEc05GQmc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.17.1/aix-code-0.17.1-x64-setup.exe",
-      "sha256": "d3f70acb897f712cad3cea7ab048bec9efee11a9594bc3af4f88b2a8b2f1ed36"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanlPQ3BER05ZMERhQTNESlNTc2tSa3E0bTIreS9nc2wvZ1FWUm9Fb1FycnF1Unp1bWdIY3dJZ2kzUFhRZTZwZUk0bzlDaG52a3Z6Vm5vSDZhcTV3eHcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjkyNDkxCWZpbGU6QWl4IENvZGVfMC4xOC4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE4LjAKVXVhdWw4TzVIQUd0bXArbmI2aUMxYWYySkFGN2VlTnFMZHl1Q1NaNXhPV2l3QlJBWUhpS1BHYlRyUnZnbzM1eDJGTytENUlSS1MrZ2IreGhaY3ZnQmc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.18.0/aix-code-0.18.0-x64-setup.exe",
+      "sha256": "2034119cbf44fee064844afd4f78ceaa17259b25a67c2b6b5b6da6f8b5fdbce7"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajdnRmNsK1BvVE1XVFROVGNZcXZDclZUbVdxNUJKMHdQbHNtV0l1NXRCQ0VKU21uREpsSlpMVFZJNUpHK3ZNcFNLRjBBaHgzVU0yejd5U3Rta2RZM3dvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjQzNjU5CWZpbGU6QWl4IENvZGVfMC4xNy4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE3LjEKNFBLNW9PdXVsaVhadk1Cd3luTkNPTFpHWXM5RTZ1L1ZtTjhVWXcyVG94MjZsSlArVDVmc2MyRENPYmJkOGlvRHVlQytiN1ovVCsyQnQ4MXNEc05GQmc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.17.1/aix-code-0.17.1-x64-setup.exe",
-      "sha256": "d3f70acb897f712cad3cea7ab048bec9efee11a9594bc3af4f88b2a8b2f1ed36"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanlPQ3BER05ZMERhQTNESlNTc2tSa3E0bTIreS9nc2wvZ1FWUm9Fb1FycnF1Unp1bWdIY3dJZ2kzUFhRZTZwZUk0bzlDaG52a3Z6Vm5vSDZhcTV3eHcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjkyNDkxCWZpbGU6QWl4IENvZGVfMC4xOC4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE4LjAKVXVhdWw4TzVIQUd0bXArbmI2aUMxYWYySkFGN2VlTnFMZHl1Q1NaNXhPV2l3QlJBWUhpS1BHYlRyUnZnbzM1eDJGTytENUlSS1MrZ2IreGhaY3ZnQmc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.18.0/aix-code-0.18.0-x64-setup.exe",
+      "sha256": "2034119cbf44fee064844afd4f78ceaa17259b25a67c2b6b5b6da6f8b5fdbce7"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aano5K2w1cWFzL2F6T2JFUmdqcDBwdFNhaFRzWXpXNzI3WHhkYlo5aFRoTFpETmwzRm1FdkhRblpTckdLektoU0pZRlcwbjFKbFI5Smd4NDNVMG4rR1FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjQzNjU5CWZpbGU6QWl4IENvZGVfMC4xNy4xX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjE3LjEKRDkrc3JBVTI1ZGJNOXdXWXNldE5rQVhZUDNQWnJKelViMFZUaFl4UVZpeGtLRy90VG9VbUp6OExSTkRsRm9CVms1Q3p2algxK0tJcG5oNzhZZVMvQXc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.17.1/aix-code-0.17.1-x64.msi",
-      "sha256": "88162ee38763fbeba002a8a2bd04ab85e192b3b4382718d5f3e029610a1e865a"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajcxWDdEd2NHOWM1QSthRnVBaGVZaEtTb2h0UWlBVHRGd29DWmloaXZrVS9IVkF4WUpEK0MvcEdxb3NJZUhTbUI4c1JLTTUySWd3WTF3WWE3cGtXWlFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjkyNDkxCWZpbGU6QWl4IENvZGVfMC4xOC4wX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjE4LjAKOTIrZXRQakoza0wwK0IrSkJGUmdsSWdBcU9RcmNMV21PSHJTck82UGVpMjYxc1JJY3lSOUhqNnoraUNsUVd6ZzFuSnBHNDdBeHRweVhPVkVacEdvRFE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.18.0/aix-code-0.18.0-x64.msi",
+      "sha256": "dd3da2bdb03977604134c3072b31b387e77429ca70afd2f84098c863f6f49701"
     }
   }
 }

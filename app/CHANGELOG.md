@@ -1,5 +1,24 @@
 # Changelog
 
+## v0.18.0 — 2026-10-22
+
+- **Live speed and effort controls.** Standard/Fast/Ultrafast and effort changes affect the
+  active turn and its running helpers without Stop or resending a chat message. AIX transparently
+  restarts only the in-flight model request, keeping completed tools, history and pending inputs.
+  Active Ultra subagent-effort overrides update helpers too; each model clamps unsupported levels.
+  Provider usage already incurred may still be billed; reported usage is retained.
+- **Codex fast-tier routing and false cooldown fix.** Codex requests now include the same
+  `x-codex-routing-hint` model/tier header as Codex. A successful response reporting a default or
+  slower tier no longer incorrectly disables Fast/Ultrafast for five minutes. Explicit provider
+  rejections still fall back normally; reported served tiers still drive usage estimates.
+- **Long-session responsiveness.** Historical rows stop rerendering on each token, code blocks
+  and diagrams retain stable renderers, and large streamed Markdown reuses completed sections.
+  Very large unfinished code blocks stay lightweight until completion. The same QA fixtures
+  improved p95 frame gaps from ~104 to ~13 ms at 1,201 transcript items and ~108 to ~4 ms for a
+  64 KB streamed reply, with no long tasks. History, copy, references and diagram behavior remain.
+- Shared live controls and tier fixes ship in aix 2.20.0. Transcript/Markdown rendering changes
+  and control-help text are desktop-only; no model context or saved history is discarded.
+
 ## v0.17.1 — 2026-10-22
 
 - **Rewind keeps image attachments.** Rewinding a sent message restores its text and every
