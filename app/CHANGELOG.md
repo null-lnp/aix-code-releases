@@ -1,5 +1,22 @@
 # Changelog
 
+## v0.16.0 — 2026-10-21
+
+- **Local-only predictive typing.** Gray ghost text can complete a prior prompt as you type.
+  Tab or Right Arrow accepts it, Esc dismisses it, and Enter sends only the actual draft —
+  suggestions are never sent or executed automatically. Command/file pickers, recall, cursor
+  selections and IME composition take priority; while Aix runs, Tab still queues a follow-up.
+- **Free by default, optional local AI.** History mode is offline and is not generative AI.
+  Settings → General → Prediction source can use a downloaded model served by Ollama or LM
+  Studio for novel continuations and next-message suggestions. No model is bundled or downloaded
+  automatically, and prediction never uses the selected paid provider, account tokens, private
+  ChatGPT services or a cloud fallback. Only credential-free loopback endpoints are accepted;
+  redirects and cloud-tagged models are rejected. Model quality/speed depend on local hardware.
+- **Shared with aix 2.18.0.** `/prediction on|off|history|local <url> <model>` manages the same
+  user-only setting. Project configuration cannot opt you into background prediction inference.
+  The terminal has the same explicit-accept interaction; the visual textarea overlay and settings
+  controls are desktop-only.
+
 ## v0.15.0 — 2026-10-21
 
 - **Browser sign-in for OpenAI and Anthropic.** Providers now offers ChatGPT and Claude OAuth

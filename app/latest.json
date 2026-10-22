@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.15.0",
-  "notes": "- **Browser sign-in for OpenAI and Anthropic.** Providers now offers ChatGPT and Claude OAuth\n  alongside API keys, with a reopenable/copyable authorization link and cancellation. ChatGPT\n  returns through localhost; Claude asks for the browser's authorization code. Claude Code and\n  Codex do not need to be installed. Credentials and token refresh are shared with aix 2.17.0.\n  Proof keys stay private when sharing an authorization link; CSRF state is independent.\n- **Multiple subscription accounts.** Add several Claude or ChatGPT sign-ins as well as API\n  keys. A rate/usage limit tries the next saved account before pausing, without silently crossing\n  from subscription auth to paid API billing. Account changes reach open chats; settings and\n  environment overrides are called out. Exhausted API credits also try the next API account.\n- **`/import-codex`** imports Codex/.agents skills, prompts and compatible cached plugins without\n  overwriting existing aix content or copying credentials. `/resume-codex` imports conversations.\n- **Changing models unblocks paused chats.** The backend stops the old waiting request and\n  continues the same history on the selected model, preserving queued messages. An old model's\n  cooldown no longer leaves the new model, sidebar or Axo stuck in a paused state.\n- **One animation setting.** Settings → General → Animations offers System, Full and Reduced for\n  CSS effects, Axo, the agents/office and the home code background. Full overrides an OS request\n  for reduced motion; System still respects it, and changes apply without restarting. Release CSS\n  is flattened for older WebView2 runtimes rather than requiring native CSS nesting. This UI\n  preference is desktop-only; terminal motion settings are unchanged.",
-  "pub_date": "2026-10-21T18:24:16.029Z",
-  "tag": "app-v0.15.0",
+  "version": "0.16.0",
+  "notes": "- **Local-only predictive typing.** Gray ghost text can complete a prior prompt as you type.\n  Tab or Right Arrow accepts it, Esc dismisses it, and Enter sends only the actual draft —\n  suggestions are never sent or executed automatically. Command/file pickers, recall, cursor\n  selections and IME composition take priority; while Aix runs, Tab still queues a follow-up.\n- **Free by default, optional local AI.** History mode is offline and is not generative AI.\n  Settings → General → Prediction source can use a downloaded model served by Ollama or LM\n  Studio for novel continuations and next-message suggestions. No model is bundled or downloaded\n  automatically, and prediction never uses the selected paid provider, account tokens, private\n  ChatGPT services or a cloud fallback. Only credential-free loopback endpoints are accepted;\n  redirects and cloud-tagged models are rejected. Model quality/speed depend on local hardware.\n- **Shared with aix 2.18.0.** `/prediction on|off|history|local <url> <model>` manages the same\n  user-only setting. Project configuration cannot opt you into background prediction inference.\n  The terminal has the same explicit-accept interaction; the visual textarea overlay and settings\n  controls are desktop-only.",
+  "pub_date": "2026-10-22T00:23:27.998Z",
+  "tag": "app-v0.16.0",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanp5NlJGeVdHYUV5bUdnUVIwckQzbnNsN2FrVlk2MndBUTQwdjRZS0E1dGg1SnlyODRHSDh1cWlZN3RNS2FlY1c0aE1vSTdCMDY0RTcxTitwMXRuWFFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjA2NjUzCWZpbGU6QWl4IENvZGVfMC4xNS4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE1LjAKUGRmd29ERkJMZW03Q1dkZUlLZlZ1dzBGbW4xVFlZQ21lNUtaeGdBSHo0S3pxM0RwaVZCbnFBOG43eXlsc2hWdzRZVlVqVURlcXZROEwwK2VJa2lRQ3c9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.15.0/aix-code-0.15.0-x64-setup.exe",
-      "sha256": "4fbf4ffd51d04ca21f0358356ecab11927444c8952a44442f7f8f988b5749103"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajJJU3dPWm1HbWtiN0lXWUVQamR1eWZpMDBFb215a0E4aTRPU0dMelN4cFRySkl3WTBhUDdaU0lHVEpCWFpRYTh5YTVxeWlwcmNQNk5sZkg0RDBacFE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjI4NDAxCWZpbGU6QWl4IENvZGVfMC4xNi4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE2LjAKMkR5Wi9KMXM4MEt3ZFgra2p4aWNFRkxTK2drTzlLYW9MbFQ0YzVjazFvUTdCU1E1VmEwTitnbWJaVzR1NGFKOVZvcFJYY2ZGbGd0d3JwZm1IM2VMQnc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.16.0/aix-code-0.16.0-x64-setup.exe",
+      "sha256": "ad00899200f8c86df5797036035b2c3508022daefdbfd9f08b93e913cd2f8311"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanp5NlJGeVdHYUV5bUdnUVIwckQzbnNsN2FrVlk2MndBUTQwdjRZS0E1dGg1SnlyODRHSDh1cWlZN3RNS2FlY1c0aE1vSTdCMDY0RTcxTitwMXRuWFFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjA2NjUzCWZpbGU6QWl4IENvZGVfMC4xNS4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE1LjAKUGRmd29ERkJMZW03Q1dkZUlLZlZ1dzBGbW4xVFlZQ21lNUtaeGdBSHo0S3pxM0RwaVZCbnFBOG43eXlsc2hWdzRZVlVqVURlcXZROEwwK2VJa2lRQ3c9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.15.0/aix-code-0.15.0-x64-setup.exe",
-      "sha256": "4fbf4ffd51d04ca21f0358356ecab11927444c8952a44442f7f8f988b5749103"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajJJU3dPWm1HbWtiN0lXWUVQamR1eWZpMDBFb215a0E4aTRPU0dMelN4cFRySkl3WTBhUDdaU0lHVEpCWFpRYTh5YTVxeWlwcmNQNk5sZkg0RDBacFE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjI4NDAxCWZpbGU6QWl4IENvZGVfMC4xNi4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE2LjAKMkR5Wi9KMXM4MEt3ZFgra2p4aWNFRkxTK2drTzlLYW9MbFQ0YzVjazFvUTdCU1E1VmEwTitnbWJaVzR1NGFKOVZvcFJYY2ZGbGd0d3JwZm1IM2VMQnc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.16.0/aix-code-0.16.0-x64-setup.exe",
+      "sha256": "ad00899200f8c86df5797036035b2c3508022daefdbfd9f08b93e913cd2f8311"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajU5NTM5L1h6bkFEWlc1UWxla0E0QnpLK09mNU80ZXhYc3VYSGdyTE5pZlVoUHpldVJYbDlid1Z6T2hPOUp0YXRrZTFCVGRzcVhuZWtHRG1mbWxHU3c0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjA2NjUzCWZpbGU6QWl4IENvZGVfMC4xNS4wX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjE1LjAKSlR1aUo1OVB6TEwyY0hESWM3ZzgvWXZVN0dSbkZ3Z2VCek42d3BUZnROMnpCMWlYRTBJQjZHNkFWQWM2WjVCVUh3MWU3Qldwa3dUc1BpR2M3RUFQQnc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.15.0/aix-code-0.15.0-x64.msi",
-      "sha256": "f8e910460ba982eb98358d98f3a837e1acd551e068f5178797649dcffbe7f397"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajUwMXEvS3RtUEdSNXkyZmJFeXJDeXBMVGdJRXN2Tm9MUkhDenJpSFRTWnB4NkJnQWtEcFo3VzZYWGJ0anJwQUpmQTcxdm42MUZTQmFoMkJhbGVtRlFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjI4NDAxCWZpbGU6QWl4IENvZGVfMC4xNi4wX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjE2LjAKM00rK3FXeVNiY3hzejdiZE85ZDI3eHpZcVJDRlR4ZlBkYWlEK0tPTGR4OHdkVE1CWWRlMzNDL1FFOVFNbFUzd25JejlIeUdidFBaL0ZhY2hwWWRzQVE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.16.0/aix-code-0.16.0-x64.msi",
+      "sha256": "d5aa8952799f5da9a8abe7e3fa00313d9899f250e65ad9127ec927cb06540526"
     }
   }
 }
