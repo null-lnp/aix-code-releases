@@ -1,5 +1,18 @@
 # Changelog
 
+## v2.20.1 — 2026-10-23
+
+- **Choose a preferred speed beyond the orchestrator's capabilities.** `/fast` and `/ultrafast`
+  now set a shared preference on any model. Every request still clamps independently: preferred
+  Ultrafast means Fast on GPT-5.6 Sol and Ultrafast on eligible GPT-6.1 Sol/Astra helpers. Existing
+  `speed` settings are preserved, and the preference applies to active helpers as before.
+- The header and status output separate the model's actual tier from a higher preference instead
+  of hiding the preference or calling an unsupported tier “resting.” Only actual provider refusals
+  create cooldowns; model-specific prices apply. A preference change does not restart an active
+  orchestrator request when its effective tier is unchanged.
+- Aix Code 0.18.1 exposes all preference choices with desktop-only actual/preferred badges and
+  pricing hints, including on Standard-only models.
+
 ## v2.20.0 — 2026-10-22
 
 - **Live speed and effort changes.** `/fast`, `/ultrafast`, effort controls and Ultra helper-effort

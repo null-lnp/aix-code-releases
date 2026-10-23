@@ -1,14 +1,14 @@
 {
   "product": "cli",
-  "version": "2.20.0",
-  "notes": "- **Live speed and effort changes.** `/fast`, `/ultrafast`, effort controls and Ultra helper-effort\n  changes reach active model requests and running subagents, including nested contexts. AIX\n  transparently restarts just the provider request, not the turn or completed tool work. Retry\n  waits wake immediately, partial output is replaced rather than duplicated, reported usage is\n  retained, and stale cache refreshes are cancelled. Already-incurred provider usage may be billed.\n- **Codex fast modes remain available.** Send the Codex model/tier routing hint alongside the\n  request body. Successful response-tier metadata no longer becomes an inferred five-minute\n  Fast/Ultrafast refusal; only explicit provider rejections trigger fallback/cooldown. Usage\n  estimates still use reported served tiers when present.\n- Aix Code 0.18.0 adds desktop-only long-transcript and streamed-Markdown rendering optimizations.\n  Its 1,201-item and 64 KB reply QA fixtures remove the measured long-task stalls without\n  truncating saved history or changing the model's context.",
-  "pub_date": "2026-10-22T18:11:44.355Z",
-  "tag": "cli-v2.20.0",
+  "version": "2.20.1",
+  "notes": "- **Choose a preferred speed beyond the orchestrator's capabilities.** `/fast` and `/ultrafast`\n  now set a shared preference on any model. Every request still clamps independently: preferred\n  Ultrafast means Fast on GPT-5.6 Sol and Ultrafast on eligible GPT-6.1 Sol/Astra helpers. Existing\n  `speed` settings are preserved, and the preference applies to active helpers as before.\n- The header and status output separate the model's actual tier from a higher preference instead\n  of hiding the preference or calling an unsupported tier “resting.” Only actual provider refusals\n  create cooldowns; model-specific prices apply. A preference change does not restart an active\n  orchestrator request when its effective tier is unchanged.\n- Aix Code 0.18.1 exposes all preference choices with desktop-only actual/preferred badges and\n  pricing hints, including on Standard-only models.",
+  "pub_date": "2026-10-23T10:29:30.814Z",
+  "tag": "cli-v2.20.1",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajRxcUVLSWE1ZlR6aTFMYjFmRUR4NkpkVk01K3pZMXFkcXhOZk9FNjN3YUNVQzh1MFRUeUtWM3YxRlZSY044SlhUZldJbzNOVjV2T25xMjN0Z0dYTlE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjkyNzA0CWZpbGU6YWl4LTIuMjAuMC13aW5kb3dzLXg4Nl82NC5leGUKZkZ4RTlRemloRDJCQTFBaVZaYnNXeXkvUTZPK3RZYXRMUDJWdk1CZkVDNjlwNVF6N3huam1tSm92WFRWNDFrbERJb1BET1BSaEpKL2Z2c2JqclRJRFE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.20.0/aix-2.20.0-windows-x86_64.exe",
-      "sha256": "40f0373b1290cb25f90244952267f02c2131ebc5a017e7b19327b330fa82043f"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajNpRXpTTHBQNFAxS2dzc3V2aGZSL1ZwR2g2M0FadGs2bjFuUUc4eThick9la3kyYUhwMlVGd29QalZqQ3Q0Q2VnQ2pKeng5QTAyTzFQaXVQREcwNEFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNzUxMzcwCWZpbGU6YWl4LTIuMjAuMS13aW5kb3dzLXg4Nl82NC5leGUKNEhMcjFNM0RzbXdBVnpha0Y2OVFOVnExTFpuZnE0bXpRWjBEcWJvd2xaVUhqNkRXT2ZneXdramMvK2V2bjliQjRlMThVSzQ1aFdjd2xWRnNjNkI4QlE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.20.1/aix-2.20.1-windows-x86_64.exe",
+      "sha256": "73b0f61e1e442ac40eb24ae59206a2c217f5a5d9fe87df781f6f9a45c831a6da"
     }
   }
 }
