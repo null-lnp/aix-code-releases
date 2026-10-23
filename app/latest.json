@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.18.0",
-  "notes": "- **Live speed and effort controls.** Standard/Fast/Ultrafast and effort changes affect the\n  active turn and its running helpers without Stop or resending a chat message. AIX transparently\n  restarts only the in-flight model request, keeping completed tools, history and pending inputs.\n  Active Ultra subagent-effort overrides update helpers too; each model clamps unsupported levels.\n  Provider usage already incurred may still be billed; reported usage is retained.\n- **Codex fast-tier routing and false cooldown fix.** Codex requests now include the same\n  `x-codex-routing-hint` model/tier header as Codex. A successful response reporting a default or\n  slower tier no longer incorrectly disables Fast/Ultrafast for five minutes. Explicit provider\n  rejections still fall back normally; reported served tiers still drive usage estimates.\n- **Long-session responsiveness.** Historical rows stop rerendering on each token, code blocks\n  and diagrams retain stable renderers, and large streamed Markdown reuses completed sections.\n  Very large unfinished code blocks stay lightweight until completion. The same QA fixtures\n  improved p95 frame gaps from ~104 to ~13 ms at 1,201 transcript items and ~108 to ~4 ms for a\n  64 KB streamed reply, with no long tasks. History, copy, references and diagram behavior remain.\n- Shared live controls and tier fixes ship in aix 2.20.0. Transcript/Markdown rendering changes\n  and control-help text are desktop-only; no model context or saved history is discarded.",
-  "pub_date": "2026-10-22T18:12:36.246Z",
-  "tag": "app-v0.18.0",
+  "version": "0.18.1",
+  "notes": "- **Preferred speed is independent of the orchestrator.** Standard, Fast and Ultrafast can be\n  selected even when the current model does not offer that tier. Each agent uses its fastest\n  supported tier at or below the shared preference: e.g. preferred Ultrafast keeps GPT-5.6 Sol\n  on Fast while eligible GPT-6.1 Sol/Astra helpers use Ultrafast. The existing `speed` setting\n  remains shared with aix 2.20.1; no duplicate preference or migration is needed.\n- **Clear actual speed versus preference.** The pill can show “Fast · prefers Ultrafast” without\n  incorrectly calling the capability difference a cooldown. Unsupported tiers no longer show a\n  misleading orchestrator price; helper premiums are identified separately. `/fast` and\n  `/ultrafast` remain available to set or clear the preference on Standard-only models too.\n- Live changes update eligible running helpers without restarting an orchestrator request whose\n  actual tier stays the same. Models without faster tiers stay Standard and explicit provider\n  refusals still use normal fallback/cooldown behavior. Preference picker/badges are desktop-only.",
+  "pub_date": "2026-10-23T10:30:09.168Z",
+  "tag": "app-v0.18.1",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanlPQ3BER05ZMERhQTNESlNTc2tSa3E0bTIreS9nc2wvZ1FWUm9Fb1FycnF1Unp1bWdIY3dJZ2kzUFhRZTZwZUk0bzlDaG52a3Z6Vm5vSDZhcTV3eHcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjkyNDkxCWZpbGU6QWl4IENvZGVfMC4xOC4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE4LjAKVXVhdWw4TzVIQUd0bXArbmI2aUMxYWYySkFGN2VlTnFMZHl1Q1NaNXhPV2l3QlJBWUhpS1BHYlRyUnZnbzM1eDJGTytENUlSS1MrZ2IreGhaY3ZnQmc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.18.0/aix-code-0.18.0-x64-setup.exe",
-      "sha256": "2034119cbf44fee064844afd4f78ceaa17259b25a67c2b6b5b6da6f8b5fdbce7"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajN0cG9hcFZQcXJIWnYyT3VuWC9HdCtvUG5QdUVhSUEwZ0g4eThHdys0YkpsL0I0eVl5WmZOc0U4RTBjczNXb0kybEZZUFhyV2hGamxJQ3p6R25XeHdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNzUxMjA4CWZpbGU6QWl4IENvZGVfMC4xOC4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE4LjEKa3l2WGtHb2lGK3d5ZVN1U0s2TUFVODFOWEdzL0xHeUdoMWV4RkNnTGJZSzhFUWYza0hIQTlyWEpKUVpyOU9iazIxUWtQY1o3Z0FIZEdQZFNyZ2lQQ1E9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.18.1/aix-code-0.18.1-x64-setup.exe",
+      "sha256": "f966c0e45f33f08f2268f82b9525898fdce8c246fafe96cf627a16f4212287ea"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanlPQ3BER05ZMERhQTNESlNTc2tSa3E0bTIreS9nc2wvZ1FWUm9Fb1FycnF1Unp1bWdIY3dJZ2kzUFhRZTZwZUk0bzlDaG52a3Z6Vm5vSDZhcTV3eHcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjkyNDkxCWZpbGU6QWl4IENvZGVfMC4xOC4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE4LjAKVXVhdWw4TzVIQUd0bXArbmI2aUMxYWYySkFGN2VlTnFMZHl1Q1NaNXhPV2l3QlJBWUhpS1BHYlRyUnZnbzM1eDJGTytENUlSS1MrZ2IreGhaY3ZnQmc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.18.0/aix-code-0.18.0-x64-setup.exe",
-      "sha256": "2034119cbf44fee064844afd4f78ceaa17259b25a67c2b6b5b6da6f8b5fdbce7"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajN0cG9hcFZQcXJIWnYyT3VuWC9HdCtvUG5QdUVhSUEwZ0g4eThHdys0YkpsL0I0eVl5WmZOc0U4RTBjczNXb0kybEZZUFhyV2hGamxJQ3p6R25XeHdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNzUxMjA4CWZpbGU6QWl4IENvZGVfMC4xOC4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE4LjEKa3l2WGtHb2lGK3d5ZVN1U0s2TUFVODFOWEdzL0xHeUdoMWV4RkNnTGJZSzhFUWYza0hIQTlyWEpKUVpyOU9iazIxUWtQY1o3Z0FIZEdQZFNyZ2lQQ1E9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.18.1/aix-code-0.18.1-x64-setup.exe",
+      "sha256": "f966c0e45f33f08f2268f82b9525898fdce8c246fafe96cf627a16f4212287ea"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajcxWDdEd2NHOWM1QSthRnVBaGVZaEtTb2h0UWlBVHRGd29DWmloaXZrVS9IVkF4WUpEK0MvcEdxb3NJZUhTbUI4c1JLTTUySWd3WTF3WWE3cGtXWlFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjkyNDkxCWZpbGU6QWl4IENvZGVfMC4xOC4wX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjE4LjAKOTIrZXRQakoza0wwK0IrSkJGUmdsSWdBcU9RcmNMV21PSHJTck82UGVpMjYxc1JJY3lSOUhqNnoraUNsUVd6ZzFuSnBHNDdBeHRweVhPVkVacEdvRFE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.18.0/aix-code-0.18.0-x64.msi",
-      "sha256": "dd3da2bdb03977604134c3072b31b387e77429ca70afd2f84098c863f6f49701"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajNhQTBHNHR1VlBkZmdrMmFEcGJJSjBqMEU4TzZqTmZFall6OGdQQUhyV3BEN2lJYlg0T3dYczlZUXdCL3pldUcwaHZuQzVYcVFFbVg1TGRoUEVrR1E0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNzUxMjA4CWZpbGU6QWl4IENvZGVfMC4xOC4xX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjE4LjEKMmRHd0dmUk1jcEFJbWlHelFVOFZDVnFsQkhGUGZEaWxFUjlRanZ2bUtjMzVjbmZ4VExqczVoRlBwKzNTRU55ZStpc2dBdzlJemtYUXBGaG9JaFpWQUE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.18.1/aix-code-0.18.1-x64.msi",
+      "sha256": "277417b610a0bc907cac6f98f27702f51382fd00db1d67e5b349af51ed0133ed"
     }
   }
 }

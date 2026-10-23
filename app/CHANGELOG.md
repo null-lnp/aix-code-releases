@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.18.1 — 2026-10-23
+
+- **Preferred speed is independent of the orchestrator.** Standard, Fast and Ultrafast can be
+  selected even when the current model does not offer that tier. Each agent uses its fastest
+  supported tier at or below the shared preference: e.g. preferred Ultrafast keeps GPT-5.6 Sol
+  on Fast while eligible GPT-6.1 Sol/Astra helpers use Ultrafast. The existing `speed` setting
+  remains shared with aix 2.20.1; no duplicate preference or migration is needed.
+- **Clear actual speed versus preference.** The pill can show “Fast · prefers Ultrafast” without
+  incorrectly calling the capability difference a cooldown. Unsupported tiers no longer show a
+  misleading orchestrator price; helper premiums are identified separately. `/fast` and
+  `/ultrafast` remain available to set or clear the preference on Standard-only models too.
+- Live changes update eligible running helpers without restarting an orchestrator request whose
+  actual tier stays the same. Models without faster tiers stay Standard and explicit provider
+  refusals still use normal fallback/cooldown behavior. Preference picker/badges are desktop-only.
+
 ## v0.18.0 — 2026-10-22
 
 - **Live speed and effort controls.** Standard/Fast/Ultrafast and effort changes affect the
