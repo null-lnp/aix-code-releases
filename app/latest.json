@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.18.1",
-  "notes": "- **Preferred speed is independent of the orchestrator.** Standard, Fast and Ultrafast can be\n  selected even when the current model does not offer that tier. Each agent uses its fastest\n  supported tier at or below the shared preference: e.g. preferred Ultrafast keeps GPT-5.6 Sol\n  on Fast while eligible GPT-6.1 Sol/Astra helpers use Ultrafast. The existing `speed` setting\n  remains shared with aix 2.20.1; no duplicate preference or migration is needed.\n- **Clear actual speed versus preference.** The pill can show “Fast · prefers Ultrafast” without\n  incorrectly calling the capability difference a cooldown. Unsupported tiers no longer show a\n  misleading orchestrator price; helper premiums are identified separately. `/fast` and\n  `/ultrafast` remain available to set or clear the preference on Standard-only models too.\n- Live changes update eligible running helpers without restarting an orchestrator request whose\n  actual tier stays the same. Models without faster tiers stay Standard and explicit provider\n  refusals still use normal fallback/cooldown behavior. Preference picker/badges are desktop-only.",
-  "pub_date": "2026-10-23T10:30:09.168Z",
-  "tag": "app-v0.18.1",
+  "version": "0.19.0",
+  "notes": "- **Subagents notify instead of polling.** `spawn_agent` runs asynchronously by default and\n  returns its task ID immediately. The orchestrator can finish its current turn while helpers\n  work; a completion or failure notification automatically resumes the session. Reports arriving\n  during other work join its next safe model boundary, without interrupting tools or streaming;\n  simultaneous user steering keeps priority and is read in the same next request.\n- **No ten-minute failed waits.** `task_output` now reads a saved report or immediate status.\n  A healthy running agent is not an error, and model guidance explicitly ends the turn instead\n  of repeatedly calling wait/poll tools. Explicit `background: false` retains synchronous runs.\n- **Safe, durable delivery.** Reports are delivered once, remain readable without rerunning work,\n  and are bounded in model context. Only the manager can collect them; helpers cannot consume\n  another agent's completion notification. Cancellation and crashes produce reports too. Stop holds\n  automatic continuation until an explicit new turn; resets reject stale completions. Helper\n  usage is saved even if no follow-up request runs.\n- Goal and peer-goal rounds wait on agent events instead of consuming extra model requests;\n  steering and Stop still work. Headless runs wait for notification-driven summaries before exit.\n  Shared behavior ships in aix 2.21.0; desktop-only adapters show notification notices and resume\n  the correct session without adding a user message or a failed wait cell.",
+  "pub_date": "2026-10-25T13:33:05.644Z",
+  "tag": "app-v0.19.0",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajN0cG9hcFZQcXJIWnYyT3VuWC9HdCtvUG5QdUVhSUEwZ0g4eThHdys0YkpsL0I0eVl5WmZOc0U4RTBjczNXb0kybEZZUFhyV2hGamxJQ3p6R25XeHdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNzUxMjA4CWZpbGU6QWl4IENvZGVfMC4xOC4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE4LjEKa3l2WGtHb2lGK3d5ZVN1U0s2TUFVODFOWEdzL0xHeUdoMWV4RkNnTGJZSzhFUWYza0hIQTlyWEpKUVpyOU9iazIxUWtQY1o3Z0FIZEdQZFNyZ2lQQ1E9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.18.1/aix-code-0.18.1-x64-setup.exe",
-      "sha256": "f966c0e45f33f08f2268f82b9525898fdce8c246fafe96cf627a16f4212287ea"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajFvdDErYXlhNkhFRUkzS2UrcDdtUERqcERkSnI1dkppYVRkZjBiSzdNQStwN0dQK3JET3U4LzRNWG0wY2UvSzgvRmcyVkswSVNDTjNzeSszSTQ1Q2c0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyOTM0ODQyCWZpbGU6QWl4IENvZGVfMC4xOS4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE5LjAKMGJlMmZGK29DMnBFQ3lwQ2xpTFhkeUNkT2ZrZGFJK2pFdHB2WUhQVHZPOEhia0lyVkVvRTVQZ1FPYzdmK3JITml2Y1QvSFJ6OEpCUHNyd05ibm04QWc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.19.0/aix-code-0.19.0-x64-setup.exe",
+      "sha256": "e410318abb78664459f13339b65563aaf6e4a014e0521620424bb790fe4c483d"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajN0cG9hcFZQcXJIWnYyT3VuWC9HdCtvUG5QdUVhSUEwZ0g4eThHdys0YkpsL0I0eVl5WmZOc0U4RTBjczNXb0kybEZZUFhyV2hGamxJQ3p6R25XeHdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNzUxMjA4CWZpbGU6QWl4IENvZGVfMC4xOC4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE4LjEKa3l2WGtHb2lGK3d5ZVN1U0s2TUFVODFOWEdzL0xHeUdoMWV4RkNnTGJZSzhFUWYza0hIQTlyWEpKUVpyOU9iazIxUWtQY1o3Z0FIZEdQZFNyZ2lQQ1E9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.18.1/aix-code-0.18.1-x64-setup.exe",
-      "sha256": "f966c0e45f33f08f2268f82b9525898fdce8c246fafe96cf627a16f4212287ea"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajFvdDErYXlhNkhFRUkzS2UrcDdtUERqcERkSnI1dkppYVRkZjBiSzdNQStwN0dQK3JET3U4LzRNWG0wY2UvSzgvRmcyVkswSVNDTjNzeSszSTQ1Q2c0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyOTM0ODQyCWZpbGU6QWl4IENvZGVfMC4xOS4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE5LjAKMGJlMmZGK29DMnBFQ3lwQ2xpTFhkeUNkT2ZrZGFJK2pFdHB2WUhQVHZPOEhia0lyVkVvRTVQZ1FPYzdmK3JITml2Y1QvSFJ6OEpCUHNyd05ibm04QWc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.19.0/aix-code-0.19.0-x64-setup.exe",
+      "sha256": "e410318abb78664459f13339b65563aaf6e4a014e0521620424bb790fe4c483d"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajNhQTBHNHR1VlBkZmdrMmFEcGJJSjBqMEU4TzZqTmZFall6OGdQQUhyV3BEN2lJYlg0T3dYczlZUXdCL3pldUcwaHZuQzVYcVFFbVg1TGRoUEVrR1E0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNzUxMjA4CWZpbGU6QWl4IENvZGVfMC4xOC4xX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjE4LjEKMmRHd0dmUk1jcEFJbWlHelFVOFZDVnFsQkhGUGZEaWxFUjlRanZ2bUtjMzVjbmZ4VExqczVoRlBwKzNTRU55ZStpc2dBdzlJemtYUXBGaG9JaFpWQUE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.18.1/aix-code-0.18.1-x64.msi",
-      "sha256": "277417b610a0bc907cac6f98f27702f51382fd00db1d67e5b349af51ed0133ed"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajBEdkRpbm1RODNqYjBTMzFEbWRZTVJ0elhOMkh6N2JVTDJvTGVjaE9EYXRBUW9MUjZ4dTBGNW5uREF4RkVHajlROWJoSHhkTzNtbSt1SXBlOVd0VmdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyOTM0ODQyCWZpbGU6QWl4IENvZGVfMC4xOS4wX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjE5LjAKcG9pRS92UTJjQ29BRW51Vzk5WWJzUGNlNjVkR2hpcytEQmpBRDc3TlFWMGJLVitCWTQ1MU1UVEd0aVBHNlFYZUNXNWF1amQzMThFRmNQNFVZdmRrQmc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.19.0/aix-code-0.19.0-x64.msi",
+      "sha256": "f1ad5537ea2c3bb4cd4d29400cbb863f4cb977c6774c7e57809ffe7067b793d1"
     }
   }
 }

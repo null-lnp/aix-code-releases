@@ -1,5 +1,25 @@
 # Changelog
 
+## v0.19.0 — 2026-10-25
+
+- **Subagents notify instead of polling.** `spawn_agent` runs asynchronously by default and
+  returns its task ID immediately. The orchestrator can finish its current turn while helpers
+  work; a completion or failure notification automatically resumes the session. Reports arriving
+  during other work join its next safe model boundary, without interrupting tools or streaming;
+  simultaneous user steering keeps priority and is read in the same next request.
+- **No ten-minute failed waits.** `task_output` now reads a saved report or immediate status.
+  A healthy running agent is not an error, and model guidance explicitly ends the turn instead
+  of repeatedly calling wait/poll tools. Explicit `background: false` retains synchronous runs.
+- **Safe, durable delivery.** Reports are delivered once, remain readable without rerunning work,
+  and are bounded in model context. Only the manager can collect them; helpers cannot consume
+  another agent's completion notification. Cancellation and crashes produce reports too. Stop holds
+  automatic continuation until an explicit new turn; resets reject stale completions. Helper
+  usage is saved even if no follow-up request runs.
+- Goal and peer-goal rounds wait on agent events instead of consuming extra model requests;
+  steering and Stop still work. Headless runs wait for notification-driven summaries before exit.
+  Shared behavior ships in aix 2.21.0; desktop-only adapters show notification notices and resume
+  the correct session without adding a user message or a failed wait cell.
+
 ## v0.18.1 — 2026-10-23
 
 - **Preferred speed is independent of the orchestrator.** Standard, Fast and Ultrafast can be
