@@ -1,5 +1,25 @@
 # Changelog
 
+## v2.21.0 — 2026-10-25
+
+- **Notification-driven subagents.** `spawn_agent` returns a task ID immediately by default.
+  Continue other work, or finish the current turn when only waiting: completion and failure
+  reports arrive automatically and resume an idle session. Active sessions read reports at the
+  next safe model boundary, with simultaneous user steering read first in the same next request.
+  Explicit `background: false` still requests a synchronous report.
+- `task_output` is a nonblocking saved-report/status read. Running agents are not failed tools,
+  and the old ten-minute timeout/poll-again loop is removed. Tool and Ultra guidance instruct
+  the orchestrator to yield rather than poll or execute wait commands. Background peers notify too.
+- Notifications are bounded, scoped to the conversation, and delivered once; reports stay
+  recoverable without rerunning agents. Only the manager can collect reports; helpers cannot
+  consume the manager's notifications. Stop holds automatic continuation, resets reject stale
+  completions, and crashes/cancellation produce interrupted reports. Finished handles are cleaned
+  up and helper usage is persisted even when the main agent remains idle.
+- Goal/peer-goal loops wait on events without spending model rounds; steering and Stop remain
+  responsive. Headless output includes notification-driven follow-ups before exiting.
+- Aix Code 0.19.0 adds desktop-only notification notices and session wakeup adapters around
+  the same core lifecycle. No private Codex code or polling-based wait routine is used.
+
 ## v2.20.1 — 2026-10-23
 
 - **Choose a preferred speed beyond the orchestrator's capabilities.** `/fast` and `/ultrafast`

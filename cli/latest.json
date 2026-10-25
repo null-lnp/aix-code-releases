@@ -1,14 +1,14 @@
 {
   "product": "cli",
-  "version": "2.20.1",
-  "notes": "- **Choose a preferred speed beyond the orchestrator's capabilities.** `/fast` and `/ultrafast`\n  now set a shared preference on any model. Every request still clamps independently: preferred\n  Ultrafast means Fast on GPT-5.6 Sol and Ultrafast on eligible GPT-6.1 Sol/Astra helpers. Existing\n  `speed` settings are preserved, and the preference applies to active helpers as before.\n- The header and status output separate the model's actual tier from a higher preference instead\n  of hiding the preference or calling an unsupported tier “resting.” Only actual provider refusals\n  create cooldowns; model-specific prices apply. A preference change does not restart an active\n  orchestrator request when its effective tier is unchanged.\n- Aix Code 0.18.1 exposes all preference choices with desktop-only actual/preferred badges and\n  pricing hints, including on Standard-only models.",
-  "pub_date": "2026-10-23T10:29:30.814Z",
-  "tag": "cli-v2.20.1",
+  "version": "2.21.0",
+  "notes": "- **Notification-driven subagents.** `spawn_agent` returns a task ID immediately by default.\n  Continue other work, or finish the current turn when only waiting: completion and failure\n  reports arrive automatically and resume an idle session. Active sessions read reports at the\n  next safe model boundary, with simultaneous user steering read first in the same next request.\n  Explicit `background: false` still requests a synchronous report.\n- `task_output` is a nonblocking saved-report/status read. Running agents are not failed tools,\n  and the old ten-minute timeout/poll-again loop is removed. Tool and Ultra guidance instruct\n  the orchestrator to yield rather than poll or execute wait commands. Background peers notify too.\n- Notifications are bounded, scoped to the conversation, and delivered once; reports stay\n  recoverable without rerunning agents. Only the manager can collect reports; helpers cannot\n  consume the manager's notifications. Stop holds automatic continuation, resets reject stale\n  completions, and crashes/cancellation produce interrupted reports. Finished handles are cleaned\n  up and helper usage is persisted even when the main agent remains idle.\n- Goal/peer-goal loops wait on events without spending model rounds; steering and Stop remain\n  responsive. Headless output includes notification-driven follow-ups before exiting.\n- Aix Code 0.19.0 adds desktop-only notification notices and session wakeup adapters around\n  the same core lifecycle. No private Codex code or polling-based wait routine is used.",
+  "pub_date": "2026-10-25T13:32:34.055Z",
+  "tag": "cli-v2.21.0",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajNpRXpTTHBQNFAxS2dzc3V2aGZSL1ZwR2g2M0FadGs2bjFuUUc4eThick9la3kyYUhwMlVGd29QalZqQ3Q0Q2VnQ2pKeng5QTAyTzFQaXVQREcwNEFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNzUxMzcwCWZpbGU6YWl4LTIuMjAuMS13aW5kb3dzLXg4Nl82NC5leGUKNEhMcjFNM0RzbXdBVnpha0Y2OVFOVnExTFpuZnE0bXpRWjBEcWJvd2xaVUhqNkRXT2ZneXdramMvK2V2bjliQjRlMThVSzQ1aFdjd2xWRnNjNkI4QlE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.20.1/aix-2.20.1-windows-x86_64.exe",
-      "sha256": "73b0f61e1e442ac40eb24ae59206a2c217f5a5d9fe87df781f6f9a45c831a6da"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aandPRWFhNGNHWElVbHBFTVcrM1hBTERKaUVsUitEaytPRkZWYzhtMjJyOUhXOVduYU9hZzc3djkzRUR5NjkxUUtLbUlYNmtUem9wR0tQNldYKzlGMEFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyOTM1MTUzCWZpbGU6YWl4LTIuMjEuMC13aW5kb3dzLXg4Nl82NC5leGUKSjRNZ1Bza002ZmxJb1k2bHlrWDEvWThCbWNzWExBQVlSOWJ0ZEppTHJjeE8zSTZKTDc1QlJyQWZ4eExCdHc4ekVETTdUTE1YQUxhZmQ1TGtvNTZYQUE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.21.0/aix-2.21.0-windows-x86_64.exe",
+      "sha256": "58268a109a1b7f03375f3dfc54ca6dfa82ec14cb415652f91fcd050d87c4d939"
     }
   }
 }
