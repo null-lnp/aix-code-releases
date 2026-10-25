@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.19.0",
-  "notes": "- **Subagents notify instead of polling.** `spawn_agent` runs asynchronously by default and\n  returns its task ID immediately. The orchestrator can finish its current turn while helpers\n  work; a completion or failure notification automatically resumes the session. Reports arriving\n  during other work join its next safe model boundary, without interrupting tools or streaming;\n  simultaneous user steering keeps priority and is read in the same next request.\n- **No ten-minute failed waits.** `task_output` now reads a saved report or immediate status.\n  A healthy running agent is not an error, and model guidance explicitly ends the turn instead\n  of repeatedly calling wait/poll tools. Explicit `background: false` retains synchronous runs.\n- **Safe, durable delivery.** Reports are delivered once, remain readable without rerunning work,\n  and are bounded in model context. Only the manager can collect them; helpers cannot consume\n  another agent's completion notification. Cancellation and crashes produce reports too. Stop holds\n  automatic continuation until an explicit new turn; resets reject stale completions. Helper\n  usage is saved even if no follow-up request runs.\n- Goal and peer-goal rounds wait on agent events instead of consuming extra model requests;\n  steering and Stop still work. Headless runs wait for notification-driven summaries before exit.\n  Shared behavior ships in aix 2.21.0; desktop-only adapters show notification notices and resume\n  the correct session without adding a user message or a failed wait cell.",
-  "pub_date": "2026-10-25T13:33:05.644Z",
-  "tag": "app-v0.19.0",
+  "version": "0.19.1",
+  "notes": "- **Rewind targets the selected input, not a live UI counter.** Stable input IDs survive\n  provider/model changes (including GLM 5.3 to GPT-5.6 Sol), reloads, and compaction. Repeated\n  messages have distinct targets; stale or missing targets never fall back to cutting another turn.\n- Thinking/tool-message cleanup keeps the compaction boundary aligned, so changing providers\n  cannot hide later user inputs behind an outdated context-prefix length.\n- **Steered messages keep their own boundaries and attachments.** Inputs recorded alongside tool\n  results are individually visible and rewindable, including older untagged sessions. Rewinding\n  one preserves prior tool results/steers and restores only that input's original images.\n- Live delivery and optimistic bubbles share the canonical input ID, avoiding missing/duplicate\n  messages when a turn finishes during send or reload. Internal agent mail/tool context does not\n  become a user turn. Rewind is serialized against new jobs and automatic agent continuation.\n- Fork, trim, terminal rewind/history, and image lookup use the same shared input boundaries in\n  aix 2.21.1. Desktop target wiring and controls are app-only. Internal IDs are removed from model\n  API payloads; existing session files remain readable and no user files are reverted.",
+  "pub_date": "2026-10-25T16:37:56.576Z",
+  "tag": "app-v0.19.1",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajFvdDErYXlhNkhFRUkzS2UrcDdtUERqcERkSnI1dkppYVRkZjBiSzdNQStwN0dQK3JET3U4LzRNWG0wY2UvSzgvRmcyVkswSVNDTjNzeSszSTQ1Q2c0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyOTM0ODQyCWZpbGU6QWl4IENvZGVfMC4xOS4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE5LjAKMGJlMmZGK29DMnBFQ3lwQ2xpTFhkeUNkT2ZrZGFJK2pFdHB2WUhQVHZPOEhia0lyVkVvRTVQZ1FPYzdmK3JITml2Y1QvSFJ6OEpCUHNyd05ibm04QWc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.19.0/aix-code-0.19.0-x64-setup.exe",
-      "sha256": "e410318abb78664459f13339b65563aaf6e4a014e0521620424bb790fe4c483d"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanl4ZGo3V0d4dlZYTnNxWFR3Y1RXb2dvd2I0ZFdwbWM1dnkxTjdZdGVhNW9vSjlvSVVja0FSZ0kyOVVoaXpEVFdncmhwTjVXRHFFWTFraERXdWs3ekFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyOTQ1OTgyCWZpbGU6QWl4IENvZGVfMC4xOS4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE5LjEKTnp0dEdoTlNDM2tCd1RuODJVa0tPT2RnRFM1Qk5lSTN2aWduS3U3dlFrb3FuYmtVNzdGL043QUpSd2U1Sk5uYmFWRS82dlByVzlZaTRjMmMzSjZWRHc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.19.1/aix-code-0.19.1-x64-setup.exe",
+      "sha256": "65b1ada91cb788c1b20bd4ca12c4c1bd96e522d351378c9a2c4a57c9c94646fa"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajFvdDErYXlhNkhFRUkzS2UrcDdtUERqcERkSnI1dkppYVRkZjBiSzdNQStwN0dQK3JET3U4LzRNWG0wY2UvSzgvRmcyVkswSVNDTjNzeSszSTQ1Q2c0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyOTM0ODQyCWZpbGU6QWl4IENvZGVfMC4xOS4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE5LjAKMGJlMmZGK29DMnBFQ3lwQ2xpTFhkeUNkT2ZrZGFJK2pFdHB2WUhQVHZPOEhia0lyVkVvRTVQZ1FPYzdmK3JITml2Y1QvSFJ6OEpCUHNyd05ibm04QWc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.19.0/aix-code-0.19.0-x64-setup.exe",
-      "sha256": "e410318abb78664459f13339b65563aaf6e4a014e0521620424bb790fe4c483d"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanl4ZGo3V0d4dlZYTnNxWFR3Y1RXb2dvd2I0ZFdwbWM1dnkxTjdZdGVhNW9vSjlvSVVja0FSZ0kyOVVoaXpEVFdncmhwTjVXRHFFWTFraERXdWs3ekFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyOTQ1OTgyCWZpbGU6QWl4IENvZGVfMC4xOS4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE5LjEKTnp0dEdoTlNDM2tCd1RuODJVa0tPT2RnRFM1Qk5lSTN2aWduS3U3dlFrb3FuYmtVNzdGL043QUpSd2U1Sk5uYmFWRS82dlByVzlZaTRjMmMzSjZWRHc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.19.1/aix-code-0.19.1-x64-setup.exe",
+      "sha256": "65b1ada91cb788c1b20bd4ca12c4c1bd96e522d351378c9a2c4a57c9c94646fa"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajBEdkRpbm1RODNqYjBTMzFEbWRZTVJ0elhOMkh6N2JVTDJvTGVjaE9EYXRBUW9MUjZ4dTBGNW5uREF4RkVHajlROWJoSHhkTzNtbSt1SXBlOVd0VmdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyOTM0ODQyCWZpbGU6QWl4IENvZGVfMC4xOS4wX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjE5LjAKcG9pRS92UTJjQ29BRW51Vzk5WWJzUGNlNjVkR2hpcytEQmpBRDc3TlFWMGJLVitCWTQ1MU1UVEd0aVBHNlFYZUNXNWF1amQzMThFRmNQNFVZdmRrQmc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.19.0/aix-code-0.19.0-x64.msi",
-      "sha256": "f1ad5537ea2c3bb4cd4d29400cbb863f4cb977c6774c7e57809ffe7067b793d1"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aaitGTmowV2tMTzRERWZHZnhJeVY5ODg1azBRSVRDeDJMdGZ5K1IwUC9sdm85QjRPQ0p3UHdNUFFkenFJRXVHZ0IvMjQxRU4ybjY4cTNPNHp1LzRad3d3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyOTQ1OTgyCWZpbGU6QWl4IENvZGVfMC4xOS4xX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjE5LjEKcENHdzJGU2JPQXlOTmJqNENIVVhTc2VBc3pkYkpxa2x2UlgxVFJzczJZR204NFR2dzFvbmo1N21wZ25DNFEzb1JnRklmN21VSHh4dThKZklIVUtIQVE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.19.1/aix-code-0.19.1-x64.msi",
+      "sha256": "85e6b29abb97a8a76e2ccfdc980c1fe4a30fcd15fef6004bdd6cb42ab7571dcb"
     }
   }
 }

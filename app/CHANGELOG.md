@@ -1,5 +1,22 @@
 # Changelog
 
+## v0.19.1 — 2026-10-25
+
+- **Rewind targets the selected input, not a live UI counter.** Stable input IDs survive
+  provider/model changes (including GLM 5.3 to GPT-5.6 Sol), reloads, and compaction. Repeated
+  messages have distinct targets; stale or missing targets never fall back to cutting another turn.
+- Thinking/tool-message cleanup keeps the compaction boundary aligned, so changing providers
+  cannot hide later user inputs behind an outdated context-prefix length.
+- **Steered messages keep their own boundaries and attachments.** Inputs recorded alongside tool
+  results are individually visible and rewindable, including older untagged sessions. Rewinding
+  one preserves prior tool results/steers and restores only that input's original images.
+- Live delivery and optimistic bubbles share the canonical input ID, avoiding missing/duplicate
+  messages when a turn finishes during send or reload. Internal agent mail/tool context does not
+  become a user turn. Rewind is serialized against new jobs and automatic agent continuation.
+- Fork, trim, terminal rewind/history, and image lookup use the same shared input boundaries in
+  aix 2.21.1. Desktop target wiring and controls are app-only. Internal IDs are removed from model
+  API payloads; existing session files remain readable and no user files are reverted.
+
 ## v0.19.0 — 2026-10-25
 
 - **Subagents notify instead of polling.** `spawn_agent` runs asynchronously by default and
