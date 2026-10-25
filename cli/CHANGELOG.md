@@ -1,5 +1,22 @@
 # Changelog
 
+## v2.21.1 — 2026-10-25
+
+- **Stable input identities across provider/model switches.** Rewind and fork can resolve a
+  specific saved input rather than relying on a client's turn counter. Existing histories receive
+  deterministic targets, and IDs remain stable through sanitization, reload, and compaction.
+- Keep the compaction boundary aligned when sanitization removes thinking/results or inserts
+  repaired tool results; post-compaction inputs stay visible and rewindable after provider changes.
+- User steers embedded in tool-result messages are counted and rewound individually, preserving
+  earlier results/steers and the selected input's images. Repeated text has distinct identities;
+  stale or ambiguous IDs are rejected without truncating history.
+- `/goto`, `/trim`, forks, image restoration, Esc Esc, transcript rebuild, and input recall share
+  the same logical input boundaries. Internal agent mail and tool-generated context are not user
+  turns. Metadata IDs are stripped from provider payloads and do not change the wire conversation.
+- Aix Code 0.19.1 adds desktop-only stable-target controls, canonical live-input delivery, send/reload
+  reconciliation, and serialized history editing around this shared fix. Rewind changes chat
+  history only; it never reverts workspace files.
+
 ## v2.21.0 — 2026-10-25
 
 - **Notification-driven subagents.** `spawn_agent` returns a task ID immediately by default.
