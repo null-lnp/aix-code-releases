@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.22.1 — 2026-10-28
+
+- **↑ recalls only this conversation's messages.** After `/clear` or `/new`, ↑ still walked the
+  previous conversation's messages; now it starts empty and fills with what you send. Ctrl+R still
+  searches every prompt you've sent (aix's shared history).
+
 ## v2.22.0 — 2026-10-28
 
 - **Ctrl+click opens files in your code editor, at the line.** `file_opener` now defaults to

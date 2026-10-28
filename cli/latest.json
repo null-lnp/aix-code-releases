@@ -1,14 +1,14 @@
 {
   "product": "cli",
-  "version": "2.22.0",
-  "notes": "- **Ctrl+click opens files in your code editor, at the line.** `file_opener` now defaults to\n  opening text files in an installed code editor — VS Code, Cursor, Windsurf or VS Code Insiders,\n  the first one found — at the referenced line and column (through its `--goto`, so the file opens\n  in the running window). Folders open in the file manager; pictures, PDFs and media in their\n  default app. Without an editor, text files open in their default app as before. New value\n  `system` keeps the default app for everything.\n- **More references are recognised:** `path:12-20`, `path#L12-L20` and compiler-style\n  `path(12,4)` open at their first line; paths relative to the repository root work from a\n  subfolder, and `a/` / `b/` diff prefixes are dropped. A colon, full stop or bracket after a path\n  is no longer part of it.\n- **Programs are never run:** a click on an `.exe`, an archive, an installer or an app bundle\n  shows it in the file manager instead.\n- The hover hint says what a click does: **Ctrl+click: Open in VS Code at line 12**, *Show in File\n  Explorer*… `/help` lists Ctrl+click.\n- Fixed: clicking a path on Windows passed explorer.exe a `\\\\?\\` path and reported its exit code 1\n  as a failure; a `code --goto …` command now finds `code.cmd`.\n- Core API: `util::file_links` (`trim_candidate`, `resolve`, `describe`, `open`, `check_opener`,\n  `installed_editors`) and `config::file_opener_for` / `user_file_opener` / `set_user_file_opener`.\n  Aix Code 0.20.0 uses them for its Ctrl/⌘+click file links.",
-  "pub_date": "2026-10-28T04:17:11.415Z",
-  "tag": "cli-v2.22.0",
+  "version": "2.22.1",
+  "notes": "- **↑ recalls only this conversation's messages.** After `/clear` or `/new`, ↑ still walked the\n  previous conversation's messages; now it starts empty and fills with what you send. Ctrl+R still\n  searches every prompt you've sent (aix's shared history).",
+  "pub_date": "2026-10-28T14:06:15.614Z",
+  "tag": "cli-v2.22.1",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajJLRmJYRER1Tm5aUkZJNDJNcEtTVWNjMzN5anpMcnJ5UURxS3I0TnhNRnFxaDNkRGNxK0t5TzN2VHRaSHgvdEdXdDlCaWFNdlJyY1dpaGVQYXFybVE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTYxMDMxCWZpbGU6YWl4LTIuMjIuMC13aW5kb3dzLXg4Nl82NC5leGUKaHAxdGk2QlkxOW5OV2x3dXAvTWM3c0FEWWpkcDl0VHVnVVV1TGtxZzIreDRSNFl2WWpvYVFWYU1HMGs2eDgrRi9XVTN1R0FKKzV6cEw1VlUvMVNNQWc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.22.0/aix-2.22.0-windows-x86_64.exe",
-      "sha256": "6aea9cd877afdc93efcdc0d96350d37b983be8e58a8357dcdab6b758fdba84cd"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aai9vZ3pUdSsvOGk3Sm5Pd2R1RG5PRVZTcDdrV0VwRmc2SzYxc1hmbkZPbUpJOHV1ZkoxUnRTUWZybVdGck1hdEdKYmVuM0diZ1dXeWRRcGVwd0tGZUFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTk2Mzc1CWZpbGU6YWl4LTIuMjIuMS13aW5kb3dzLXg4Nl82NC5leGUKYmRMOTd2aVNLZGRGU1BXMnBLRXhDeENYODFvd2dnVDBkbXFIRUluM3hEM0tldnZiZVVhUmozV0pvSEgxMkZqSEtvSWhZc1VoODJ6SmtCUXRldzFRQWc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.22.1/aix-2.22.1-windows-x86_64.exe",
+      "sha256": "12a1db7c6f6c94ced8563b6f521df282036dd0b9d12b5b417fdd28486a9475af"
     }
   }
 }
