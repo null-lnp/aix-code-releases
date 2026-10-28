@@ -1,5 +1,27 @@
 # Changelog
 
+## v2.22.0 — 2026-10-28
+
+- **Ctrl+click opens files in your code editor, at the line.** `file_opener` now defaults to
+  opening text files in an installed code editor — VS Code, Cursor, Windsurf or VS Code Insiders,
+  the first one found — at the referenced line and column (through its `--goto`, so the file opens
+  in the running window). Folders open in the file manager; pictures, PDFs and media in their
+  default app. Without an editor, text files open in their default app as before. New value
+  `system` keeps the default app for everything.
+- **More references are recognised:** `path:12-20`, `path#L12-L20` and compiler-style
+  `path(12,4)` open at their first line; paths relative to the repository root work from a
+  subfolder, and `a/` / `b/` diff prefixes are dropped. A colon, full stop or bracket after a path
+  is no longer part of it.
+- **Programs are never run:** a click on an `.exe`, an archive, an installer or an app bundle
+  shows it in the file manager instead.
+- The hover hint says what a click does: **Ctrl+click: Open in VS Code at line 12**, *Show in File
+  Explorer*… `/help` lists Ctrl+click.
+- Fixed: clicking a path on Windows passed explorer.exe a `\\?\` path and reported its exit code 1
+  as a failure; a `code --goto …` command now finds `code.cmd`.
+- Core API: `util::file_links` (`trim_candidate`, `resolve`, `describe`, `open`, `check_opener`,
+  `installed_editors`) and `config::file_opener_for` / `user_file_opener` / `set_user_file_opener`.
+  Aix Code 0.20.0 uses them for its Ctrl/⌘+click file links.
+
 ## v2.21.1 — 2026-10-25
 
 - **Stable input identities across provider/model switches.** Rewind and fork can resolve a
