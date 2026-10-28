@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.19.1",
-  "notes": "- **Rewind targets the selected input, not a live UI counter.** Stable input IDs survive\n  provider/model changes (including GLM 5.3 to GPT-5.6 Sol), reloads, and compaction. Repeated\n  messages have distinct targets; stale or missing targets never fall back to cutting another turn.\n- Thinking/tool-message cleanup keeps the compaction boundary aligned, so changing providers\n  cannot hide later user inputs behind an outdated context-prefix length.\n- **Steered messages keep their own boundaries and attachments.** Inputs recorded alongside tool\n  results are individually visible and rewindable, including older untagged sessions. Rewinding\n  one preserves prior tool results/steers and restores only that input's original images.\n- Live delivery and optimistic bubbles share the canonical input ID, avoiding missing/duplicate\n  messages when a turn finishes during send or reload. Internal agent mail/tool context does not\n  become a user turn. Rewind is serialized against new jobs and automatic agent continuation.\n- Fork, trim, terminal rewind/history, and image lookup use the same shared input boundaries in\n  aix 2.21.1. Desktop target wiring and controls are app-only. Internal IDs are removed from model\n  API payloads; existing session files remain readable and no user files are reverted.",
-  "pub_date": "2026-10-25T16:37:56.576Z",
-  "tag": "app-v0.19.1",
+  "version": "0.20.0",
+  "notes": "- **Ctrl+click a file path to open it** (⌘+click on macOS; aix v2.22.0). Anywhere in a session:\n  paths in replies, inline code like `docs/plan.md:1`, GitHub-style `src/a.rs#L12`, a tool step's\n  file, a diff's file name or any of its lines, the Changes pane and the Terminal tab's output.\n  - Hold Ctrl and the path under the pointer is underlined, with a tooltip saying what a click\n    does — *Open in VS Code at line 12*, *Open in File Explorer*, *Show in File Explorer*…\n  - By default text files open in your installed code editor (VS Code, Cursor, Windsurf or VS Code\n    Insiders) at the line; folders in the file manager; pictures and PDFs in their own app.\n    Programs are never run: they're shown in the file manager.\n  - Resting on inline code that names a file hints at Ctrl+click. Paths that don't exist aren't\n    links; markdown links to files open the same way on a plain click.\n- **Settings → General → Open file links with**: Automatic, a specific editor, Default app, a\n  custom command (`code --goto \"{path}:{line}:{column}\"`) or Off. It's the same `file_opener`\n  setting aix uses in a terminal.\n- The help dialog lists Ctrl/⌘+click.",
+  "pub_date": "2026-10-28T04:48:43.508Z",
+  "tag": "app-v0.20.0",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanl4ZGo3V0d4dlZYTnNxWFR3Y1RXb2dvd2I0ZFdwbWM1dnkxTjdZdGVhNW9vSjlvSVVja0FSZ0kyOVVoaXpEVFdncmhwTjVXRHFFWTFraERXdWs3ekFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyOTQ1OTgyCWZpbGU6QWl4IENvZGVfMC4xOS4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE5LjEKTnp0dEdoTlNDM2tCd1RuODJVa0tPT2RnRFM1Qk5lSTN2aWduS3U3dlFrb3FuYmtVNzdGL043QUpSd2U1Sk5uYmFWRS82dlByVzlZaTRjMmMzSjZWRHc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.19.1/aix-code-0.19.1-x64-setup.exe",
-      "sha256": "65b1ada91cb788c1b20bd4ca12c4c1bd96e522d351378c9a2c4a57c9c94646fa"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajFSZGdNWDdGWE9VQTlYcEY5Tld4MFo2U0dYYk9zN1dYQlcrMlB5K1cxTG51b1lWUStyOEFoL0VZODNzNFlTZVRTbVZwVmNhQUliWDVOejBwSTY0ZGcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTYyOTEzCWZpbGU6QWl4IENvZGVfMC4yMC4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIwLjAKakhjTncyNGQ0STg1UTNLZjcvcEFSYklKUTFJTEZsT0RJQWNxQ0trTWo4THArR2JNR01tZkEzd29OM05KYUNCL2p5eHZObmNEVHV6NjJseDB4WmEzREE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.20.0/aix-code-0.20.0-x64-setup.exe",
+      "sha256": "a63864145b991c0b28cb67df8c32dd042705f7d0c56f42ba06c898793a4dca01"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanl4ZGo3V0d4dlZYTnNxWFR3Y1RXb2dvd2I0ZFdwbWM1dnkxTjdZdGVhNW9vSjlvSVVja0FSZ0kyOVVoaXpEVFdncmhwTjVXRHFFWTFraERXdWs3ekFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyOTQ1OTgyCWZpbGU6QWl4IENvZGVfMC4xOS4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjE5LjEKTnp0dEdoTlNDM2tCd1RuODJVa0tPT2RnRFM1Qk5lSTN2aWduS3U3dlFrb3FuYmtVNzdGL043QUpSd2U1Sk5uYmFWRS82dlByVzlZaTRjMmMzSjZWRHc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.19.1/aix-code-0.19.1-x64-setup.exe",
-      "sha256": "65b1ada91cb788c1b20bd4ca12c4c1bd96e522d351378c9a2c4a57c9c94646fa"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajFSZGdNWDdGWE9VQTlYcEY5Tld4MFo2U0dYYk9zN1dYQlcrMlB5K1cxTG51b1lWUStyOEFoL0VZODNzNFlTZVRTbVZwVmNhQUliWDVOejBwSTY0ZGcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTYyOTEzCWZpbGU6QWl4IENvZGVfMC4yMC4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIwLjAKakhjTncyNGQ0STg1UTNLZjcvcEFSYklKUTFJTEZsT0RJQWNxQ0trTWo4THArR2JNR01tZkEzd29OM05KYUNCL2p5eHZObmNEVHV6NjJseDB4WmEzREE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.20.0/aix-code-0.20.0-x64-setup.exe",
+      "sha256": "a63864145b991c0b28cb67df8c32dd042705f7d0c56f42ba06c898793a4dca01"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aaitGTmowV2tMTzRERWZHZnhJeVY5ODg1azBRSVRDeDJMdGZ5K1IwUC9sdm85QjRPQ0p3UHdNUFFkenFJRXVHZ0IvMjQxRU4ybjY4cTNPNHp1LzRad3d3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyOTQ1OTgyCWZpbGU6QWl4IENvZGVfMC4xOS4xX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjE5LjEKcENHdzJGU2JPQXlOTmJqNENIVVhTc2VBc3pkYkpxa2x2UlgxVFJzczJZR204NFR2dzFvbmo1N21wZ25DNFEzb1JnRklmN21VSHh4dThKZklIVUtIQVE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.19.1/aix-code-0.19.1-x64.msi",
-      "sha256": "85e6b29abb97a8a76e2ccfdc980c1fe4a30fcd15fef6004bdd6cb42ab7571dcb"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajBySU9MYmwwTElJZ25OSEZFUGRrMlF5Rzc3VVdGWTN3blZzUjVwcjZZNWFkOFM0U0dOU0F1VmRHTm5pMi9hN0ZtNXpTa21LRk1pL0ZySGZ5NFlEb3dRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTYyOTEzCWZpbGU6QWl4IENvZGVfMC4yMC4wX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjIwLjAKSkp4QTE5eHAvWjhMeWVWWCtnQTBNMnFEdmdGMkEyMDlWdEJlTWNjR2NLR2tjVmhRd1RNa3lrK1Jrbnh3TjVCb0dIR1hVRlUvdVJwVEVVRjRTdSs0Qmc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.20.0/aix-code-0.20.0-x64.msi",
+      "sha256": "66efdbfd7c990066f1227741dd658e4e353a696cfacf756dfb5328d11da41e43"
     }
   }
 }

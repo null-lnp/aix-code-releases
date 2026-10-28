@@ -1,5 +1,22 @@
 # Changelog
 
+## v0.20.0 — 2026-10-28
+
+- **Ctrl+click a file path to open it** (⌘+click on macOS; aix v2.22.0). Anywhere in a session:
+  paths in replies, inline code like `docs/plan.md:1`, GitHub-style `src/a.rs#L12`, a tool step's
+  file, a diff's file name or any of its lines, the Changes pane and the Terminal tab's output.
+  - Hold Ctrl and the path under the pointer is underlined, with a tooltip saying what a click
+    does — *Open in VS Code at line 12*, *Open in File Explorer*, *Show in File Explorer*…
+  - By default text files open in your installed code editor (VS Code, Cursor, Windsurf or VS Code
+    Insiders) at the line; folders in the file manager; pictures and PDFs in their own app.
+    Programs are never run: they're shown in the file manager.
+  - Resting on inline code that names a file hints at Ctrl+click. Paths that don't exist aren't
+    links; markdown links to files open the same way on a plain click.
+- **Settings → General → Open file links with**: Automatic, a specific editor, Default app, a
+  custom command (`code --goto "{path}:{line}:{column}"`) or Off. It's the same `file_opener`
+  setting aix uses in a terminal.
+- The help dialog lists Ctrl/⌘+click.
+
 ## v0.19.1 — 2026-10-25
 
 - **Rewind targets the selected input, not a live UI counter.** Stable input IDs survive
