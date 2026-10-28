@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.20.1 — 2026-10-28
+
+- **↑ in the message box recalls only this session's messages.** It used to continue into every
+  prompt sent anywhere in Aix, so other sessions' messages came up — and in a new session they
+  were all there was. Now ↑ walks this session's own messages, newest first, and stops at the
+  oldest; the start page recalls nothing. The whole session counts, including earlier messages not
+  loaded on screen yet and turns before a compaction. Predictive typing still learns from all your
+  prompts. (aix v2.22.1 fixes the same after `/clear` and `/new` in the terminal.)
+
 ## v0.20.0 — 2026-10-28
 
 - **Ctrl+click a file path to open it** (⌘+click on macOS; aix v2.22.0). Anywhere in a session:

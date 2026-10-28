@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.20.0",
-  "notes": "- **Ctrl+click a file path to open it** (⌘+click on macOS; aix v2.22.0). Anywhere in a session:\n  paths in replies, inline code like `docs/plan.md:1`, GitHub-style `src/a.rs#L12`, a tool step's\n  file, a diff's file name or any of its lines, the Changes pane and the Terminal tab's output.\n  - Hold Ctrl and the path under the pointer is underlined, with a tooltip saying what a click\n    does — *Open in VS Code at line 12*, *Open in File Explorer*, *Show in File Explorer*…\n  - By default text files open in your installed code editor (VS Code, Cursor, Windsurf or VS Code\n    Insiders) at the line; folders in the file manager; pictures and PDFs in their own app.\n    Programs are never run: they're shown in the file manager.\n  - Resting on inline code that names a file hints at Ctrl+click. Paths that don't exist aren't\n    links; markdown links to files open the same way on a plain click.\n- **Settings → General → Open file links with**: Automatic, a specific editor, Default app, a\n  custom command (`code --goto \"{path}:{line}:{column}\"`) or Off. It's the same `file_opener`\n  setting aix uses in a terminal.\n- The help dialog lists Ctrl/⌘+click.",
-  "pub_date": "2026-10-28T04:48:43.508Z",
-  "tag": "app-v0.20.0",
+  "version": "0.20.1",
+  "notes": "- **↑ in the message box recalls only this session's messages.** It used to continue into every\n  prompt sent anywhere in Aix, so other sessions' messages came up — and in a new session they\n  were all there was. Now ↑ walks this session's own messages, newest first, and stops at the\n  oldest; the start page recalls nothing. The whole session counts, including earlier messages not\n  loaded on screen yet and turns before a compaction. Predictive typing still learns from all your\n  prompts. (aix v2.22.1 fixes the same after `/clear` and `/new` in the terminal.)",
+  "pub_date": "2026-10-28T14:18:14.962Z",
+  "tag": "app-v0.20.1",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajFSZGdNWDdGWE9VQTlYcEY5Tld4MFo2U0dYYk9zN1dYQlcrMlB5K1cxTG51b1lWUStyOEFoL0VZODNzNFlTZVRTbVZwVmNhQUliWDVOejBwSTY0ZGcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTYyOTEzCWZpbGU6QWl4IENvZGVfMC4yMC4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIwLjAKakhjTncyNGQ0STg1UTNLZjcvcEFSYklKUTFJTEZsT0RJQWNxQ0trTWo4THArR2JNR01tZkEzd29OM05KYUNCL2p5eHZObmNEVHV6NjJseDB4WmEzREE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.20.0/aix-code-0.20.0-x64-setup.exe",
-      "sha256": "a63864145b991c0b28cb67df8c32dd042705f7d0c56f42ba06c898793a4dca01"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajV5S1JtQXFYSUhUZms3eFZGd0dpQkhEYkJUdmFwSXNEbjJzRGhpaDB5YXR5TlkrK24vMU1Cd1loUXIrOE96d2ZZUGtGRzZiNTArRlhYc3plTVZNcWd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTk3MDgzCWZpbGU6QWl4IENvZGVfMC4yMC4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIwLjEKbWhUamNJVnFGRTNrbDN6OXhRdFVnY0dpaXZiT2QyQUFJK243QjVxamRqeFA3Um00MHJIbTNjVUtpRHp6NXBXTTc1ZEcreHA4Z1J0Wm5VaU5UM0IyQ3c9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.20.1/aix-code-0.20.1-x64-setup.exe",
+      "sha256": "4825d32bf0ae474f2ff9baa92b61253e652030458d88098f7e2f8d28aa540ad7"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajFSZGdNWDdGWE9VQTlYcEY5Tld4MFo2U0dYYk9zN1dYQlcrMlB5K1cxTG51b1lWUStyOEFoL0VZODNzNFlTZVRTbVZwVmNhQUliWDVOejBwSTY0ZGcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTYyOTEzCWZpbGU6QWl4IENvZGVfMC4yMC4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIwLjAKakhjTncyNGQ0STg1UTNLZjcvcEFSYklKUTFJTEZsT0RJQWNxQ0trTWo4THArR2JNR01tZkEzd29OM05KYUNCL2p5eHZObmNEVHV6NjJseDB4WmEzREE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.20.0/aix-code-0.20.0-x64-setup.exe",
-      "sha256": "a63864145b991c0b28cb67df8c32dd042705f7d0c56f42ba06c898793a4dca01"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajV5S1JtQXFYSUhUZms3eFZGd0dpQkhEYkJUdmFwSXNEbjJzRGhpaDB5YXR5TlkrK24vMU1Cd1loUXIrOE96d2ZZUGtGRzZiNTArRlhYc3plTVZNcWd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTk3MDgzCWZpbGU6QWl4IENvZGVfMC4yMC4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIwLjEKbWhUamNJVnFGRTNrbDN6OXhRdFVnY0dpaXZiT2QyQUFJK243QjVxamRqeFA3Um00MHJIbTNjVUtpRHp6NXBXTTc1ZEcreHA4Z1J0Wm5VaU5UM0IyQ3c9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.20.1/aix-code-0.20.1-x64-setup.exe",
+      "sha256": "4825d32bf0ae474f2ff9baa92b61253e652030458d88098f7e2f8d28aa540ad7"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajBySU9MYmwwTElJZ25OSEZFUGRrMlF5Rzc3VVdGWTN3blZzUjVwcjZZNWFkOFM0U0dOU0F1VmRHTm5pMi9hN0ZtNXpTa21LRk1pL0ZySGZ5NFlEb3dRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTYyOTEzCWZpbGU6QWl4IENvZGVfMC4yMC4wX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjIwLjAKSkp4QTE5eHAvWjhMeWVWWCtnQTBNMnFEdmdGMkEyMDlWdEJlTWNjR2NLR2tjVmhRd1RNa3lrK1Jrbnh3TjVCb0dIR1hVRlUvdVJwVEVVRjRTdSs0Qmc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.20.0/aix-code-0.20.0-x64.msi",
-      "sha256": "66efdbfd7c990066f1227741dd658e4e353a696cfacf756dfb5328d11da41e43"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanhBeEhnM2pQZENIcjlBN2lkdHprQXBOYUdUM0N4RVdoQjYweEx2aGs5RUUrV2VxMTFSQVE4cDhGS3pKOUdOWmRMSDNBVVhaZVNDNXBPWUFDaUh4VFFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTk3MDgzCWZpbGU6QWl4IENvZGVfMC4yMC4xX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjIwLjEKcjZUZnF6T3I4cXpXSEhtZTYxTVkxb0xnQjR2VG1Ed3FDWjdGZG1odzdQUHUrMnRodUlxOExJc3djc0NXNVRMUjNkZCt5di9HMHZEWllCY1Y4RngwRHc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.20.1/aix-code-0.20.1-x64.msi",
+      "sha256": "c1cda3e0853d56b7e8807db3090dcaf2a69879574389930971821812f710b132"
     }
   }
 }
