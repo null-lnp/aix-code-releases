@@ -1,5 +1,23 @@
 # Changelog
 
+## v2.23.0 — 2026-10-29
+
+- **Predictive typing suggests far more often.** History used to complete a draft only when it
+  started word for word like an earlier prompt. Now, when no prompt starts that way, the phrase
+  you're typing is completed from inside earlier prompts: "can you add regression te" picks up
+  "…regression tests for the parser" and stops at the end of that clause. Up to 400 earlier
+  prompts are searched (this conversation's first).
+- **The free local model works while you type.** Its server used to start on the first suggestion
+  and get killed by the next keystroke, so it never came up while you kept typing; it now starts
+  on its own, as soon as aix starts or you switch to it, and stays loaded for 10 idle minutes
+  instead of 2. A suggestion waits for the previous one instead of being dropped, and a failed
+  start is retried after a minute instead of at every keystroke.
+- **Local-model suggestions are kept more often:** the model no longer has to repeat your draft
+  exactly — different case or spacing, or only the draft's last words rewritten, still works. Its
+  prompt is shorter and it gets 10 s instead of 4 for a first answer. When the model has nothing,
+  history's phrase completion still can.
+- Core API: `prediction::from_phrases`, `prediction::warm`.
+
 ## v2.22.1 — 2026-10-28
 
 - **↑ recalls only this conversation's messages.** After `/clear` or `/new`, ↑ still walked the

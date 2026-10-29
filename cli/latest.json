@@ -1,14 +1,14 @@
 {
   "product": "cli",
-  "version": "2.22.1",
-  "notes": "- **↑ recalls only this conversation's messages.** After `/clear` or `/new`, ↑ still walked the\n  previous conversation's messages; now it starts empty and fills with what you send. Ctrl+R still\n  searches every prompt you've sent (aix's shared history).",
-  "pub_date": "2026-10-28T14:06:15.614Z",
-  "tag": "cli-v2.22.1",
+  "version": "2.23.0",
+  "notes": "- **Predictive typing suggests far more often.** History used to complete a draft only when it\n  started word for word like an earlier prompt. Now, when no prompt starts that way, the phrase\n  you're typing is completed from inside earlier prompts: \"can you add regression te\" picks up\n  \"…regression tests for the parser\" and stops at the end of that clause. Up to 400 earlier\n  prompts are searched (this conversation's first).\n- **The free local model works while you type.** Its server used to start on the first suggestion\n  and get killed by the next keystroke, so it never came up while you kept typing; it now starts\n  on its own, as soon as aix starts or you switch to it, and stays loaded for 10 idle minutes\n  instead of 2. A suggestion waits for the previous one instead of being dropped, and a failed\n  start is retried after a minute instead of at every keystroke.\n- **Local-model suggestions are kept more often:** the model no longer has to repeat your draft\n  exactly — different case or spacing, or only the draft's last words rewritten, still works. Its\n  prompt is shorter and it gets 10 s instead of 4 for a first answer. When the model has nothing,\n  history's phrase completion still can.\n- Core API: `prediction::from_phrases`, `prediction::warm`.",
+  "pub_date": "2026-10-29T22:42:54.386Z",
+  "tag": "cli-v2.23.0",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aai9vZ3pUdSsvOGk3Sm5Pd2R1RG5PRVZTcDdrV0VwRmc2SzYxc1hmbkZPbUpJOHV1ZkoxUnRTUWZybVdGck1hdEdKYmVuM0diZ1dXeWRRcGVwd0tGZUFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTk2Mzc1CWZpbGU6YWl4LTIuMjIuMS13aW5kb3dzLXg4Nl82NC5leGUKYmRMOTd2aVNLZGRGU1BXMnBLRXhDeENYODFvd2dnVDBkbXFIRUluM3hEM0tldnZiZVVhUmozV0pvSEgxMkZqSEtvSWhZc1VoODJ6SmtCUXRldzFRQWc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.22.1/aix-2.22.1-windows-x86_64.exe",
-      "sha256": "12a1db7c6f6c94ced8563b6f521df282036dd0b9d12b5b417fdd28486a9475af"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajB3dEtvM08yKzlqbjQxWFFMcnRsSzN1a005OHRMRHYxZlRrS0lKbXcvRGdsNkt5QzdxbnZaSXpuS0k0YlZ6ZHNVTm9vTzE5Qm5CVXlvSWpCTnRQcUFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMzEzNzc0CWZpbGU6YWl4LTIuMjMuMC13aW5kb3dzLXg4Nl82NC5leGUKODcrZlVROWxBanlsUDcvVU9EdDBJc1h2b25xYmp3dEZycHhQUXIvZUt3Wk5oVXpPVTh1M0FRZnNKeEZDMlR5RXVEZy9aRnllcUhuenh1TE9EMm1PQUE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.23.0/aix-2.23.0-windows-x86_64.exe",
+      "sha256": "bff8b9343842a99803de355496f4176cadc7042c33f9fa07fc05e7cc61552993"
     }
   }
 }
