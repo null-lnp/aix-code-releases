@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.21.0 — 2026-10-29
+
+- **Predictive typing suggests far more often** (aix v2.23.0). When no earlier prompt starts like
+  your draft, the phrase you're typing is completed from inside earlier prompts ("can you add
+  regression te" → "…sts for the parser"), up to the end of that clause; 300 earlier prompts are
+  searched, this session's first.
+- **Suggestions no longer vanish at random:** they were hidden whenever WebView2 reported the
+  window as not focused, which it sometimes does while you type. Only a hidden window stops them
+  now.
+- **The free local model is ready when you start typing:** it starts loading as soon as the
+  message box is focused, survives you typing on while it loads, and stays loaded for 10 idle
+  minutes. Its suggestions are kept even when it doesn't repeat your draft exactly.
+
 ## v0.20.1 — 2026-10-28
 
 - **↑ in the message box recalls only this session's messages.** It used to continue into every

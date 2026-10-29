@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.20.1",
-  "notes": "- **↑ in the message box recalls only this session's messages.** It used to continue into every\n  prompt sent anywhere in Aix, so other sessions' messages came up — and in a new session they\n  were all there was. Now ↑ walks this session's own messages, newest first, and stops at the\n  oldest; the start page recalls nothing. The whole session counts, including earlier messages not\n  loaded on screen yet and turns before a compaction. Predictive typing still learns from all your\n  prompts. (aix v2.22.1 fixes the same after `/clear` and `/new` in the terminal.)",
-  "pub_date": "2026-10-28T14:18:14.962Z",
-  "tag": "app-v0.20.1",
+  "version": "0.21.0",
+  "notes": "- **Predictive typing suggests far more often** (aix v2.23.0). When no earlier prompt starts like\n  your draft, the phrase you're typing is completed from inside earlier prompts (\"can you add\n  regression te\" → \"…sts for the parser\"), up to the end of that clause; 300 earlier prompts are\n  searched, this session's first.\n- **Suggestions no longer vanish at random:** they were hidden whenever WebView2 reported the\n  window as not focused, which it sometimes does while you type. Only a hidden window stops them\n  now.\n- **The free local model is ready when you start typing:** it starts loading as soon as the\n  message box is focused, survives you typing on while it loads, and stays loaded for 10 idle\n  minutes. Its suggestions are kept even when it doesn't repeat your draft exactly.",
+  "pub_date": "2026-10-29T22:52:27.208Z",
+  "tag": "app-v0.21.0",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajV5S1JtQXFYSUhUZms3eFZGd0dpQkhEYkJUdmFwSXNEbjJzRGhpaDB5YXR5TlkrK24vMU1Cd1loUXIrOE96d2ZZUGtGRzZiNTArRlhYc3plTVZNcWd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTk3MDgzCWZpbGU6QWl4IENvZGVfMC4yMC4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIwLjEKbWhUamNJVnFGRTNrbDN6OXhRdFVnY0dpaXZiT2QyQUFJK243QjVxamRqeFA3Um00MHJIbTNjVUtpRHp6NXBXTTc1ZEcreHA4Z1J0Wm5VaU5UM0IyQ3c9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.20.1/aix-code-0.20.1-x64-setup.exe",
-      "sha256": "4825d32bf0ae474f2ff9baa92b61253e652030458d88098f7e2f8d28aa540ad7"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajZYOTMvblNsLzZHdXVsN28wUG9yNWhUQkQ3WDF2RW1sdFlibDhhdm5JbUhNVzhQN1hDRlVSckZIa0FxcGlCRmFVVGttQmdmQjgwMWxYY2NmQXRvcXdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMzE0MzM3CWZpbGU6QWl4IENvZGVfMC4yMS4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIxLjAKNkVIQVVuL0t2K3Jpb0lHQnI4anVibmRsWTFlOERiSDhacE5pM0lMay84VG5NcWVWcmdDQno1S1F4WmIxbkQ5T0xGcWgzcEdKekl2ZnQrV2VGdTVjQWc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.21.0/aix-code-0.21.0-x64-setup.exe",
+      "sha256": "c7892e8af3cddec72e0c517fd203ebb173b4c234a9eb4fe97639986ad0b6e3e2"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajV5S1JtQXFYSUhUZms3eFZGd0dpQkhEYkJUdmFwSXNEbjJzRGhpaDB5YXR5TlkrK24vMU1Cd1loUXIrOE96d2ZZUGtGRzZiNTArRlhYc3plTVZNcWd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTk3MDgzCWZpbGU6QWl4IENvZGVfMC4yMC4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIwLjEKbWhUamNJVnFGRTNrbDN6OXhRdFVnY0dpaXZiT2QyQUFJK243QjVxamRqeFA3Um00MHJIbTNjVUtpRHp6NXBXTTc1ZEcreHA4Z1J0Wm5VaU5UM0IyQ3c9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.20.1/aix-code-0.20.1-x64-setup.exe",
-      "sha256": "4825d32bf0ae474f2ff9baa92b61253e652030458d88098f7e2f8d28aa540ad7"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajZYOTMvblNsLzZHdXVsN28wUG9yNWhUQkQ3WDF2RW1sdFlibDhhdm5JbUhNVzhQN1hDRlVSckZIa0FxcGlCRmFVVGttQmdmQjgwMWxYY2NmQXRvcXdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMzE0MzM3CWZpbGU6QWl4IENvZGVfMC4yMS4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIxLjAKNkVIQVVuL0t2K3Jpb0lHQnI4anVibmRsWTFlOERiSDhacE5pM0lMay84VG5NcWVWcmdDQno1S1F4WmIxbkQ5T0xGcWgzcEdKekl2ZnQrV2VGdTVjQWc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.21.0/aix-code-0.21.0-x64-setup.exe",
+      "sha256": "c7892e8af3cddec72e0c517fd203ebb173b4c234a9eb4fe97639986ad0b6e3e2"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanhBeEhnM2pQZENIcjlBN2lkdHprQXBOYUdUM0N4RVdoQjYweEx2aGs5RUUrV2VxMTFSQVE4cDhGS3pKOUdOWmRMSDNBVVhaZVNDNXBPWUFDaUh4VFFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTk3MDgzCWZpbGU6QWl4IENvZGVfMC4yMC4xX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjIwLjEKcjZUZnF6T3I4cXpXSEhtZTYxTVkxb0xnQjR2VG1Ed3FDWjdGZG1odzdQUHUrMnRodUlxOExJc3djc0NXNVRMUjNkZCt5di9HMHZEWllCY1Y4RngwRHc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.20.1/aix-code-0.20.1-x64.msi",
-      "sha256": "c1cda3e0853d56b7e8807db3090dcaf2a69879574389930971821812f710b132"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajZYUDdqdEI4UmZ2ZkY5L0tSQXdLUXhzRmhhZzE5WGttYzRPSndIT1FjTzRpNmkrMkFxakZ1bCtGa29HVENBVlc2ZFJ2aU8vd1FkZmlhSnMwcTI5bkFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMzE0MzM3CWZpbGU6QWl4IENvZGVfMC4yMS4wX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjIxLjAKL1VqNmp4bE5jcis1RUhxenFIK1pGYWJtVCtpRVRLT1FLLzF2cHM0U3RHK1llaHRLRUxwbFU0NHNnYkIrUlRNZS9hbmVjbGsrOEJ3WHRwbld3R3NrQXc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.21.0/aix-code-0.21.0-x64.msi",
+      "sha256": "a2f9a402a3c6556fc6aff8325952c61d4889d1796f783a6101a27fd87c80c796"
     }
   }
 }
