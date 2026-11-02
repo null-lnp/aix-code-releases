@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.21.1 — 2026-11-02
+
+- **Animations play on every PC again.** On PCs where Windows asks for less motion (*Animation
+  effects* off under Accessibility → Visual effects, *Adjust for best performance*, many Remote
+  Desktop and VM sessions), the default Animations setting (System) turned off almost everything:
+  Axo on the composer stood frozen, the home code background stopped, and interface transitions
+  and effects never played. Only the office manager, which still faded in at its desk, seemed to
+  work. System now keeps Axo, the agents, the office, the code background and the interface
+  animated in that case. It leaves out only what sweeps, shakes or flashes: the office camera's
+  intro swoop and idle drift, the effort card's shake and thumb jitter, and lightning and neon
+  flicker. **Reduced** (Settings → General → Animations) still makes everything stand still, and
+  **Full** plays everything. The setting now says when your system is asking for less motion.
+  Desktop only: the terminal app doesn't read the OS motion setting, so no terminal counterpart
+  applies.
+
 ## v0.21.0 — 2026-10-29
 
 - **Predictive typing suggests far more often** (aix v2.23.0). When no earlier prompt starts like

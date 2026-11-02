@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.21.0",
-  "notes": "- **Predictive typing suggests far more often** (aix v2.23.0). When no earlier prompt starts like\n  your draft, the phrase you're typing is completed from inside earlier prompts (\"can you add\n  regression te\" → \"…sts for the parser\"), up to the end of that clause; 300 earlier prompts are\n  searched, this session's first.\n- **Suggestions no longer vanish at random:** they were hidden whenever WebView2 reported the\n  window as not focused, which it sometimes does while you type. Only a hidden window stops them\n  now.\n- **The free local model is ready when you start typing:** it starts loading as soon as the\n  message box is focused, survives you typing on while it loads, and stays loaded for 10 idle\n  minutes. Its suggestions are kept even when it doesn't repeat your draft exactly.",
-  "pub_date": "2026-10-29T22:52:27.208Z",
-  "tag": "app-v0.21.0",
+  "version": "0.21.1",
+  "notes": "- **Animations play on every PC again.** On PCs where Windows asks for less motion (*Animation\n  effects* off under Accessibility → Visual effects, *Adjust for best performance*, many Remote\n  Desktop and VM sessions), the default Animations setting (System) turned off almost everything:\n  Axo on the composer stood frozen, the home code background stopped, and interface transitions\n  and effects never played. Only the office manager, which still faded in at its desk, seemed to\n  work. System now keeps Axo, the agents, the office, the code background and the interface\n  animated in that case. It leaves out only what sweeps, shakes or flashes: the office camera's\n  intro swoop and idle drift, the effort card's shake and thumb jitter, and lightning and neon\n  flicker. **Reduced** (Settings → General → Animations) still makes everything stand still, and\n  **Full** plays everything. The setting now says when your system is asking for less motion.\n  Desktop only: the terminal app doesn't read the OS motion setting, so no terminal counterpart\n  applies.",
+  "pub_date": "2026-11-02T19:13:54.351Z",
+  "tag": "app-v0.21.1",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajZYOTMvblNsLzZHdXVsN28wUG9yNWhUQkQ3WDF2RW1sdFlibDhhdm5JbUhNVzhQN1hDRlVSckZIa0FxcGlCRmFVVGttQmdmQjgwMWxYY2NmQXRvcXdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMzE0MzM3CWZpbGU6QWl4IENvZGVfMC4yMS4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIxLjAKNkVIQVVuL0t2K3Jpb0lHQnI4anVibmRsWTFlOERiSDhacE5pM0lMay84VG5NcWVWcmdDQno1S1F4WmIxbkQ5T0xGcWgzcEdKekl2ZnQrV2VGdTVjQWc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.21.0/aix-code-0.21.0-x64-setup.exe",
-      "sha256": "c7892e8af3cddec72e0c517fd203ebb173b4c234a9eb4fe97639986ad0b6e3e2"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajNuc1ZubHJsTk9JbFc0YVF2TnBJUmF6d1Ewak9jUGw4U3FuL2pENE9rUWxXeVVramJNUndqWHM5RzgvbEZpSVlVUEprNkI2YUlJamlsS0hGS09tdUFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNjQ2ODA3CWZpbGU6QWl4IENvZGVfMC4yMS4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIxLjEKR3ZiWXk5ZTNidHg0K3RBa3ZaQUhFWTFPRmg3a1hZWDM1VGdnY3VkZitoNllIVDVjNWZrWFhNRm1mSU1Ob25uYW0ycHhGMm85V0NjRTBLSy9UQ2xnQ3c9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.21.1/aix-code-0.21.1-x64-setup.exe",
+      "sha256": "6ef6b97f28c00d9c233a28436d7cded548427ad01b53e259ef80ee22d0e77d08"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajZYOTMvblNsLzZHdXVsN28wUG9yNWhUQkQ3WDF2RW1sdFlibDhhdm5JbUhNVzhQN1hDRlVSckZIa0FxcGlCRmFVVGttQmdmQjgwMWxYY2NmQXRvcXdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMzE0MzM3CWZpbGU6QWl4IENvZGVfMC4yMS4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIxLjAKNkVIQVVuL0t2K3Jpb0lHQnI4anVibmRsWTFlOERiSDhacE5pM0lMay84VG5NcWVWcmdDQno1S1F4WmIxbkQ5T0xGcWgzcEdKekl2ZnQrV2VGdTVjQWc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.21.0/aix-code-0.21.0-x64-setup.exe",
-      "sha256": "c7892e8af3cddec72e0c517fd203ebb173b4c234a9eb4fe97639986ad0b6e3e2"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajNuc1ZubHJsTk9JbFc0YVF2TnBJUmF6d1Ewak9jUGw4U3FuL2pENE9rUWxXeVVramJNUndqWHM5RzgvbEZpSVlVUEprNkI2YUlJamlsS0hGS09tdUFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNjQ2ODA3CWZpbGU6QWl4IENvZGVfMC4yMS4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIxLjEKR3ZiWXk5ZTNidHg0K3RBa3ZaQUhFWTFPRmg3a1hZWDM1VGdnY3VkZitoNllIVDVjNWZrWFhNRm1mSU1Ob25uYW0ycHhGMm85V0NjRTBLSy9UQ2xnQ3c9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.21.1/aix-code-0.21.1-x64-setup.exe",
+      "sha256": "6ef6b97f28c00d9c233a28436d7cded548427ad01b53e259ef80ee22d0e77d08"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajZYUDdqdEI4UmZ2ZkY5L0tSQXdLUXhzRmhhZzE5WGttYzRPSndIT1FjTzRpNmkrMkFxakZ1bCtGa29HVENBVlc2ZFJ2aU8vd1FkZmlhSnMwcTI5bkFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMzE0MzM3CWZpbGU6QWl4IENvZGVfMC4yMS4wX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjIxLjAKL1VqNmp4bE5jcis1RUhxenFIK1pGYWJtVCtpRVRLT1FLLzF2cHM0U3RHK1llaHRLRUxwbFU0NHNnYkIrUlRNZS9hbmVjbGsrOEJ3WHRwbld3R3NrQXc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.21.0/aix-code-0.21.0-x64.msi",
-      "sha256": "a2f9a402a3c6556fc6aff8325952c61d4889d1796f783a6101a27fd87c80c796"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aaitWSXdhZkdiOUtqUVFNa0VvSTQ2OTgxVDBpWXF3bWJMdUNDZEJ0dm12dUQrTE9jTVdOUlgrMXliUjhUay9oeXRQTUNkTEZnQ1lyYTBiWDhtR3JGR0E0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNjQ2ODA3CWZpbGU6QWl4IENvZGVfMC4yMS4xX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjIxLjEKN3JVNjdXUmFGckk3bHhuOWk2alFxSGluZnJtc0ZTczllcHp4SG95eHZvOTVENWdpZFpNN1dnTjRrVUtzdmxzNUtKY2xJdkRpNGZHbWFCVDU4N0VNQnc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.21.1/aix-code-0.21.1-x64.msi",
+      "sha256": "4c14ccfdee8aff7554dba1e0f42c709267de9b3f000d592c49abdf33591d8a86"
     }
   }
 }
