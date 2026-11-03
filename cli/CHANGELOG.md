@@ -1,5 +1,18 @@
 # Changelog
 
+## v2.24.1 — 2026-11-03
+
+- **Long sessions stay fast.**
+  - **Every model step:** before each request, aix lists the conversation's saved subagents. It
+    used to open every one of their session files and search the whole history once per helper.
+    Each helper's saved state is now remembered until its file changes, and the history is
+    searched once for all of them. Sessions with many helpers and long histories no longer slow
+    down step after step.
+  - **The terminal view:** each frame now skips straight past transcript items above the visible
+    area, where it used to walk every line of the chat. Code blocks that are already complete are
+    no longer highlighted again on every frame while an answer streams.
+- Nothing about what the model sees or what's saved changes.
+
 ## v2.24.0 — 2026-11-03
 
 - **Scheduled tasks.** A prompt that runs by itself in a folder — by hand, once, every N minutes or
