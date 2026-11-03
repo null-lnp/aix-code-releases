@@ -1,5 +1,28 @@
 # Changelog
 
+## v0.22.0 — 2026-11-03
+
+- **Scheduled tasks** (aix v2.24.0). *Scheduled* in the sidebar (and the collapsed rail) lists
+  prompts that run by themselves in a folder: by hand, once, every N minutes / hours / days, or at
+  a time on chosen weekdays (every day, weekdays, weekends, or any days you tick). *New task* opens
+  an editor: what it does, a name, the folder, when (with a live preview of the next runs), the
+  model, effort and permission mode, and options to work in a fresh git worktree each run, run as
+  a goal, catch up a missed run, and notify you. Start from an example (PR review, nightly tests,
+  weekly summary) or `/schedule add weekdays 9:00 review the open PRs` in any message box.
+- **Each run is a real session.** While Aix Code is open, a due task starts as a new session named
+  after the task and the time — in the sidebar, with its approvals and questions like any other —
+  so you can open it, watch it and continue the conversation afterwards. *Run now* starts one at
+  once and opens it. Each task shows its next run, the run going now (with Stop) and its recent
+  runs (done, failed, stopped, skipped, missed) with the end of each answer and *Open session*. A
+  notification says when a run finishes or fails.
+- **Ask Aix to schedule it.** "Every night at 23:00, run the tests and fix what fails" — Aix sets
+  the task up with its new `schedule_task` tool, after an approval card that shows the schedule,
+  folder, what it does and its permissions. It can also list, change, turn off or delete tasks.
+- **The same tasks as the terminal.** Tasks are shared with `aix schedule` (aix 2.24.0) and its
+  `watch` mode; a run is claimed before it starts, so each happens once wherever it starts. A run
+  missed while nothing was running catches up once when Aix Code opens (within a day); one still
+  going when the next is due makes that one skip; closing Aix Code mid-run marks the run stopped.
+
 ## v0.21.1 — 2026-11-02
 
 - **Animations play on every PC again.** On PCs where Windows asks for less motion (*Animation

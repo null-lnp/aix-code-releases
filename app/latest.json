@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.21.1",
-  "notes": "- **Animations play on every PC again.** On PCs where Windows asks for less motion (*Animation\n  effects* off under Accessibility → Visual effects, *Adjust for best performance*, many Remote\n  Desktop and VM sessions), the default Animations setting (System) turned off almost everything:\n  Axo on the composer stood frozen, the home code background stopped, and interface transitions\n  and effects never played. Only the office manager, which still faded in at its desk, seemed to\n  work. System now keeps Axo, the agents, the office, the code background and the interface\n  animated in that case. It leaves out only what sweeps, shakes or flashes: the office camera's\n  intro swoop and idle drift, the effort card's shake and thumb jitter, and lightning and neon\n  flicker. **Reduced** (Settings → General → Animations) still makes everything stand still, and\n  **Full** plays everything. The setting now says when your system is asking for less motion.\n  Desktop only: the terminal app doesn't read the OS motion setting, so no terminal counterpart\n  applies.",
-  "pub_date": "2026-11-02T19:13:54.351Z",
-  "tag": "app-v0.21.1",
+  "version": "0.22.0",
+  "notes": "- **Scheduled tasks** (aix v2.24.0). *Scheduled* in the sidebar (and the collapsed rail) lists\n  prompts that run by themselves in a folder: by hand, once, every N minutes / hours / days, or at\n  a time on chosen weekdays (every day, weekdays, weekends, or any days you tick). *New task* opens\n  an editor: what it does, a name, the folder, when (with a live preview of the next runs), the\n  model, effort and permission mode, and options to work in a fresh git worktree each run, run as\n  a goal, catch up a missed run, and notify you. Start from an example (PR review, nightly tests,\n  weekly summary) or `/schedule add weekdays 9:00 review the open PRs` in any message box.\n- **Each run is a real session.** While Aix Code is open, a due task starts as a new session named\n  after the task and the time — in the sidebar, with its approvals and questions like any other —\n  so you can open it, watch it and continue the conversation afterwards. *Run now* starts one at\n  once and opens it. Each task shows its next run, the run going now (with Stop) and its recent\n  runs (done, failed, stopped, skipped, missed) with the end of each answer and *Open session*. A\n  notification says when a run finishes or fails.\n- **Ask Aix to schedule it.** \"Every night at 23:00, run the tests and fix what fails\" — Aix sets\n  the task up with its new `schedule_task` tool, after an approval card that shows the schedule,\n  folder, what it does and its permissions. It can also list, change, turn off or delete tasks.\n- **The same tasks as the terminal.** Tasks are shared with `aix schedule` (aix 2.24.0) and its\n  `watch` mode; a run is claimed before it starts, so each happens once wherever it starts. A run\n  missed while nothing was running catches up once when Aix Code opens (within a day); one still\n  going when the next is due makes that one skip; closing Aix Code mid-run marks the run stopped.",
+  "pub_date": "2026-11-03T13:07:20.515Z",
+  "tag": "app-v0.22.0",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajNuc1ZubHJsTk9JbFc0YVF2TnBJUmF6d1Ewak9jUGw4U3FuL2pENE9rUWxXeVVramJNUndqWHM5RzgvbEZpSVlVUEprNkI2YUlJamlsS0hGS09tdUFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNjQ2ODA3CWZpbGU6QWl4IENvZGVfMC4yMS4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIxLjEKR3ZiWXk5ZTNidHg0K3RBa3ZaQUhFWTFPRmg3a1hZWDM1VGdnY3VkZitoNllIVDVjNWZrWFhNRm1mSU1Ob25uYW0ycHhGMm85V0NjRTBLSy9UQ2xnQ3c9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.21.1/aix-code-0.21.1-x64-setup.exe",
-      "sha256": "6ef6b97f28c00d9c233a28436d7cded548427ad01b53e259ef80ee22d0e77d08"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanpCbWhnOVFxYUdDQVUzNEZUR3hlWEFyRlBuZGhmc3k2VmNyMndENURZRHVjYlJpenhtRklFS1hCVWR2VzZWMWU3VDlzS2lFSi8rZlIvOVZNNnZ3VFF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzExMjE3CWZpbGU6QWl4IENvZGVfMC4yMi4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIyLjAKa0xSQ0xYN0s1cUVHcDdGcXU5WlhWeXZDSUVuOU1oUkhtRXNmUEI0LzV5ZWxtcVpTcnJjeGU1UXdWTC84TWxMYXFWMFAzSFl4RkgrV0hNako0OVZ3Q3c9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.22.0/aix-code-0.22.0-x64-setup.exe",
+      "sha256": "2a07e890a3924c59575de096cd0bcb718d9f2119535a1ac6224b8ef225cdb59c"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajNuc1ZubHJsTk9JbFc0YVF2TnBJUmF6d1Ewak9jUGw4U3FuL2pENE9rUWxXeVVramJNUndqWHM5RzgvbEZpSVlVUEprNkI2YUlJamlsS0hGS09tdUFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNjQ2ODA3CWZpbGU6QWl4IENvZGVfMC4yMS4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIxLjEKR3ZiWXk5ZTNidHg0K3RBa3ZaQUhFWTFPRmg3a1hZWDM1VGdnY3VkZitoNllIVDVjNWZrWFhNRm1mSU1Ob25uYW0ycHhGMm85V0NjRTBLSy9UQ2xnQ3c9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.21.1/aix-code-0.21.1-x64-setup.exe",
-      "sha256": "6ef6b97f28c00d9c233a28436d7cded548427ad01b53e259ef80ee22d0e77d08"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanpCbWhnOVFxYUdDQVUzNEZUR3hlWEFyRlBuZGhmc3k2VmNyMndENURZRHVjYlJpenhtRklFS1hCVWR2VzZWMWU3VDlzS2lFSi8rZlIvOVZNNnZ3VFF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzExMjE3CWZpbGU6QWl4IENvZGVfMC4yMi4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIyLjAKa0xSQ0xYN0s1cUVHcDdGcXU5WlhWeXZDSUVuOU1oUkhtRXNmUEI0LzV5ZWxtcVpTcnJjeGU1UXdWTC84TWxMYXFWMFAzSFl4RkgrV0hNako0OVZ3Q3c9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.22.0/aix-code-0.22.0-x64-setup.exe",
+      "sha256": "2a07e890a3924c59575de096cd0bcb718d9f2119535a1ac6224b8ef225cdb59c"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aaitWSXdhZkdiOUtqUVFNa0VvSTQ2OTgxVDBpWXF3bWJMdUNDZEJ0dm12dUQrTE9jTVdOUlgrMXliUjhUay9oeXRQTUNkTEZnQ1lyYTBiWDhtR3JGR0E0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNjQ2ODA3CWZpbGU6QWl4IENvZGVfMC4yMS4xX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjIxLjEKN3JVNjdXUmFGckk3bHhuOWk2alFxSGluZnJtc0ZTczllcHp4SG95eHZvOTVENWdpZFpNN1dnTjRrVUtzdmxzNUtKY2xJdkRpNGZHbWFCVDU4N0VNQnc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.21.1/aix-code-0.21.1-x64.msi",
-      "sha256": "4c14ccfdee8aff7554dba1e0f42c709267de9b3f000d592c49abdf33591d8a86"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajQxbExFZDFRdVMyWS9UZnlSZWFOUlVxTDNkRkMrVjk3c3N1aWM0TDA0Z3JHR1d6MmZZR0MrY1B0UUpOUkhBbEtXTUp1Y21UR1ErZEFqOEwyLythUEFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzExMjE3CWZpbGU6QWl4IENvZGVfMC4yMi4wX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjIyLjAKUTZCcE5FOC9JUkhZUDZDRVB6QnR3K3RjM2FVQXRwaW5LdXVFZzE3V1NZbUdkZ2E3dXBGNHY1OGVmNnRKNjlvZDUvOTVkbkRQUDJkWTdhU25LQzVSQmc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.22.0/aix-code-0.22.0-x64.msi",
+      "sha256": "08ea79aa5173fbc80ef06ba0821f0b90b4c84fc4de47c8e70b840994c15f1dbf"
     }
   }
 }
