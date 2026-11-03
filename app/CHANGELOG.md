@@ -1,5 +1,22 @@
 # Changelog
 
+## v0.22.1 — 2026-11-03
+
+- **Long chats don't lag any more** (aix v2.24.1). The window kept every loaded message on the
+  page, and every streamed word made it redo layout for all of them. With a few thousand messages
+  the page had ~59,000 elements, opening the chat took 1.5 s, and the view ran at 15–20 frames a
+  second while Aix wrote. Now only the newest ~120 rows are on the page while you follow along.
+  Scrolling up shows 100 more at a time, with what you're reading held in place, and then loads
+  earlier messages from disk as before. Going back to the bottom drops the extra rows again. In a
+  600-turn test chat:
+  - opening: **65 ms** (was 1,553 ms);
+  - frames while streaming: **4 ms** (was 50–63 ms);
+  - elements on the page: **2,400** (was 58,700).
+- The window and several pickers no longer redraw on every streamed token: the top-level view,
+  the model picker, the folder menu and the settings pages now update only when what they show
+  changes.
+- Fewer stalls in long sessions with many subagents, and a smoother terminal view (aix 2.24.1).
+
 ## v0.22.0 — 2026-11-03
 
 - **Scheduled tasks** (aix v2.24.0). *Scheduled* in the sidebar (and the collapsed rail) lists
