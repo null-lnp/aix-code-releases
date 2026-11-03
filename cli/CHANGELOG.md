@@ -1,5 +1,30 @@
 # Changelog
 
+## v2.24.0 — 2026-11-03
+
+- **Scheduled tasks.** A prompt that runs by itself in a folder — by hand, once, every N minutes or
+  hours, or at a time on chosen weekdays — each run in a fresh session (named after the task and
+  the time) you can resume afterwards. `aix schedule add weekdays 9:00 review the open pull
+  requests` adds one (`--folder`, `-m`, `--effort`, `--permissions`, `--worktree` for a fresh git
+  worktree per run, `--goal` to run it as a `/goal`); `aix schedule` lists them with their next and
+  last runs; `show`, `run`, `on`, `off`, `rm` and `log` do what they say. `aix schedule watch` keeps
+  running tasks as they come due; `aix schedule run-due` runs what's due and exits, for Task
+  Scheduler or cron. `/schedule` does the same from a session (`/schedule add <when> <what>` uses
+  this folder and model).
+- **Ask the agent to schedule something.** "Every weekday at 9, review the open PRs in this folder"
+  — the new `schedule_task` tool creates, lists, changes, turns on/off, deletes or starts tasks.
+  Listing is free; everything else asks for your approval first, since a task later runs on its
+  own with the permissions it was given. Subagents and unattended runs don't get the tool.
+- **One task list for both apps.** Tasks live in `$AIX_HOME/schedules.json`, shared with Aix Code
+  (0.22.0, Scheduled in its sidebar). A runner claims a due run under a file lock before starting
+  it, so each run happens once even with Aix Code and a terminal both watching. A run missed while
+  nothing was running catches up once when a runner starts (within a day; older ones are logged as
+  missed); a run still going when the next is due makes that one skip; a run left behind by a
+  closed runner is marked interrupted.
+- Terminal runs are unattended: approvals are declined and questions go unanswered, so a task that
+  runs commands needs `--permissions auto`.
+- Core API: `aix::schedule` (`Trigger`, `Store`, `run::execute`, `tool`).
+
 ## v2.23.0 — 2026-10-29
 
 - **Predictive typing suggests far more often.** History used to complete a draft only when it
