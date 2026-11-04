@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.22.3 — 2026-11-04
+
+- **GLM 5.3 no longer fails after computer use** (aix v2.24.2). Computer control now requires an
+  image-capable model. Text-only models do not receive the tool, and direct or stale calls are
+  refused before approval or desktop input, including in Bypass mode. Vision-capable variants
+  such as GLM 5.3 Flash and GLM 4.6V remain eligible.
+- Conversations already containing screenshots can continue on GLM: unsupported image payloads
+  become explicit omission notices on the wire. Saved images, tool history and custom `/system`
+  prompts remain unchanged. Compatible endpoints returning the text-only content-type error
+  also get a one-time retry; the learned restriction is per model, so switching to a vision
+  model keeps its image support.
+
 ## v0.22.2 — 2026-11-03
 
 - **Readable pickers everywhere.** The scheduled-task editor's lists (folder, repeat unit, model,

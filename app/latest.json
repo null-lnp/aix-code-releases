@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.22.2",
-  "notes": "- **Readable pickers everywhere.** The scheduled-task editor's lists (folder, repeat unit, model,\n  effort, permissions) and its time and date fields were native controls. Windows drew their\n  popups as a white list with the dark theme's light text on it, which made them unreadable. Every\n  picker in the app is now drawn by Aix, in its own menu style, in both themes:\n  - **Lists** open an Aix popover with the same rows, icons, descriptions and check mark as the\n    other menus. They support ↑/↓, Home/End, PageUp/PageDown, Enter, Esc and type-ahead. Long\n    lists (models) get a search box and are grouped by provider. The folder list shows the full\n    path and ends with *Choose another folder…*.\n  - **Time** can be typed (`930`, `9:30 pm`, `21.05`) or picked from hour and minute columns.\n    ↑/↓ step it by 5 minutes, or by an hour with Shift.\n  - **Once** opens a month calendar (Monday first, today marked, past days disabled) with hour\n    and minute columns beside it. Arrow keys move by a day or a week, PageUp/PageDown by a month.\n- The same pickers replace the remaining native lists in Settings (*Open file links with*,\n  *Prediction source*) and in a model's settings (*Fallback model*, *Smart subagent model*).",
-  "pub_date": "2026-11-04T01:17:51.082Z",
-  "tag": "app-v0.22.2",
+  "version": "0.22.3",
+  "notes": "- **GLM 5.3 no longer fails after computer use** (aix v2.24.2). Computer control now requires an\n  image-capable model. Text-only models do not receive the tool, and direct or stale calls are\n  refused before approval or desktop input, including in Bypass mode. Vision-capable variants\n  such as GLM 5.3 Flash and GLM 4.6V remain eligible.\n- Conversations already containing screenshots can continue on GLM: unsupported image payloads\n  become explicit omission notices on the wire. Saved images, tool history and custom `/system`\n  prompts remain unchanged. Compatible endpoints returning the text-only content-type error\n  also get a one-time retry; the learned restriction is per model, so switching to a vision\n  model keeps its image support.",
+  "pub_date": "2026-11-04T17:04:14.349Z",
+  "tag": "app-v0.22.3",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajBDTnZUR0ZKRllWbzhYdmhEc2xOejZxNE55dE4vQTZuZ2dKdTltVmI3anZEV21QelhYNmZhVzBZSkMzZmtBL2ttdUpDRUxjUDVNMGU4TkJpNCtQZXd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzU1MDY2CWZpbGU6QWl4IENvZGVfMC4yMi4yX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIyLjIKVDhtL0tBNldIZTQ0cDAxYkxuV3Y3NVRhdHMwY3dVdEI2MC9PbXRldE94T0hyWUh4dlJST1JWZ05HNXBnZ3ZxaGFkc1lVbCtQNG94Y09ONjVaT2lHQ3c9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.22.2/aix-code-0.22.2-x64-setup.exe",
-      "sha256": "b5ebbc69d5a57c73c2febe671f46be2afdd0ef031164f0e59cb79d7e6383c818"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajdNVERFSmI3VStqVHZ0ak9zcXBPWDhDMnVPaUFkRFJxdnlqMkRzRmcvRkVEMUl5a3l0Rkh1MHlzZkRjN0Q0Z0xCNXBnT1JJbkQxMk91bHdTMEdZV3dzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzODExODA0CWZpbGU6QWl4IENvZGVfMC4yMi4zX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIyLjMKMEZqSTVYc2NzMkNzejk3MEZiTFE0TVEzNm1QSzZ6LzROQVNBd3FXampZWGZYdmtRa0Y1eERvd3MwaGZWZWtQTU85aEl2bzJicnBQSGxpcEJUNENRQXc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.22.3/aix-code-0.22.3-x64-setup.exe",
+      "sha256": "342c0f53653a56079023991193b597f53829fb46fffa4803c13b64b64f6c852f"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajBDTnZUR0ZKRllWbzhYdmhEc2xOejZxNE55dE4vQTZuZ2dKdTltVmI3anZEV21QelhYNmZhVzBZSkMzZmtBL2ttdUpDRUxjUDVNMGU4TkJpNCtQZXd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzU1MDY2CWZpbGU6QWl4IENvZGVfMC4yMi4yX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIyLjIKVDhtL0tBNldIZTQ0cDAxYkxuV3Y3NVRhdHMwY3dVdEI2MC9PbXRldE94T0hyWUh4dlJST1JWZ05HNXBnZ3ZxaGFkc1lVbCtQNG94Y09ONjVaT2lHQ3c9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.22.2/aix-code-0.22.2-x64-setup.exe",
-      "sha256": "b5ebbc69d5a57c73c2febe671f46be2afdd0ef031164f0e59cb79d7e6383c818"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajdNVERFSmI3VStqVHZ0ak9zcXBPWDhDMnVPaUFkRFJxdnlqMkRzRmcvRkVEMUl5a3l0Rkh1MHlzZkRjN0Q0Z0xCNXBnT1JJbkQxMk91bHdTMEdZV3dzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzODExODA0CWZpbGU6QWl4IENvZGVfMC4yMi4zX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIyLjMKMEZqSTVYc2NzMkNzejk3MEZiTFE0TVEzNm1QSzZ6LzROQVNBd3FXampZWGZYdmtRa0Y1eERvd3MwaGZWZWtQTU85aEl2bzJicnBQSGxpcEJUNENRQXc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.22.3/aix-code-0.22.3-x64-setup.exe",
+      "sha256": "342c0f53653a56079023991193b597f53829fb46fffa4803c13b64b64f6c852f"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajNoZVZWWlpDMTZoWWJXQmdrTDZUT0tzLzZXYWE0NjY0NlRzUS9PdTN0T2tPaWlORmVBZTlicTNEeW9ld3JJczlnYzFFQ1I5VWxmbUw3dWtiUlVsL1FZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzU1MDY2CWZpbGU6QWl4IENvZGVfMC4yMi4yX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjIyLjIKYnZ2OHNTcHpPc3hFUEYwYUJKUVlpUmQ5SGkyVHlaYzZ2VXZSQXRCakplMTFlbnQyRUpJVy9adnlJUWxhWUxQRGw1SVFGSXJQbVJTb25QQ2djU3E0Q3c9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.22.2/aix-code-0.22.2-x64.msi",
-      "sha256": "c408a625406a3572c1f99c1a21f44189d157bbb5d3e206d798e9e57e12782131"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajY2UjBuOVh4M1NjcjhmZU5BWUswbG5qQWJETHhlbHg4RDE4WTJ1U05INkNtYm5RdFRBaTJIQzVVek1KWWluOWZ2RFU1OVE0UWZ5WTJQNXNFQWc5NXdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzODExODA0CWZpbGU6QWl4IENvZGVfMC4yMi4zX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjIyLjMKWFpObk1OSGRqYTRWU1R0OFU3b0FEZytseXlLS1p3MjlXd2k5S1FtNFhJdXh5eW9LNm1wL3d5MFpsMSt2TC8yRExOV29XNUk1VFpncHVDRXVXZDdkRFE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.22.3/aix-code-0.22.3-x64.msi",
+      "sha256": "ca029e8ce86c2c60c32c5d172f6713607f6ac5464962dd53b264a30bf801e382"
     }
   }
 }
