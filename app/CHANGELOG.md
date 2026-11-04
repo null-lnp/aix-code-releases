@@ -1,5 +1,22 @@
 # Changelog
 
+## v0.22.2 — 2026-11-03
+
+- **Readable pickers everywhere.** The scheduled-task editor's lists (folder, repeat unit, model,
+  effort, permissions) and its time and date fields were native controls. Windows drew their
+  popups as a white list with the dark theme's light text on it, which made them unreadable. Every
+  picker in the app is now drawn by Aix, in its own menu style, in both themes:
+  - **Lists** open an Aix popover with the same rows, icons, descriptions and check mark as the
+    other menus. They support ↑/↓, Home/End, PageUp/PageDown, Enter, Esc and type-ahead. Long
+    lists (models) get a search box and are grouped by provider. The folder list shows the full
+    path and ends with *Choose another folder…*.
+  - **Time** can be typed (`930`, `9:30 pm`, `21.05`) or picked from hour and minute columns.
+    ↑/↓ step it by 5 minutes, or by an hour with Shift.
+  - **Once** opens a month calendar (Monday first, today marked, past days disabled) with hour
+    and minute columns beside it. Arrow keys move by a day or a week, PageUp/PageDown by a month.
+- The same pickers replace the remaining native lists in Settings (*Open file links with*,
+  *Prediction source*) and in a model's settings (*Fallback model*, *Smart subagent model*).
+
 ## v0.22.1 — 2026-11-03
 
 - **Long chats don't lag any more** (aix v2.24.1). The window kept every loaded message on the

@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.22.1",
-  "notes": "- **Long chats don't lag any more** (aix v2.24.1). The window kept every loaded message on the\n  page, and every streamed word made it redo layout for all of them. With a few thousand messages\n  the page had ~59,000 elements, opening the chat took 1.5 s, and the view ran at 15–20 frames a\n  second while Aix wrote. Now only the newest ~120 rows are on the page while you follow along.\n  Scrolling up shows 100 more at a time, with what you're reading held in place, and then loads\n  earlier messages from disk as before. Going back to the bottom drops the extra rows again. In a\n  600-turn test chat:\n  - opening: **65 ms** (was 1,553 ms);\n  - frames while streaming: **4 ms** (was 50–63 ms);\n  - elements on the page: **2,400** (was 58,700).\n- The window and several pickers no longer redraw on every streamed token: the top-level view,\n  the model picker, the folder menu and the settings pages now update only when what they show\n  changes.\n- Fewer stalls in long sessions with many subagents, and a smoother terminal view (aix 2.24.1).",
-  "pub_date": "2026-11-03T20:24:04.693Z",
-  "tag": "app-v0.22.1",
+  "version": "0.22.2",
+  "notes": "- **Readable pickers everywhere.** The scheduled-task editor's lists (folder, repeat unit, model,\n  effort, permissions) and its time and date fields were native controls. Windows drew their\n  popups as a white list with the dark theme's light text on it, which made them unreadable. Every\n  picker in the app is now drawn by Aix, in its own menu style, in both themes:\n  - **Lists** open an Aix popover with the same rows, icons, descriptions and check mark as the\n    other menus. They support ↑/↓, Home/End, PageUp/PageDown, Enter, Esc and type-ahead. Long\n    lists (models) get a search box and are grouped by provider. The folder list shows the full\n    path and ends with *Choose another folder…*.\n  - **Time** can be typed (`930`, `9:30 pm`, `21.05`) or picked from hour and minute columns.\n    ↑/↓ step it by 5 minutes, or by an hour with Shift.\n  - **Once** opens a month calendar (Monday first, today marked, past days disabled) with hour\n    and minute columns beside it. Arrow keys move by a day or a week, PageUp/PageDown by a month.\n- The same pickers replace the remaining native lists in Settings (*Open file links with*,\n  *Prediction source*) and in a model's settings (*Fallback model*, *Smart subagent model*).",
+  "pub_date": "2026-11-04T01:17:51.082Z",
+  "tag": "app-v0.22.2",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajY0Qy9rb3MzeHAvYmpkSDlGeVE0MHRST2ltaDdhRFlZdUJDSmFvd3hNSDgyTGdKVTVGUTh4c05zMC9uY1NHZkxCb2FycGxjek8zRE83M3czU2FwOXdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzM3NDI0CWZpbGU6QWl4IENvZGVfMC4yMi4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIyLjEKU2xITE9VWEpUdURudnlZVUdEWUFqQjAzWEJpakY5cGs1SEhBL0dwWVNvZ0V2NnFoaDNVYVFLTzF3UFMwemplMWQzSUpNTGhMVVNSZ3dDRHYyckRrQXc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.22.1/aix-code-0.22.1-x64-setup.exe",
-      "sha256": "d9779c6c7cc824b43cedd951f6cd1370b4a5de9be52fe9e64f622b4e04a55377"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajBDTnZUR0ZKRllWbzhYdmhEc2xOejZxNE55dE4vQTZuZ2dKdTltVmI3anZEV21QelhYNmZhVzBZSkMzZmtBL2ttdUpDRUxjUDVNMGU4TkJpNCtQZXd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzU1MDY2CWZpbGU6QWl4IENvZGVfMC4yMi4yX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIyLjIKVDhtL0tBNldIZTQ0cDAxYkxuV3Y3NVRhdHMwY3dVdEI2MC9PbXRldE94T0hyWUh4dlJST1JWZ05HNXBnZ3ZxaGFkc1lVbCtQNG94Y09ONjVaT2lHQ3c9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.22.2/aix-code-0.22.2-x64-setup.exe",
+      "sha256": "b5ebbc69d5a57c73c2febe671f46be2afdd0ef031164f0e59cb79d7e6383c818"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajY0Qy9rb3MzeHAvYmpkSDlGeVE0MHRST2ltaDdhRFlZdUJDSmFvd3hNSDgyTGdKVTVGUTh4c05zMC9uY1NHZkxCb2FycGxjek8zRE83M3czU2FwOXdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzM3NDI0CWZpbGU6QWl4IENvZGVfMC4yMi4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIyLjEKU2xITE9VWEpUdURudnlZVUdEWUFqQjAzWEJpakY5cGs1SEhBL0dwWVNvZ0V2NnFoaDNVYVFLTzF3UFMwemplMWQzSUpNTGhMVVNSZ3dDRHYyckRrQXc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.22.1/aix-code-0.22.1-x64-setup.exe",
-      "sha256": "d9779c6c7cc824b43cedd951f6cd1370b4a5de9be52fe9e64f622b4e04a55377"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajBDTnZUR0ZKRllWbzhYdmhEc2xOejZxNE55dE4vQTZuZ2dKdTltVmI3anZEV21QelhYNmZhVzBZSkMzZmtBL2ttdUpDRUxjUDVNMGU4TkJpNCtQZXd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzU1MDY2CWZpbGU6QWl4IENvZGVfMC4yMi4yX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIyLjIKVDhtL0tBNldIZTQ0cDAxYkxuV3Y3NVRhdHMwY3dVdEI2MC9PbXRldE94T0hyWUh4dlJST1JWZ05HNXBnZ3ZxaGFkc1lVbCtQNG94Y09ONjVaT2lHQ3c9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.22.2/aix-code-0.22.2-x64-setup.exe",
+      "sha256": "b5ebbc69d5a57c73c2febe671f46be2afdd0ef031164f0e59cb79d7e6383c818"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajRkR3BlV1Q5RjJmR3U3L3dpY1ZlRUo5V1JkK1o1ZVlKVEdWNkljTXNEb0ZDY1BhaTBkU0hQODBDY2RNMENMR0dhQkpBZUNmK0xxVjMzcmVGSi9jZkFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzM3NDI0CWZpbGU6QWl4IENvZGVfMC4yMi4xX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjIyLjEKMGRVRzlQdWJkOTd6T3grR1doa0UybUthNjVad0w4UVdrOUNjVmdOcDRFLytoTHFPMzBuSk1WVE84TnFWOUZNc3pxcXc4YlViWWpObXhTOHBZYXRwQnc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.22.1/aix-code-0.22.1-x64.msi",
-      "sha256": "b398698d62a6bddc37bc44e27a09334d54df2cbaa4291ed28f76fa139b4e2f61"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajNoZVZWWlpDMTZoWWJXQmdrTDZUT0tzLzZXYWE0NjY0NlRzUS9PdTN0T2tPaWlORmVBZTlicTNEeW9ld3JJczlnYzFFQ1I5VWxmbUw3dWtiUlVsL1FZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzU1MDY2CWZpbGU6QWl4IENvZGVfMC4yMi4yX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjIyLjIKYnZ2OHNTcHpPc3hFUEYwYUJKUVlpUmQ5SGkyVHlaYzZ2VXZSQXRCakplMTFlbnQyRUpJVy9adnlJUWxhWUxQRGw1SVFGSXJQbVJTb25QQ2djU3E0Q3c9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.22.2/aix-code-0.22.2-x64.msi",
+      "sha256": "c408a625406a3572c1f99c1a21f44189d157bbb5d3e206d798e9e57e12782131"
     }
   }
 }
