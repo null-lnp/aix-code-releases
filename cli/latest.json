@@ -1,14 +1,14 @@
 {
   "product": "cli",
-  "version": "2.24.1",
-  "notes": "- **Long sessions stay fast.**\n  - **Every model step:** before each request, aix lists the conversation's saved subagents. It\n    used to open every one of their session files and search the whole history once per helper.\n    Each helper's saved state is now remembered until its file changes, and the history is\n    searched once for all of them. Sessions with many helpers and long histories no longer slow\n    down step after step.\n  - **The terminal view:** each frame now skips straight past transcript items above the visible\n    area, where it used to walk every line of the chat. Code blocks that are already complete are\n    no longer highlighted again on every frame while an answer streams.\n- Nothing about what the model sees or what's saved changes.",
-  "pub_date": "2026-11-03T20:14:47.955Z",
-  "tag": "cli-v2.24.1",
+  "version": "2.24.2",
+  "notes": "- **Computer use requires vision** (Aix Code v0.22.3). Text-only models such as GLM 5.3 no\n  longer receive the computer-use tool. Direct or stale calls are refused before approval,\n  screen capture or desktop input, even in yolo mode. Stop and status remain available to\n  release control safely. GLM's image-capable Flash and V variants remain eligible.\n- Existing screenshots no longer break GLM conversations with `messages.content.type is invalid,\n  allowed values: ['text']`. Requests to known text-only models omit image payloads with explicit\n  text notices, without changing saved images, tool history or the custom `/system` prompt.\n  Other compatible endpoints returning this error retry once without images and remember that\n  limitation only for the rejecting model, not every model on the provider.",
+  "pub_date": "2026-11-04T16:49:27.351Z",
+  "tag": "cli-v2.24.2",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajZDZUNlV1J0SGxZQVVxMmZ3Y05KYkRETWZmMWJ6Z0Z5VStXcVAxMzA4ZWhzaU9hdDd6MVBicXV2ekRCbWRxZ3hKSlBJL1ZhcXNveGFKcDlSYmlBdndnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzM2ODg3CWZpbGU6YWl4LTIuMjQuMS13aW5kb3dzLXg4Nl82NC5leGUKbmNDWW1xRGpidUJyNXZnblNPb0FoRXYrV0lqbzQ0dUpaMGtwTjlGUGdublVtMzlBQUhWam5hMHppTVZmS1A4NnZEQklMRldPVTlFVnZCQ3pENzdPREE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.24.1/aix-2.24.1-windows-x86_64.exe",
-      "sha256": "d9bf57c8b85ae9e2f814dcddc5de68d95a4f3924dc15df6458c465436a73cc37"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajNZYjErQ3lRdkFwcHQrTE4yK0E3emxZeGJCRDJ0T1poWnB2KzJIOUFvUWxGaVl3bVZKbkNxWW4rbkdFai9CcEsrNm9NQk1Vekx2VzRtT1ZrbUtXR0FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzODEwOTY2CWZpbGU6YWl4LTIuMjQuMi13aW5kb3dzLXg4Nl82NC5leGUKY1RackxoQzE4aXppL1VHbUE2QXE5NS82VFdHRmd4MUZBRG5WaENWdFJxZTl0ZFp6WnNZZ0ZJeitucVJldDh3QkpkNU0rajE2YWxRMXFvVmRZSXN0QWc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.24.2/aix-2.24.2-windows-x86_64.exe",
+      "sha256": "6c55bb3de44e17eb50d8f55264f1bf21ccb4a1ce40150d5e2655026670b0f158"
     }
   }
 }

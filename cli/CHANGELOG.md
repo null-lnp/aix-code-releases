@@ -1,5 +1,17 @@
 # Changelog
 
+## v2.24.2 — 2026-11-04
+
+- **Computer use requires vision** (Aix Code v0.22.3). Text-only models such as GLM 5.3 no
+  longer receive the computer-use tool. Direct or stale calls are refused before approval,
+  screen capture or desktop input, even in yolo mode. Stop and status remain available to
+  release control safely. GLM's image-capable Flash and V variants remain eligible.
+- Existing screenshots no longer break GLM conversations with `messages.content.type is invalid,
+  allowed values: ['text']`. Requests to known text-only models omit image payloads with explicit
+  text notices, without changing saved images, tool history or the custom `/system` prompt.
+  Other compatible endpoints returning this error retry once without images and remember that
+  limitation only for the rejecting model, not every model on the provider.
+
 ## v2.24.1 — 2026-11-03
 
 - **Long sessions stay fast.**
