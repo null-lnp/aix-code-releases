@@ -1,14 +1,14 @@
 {
   "product": "cli",
-  "version": "2.24.2",
-  "notes": "- **Computer use requires vision** (Aix Code v0.22.3). Text-only models such as GLM 5.3 no\n  longer receive the computer-use tool. Direct or stale calls are refused before approval,\n  screen capture or desktop input, even in yolo mode. Stop and status remain available to\n  release control safely. GLM's image-capable Flash and V variants remain eligible.\n- Existing screenshots no longer break GLM conversations with `messages.content.type is invalid,\n  allowed values: ['text']`. Requests to known text-only models omit image payloads with explicit\n  text notices, without changing saved images, tool history or the custom `/system` prompt.\n  Other compatible endpoints returning this error retry once without images and remember that\n  limitation only for the rejecting model, not every model on the provider.",
-  "pub_date": "2026-11-04T16:49:27.351Z",
-  "tag": "cli-v2.24.2",
+  "version": "2.25.0",
+  "notes": "- **Watch a session from your phone — `/share`** (Aix Code v0.23.0: the Share button). The session\n  goes on your local network, read-only: aix prints a link and a QR code, and any phone, tablet or\n  laptop on the same Wi-Fi follows it live — replies as they stream, reasoning, tool calls (output\n  and diffs on tap), the task list, the subagents at work and what the agent is waiting for. It\n  works mid-turn; `/share stop` ends it and tells the viewers. The header shows\n  `◉ shared · n watching`.\n  - Read-only by construction: the server has no endpoint that changes anything. Each share has its\n    own unguessable link; the port (7420 or the next free one, `AIX_SHARE_PORT`) is open only while\n    something is shared.\n  - Light on the network and the phone: one ~10 KB page, a gzip snapshot of the newest items, then\n    small batches over Server-Sent Events — streamed text leaves at most ~12 times a second and is\n    serialised once for every viewer; viewers far behind start over from a snapshot. A phone that is\n    put away drops the stream after a minute and catches up when it's back.\n  - The core's `share` module serves both apps: hosts only feed it their agent events; it reads the\n    user's messages, the plan and the subagent roster from the session itself.",
+  "pub_date": "2026-11-09T04:29:40.231Z",
+  "tag": "cli-v2.25.0",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajNZYjErQ3lRdkFwcHQrTE4yK0E3emxZeGJCRDJ0T1poWnB2KzJIOUFvUWxGaVl3bVZKbkNxWW4rbkdFai9CcEsrNm9NQk1Vekx2VzRtT1ZrbUtXR0FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzODEwOTY2CWZpbGU6YWl4LTIuMjQuMi13aW5kb3dzLXg4Nl82NC5leGUKY1RackxoQzE4aXppL1VHbUE2QXE5NS82VFdHRmd4MUZBRG5WaENWdFJxZTl0ZFp6WnNZZ0ZJeitucVJldDh3QkpkNU0rajE2YWxRMXFvVmRZSXN0QWc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.24.2/aix-2.24.2-windows-x86_64.exe",
-      "sha256": "6c55bb3de44e17eb50d8f55264f1bf21ccb4a1ce40150d5e2655026670b0f158"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajc0SkJNZm5obHQ3YlRpQmpVbDZQcElRdGJYejNtZFV4SzF0Y3JHQk5ub2hjYmtHNkZZdEN3ZXA5Y3JINUhIdlFFR1pNZFVTNWpFa01jYi82Rnd3YXdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MTk4NTc5CWZpbGU6YWl4LTIuMjUuMC13aW5kb3dzLXg4Nl82NC5leGUKZW9sMWhpNTdCOXhaZ3VnQldZeE9BZ0Q3dHR5Z2Zjd2UxN2ljVnNlVVIwNjBaZVErTDc3eHlpNGJoTGhuMlV5dEgvNkFKbXBpbWlQUHRtMTQ5dWpXQ1E9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.25.0/aix-2.25.0-windows-x86_64.exe",
+      "sha256": "1dc5f4cd102a185c7a39f30b8ce6f9cab1db654496d1e0ff97bb66e3e78bca26"
     }
   }
 }

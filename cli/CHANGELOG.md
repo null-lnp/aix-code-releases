@@ -1,5 +1,23 @@
 # Changelog
 
+## v2.25.0 — 2026-11-09
+
+- **Watch a session from your phone — `/share`** (Aix Code v0.23.0: the Share button). The session
+  goes on your local network, read-only: aix prints a link and a QR code, and any phone, tablet or
+  laptop on the same Wi-Fi follows it live — replies as they stream, reasoning, tool calls (output
+  and diffs on tap), the task list, the subagents at work and what the agent is waiting for. It
+  works mid-turn; `/share stop` ends it and tells the viewers. The header shows
+  `◉ shared · n watching`.
+  - Read-only by construction: the server has no endpoint that changes anything. Each share has its
+    own unguessable link; the port (7420 or the next free one, `AIX_SHARE_PORT`) is open only while
+    something is shared.
+  - Light on the network and the phone: one ~10 KB page, a gzip snapshot of the newest items, then
+    small batches over Server-Sent Events — streamed text leaves at most ~12 times a second and is
+    serialised once for every viewer; viewers far behind start over from a snapshot. A phone that is
+    put away drops the stream after a minute and catches up when it's back.
+  - The core's `share` module serves both apps: hosts only feed it their agent events; it reads the
+    user's messages, the plan and the subagent roster from the session itself.
+
 ## v2.24.2 — 2026-11-04
 
 - **Computer use requires vision** (Aix Code v0.22.3). Text-only models such as GLM 5.3 no
