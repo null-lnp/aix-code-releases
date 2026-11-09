@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.23.0",
-  "notes": "- **Watch a session from your phone — Share** (aix v2.25.0: `/share`). The new Share button in the\n  title bar (or `/share`) puts the session on your local network, read-only: scan the QR code, or\n  open the link on any phone, tablet or laptop on the same Wi-Fi, and follow Aix live — replies as\n  they stream, reasoning, tool calls (output and diffs on tap), the task list, the agents at work\n  and what Aix is waiting for. It works while a turn runs. The button shows how many devices watch;\n  *Stop sharing* (or `/share stop`) ends it and tells them.\n  - Read-only by construction: the server has no endpoint that changes anything; prompts are still\n    answered here. Every share has its own unguessable link, and the port (7420, or the next free\n    one) is open only while something is shared. Windows may ask once to let Aix Code through the\n    firewall on private networks.\n  - Light on the phone and the network: one ~10 KB page, a gzip snapshot of the newest items, then\n    small Server-Sent Event batches (streamed text at most ~12 times a second, serialised once for\n    every viewer). A phone that is put away lets go after a minute and catches up when it's back.\n  - The view follows the session through rewinds, `/clear` and compactions, and a share stops with\n    its session (deleted, or the app closed).",
-  "pub_date": "2026-11-09T04:55:17.002Z",
-  "tag": "app-v0.23.0",
+  "version": "0.23.1",
+  "notes": "- **Claude Fable 5.2** (`claude-fable-5-2`, aix v2.25.1) is available in the model picker and with\n  `/model claude-fable-5-2`: 1M context, 128K output, images, low through max effort, and Fast mode.\n  Adaptive thinking stays on as required by Anthropic, with thinking-binding controls for edited\n  history. Pricing and cache savings use $8/$40 per million input/output tokens, $0.20 cached\n  reads, and $16/$80 in Fast mode. Existing model defaults are unchanged.\n- Anthropic requires 30-day data retention for this model unless it expressly authorizes otherwise.\n  Model details: https://platform.claude.com/docs/en/models/fable-5-2/overview",
+  "pub_date": "2026-11-09T20:13:35.705Z",
+  "tag": "app-v0.23.1",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajF0SU8vY01PUFh3b01SWWRsQlNCN2p1Nkl6eEhYNVdYVnpvcGJnK3BHVlVpaU5GMWltbDhuajRIQWp5NXgwcERMNG83bDhjc2s5Zittdnd5Nmk1WWdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjAwMTEzCWZpbGU6QWl4IENvZGVfMC4yMy4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIzLjAKWGwzYUdqbGZwZWpUR1I2RGRXbXZabUlDRklTYWRvRTVyVWJIeFBWVkl2WlI1S3VnY0FTYUpubDFGWm53NGJQOGRQNlNOdUlFdmt0YUZWdENtdVFJRGc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.23.0/aix-code-0.23.0-x64-setup.exe",
-      "sha256": "031e110f2fe29231401e81c5633fd0311c030015335feff80b5730d48d610f12"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajExbjJrMEpDNDMvV3FBM2xkQlEyMXMzeVFFMS9OdHlSUVF4MGp6OGNnQm5iRUppNkhyVVVEd0RTVmdnSnJodmMvVnpPUmlYeHZ6OFpJcVJkZWRsY0EwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjU1MjA3CWZpbGU6QWl4IENvZGVfMC4yMy4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIzLjEKVmFrUFpzU3NhYXZ3QllxMFY4bENkem1mT2ltU2Fnb0V4aHFpSi9yY28wQVBkL3paY3dpd3pYQnRkVnFqOWZ4UGpML1RSZ0xMTzFzTFlBT3J5cFY3Q0E9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.23.1/aix-code-0.23.1-x64-setup.exe",
+      "sha256": "5aaa80c4a164400423c60af32f06c713a088c91eee7c6b8c34cb24f50465ca2d"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajF0SU8vY01PUFh3b01SWWRsQlNCN2p1Nkl6eEhYNVdYVnpvcGJnK3BHVlVpaU5GMWltbDhuajRIQWp5NXgwcERMNG83bDhjc2s5Zittdnd5Nmk1WWdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjAwMTEzCWZpbGU6QWl4IENvZGVfMC4yMy4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIzLjAKWGwzYUdqbGZwZWpUR1I2RGRXbXZabUlDRklTYWRvRTVyVWJIeFBWVkl2WlI1S3VnY0FTYUpubDFGWm53NGJQOGRQNlNOdUlFdmt0YUZWdENtdVFJRGc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.23.0/aix-code-0.23.0-x64-setup.exe",
-      "sha256": "031e110f2fe29231401e81c5633fd0311c030015335feff80b5730d48d610f12"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajExbjJrMEpDNDMvV3FBM2xkQlEyMXMzeVFFMS9OdHlSUVF4MGp6OGNnQm5iRUppNkhyVVVEd0RTVmdnSnJodmMvVnpPUmlYeHZ6OFpJcVJkZWRsY0EwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjU1MjA3CWZpbGU6QWl4IENvZGVfMC4yMy4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIzLjEKVmFrUFpzU3NhYXZ3QllxMFY4bENkem1mT2ltU2Fnb0V4aHFpSi9yY28wQVBkL3paY3dpd3pYQnRkVnFqOWZ4UGpML1RSZ0xMTzFzTFlBT3J5cFY3Q0E9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.23.1/aix-code-0.23.1-x64-setup.exe",
+      "sha256": "5aaa80c4a164400423c60af32f06c713a088c91eee7c6b8c34cb24f50465ca2d"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajljWUlrWmMySE15aFVRNCtLL1Y4eFhQM2NjYzU5Zk4zMHhnaE1LWGlMdkVXQ1hGMlZuczR6YlNMZW1IWjI1U3hmTFNxcG5NWUJ4VkRXRHZNandwb2dJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjAwMTEzCWZpbGU6QWl4IENvZGVfMC4yMy4wX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjIzLjAKTG00eXRYTEtML0s0alZXSHJwWStZRkc0Zy9xS3pjL0J3b0N3eCtJdDZxUW1hbmxSNHJmczdBQ1V0ZGUxVENaQ2k3ZC9FNzlhZElRc1I5cHVwb3VzQ0E9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.23.0/aix-code-0.23.0-x64.msi",
-      "sha256": "e699e426b181d200c86bc0033cf3e5fbf99be536c52a17e29c4f5e0dfb1329e3"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanlwNXVlNkdoR2dvdFpjOFhUNDNMdnRCeXl2WVVSYlhDWmdxTitoZTBIZVR2U3F5bzQ5dEtlVXNnU2FERHlrdzlTN21yR0lmZncxdEpQN1JSYjdKL1FVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjU1MjA3CWZpbGU6QWl4IENvZGVfMC4yMy4xX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjIzLjEKZUgxMXZxcjdZcUlOVlVDQ2tLajV3aTZKS2YrVjYyS3lseVF4Vyt6V3B4RVFQSHFjd09hYytBbXpGMjRUZVhoTDNXVHJpQUJ2ZmtVNnQwQk10OG5XQkE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.23.1/aix-code-0.23.1-x64.msi",
+      "sha256": "d79ae3b49f649a46d1349f760cb8dff8279968c9b038c33323d792abf64fc084"
     }
   }
 }

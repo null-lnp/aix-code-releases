@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.23.1 — 2026-11-09
+
+- **Claude Fable 5.2** (`claude-fable-5-2`, aix v2.25.1) is available in the model picker and with
+  `/model claude-fable-5-2`: 1M context, 128K output, images, low through max effort, and Fast mode.
+  Adaptive thinking stays on as required by Anthropic, with thinking-binding controls for edited
+  history. Pricing and cache savings use $8/$40 per million input/output tokens, $0.20 cached
+  reads, and $16/$80 in Fast mode. Existing model defaults are unchanged.
+- Anthropic requires 30-day data retention for this model unless it expressly authorizes otherwise.
+  Model details: https://platform.claude.com/docs/en/models/fable-5-2/overview
+
 ## v0.23.0 — 2026-11-09
 
 - **Watch a session from your phone — Share** (aix v2.25.0: `/share`). The new Share button in the
