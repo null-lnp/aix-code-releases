@@ -1,14 +1,14 @@
 {
   "product": "cli",
-  "version": "2.25.0",
-  "notes": "- **Watch a session from your phone — `/share`** (Aix Code v0.23.0: the Share button). The session\n  goes on your local network, read-only: aix prints a link and a QR code, and any phone, tablet or\n  laptop on the same Wi-Fi follows it live — replies as they stream, reasoning, tool calls (output\n  and diffs on tap), the task list, the subagents at work and what the agent is waiting for. It\n  works mid-turn; `/share stop` ends it and tells the viewers. The header shows\n  `◉ shared · n watching`.\n  - Read-only by construction: the server has no endpoint that changes anything. Each share has its\n    own unguessable link; the port (7420 or the next free one, `AIX_SHARE_PORT`) is open only while\n    something is shared.\n  - Light on the network and the phone: one ~10 KB page, a gzip snapshot of the newest items, then\n    small batches over Server-Sent Events — streamed text leaves at most ~12 times a second and is\n    serialised once for every viewer; viewers far behind start over from a snapshot. A phone that is\n    put away drops the stream after a minute and catches up when it's back.\n  - The core's `share` module serves both apps: hosts only feed it their agent events; it reads the\n    user's messages, the plan and the subagent roster from the session itself.",
-  "pub_date": "2026-11-09T04:29:40.231Z",
-  "tag": "cli-v2.25.0",
+  "version": "2.25.1",
+  "notes": "- **Claude Fable 5.2** (`claude-fable-5-2`) is available in the shared model catalog and Anthropic's\n  offline fallback list, including Aix Code v0.23.1. Select it with `/model claude-fable-5-2`.\n  Supports a 1M context window, 128K output, images, low through max effort, and Fast mode.\n- Requests keep adaptive thinking on even when the thinking toggle is off, with thinking-binding\n  controls so edited history can continue. Standard pricing is $8/$40 per million input/output\n  tokens, cached reads are $0.20, and Fast pricing is $16/$80. Cost and cache-savings estimates use\n  these rates; older Fable models keep their existing rates. Existing model defaults are unchanged.\n- Anthropic requires 30-day data retention for Fable 5.2 unless it expressly authorizes otherwise.\n  Model details: https://platform.claude.com/docs/en/models/fable-5-2/overview",
+  "pub_date": "2026-11-09T20:08:35.037Z",
+  "tag": "cli-v2.25.1",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajc0SkJNZm5obHQ3YlRpQmpVbDZQcElRdGJYejNtZFV4SzF0Y3JHQk5ub2hjYmtHNkZZdEN3ZXA5Y3JINUhIdlFFR1pNZFVTNWpFa01jYi82Rnd3YXdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MTk4NTc5CWZpbGU6YWl4LTIuMjUuMC13aW5kb3dzLXg4Nl82NC5leGUKZW9sMWhpNTdCOXhaZ3VnQldZeE9BZ0Q3dHR5Z2Zjd2UxN2ljVnNlVVIwNjBaZVErTDc3eHlpNGJoTGhuMlV5dEgvNkFKbXBpbWlQUHRtMTQ5dWpXQ1E9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.25.0/aix-2.25.0-windows-x86_64.exe",
-      "sha256": "1dc5f4cd102a185c7a39f30b8ce6f9cab1db654496d1e0ff97bb66e3e78bca26"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajRSK2YyVkdLbG1TRStCdDBrU29idnV1eW9yc05obWRkaUdGQ0lVL3FaYlNtZHpFYXFSM0NoVktFeGRzUTRVdkRpejFkM1p1eDZDUFNHQWl3UVhBblE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjU0OTE0CWZpbGU6YWl4LTIuMjUuMS13aW5kb3dzLXg4Nl82NC5leGUKRmdaeHFoNUhJZ0FSKytzUExPcm04NnBnL3J6aERPT3QyZXJvYWJoNzNTdU1rUjBxdnVCenRESnVsVG9YOURrYjVnTFRyaEVoRCtPZ2pGbjJpSnF5Q2c9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.25.1/aix-2.25.1-windows-x86_64.exe",
+      "sha256": "d54f634de652b49228f091b850cf6eafb1c3e95ded21eefe882b2c770e0deda0"
     }
   }
 }
