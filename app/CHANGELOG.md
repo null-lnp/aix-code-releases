@@ -1,5 +1,23 @@
 # Changelog
 
+## v0.23.0 — 2026-11-09
+
+- **Watch a session from your phone — Share** (aix v2.25.0: `/share`). The new Share button in the
+  title bar (or `/share`) puts the session on your local network, read-only: scan the QR code, or
+  open the link on any phone, tablet or laptop on the same Wi-Fi, and follow Aix live — replies as
+  they stream, reasoning, tool calls (output and diffs on tap), the task list, the agents at work
+  and what Aix is waiting for. It works while a turn runs. The button shows how many devices watch;
+  *Stop sharing* (or `/share stop`) ends it and tells them.
+  - Read-only by construction: the server has no endpoint that changes anything; prompts are still
+    answered here. Every share has its own unguessable link, and the port (7420, or the next free
+    one) is open only while something is shared. Windows may ask once to let Aix Code through the
+    firewall on private networks.
+  - Light on the phone and the network: one ~10 KB page, a gzip snapshot of the newest items, then
+    small Server-Sent Event batches (streamed text at most ~12 times a second, serialised once for
+    every viewer). A phone that is put away lets go after a minute and catches up when it's back.
+  - The view follows the session through rewinds, `/clear` and compactions, and a share stops with
+    its session (deleted, or the app closed).
+
 ## v0.22.3 — 2026-11-04
 
 - **GLM 5.3 no longer fails after computer use** (aix v2.24.2). Computer control now requires an

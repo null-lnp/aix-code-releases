@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.22.3",
-  "notes": "- **GLM 5.3 no longer fails after computer use** (aix v2.24.2). Computer control now requires an\n  image-capable model. Text-only models do not receive the tool, and direct or stale calls are\n  refused before approval or desktop input, including in Bypass mode. Vision-capable variants\n  such as GLM 5.3 Flash and GLM 4.6V remain eligible.\n- Conversations already containing screenshots can continue on GLM: unsupported image payloads\n  become explicit omission notices on the wire. Saved images, tool history and custom `/system`\n  prompts remain unchanged. Compatible endpoints returning the text-only content-type error\n  also get a one-time retry; the learned restriction is per model, so switching to a vision\n  model keeps its image support.",
-  "pub_date": "2026-11-04T17:04:14.349Z",
-  "tag": "app-v0.22.3",
+  "version": "0.23.0",
+  "notes": "- **Watch a session from your phone — Share** (aix v2.25.0: `/share`). The new Share button in the\n  title bar (or `/share`) puts the session on your local network, read-only: scan the QR code, or\n  open the link on any phone, tablet or laptop on the same Wi-Fi, and follow Aix live — replies as\n  they stream, reasoning, tool calls (output and diffs on tap), the task list, the agents at work\n  and what Aix is waiting for. It works while a turn runs. The button shows how many devices watch;\n  *Stop sharing* (or `/share stop`) ends it and tells them.\n  - Read-only by construction: the server has no endpoint that changes anything; prompts are still\n    answered here. Every share has its own unguessable link, and the port (7420, or the next free\n    one) is open only while something is shared. Windows may ask once to let Aix Code through the\n    firewall on private networks.\n  - Light on the phone and the network: one ~10 KB page, a gzip snapshot of the newest items, then\n    small Server-Sent Event batches (streamed text at most ~12 times a second, serialised once for\n    every viewer). A phone that is put away lets go after a minute and catches up when it's back.\n  - The view follows the session through rewinds, `/clear` and compactions, and a share stops with\n    its session (deleted, or the app closed).",
+  "pub_date": "2026-11-09T04:55:17.002Z",
+  "tag": "app-v0.23.0",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajdNVERFSmI3VStqVHZ0ak9zcXBPWDhDMnVPaUFkRFJxdnlqMkRzRmcvRkVEMUl5a3l0Rkh1MHlzZkRjN0Q0Z0xCNXBnT1JJbkQxMk91bHdTMEdZV3dzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzODExODA0CWZpbGU6QWl4IENvZGVfMC4yMi4zX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIyLjMKMEZqSTVYc2NzMkNzejk3MEZiTFE0TVEzNm1QSzZ6LzROQVNBd3FXampZWGZYdmtRa0Y1eERvd3MwaGZWZWtQTU85aEl2bzJicnBQSGxpcEJUNENRQXc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.22.3/aix-code-0.22.3-x64-setup.exe",
-      "sha256": "342c0f53653a56079023991193b597f53829fb46fffa4803c13b64b64f6c852f"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajF0SU8vY01PUFh3b01SWWRsQlNCN2p1Nkl6eEhYNVdYVnpvcGJnK3BHVlVpaU5GMWltbDhuajRIQWp5NXgwcERMNG83bDhjc2s5Zittdnd5Nmk1WWdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjAwMTEzCWZpbGU6QWl4IENvZGVfMC4yMy4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIzLjAKWGwzYUdqbGZwZWpUR1I2RGRXbXZabUlDRklTYWRvRTVyVWJIeFBWVkl2WlI1S3VnY0FTYUpubDFGWm53NGJQOGRQNlNOdUlFdmt0YUZWdENtdVFJRGc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.23.0/aix-code-0.23.0-x64-setup.exe",
+      "sha256": "031e110f2fe29231401e81c5633fd0311c030015335feff80b5730d48d610f12"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajdNVERFSmI3VStqVHZ0ak9zcXBPWDhDMnVPaUFkRFJxdnlqMkRzRmcvRkVEMUl5a3l0Rkh1MHlzZkRjN0Q0Z0xCNXBnT1JJbkQxMk91bHdTMEdZV3dzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzODExODA0CWZpbGU6QWl4IENvZGVfMC4yMi4zX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIyLjMKMEZqSTVYc2NzMkNzejk3MEZiTFE0TVEzNm1QSzZ6LzROQVNBd3FXampZWGZYdmtRa0Y1eERvd3MwaGZWZWtQTU85aEl2bzJicnBQSGxpcEJUNENRQXc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.22.3/aix-code-0.22.3-x64-setup.exe",
-      "sha256": "342c0f53653a56079023991193b597f53829fb46fffa4803c13b64b64f6c852f"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajF0SU8vY01PUFh3b01SWWRsQlNCN2p1Nkl6eEhYNVdYVnpvcGJnK3BHVlVpaU5GMWltbDhuajRIQWp5NXgwcERMNG83bDhjc2s5Zittdnd5Nmk1WWdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjAwMTEzCWZpbGU6QWl4IENvZGVfMC4yMy4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIzLjAKWGwzYUdqbGZwZWpUR1I2RGRXbXZabUlDRklTYWRvRTVyVWJIeFBWVkl2WlI1S3VnY0FTYUpubDFGWm53NGJQOGRQNlNOdUlFdmt0YUZWdENtdVFJRGc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.23.0/aix-code-0.23.0-x64-setup.exe",
+      "sha256": "031e110f2fe29231401e81c5633fd0311c030015335feff80b5730d48d610f12"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajY2UjBuOVh4M1NjcjhmZU5BWUswbG5qQWJETHhlbHg4RDE4WTJ1U05INkNtYm5RdFRBaTJIQzVVek1KWWluOWZ2RFU1OVE0UWZ5WTJQNXNFQWc5NXdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzODExODA0CWZpbGU6QWl4IENvZGVfMC4yMi4zX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjIyLjMKWFpObk1OSGRqYTRWU1R0OFU3b0FEZytseXlLS1p3MjlXd2k5S1FtNFhJdXh5eW9LNm1wL3d5MFpsMSt2TC8yRExOV29XNUk1VFpncHVDRXVXZDdkRFE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.22.3/aix-code-0.22.3-x64.msi",
-      "sha256": "ca029e8ce86c2c60c32c5d172f6713607f6ac5464962dd53b264a30bf801e382"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajljWUlrWmMySE15aFVRNCtLL1Y4eFhQM2NjYzU5Zk4zMHhnaE1LWGlMdkVXQ1hGMlZuczR6YlNMZW1IWjI1U3hmTFNxcG5NWUJ4VkRXRHZNandwb2dJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjAwMTEzCWZpbGU6QWl4IENvZGVfMC4yMy4wX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjIzLjAKTG00eXRYTEtML0s0alZXSHJwWStZRkc0Zy9xS3pjL0J3b0N3eCtJdDZxUW1hbmxSNHJmczdBQ1V0ZGUxVENaQ2k3ZC9FNzlhZElRc1I5cHVwb3VzQ0E9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.23.0/aix-code-0.23.0-x64.msi",
+      "sha256": "e699e426b181d200c86bc0033cf3e5fbf99be536c52a17e29c4f5e0dfb1329e3"
     }
   }
 }
