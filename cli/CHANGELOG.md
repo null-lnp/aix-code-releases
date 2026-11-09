@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.25.2 — 2026-11-09
+
+- Fix Claude subscription requests rejected because the advertised Claude Code version was
+  `2.1.280`. Both the user-agent and billing header now advertise at least the current published
+  version, `2.1.321`, even when an older Claude Code is installed locally. Newer installed versions
+  remain honored. Shared with Aix Code v0.23.2; API-key requests are unchanged.
+
 ## v2.25.1 — 2026-11-09
 
 - **Claude Fable 5.2** (`claude-fable-5-2`) is available in the shared model catalog and Anthropic's
