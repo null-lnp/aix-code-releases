@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.23.2 — 2026-11-09
+
+- Fix Claude subscription requests rejected with “Claude Code 2.1.280 does not support this
+  model.” The shared aix v2.25.2 core advertises at least Claude Code `2.1.321` in both the
+  user-agent and billing header, without letting an older local installation lower that version.
+  Newer installed versions remain honored. API-key requests are unchanged.
+
 ## v0.23.1 — 2026-11-09
 
 - **Claude Fable 5.2** (`claude-fable-5-2`, aix v2.25.1) is available in the model picker and with
