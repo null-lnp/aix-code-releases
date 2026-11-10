@@ -1,14 +1,14 @@
 {
   "product": "cli",
-  "version": "2.25.2",
-  "notes": "- Fix Claude subscription requests rejected because the advertised Claude Code version was\n  `2.1.280`. Both the user-agent and billing header now advertise at least the current published\n  version, `2.1.321`, even when an older Claude Code is installed locally. Newer installed versions\n  remain honored. Shared with Aix Code v0.23.2; API-key requests are unchanged.",
-  "pub_date": "2026-11-09T20:34:40.858Z",
-  "tag": "cli-v2.25.2",
+  "version": "2.25.3",
+  "notes": "- Restore GLM 5.3 in Z.ai's fallback and incomplete catalogs, with 1M context and low/high/max\n  effort. Shared with Aix Code v0.23.3.\n- Add Gemini 4 Carbon (`gemini-4-carbon`), including OpenCode Zen's native Gemini endpoint,\n  reasoning, tool calls and thought-signature replay. Zen requires a paid API key for Carbon.\n- Antigravity model listing no longer waits for project onboarding, retries Google's alternate\n  endpoint, and falls back before the picker's timeout. Live context/output limits are honored;\n  disabled/internal entries are hidden. Carbon appears there only when Google enables it for\n  the connected account; `gemini-4-carbon-disabled` is not a usable model.\n- Aix Code's provider brand icons are desktop-only; terminal rendering is unchanged.",
+  "pub_date": "2026-11-10T20:44:17.998Z",
+  "tag": "cli-v2.25.3",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajZTR0ZRcnlhM3dzYmNjaTRjekwyT2V0MG9RcTBJVDMyT25mVGNuU1d5Q3BQMmcxTHM0b3g1a01nK2xhMWJ0MUtVSHQ4aFBmSGl2bFZUZERmSVJWV2dJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjU2NDgwCWZpbGU6YWl4LTIuMjUuMi13aW5kb3dzLXg4Nl82NC5leGUKRmwzL3plcWJBdlNPZjVNUXp6UWxtdTlJdDVDZC9TQmJKN29XVUxrV1NXMEtuVnpkNWhxN05yYWt2M1ozQ21yRXBSa0l4cVdjWWpqWlU0eit0RGhkQmc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.25.2/aix-2.25.2-windows-x86_64.exe",
-      "sha256": "4efb70f0abc716355602cf693183de8224e0adbddb1ab3ad188062172e869009"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aai9YV0gxYU4yZThhK21lUzE4bCtPczBuUDBLbkdnN2dZSXRIS0RnS090MkludUNpMldXQktMdTQxOUJ3N2RRV1UxRGE5QjZBOGNSWU03SjViakRMK2dzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MzQzNDU3CWZpbGU6YWl4LTIuMjUuMy13aW5kb3dzLXg4Nl82NC5leGUKcStaQnNpRGVwMU5tWUVVaWFuSU94OVpWSlhKdGpuMi9CSXovc0Q0UURLUFJzRHJOZGVlcnZnaUt1V05BeDc0VXVLVlpFL2gxQURVaWFBd0ZGc3oyQUE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.25.3/aix-2.25.3-windows-x86_64.exe",
+      "sha256": "c2b20cded8ba9c69a01c09598a00ac6ca7799ffbc181cf4afedaf94e4dc230e4"
     }
   }
 }
