@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.23.3 — 2026-11-10
+
+- Replace provider monograms with bundled brand icons in the model pill, picker, settings and
+  usage views. Icons adapt to light/dark themes; unknown custom providers keep a monogram.
+- Restore GLM 5.3 in Z.ai's fallback and incomplete catalogs, with 1M context and low/high/max
+  effort in the shared aix v2.25.3 core.
+- Add Gemini 4 Carbon (`gemini-4-carbon`), including OpenCode Zen's native Gemini endpoint,
+  reasoning, tool calls and thought-signature replay. Zen requires a paid API key for Carbon.
+- Antigravity model listing no longer waits for project onboarding, retries Google's alternate
+  endpoint, and falls back before the picker's timeout. Live context/output limits are honored;
+  disabled/internal entries are hidden. Carbon appears there only when Google enables it for
+  the connected account; `gemini-4-carbon-disabled` is not a usable model.
+
 ## v0.23.2 — 2026-11-09
 
 - Fix Claude subscription requests rejected with “Claude Code 2.1.280 does not support this

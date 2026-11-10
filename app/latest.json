@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.23.2",
-  "notes": "- Fix Claude subscription requests rejected with “Claude Code 2.1.280 does not support this\n  model.” The shared aix v2.25.2 core advertises at least Claude Code `2.1.321` in both the\n  user-agent and billing header, without letting an older local installation lower that version.\n  Newer installed versions remain honored. API-key requests are unchanged.",
-  "pub_date": "2026-11-09T20:42:24.554Z",
-  "tag": "app-v0.23.2",
+  "version": "0.23.3",
+  "notes": "- Replace provider monograms with bundled brand icons in the model pill, picker, settings and\n  usage views. Icons adapt to light/dark themes; unknown custom providers keep a monogram.\n- Restore GLM 5.3 in Z.ai's fallback and incomplete catalogs, with 1M context and low/high/max\n  effort in the shared aix v2.25.3 core.\n- Add Gemini 4 Carbon (`gemini-4-carbon`), including OpenCode Zen's native Gemini endpoint,\n  reasoning, tool calls and thought-signature replay. Zen requires a paid API key for Carbon.\n- Antigravity model listing no longer waits for project onboarding, retries Google's alternate\n  endpoint, and falls back before the picker's timeout. Live context/output limits are honored;\n  disabled/internal entries are hidden. Carbon appears there only when Google enables it for\n  the connected account; `gemini-4-carbon-disabled` is not a usable model.",
+  "pub_date": "2026-11-10T20:37:56.285Z",
+  "tag": "app-v0.23.3",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanpWM0Y1QmVFN2l1VDgvaGo5dHA3eWxZYU1xM1Bxc01tM05RUk4rQWRld2l6WDBsamc4L2hPT2pQcjBBMTZIb3hpbTQxVzM3YmpVL3NxeDhqUWNEbUFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjU2OTQwCWZpbGU6QWl4IENvZGVfMC4yMy4yX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIzLjIKUUkyMTY1RUdhNWpzUDloTFJrdjZyWXdIcTRza3o4M1VHTi81dXVUTmhwREhJdm1SdzBMR1lXMEd4N3J0bHZNYzR0U1NWNTQ4MGFBRUpoVDVzSkozQ3c9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.23.2/aix-code-0.23.2-x64-setup.exe",
-      "sha256": "6fdebd64e2e8ae3ed1aafb40c9b67d1d86e17eea80d87a10684ffd88572d3f3e"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanhVa21GTmttYXJtdnlzczR1c3NwMUxhaTFnMnFIeFZGSzVHUjdFYkg1ZGZaMlFlMHhSc0JZQzNsdGszWUN6dGU4eGJPMGM0MTdEc0dqYU1VcjJyRUFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MzQyOTYzCWZpbGU6QWl4IENvZGVfMC4yMy4zX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIzLjMKa0hnK2htNFpXQ1RJdHZDdURtTkZWUUJXNlphTk1oclM3K243OU8vbWRuS1ZEcnRlZEJTaVV4VHFSVXVLdDlLdnZMeEk2WjU2bnRPUXlUTERObVdpRFE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.23.3/aix-code-0.23.3-x64-setup.exe",
+      "sha256": "8363cb8d913e4367d3d85a3e6ac4c9080ac65561de64472f1b6f6108cbe70dff"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanpWM0Y1QmVFN2l1VDgvaGo5dHA3eWxZYU1xM1Bxc01tM05RUk4rQWRld2l6WDBsamc4L2hPT2pQcjBBMTZIb3hpbTQxVzM3YmpVL3NxeDhqUWNEbUFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjU2OTQwCWZpbGU6QWl4IENvZGVfMC4yMy4yX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIzLjIKUUkyMTY1RUdhNWpzUDloTFJrdjZyWXdIcTRza3o4M1VHTi81dXVUTmhwREhJdm1SdzBMR1lXMEd4N3J0bHZNYzR0U1NWNTQ4MGFBRUpoVDVzSkozQ3c9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.23.2/aix-code-0.23.2-x64-setup.exe",
-      "sha256": "6fdebd64e2e8ae3ed1aafb40c9b67d1d86e17eea80d87a10684ffd88572d3f3e"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanhVa21GTmttYXJtdnlzczR1c3NwMUxhaTFnMnFIeFZGSzVHUjdFYkg1ZGZaMlFlMHhSc0JZQzNsdGszWUN6dGU4eGJPMGM0MTdEc0dqYU1VcjJyRUFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MzQyOTYzCWZpbGU6QWl4IENvZGVfMC4yMy4zX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIzLjMKa0hnK2htNFpXQ1RJdHZDdURtTkZWUUJXNlphTk1oclM3K243OU8vbWRuS1ZEcnRlZEJTaVV4VHFSVXVLdDlLdnZMeEk2WjU2bnRPUXlUTERObVdpRFE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.23.3/aix-code-0.23.3-x64-setup.exe",
+      "sha256": "8363cb8d913e4367d3d85a3e6ac4c9080ac65561de64472f1b6f6108cbe70dff"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajMwVUVXb2lIWGd4a0NaOTFremxYbDBVdVhOQlJEN2pWckxlSFJ3bTAyVzRjSllaUE9kc1VGRjVyLzFmdkZvb2xnQlV5YzVEcU81REVaZHE1aEs0ZGdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjU2OTQwCWZpbGU6QWl4IENvZGVfMC4yMy4yX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjIzLjIKdXRCYjE4UWF5emo3YnczaWNSb3FuWXBiTTRLTC9vd0FybUo5RHUzY1hFN3lYNVpvYzBlS0dESFlQY3REcXhEdzBLV3M0RmhPTCsyV0xyOFBwemZHQnc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.23.2/aix-code-0.23.2-x64.msi",
-      "sha256": "64a8b63f6664a8b18fb35c34e549941c44acc09524707f16e196c95d037472a6"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajh6RG1xYXpXRVF5WDdQb1BCMFB2YjBtaXRMc3RLWXBMbFZTNGxxVjlCdnRFb0hzYmlaamd4T0ZSNjVuZ0Foc0RQUWxRYTBWa3BaSFNENzRzalFzakEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MzQyOTYzCWZpbGU6QWl4IENvZGVfMC4yMy4zX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjIzLjMKdFZCazVnWGN3SzUrQUc2c1FwVFNqTzZZVXJDcGV3aG44b1kxci91V3pBcGZ1STdRZG1GVWF0cHI3MGR1cUlhRXNzTXlMSEVlcFUyRXNPK2lkRzYvQnc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.23.3/aix-code-0.23.3-x64.msi",
+      "sha256": "5cadba77a83ab9670ea132a56acd5e7816433afb4c04cd8f44f553e19473b7d5"
     }
   }
 }
