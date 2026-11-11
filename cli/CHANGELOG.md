@@ -1,5 +1,16 @@
 # Changelog
 
+## v2.25.4 — 2026-11-10
+
+- Fix Gemini API-key chats failing on tool calls with `missing thought_signature`. Google's
+  Gemini connection now uses the native Gemini transport, preserving signed tool calls and
+  reasoning state across requests and saved sessions. Existing `models/gemini-*` selections,
+  API keys and older unsigned/mixed-model history continue to work without resetting the chat.
+- Report `content_filter: OTHER` as a provider refusal with its reason, not an empty response.
+  Native Google block/finish explanations are retained in errors and diagnostics. This does not
+  disable Google's safety controls or guarantee that a provider-blocked request will be accepted.
+- Shared with Aix Code v0.23.4; restart after updating to apply the transport fix to existing chats.
+
 ## v2.25.3 — 2026-11-10
 
 - Restore GLM 5.3 in Z.ai's fallback and incomplete catalogs, with 1M context and low/high/max
