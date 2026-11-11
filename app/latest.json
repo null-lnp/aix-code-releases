@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.23.4",
-  "notes": "- Fix Gemini API-key chats failing on tool calls with `missing thought_signature`. Google's\n  Gemini connection now uses the native Gemini transport, preserving signed tool calls and\n  reasoning state across requests and saved sessions. Existing `models/gemini-*` selections,\n  API keys and older unsigned/mixed-model history continue to work without resetting the chat.\n- Report `content_filter: OTHER` as a provider refusal with its reason, not an empty response.\n  Native Google block/finish explanations are retained in errors and diagnostics. This does not\n  disable Google's safety controls or guarantee that a provider-blocked request will be accepted.\n- Shared with aix v2.25.4; restart after updating to apply the transport fix to existing chats.",
-  "pub_date": "2026-11-11T01:36:31.912Z",
-  "tag": "app-v0.23.4",
+  "version": "0.24.0",
+  "notes": "- **Shared sessions show every subagent** (aix v2.26.0). On the phone, the shared view used to fold\n  the helpers into one \"3 agents working\" line. Now each agent has a chip under the header (the\n  side list on wider screens) with what it's doing and its task progress; the calls that start or\n  message an agent show as cards that open it; and every agent has its own live page — the task it\n  was given, its task list, the messages it sent and got, and its activity: reasoning, replies and\n  tool calls with their output on tap, plus model, tokens, context and cost. Switch between agents\n  from the page; the phone's back button closes it. Finished agents stay openable.\n- An agent page loads only while it's open, so sharing stays light for everyone else watching.",
+  "pub_date": "2026-11-11T06:22:32.120Z",
+  "tag": "app-v0.24.0",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajFwWWl2MWE4R2x2NVRSa3BHVHFuZ2RzNnhoNDJGQ2xvRnU4RnBYOWdBbUxETHROTmcrS1A4cnFGZjdzYS9CdXVBTE1KZ3BkdTcxTzZBS2hTMnp1cUFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MzYwODgzCWZpbGU6QWl4IENvZGVfMC4yMy40X3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIzLjQKYTcxQWZrUjNzeFBpTm40YXV6THdjbS82NjFCSHVOQ1NIZWdIbUNISDh3MTN0QTQvVHFmM25DY1E0VktrRTBFK29ldzY4K2tYK2tlRWJFWlFwT01CQnc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.23.4/aix-code-0.23.4-x64-setup.exe",
-      "sha256": "0091188829128ef0985f798f886f15feb634530b433da943307d50bb9e1af057"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajczMU5aeFBtQ3FVb0VvT2dKbkpMM1h5RXJYMm9wZ1JUU1FzVFlqeE9sTFFRYXkyQ000QzJOSHNwYkNrNEtTUGN0dmFSTDEzakZZcWVFb0ZYeEZWSUFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0Mzc4MTQ2CWZpbGU6QWl4IENvZGVfMC4yNC4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI0LjAKSWU2QzJVUzlVZFViR2FFSU1tQk0vRzdSb2RGZmxGaUNEbjVQaFRiRkx0VjFwTlNhN1p5R21wTytaQWtuNTlhVEV3NGJnaDdoRWo4YTMrbHkxckMzQkE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.24.0/aix-code-0.24.0-x64-setup.exe",
+      "sha256": "dac564881b4060c4dbaa2f2515bc66ca0a16cddeb29f166c09ddf10dee7b44a1"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajFwWWl2MWE4R2x2NVRSa3BHVHFuZ2RzNnhoNDJGQ2xvRnU4RnBYOWdBbUxETHROTmcrS1A4cnFGZjdzYS9CdXVBTE1KZ3BkdTcxTzZBS2hTMnp1cUFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MzYwODgzCWZpbGU6QWl4IENvZGVfMC4yMy40X3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjIzLjQKYTcxQWZrUjNzeFBpTm40YXV6THdjbS82NjFCSHVOQ1NIZWdIbUNISDh3MTN0QTQvVHFmM25DY1E0VktrRTBFK29ldzY4K2tYK2tlRWJFWlFwT01CQnc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.23.4/aix-code-0.23.4-x64-setup.exe",
-      "sha256": "0091188829128ef0985f798f886f15feb634530b433da943307d50bb9e1af057"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajczMU5aeFBtQ3FVb0VvT2dKbkpMM1h5RXJYMm9wZ1JUU1FzVFlqeE9sTFFRYXkyQ000QzJOSHNwYkNrNEtTUGN0dmFSTDEzakZZcWVFb0ZYeEZWSUFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0Mzc4MTQ2CWZpbGU6QWl4IENvZGVfMC4yNC4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI0LjAKSWU2QzJVUzlVZFViR2FFSU1tQk0vRzdSb2RGZmxGaUNEbjVQaFRiRkx0VjFwTlNhN1p5R21wTytaQWtuNTlhVEV3NGJnaDdoRWo4YTMrbHkxckMzQkE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.24.0/aix-code-0.24.0-x64-setup.exe",
+      "sha256": "dac564881b4060c4dbaa2f2515bc66ca0a16cddeb29f166c09ddf10dee7b44a1"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajNPcWx2anBaRVNpSTFrRHhWNFRxcGpFL2QvN0M2NWhrbGdiNHNDOXk1NTNlWjNJUTA4c0h0YjRJQzFZaFpUYkZJU3RMeWhuVll1UTFDNVJRQ3Jhcmd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MzYwODgzCWZpbGU6QWl4IENvZGVfMC4yMy40X3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjIzLjQKT3VYZTIrQ3duSXhERTZiTEw1S2tycUZoZkg1NUg0QTM4bmJmT3ovMTc3M3ZmSDFDdjhXWHhtQVJSeUFHdFRBTlY2M3EzRUV0QkpFLzlrd2x6L2VtRFE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.23.4/aix-code-0.23.4-x64.msi",
-      "sha256": "85f8cdf2a19a4e4fcd84bd85247065ff380e6d50067c81381f13fd69d2f75fd8"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanh1Z1VINHZOdDY0a1ltRHJnSUhzcWNVZGZtYktrT0Vkck9Ndi9jbjFQU1oxcVhnNmt5c1YxbHNXSTVtdHpCL3lrc2QvRVpkNldGcHB4dzZjUlFHbGdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0Mzc4MTQ2CWZpbGU6QWl4IENvZGVfMC4yNC4wX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjI0LjAKZ01pUUdESnZoWmdaUDNObmtTZnV5VkluUjJhVGdtMytTUnZZQndyWXBDYmlQQ01iclZkakh3cmtsamcrd3RacGsraDNFam1Pblk1bHZOSDlsRytvQ3c9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.24.0/aix-code-0.24.0-x64.msi",
+      "sha256": "6feb743de9917bc07f22891dcee112aed0388c25973b49e0c24ec300524d8df9"
     }
   }
 }

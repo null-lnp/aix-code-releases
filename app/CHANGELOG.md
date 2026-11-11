@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.24.0 — 2026-11-11
+
+- **Shared sessions show every subagent** (aix v2.26.0). On the phone, the shared view used to fold
+  the helpers into one "3 agents working" line. Now each agent has a chip under the header (the
+  side list on wider screens) with what it's doing and its task progress; the calls that start or
+  message an agent show as cards that open it; and every agent has its own live page — the task it
+  was given, its task list, the messages it sent and got, and its activity: reasoning, replies and
+  tool calls with their output on tap, plus model, tokens, context and cost. Switch between agents
+  from the page; the phone's back button closes it. Finished agents stay openable.
+- An agent page loads only while it's open, so sharing stays light for everyone else watching.
+
 ## v0.23.4 — 2026-11-10
 
 - Fix Gemini API-key chats failing on tool calls with `missing thought_signature`. Google's
