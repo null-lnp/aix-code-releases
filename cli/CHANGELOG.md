@@ -1,5 +1,22 @@
 # Changelog
 
+## v2.26.0 — 2026-11-11
+
+- **Shared sessions show every subagent** (`/share`; Aix Code v0.24.0: the Share button). The
+  viewer used to collapse the helpers into one line ("3 agents working") behind the phone's task
+  bar. Now:
+  - **Agent chips** under the header on phones (the side list on wider screens): each agent with
+    what it's doing now and its own task progress.
+  - **Agent cards in the conversation**: the call that started a helper opens it; calls that wait
+    on one or write to one link to it too.
+  - **An agent page** for each helper, live: the task it was given, its own task list, the
+    messages it sent and got, and its activity — reasoning, replies, tool calls with their output
+    on tap — plus model, tool calls, tokens, context and cost. Switch between agents from the page;
+    the phone's back button closes it. Finished agents stay openable, with how they ended.
+- Light on the network: an agent page is fetched only while it's open (about once a second; an
+  unchanged agent answers with an empty reply), never pushed to every viewer.
+- Cost and cache-savings estimates are unchanged; nothing about what the agents do changes.
+
 ## v2.25.4 — 2026-11-10
 
 - Fix Gemini API-key chats failing on tool calls with `missing thought_signature`. Google's

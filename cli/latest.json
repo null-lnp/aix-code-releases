@@ -1,14 +1,14 @@
 {
   "product": "cli",
-  "version": "2.25.4",
-  "notes": "- Fix Gemini API-key chats failing on tool calls with `missing thought_signature`. Google's\n  Gemini connection now uses the native Gemini transport, preserving signed tool calls and\n  reasoning state across requests and saved sessions. Existing `models/gemini-*` selections,\n  API keys and older unsigned/mixed-model history continue to work without resetting the chat.\n- Report `content_filter: OTHER` as a provider refusal with its reason, not an empty response.\n  Native Google block/finish explanations are retained in errors and diagnostics. This does not\n  disable Google's safety controls or guarantee that a provider-blocked request will be accepted.\n- Shared with Aix Code v0.23.4; restart after updating to apply the transport fix to existing chats.",
-  "pub_date": "2026-11-11T01:40:21.279Z",
-  "tag": "cli-v2.25.4",
+  "version": "2.26.0",
+  "notes": "- **Shared sessions show every subagent** (`/share`; Aix Code v0.24.0: the Share button). The\n  viewer used to collapse the helpers into one line (\"3 agents working\") behind the phone's task\n  bar. Now:\n  - **Agent chips** under the header on phones (the side list on wider screens): each agent with\n    what it's doing now and its own task progress.\n  - **Agent cards in the conversation**: the call that started a helper opens it; calls that wait\n    on one or write to one link to it too.\n  - **An agent page** for each helper, live: the task it was given, its own task list, the\n    messages it sent and got, and its activity — reasoning, replies, tool calls with their output\n    on tap — plus model, tool calls, tokens, context and cost. Switch between agents from the page;\n    the phone's back button closes it. Finished agents stay openable, with how they ended.\n- Light on the network: an agent page is fetched only while it's open (about once a second; an\n  unchanged agent answers with an empty reply), never pushed to every viewer.\n- Cost and cache-savings estimates are unchanged; nothing about what the agents do changes.",
+  "pub_date": "2026-11-11T06:14:46.914Z",
+  "tag": "cli-v2.26.0",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajdwRVlIeVFBN2pWc28wc0ZWYjllQllNN1ZoKy8yN0ZuZmEzYy9CSmFUN0phTkRabERVTTJrQkRNenBJQTFiVnY2QnduVWNKelk0ZTlhelQ0MW9LTmdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MzYxMjIxCWZpbGU6YWl4LTIuMjUuNC13aW5kb3dzLXg4Nl82NC5leGUKaFdWOUUxQUM2eXkyMGFkWWxPTWRlRm9lZmpKTnVVcGpveVVxQ0JucC9LVTRhSFpDVis3clJCNW9DMDlyV2VlWjd3M09UczlXUXZsME5pS3BGeHRIQUE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.25.4/aix-2.25.4-windows-x86_64.exe",
-      "sha256": "12765889ee00e3e85f326a5773381a83f381f2ac3d4cbbe49adf2268668fd655"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aandRUmxJVXp5Z2hMUmNWWERBb2VheHpiclRuS0ZJTlVGSnRYYlN2ZjNSMXFTSWk3YWZjRFc5YnVVclFyQXRVcVRoOVc4MFVtWXR4ejJqcCtDcnNkSlFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0Mzc3Njg2CWZpbGU6YWl4LTIuMjYuMC13aW5kb3dzLXg4Nl82NC5leGUKdTYyK1VxeWNZZS95U1VoUmJzQnJEWTMrRWQyQkhzUVVia2toN1I5bm10QnhYOWxpYTBEQmJsR2ptYUxhVHgremlYVHFVUnF0STlrZkh4V1k1SmZQRGc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.26.0/aix-2.26.0-windows-x86_64.exe",
+      "sha256": "59d21f3edc656aa2284f19e5cf4a88f592be6234df18843cf4ed6953f0ac8074"
     }
   }
 }
