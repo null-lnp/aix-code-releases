@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.24.0",
-  "notes": "- **Shared sessions show every subagent** (aix v2.26.0). On the phone, the shared view used to fold\n  the helpers into one \"3 agents working\" line. Now each agent has a chip under the header (the\n  side list on wider screens) with what it's doing and its task progress; the calls that start or\n  message an agent show as cards that open it; and every agent has its own live page — the task it\n  was given, its task list, the messages it sent and got, and its activity: reasoning, replies and\n  tool calls with their output on tap, plus model, tokens, context and cost. Switch between agents\n  from the page; the phone's back button closes it. Finished agents stay openable.\n- An agent page loads only while it's open, so sharing stays light for everyone else watching.",
-  "pub_date": "2026-11-11T06:22:32.120Z",
-  "tag": "app-v0.24.0",
+  "version": "0.24.1",
+  "notes": "- Fix **Model & prompt** settings closing when you click a fallback-model or smart-subagent\n  dropdown. Nested menus render in a separate portal; their clicks now belong to the parent\n  popover instead of being treated as outside clicks. You can search, choose and save a model\n  without losing the settings pane.\n- Escape dismisses only the active nested menu first; another Escape closes settings. Clicking\n  elsewhere inside settings dismisses its dropdown only, and a genuine outside click still\n  closes both. The shared popover fix applies to other nested menus too.\n- Desktop-only: terminal pickers do not use browser portals. No agent-core behavior changes.",
+  "pub_date": "2026-11-12T14:50:12.879Z",
+  "tag": "app-v0.24.1",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajczMU5aeFBtQ3FVb0VvT2dKbkpMM1h5RXJYMm9wZ1JUU1FzVFlqeE9sTFFRYXkyQ000QzJOSHNwYkNrNEtTUGN0dmFSTDEzakZZcWVFb0ZYeEZWSUFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0Mzc4MTQ2CWZpbGU6QWl4IENvZGVfMC4yNC4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI0LjAKSWU2QzJVUzlVZFViR2FFSU1tQk0vRzdSb2RGZmxGaUNEbjVQaFRiRkx0VjFwTlNhN1p5R21wTytaQWtuNTlhVEV3NGJnaDdoRWo4YTMrbHkxckMzQkE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.24.0/aix-code-0.24.0-x64-setup.exe",
-      "sha256": "dac564881b4060c4dbaa2f2515bc66ca0a16cddeb29f166c09ddf10dee7b44a1"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajE2Zkt6T1JrT3g4RndVcE92ampJelFPcHBCdWNmT3RGK0EyRlE4cDdmamltZFN2T1gweHpwdGdJZ3I0REN6QnQzZFpVV01ZQXU3SXhxZTBtaUc3bmdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NDk0OTc3CWZpbGU6QWl4IENvZGVfMC4yNC4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI0LjEKMjZJbkE1Y25YVUszV29xaDdmWmZWQmpjN1FuRTB1V1Q2b0QwTDlKdWV6dXdDbElpWU55MzhuSmxMMnYyU0QwNlpZZFZndUsxRXJYUUwrRkpidm9WQmc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.24.1/aix-code-0.24.1-x64-setup.exe",
+      "sha256": "e788a61a805fa1be512bafed2a0da77f1d8b3cd37bbeadf63c0dd0ef629c38c9"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajczMU5aeFBtQ3FVb0VvT2dKbkpMM1h5RXJYMm9wZ1JUU1FzVFlqeE9sTFFRYXkyQ000QzJOSHNwYkNrNEtTUGN0dmFSTDEzakZZcWVFb0ZYeEZWSUFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0Mzc4MTQ2CWZpbGU6QWl4IENvZGVfMC4yNC4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI0LjAKSWU2QzJVUzlVZFViR2FFSU1tQk0vRzdSb2RGZmxGaUNEbjVQaFRiRkx0VjFwTlNhN1p5R21wTytaQWtuNTlhVEV3NGJnaDdoRWo4YTMrbHkxckMzQkE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.24.0/aix-code-0.24.0-x64-setup.exe",
-      "sha256": "dac564881b4060c4dbaa2f2515bc66ca0a16cddeb29f166c09ddf10dee7b44a1"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajE2Zkt6T1JrT3g4RndVcE92ampJelFPcHBCdWNmT3RGK0EyRlE4cDdmamltZFN2T1gweHpwdGdJZ3I0REN6QnQzZFpVV01ZQXU3SXhxZTBtaUc3bmdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NDk0OTc3CWZpbGU6QWl4IENvZGVfMC4yNC4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI0LjEKMjZJbkE1Y25YVUszV29xaDdmWmZWQmpjN1FuRTB1V1Q2b0QwTDlKdWV6dXdDbElpWU55MzhuSmxMMnYyU0QwNlpZZFZndUsxRXJYUUwrRkpidm9WQmc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.24.1/aix-code-0.24.1-x64-setup.exe",
+      "sha256": "e788a61a805fa1be512bafed2a0da77f1d8b3cd37bbeadf63c0dd0ef629c38c9"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanh1Z1VINHZOdDY0a1ltRHJnSUhzcWNVZGZtYktrT0Vkck9Ndi9jbjFQU1oxcVhnNmt5c1YxbHNXSTVtdHpCL3lrc2QvRVpkNldGcHB4dzZjUlFHbGdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0Mzc4MTQ2CWZpbGU6QWl4IENvZGVfMC4yNC4wX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjI0LjAKZ01pUUdESnZoWmdaUDNObmtTZnV5VkluUjJhVGdtMytTUnZZQndyWXBDYmlQQ01iclZkakh3cmtsamcrd3RacGsraDNFam1Pblk1bHZOSDlsRytvQ3c9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.24.0/aix-code-0.24.0-x64.msi",
-      "sha256": "6feb743de9917bc07f22891dcee112aed0388c25973b49e0c24ec300524d8df9"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanhjdGNPeHk3Y2JTbEVaV1FFbDlhZ1k1NjFLRTVzN0VBNUR2cTZJNkFwRUp4MU1KOWtFOEdVZU42eEdpVXV0WmRYT3d2VmkyRlpRdHk4bXh4TEtlR0FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NDk0OTc3CWZpbGU6QWl4IENvZGVfMC4yNC4xX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjI0LjEKUERDdUNKcnQwOHVaam5GbHJidWtJc3VVdnB5dXhUdjFXRVNhWStoUkdUTTRac2NDVE0wa3VQaDQrejhvVUdBWWZzdWZWYmk3d2wyV0wrRVNlVHNLRHc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.24.1/aix-code-0.24.1-x64.msi",
+      "sha256": "037bc99dd578840bcb0d30afbed8d9474977dae70f0158707a20e9f576707fe3"
     }
   }
 }

@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.24.1 — 2026-11-12
+
+- Fix **Model & prompt** settings closing when you click a fallback-model or smart-subagent
+  dropdown. Nested menus render in a separate portal; their clicks now belong to the parent
+  popover instead of being treated as outside clicks. You can search, choose and save a model
+  without losing the settings pane.
+- Escape dismisses only the active nested menu first; another Escape closes settings. Clicking
+  elsewhere inside settings dismisses its dropdown only, and a genuine outside click still
+  closes both. The shared popover fix applies to other nested menus too.
+- Desktop-only: terminal pickers do not use browser portals. No agent-core behavior changes.
+
 ## v0.24.0 — 2026-11-11
 
 - **Shared sessions show every subagent** (aix v2.26.0). On the phone, the shared view used to fold
