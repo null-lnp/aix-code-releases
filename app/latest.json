@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.24.1",
-  "notes": "- Fix **Model & prompt** settings closing when you click a fallback-model or smart-subagent\n  dropdown. Nested menus render in a separate portal; their clicks now belong to the parent\n  popover instead of being treated as outside clicks. You can search, choose and save a model\n  without losing the settings pane.\n- Escape dismisses only the active nested menu first; another Escape closes settings. Clicking\n  elsewhere inside settings dismisses its dropdown only, and a genuine outside click still\n  closes both. The shared popover fix applies to other nested menus too.\n- Desktop-only: terminal pickers do not use browser portals. No agent-core behavior changes.",
-  "pub_date": "2026-11-12T14:50:12.879Z",
-  "tag": "app-v0.24.1",
+  "version": "0.25.0",
+  "notes": "- Fix Gemini / Antigravity compaction failing with `The input token count exceeds the maximum\n  number of tokens allowed 1048576`. The shared core calibrates against actual usage and retries\n  with smaller, correctly paired history batches; failed compaction never changes saved history.\n- Background helpers keep their session active in the sidebar after the manager's turn ends.\n  Helper usage-limit pauses appear immediately, without sending another main-chat message.\n  Healthy helpers and the main chat are not labeled paused just because another model hit a\n  limit. Live helper approval cards remain answerable when the main turn finishes.\n- **Session account selector** beside the model, for existing chats and before the first message\n  of a new session. Choose a saved account without changing the global account or other chats;\n  the choice is saved with the session and applies to its helpers. Automatic follows configured\n  credentials/global failover; a selected account stays pinned. Switching only restarts pending\n  or in-flight model requests, keeping completed work; previously generated tokens may be billed.\n  `/account` opens the selector; `/account <number or label>` and `/account auto` also work.\n  Subscription usage snapshots remain separate for pinned accounts.\n- These changes are shared with aix v2.27.0; shared LAN viewers also track helper activity.",
+  "pub_date": "2026-11-13T17:22:31.983Z",
+  "tag": "app-v0.25.0",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajE2Zkt6T1JrT3g4RndVcE92ampJelFPcHBCdWNmT3RGK0EyRlE4cDdmamltZFN2T1gweHpwdGdJZ3I0REN6QnQzZFpVV01ZQXU3SXhxZTBtaUc3bmdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NDk0OTc3CWZpbGU6QWl4IENvZGVfMC4yNC4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI0LjEKMjZJbkE1Y25YVUszV29xaDdmWmZWQmpjN1FuRTB1V1Q2b0QwTDlKdWV6dXdDbElpWU55MzhuSmxMMnYyU0QwNlpZZFZndUsxRXJYUUwrRkpidm9WQmc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.24.1/aix-code-0.24.1-x64-setup.exe",
-      "sha256": "e788a61a805fa1be512bafed2a0da77f1d8b3cd37bbeadf63c0dd0ef629c38c9"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanlzT3dPSDBPNkVTenhLRzdEbkREMnQ2MnpYeXZhUWJvU0x2R2Q1QzU0cFpCNzBNUGRqNnMzT2lCRWN1NmsxQy82aGFEYjUwaHdXdENYdDQ1UEdBbHc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NTkwNTQyCWZpbGU6QWl4IENvZGVfMC4yNS4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI1LjAKd0x2M3BOWUt6YXFyYm50ZGd1WHk5cVFWaklEbld4ZHFhb1dUTDltbGxQV1V4K0M4UytwSyttVGdHaG5BVkxjcndwUW1hZWdJZS9UU21jWUcreUZaQXc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.0/aix-code-0.25.0-x64-setup.exe",
+      "sha256": "b3e0fd216b7a266d5afee9ba367eecdbcd0d763afda17bdf5e304dcd50bbaac7"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajE2Zkt6T1JrT3g4RndVcE92ampJelFPcHBCdWNmT3RGK0EyRlE4cDdmamltZFN2T1gweHpwdGdJZ3I0REN6QnQzZFpVV01ZQXU3SXhxZTBtaUc3bmdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NDk0OTc3CWZpbGU6QWl4IENvZGVfMC4yNC4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI0LjEKMjZJbkE1Y25YVUszV29xaDdmWmZWQmpjN1FuRTB1V1Q2b0QwTDlKdWV6dXdDbElpWU55MzhuSmxMMnYyU0QwNlpZZFZndUsxRXJYUUwrRkpidm9WQmc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.24.1/aix-code-0.24.1-x64-setup.exe",
-      "sha256": "e788a61a805fa1be512bafed2a0da77f1d8b3cd37bbeadf63c0dd0ef629c38c9"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanlzT3dPSDBPNkVTenhLRzdEbkREMnQ2MnpYeXZhUWJvU0x2R2Q1QzU0cFpCNzBNUGRqNnMzT2lCRWN1NmsxQy82aGFEYjUwaHdXdENYdDQ1UEdBbHc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NTkwNTQyCWZpbGU6QWl4IENvZGVfMC4yNS4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI1LjAKd0x2M3BOWUt6YXFyYm50ZGd1WHk5cVFWaklEbld4ZHFhb1dUTDltbGxQV1V4K0M4UytwSyttVGdHaG5BVkxjcndwUW1hZWdJZS9UU21jWUcreUZaQXc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.0/aix-code-0.25.0-x64-setup.exe",
+      "sha256": "b3e0fd216b7a266d5afee9ba367eecdbcd0d763afda17bdf5e304dcd50bbaac7"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanhjdGNPeHk3Y2JTbEVaV1FFbDlhZ1k1NjFLRTVzN0VBNUR2cTZJNkFwRUp4MU1KOWtFOEdVZU42eEdpVXV0WmRYT3d2VmkyRlpRdHk4bXh4TEtlR0FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NDk0OTc3CWZpbGU6QWl4IENvZGVfMC4yNC4xX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjI0LjEKUERDdUNKcnQwOHVaam5GbHJidWtJc3VVdnB5dXhUdjFXRVNhWStoUkdUTTRac2NDVE0wa3VQaDQrejhvVUdBWWZzdWZWYmk3d2wyV0wrRVNlVHNLRHc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.24.1/aix-code-0.24.1-x64.msi",
-      "sha256": "037bc99dd578840bcb0d30afbed8d9474977dae70f0158707a20e9f576707fe3"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajlDUTJYZHFQMUUyUlYvZEVndnJOemxRS0w4UUNSOElTUkVWRyswdGdBMTREMGN1bkQxb0lXMjF4NlB0UjZBa21BYkpCd2E1YmlSME8xQTVHRFJUWVFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NTkwNTQyCWZpbGU6QWl4IENvZGVfMC4yNS4wX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjI1LjAKK0svcFhJeU5XRVlZQmpEYURLdE5uaGdtbE9wbmpmWUZuRFdQcXRUenpCc3p3bjJHdTBBZTFuSHhtdW5YQ291VVo0clI0YUlMenJ2LzFLZVludkp3RHc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.0/aix-code-0.25.0-x64.msi",
+      "sha256": "fb023080883e8270450fcb310a6308d19b301df32ec9f9c806c6ed8b643d4391"
     }
   }
 }

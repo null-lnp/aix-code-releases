@@ -1,5 +1,23 @@
 # Changelog
 
+## v0.25.0 — 2026-11-13
+
+- Fix Gemini / Antigravity compaction failing with `The input token count exceeds the maximum
+  number of tokens allowed 1048576`. The shared core calibrates against actual usage and retries
+  with smaller, correctly paired history batches; failed compaction never changes saved history.
+- Background helpers keep their session active in the sidebar after the manager's turn ends.
+  Helper usage-limit pauses appear immediately, without sending another main-chat message.
+  Healthy helpers and the main chat are not labeled paused just because another model hit a
+  limit. Live helper approval cards remain answerable when the main turn finishes.
+- **Session account selector** beside the model, for existing chats and before the first message
+  of a new session. Choose a saved account without changing the global account or other chats;
+  the choice is saved with the session and applies to its helpers. Automatic follows configured
+  credentials/global failover; a selected account stays pinned. Switching only restarts pending
+  or in-flight model requests, keeping completed work; previously generated tokens may be billed.
+  `/account` opens the selector; `/account <number or label>` and `/account auto` also work.
+  Subscription usage snapshots remain separate for pinned accounts.
+- These changes are shared with aix v2.27.0; shared LAN viewers also track helper activity.
+
 ## v0.24.1 — 2026-11-12
 
 - Fix **Model & prompt** settings closing when you click a fallback-model or smart-subagent
