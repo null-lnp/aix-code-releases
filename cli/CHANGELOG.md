@@ -1,5 +1,21 @@
 # Changelog
 
+## v2.27.1 — 2026-11-13
+
+- Add a bounded, read-only session preview/page reader used by Aix Code v0.25.1. It opens recent
+  SQLite conversation rows without decoding the full compacted archive or forcing a foreground
+  index migration. Optional per-row layout counts improve exact counts for new writes; older
+  previews can defer turn totals rather than inventing them. Legacy JSON is scanned with a bounded
+  rolling tail, and full history is still hydrated only when inference or an explicit history action
+  needs it.
+- Earlier-page cursors remain valid through append-only work and compaction preserving visible
+  history, but reject stale rewinds/changed boundary content. Marked input IDs remain exact; legacy
+  preview targets resolve and validate lazily on rewind/fork. Pending-message previews hydrate their
+  runtime only when acted on, without changing journal/restore safety.
+- Desktop rendering is bounded/lazy for rich long chats, with worker syntax highlighting and
+  paged large sources; background UI caches are bounded too. No saved messages, model context,
+  inference behavior or tool results are discarded.
+
 ## v2.27.0 — 2026-11-13
 
 - **Gemini / Antigravity compaction recovers from oversized input.** Recognizes Google's
