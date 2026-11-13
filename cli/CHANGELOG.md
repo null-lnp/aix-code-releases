@@ -1,5 +1,25 @@
 # Changelog
 
+## v2.27.0 — 2026-11-13
+
+- **Gemini / Antigravity compaction recovers from oversized input.** Recognizes Google's
+  `input token count exceeds ... 1048576` error, calibrates the estimate against reported usage,
+  and shrinks oversized retry requests in paired batches instead of removing one item per failed
+  request. Retries are bounded; failed compaction leaves the saved conversation unchanged.
+- **Background helpers remain visibly active.** Sessions stay active while helpers work after
+  the main turn ends. A helper that reaches its usage limit shows paused immediately, without
+  another message to the manager. Only the affected provider/model waits; other helpers can keep
+  working. Live helper approvals also survive the main turn ending.
+- **Per-session accounts: `/account`.** Choose a saved account by number or label, or use
+  `/account auto` to follow the configured/global account and automatic failover. Selections are
+  saved per provider in the session as opaque IDs, never credentials. They apply to the session's
+  helpers too, without changing other sessions or the global active account. Switching restarts
+  pending/in-flight model requests, not completed tools; already generated tokens may be billed.
+  A pinned account does not rotate automatically. Subscription usage snapshots stay separate per
+  pinned account. `/accounts` still manages global accounts.
+- Aix Code v0.25.0 adds the same account selector beside the model, including new-session setup,
+  and the same helper status and pause fixes. Shared LAN viewers also stay active for helpers.
+
 ## v2.26.0 — 2026-11-11
 
 - **Shared sessions show every subagent** (`/share`; Aix Code v0.24.0: the Share button). The
