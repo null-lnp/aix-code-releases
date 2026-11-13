@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.25.0",
-  "notes": "- Fix Gemini / Antigravity compaction failing with `The input token count exceeds the maximum\n  number of tokens allowed 1048576`. The shared core calibrates against actual usage and retries\n  with smaller, correctly paired history batches; failed compaction never changes saved history.\n- Background helpers keep their session active in the sidebar after the manager's turn ends.\n  Helper usage-limit pauses appear immediately, without sending another main-chat message.\n  Healthy helpers and the main chat are not labeled paused just because another model hit a\n  limit. Live helper approval cards remain answerable when the main turn finishes.\n- **Session account selector** beside the model, for existing chats and before the first message\n  of a new session. Choose a saved account without changing the global account or other chats;\n  the choice is saved with the session and applies to its helpers. Automatic follows configured\n  credentials/global failover; a selected account stays pinned. Switching only restarts pending\n  or in-flight model requests, keeping completed work; previously generated tokens may be billed.\n  `/account` opens the selector; `/account <number or label>` and `/account auto` also work.\n  Subscription usage snapshots remain separate for pinned accounts.\n- These changes are shared with aix v2.27.0; shared LAN viewers also track helper activity.",
-  "pub_date": "2026-11-13T17:22:31.983Z",
-  "tag": "app-v0.25.0",
+  "version": "0.25.1",
+  "notes": "- **Open long chats tail-first.** SQLite previews read the recent page directly, with bounded\n  decoded rows/bytes, instead of loading the entire active and compacted archive before showing\n  160 items. Older pages load on demand. Account/settings previews and recent composer recall no\n  longer pull the full archive into memory either. Legacy JSON remains supported with a streaming,\n  bounded-memory scan. Agent/model context and saved history are unchanged.\n- **Keep scrolling responsive during long runs.** The transcript has a two-ended rendered window\n  even while reading older messages; offscreen rich rows are not eagerly parsed. Large Markdown,\n  code, output and diff blocks use bounded readable pages with full-source copy. Syntax highlighting\n  runs in a capped worker, and diagram work is deferred/bounded instead of blocking scroll input.\n- Background UI transcript tails and orphan tool-event queues are bounded; opening a trimmed chat\n  reloads its recent page. Unanswered prompts and their drafts remain available. This changes UI\n  caching only, not what is saved or sent to the model.\n- Shared paging/storage work ships in aix v2.27.1, including cursor validation that permits live\n  appends while rejecting stale rewind/truncation targets.",
+  "pub_date": "2026-11-13T21:09:32.544Z",
+  "tag": "app-v0.25.1",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanlzT3dPSDBPNkVTenhLRzdEbkREMnQ2MnpYeXZhUWJvU0x2R2Q1QzU0cFpCNzBNUGRqNnMzT2lCRWN1NmsxQy82aGFEYjUwaHdXdENYdDQ1UEdBbHc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NTkwNTQyCWZpbGU6QWl4IENvZGVfMC4yNS4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI1LjAKd0x2M3BOWUt6YXFyYm50ZGd1WHk5cVFWaklEbld4ZHFhb1dUTDltbGxQV1V4K0M4UytwSyttVGdHaG5BVkxjcndwUW1hZWdJZS9UU21jWUcreUZaQXc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.0/aix-code-0.25.0-x64-setup.exe",
-      "sha256": "b3e0fd216b7a266d5afee9ba367eecdbcd0d763afda17bdf5e304dcd50bbaac7"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajg5RktzZUdsK2tJdHFnMSsrbGRyeitZcytkME00ektWanA1TTZkaVdmckJzaWRVb2VZR1U5V0tsL044RXNSb2crd1JqZHpoTGR3aFkvYlU0elA5QXdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NjA0MTA2CWZpbGU6QWl4IENvZGVfMC4yNS4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI1LjEKKzNVVjVHeTExR01uWkVmVGdwa2hxaXIzWkJoQm9qTW9UcjdENHFrSFpYOVNoeXk5RzZNMnp4bzJIb3pzSHh0Q2ttdmVJbGQxMTNoeTYvWTVYK0FrQmc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.1/aix-code-0.25.1-x64-setup.exe",
+      "sha256": "b6a0517b4cf227deae76585341071b2c29899809b95c4e418bb7e2f114e59920"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanlzT3dPSDBPNkVTenhLRzdEbkREMnQ2MnpYeXZhUWJvU0x2R2Q1QzU0cFpCNzBNUGRqNnMzT2lCRWN1NmsxQy82aGFEYjUwaHdXdENYdDQ1UEdBbHc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NTkwNTQyCWZpbGU6QWl4IENvZGVfMC4yNS4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI1LjAKd0x2M3BOWUt6YXFyYm50ZGd1WHk5cVFWaklEbld4ZHFhb1dUTDltbGxQV1V4K0M4UytwSyttVGdHaG5BVkxjcndwUW1hZWdJZS9UU21jWUcreUZaQXc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.0/aix-code-0.25.0-x64-setup.exe",
-      "sha256": "b3e0fd216b7a266d5afee9ba367eecdbcd0d763afda17bdf5e304dcd50bbaac7"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajg5RktzZUdsK2tJdHFnMSsrbGRyeitZcytkME00ektWanA1TTZkaVdmckJzaWRVb2VZR1U5V0tsL044RXNSb2crd1JqZHpoTGR3aFkvYlU0elA5QXdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NjA0MTA2CWZpbGU6QWl4IENvZGVfMC4yNS4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI1LjEKKzNVVjVHeTExR01uWkVmVGdwa2hxaXIzWkJoQm9qTW9UcjdENHFrSFpYOVNoeXk5RzZNMnp4bzJIb3pzSHh0Q2ttdmVJbGQxMTNoeTYvWTVYK0FrQmc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.1/aix-code-0.25.1-x64-setup.exe",
+      "sha256": "b6a0517b4cf227deae76585341071b2c29899809b95c4e418bb7e2f114e59920"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajlDUTJYZHFQMUUyUlYvZEVndnJOemxRS0w4UUNSOElTUkVWRyswdGdBMTREMGN1bkQxb0lXMjF4NlB0UjZBa21BYkpCd2E1YmlSME8xQTVHRFJUWVFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NTkwNTQyCWZpbGU6QWl4IENvZGVfMC4yNS4wX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjI1LjAKK0svcFhJeU5XRVlZQmpEYURLdE5uaGdtbE9wbmpmWUZuRFdQcXRUenpCc3p3bjJHdTBBZTFuSHhtdW5YQ291VVo0clI0YUlMenJ2LzFLZVludkp3RHc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.0/aix-code-0.25.0-x64.msi",
-      "sha256": "fb023080883e8270450fcb310a6308d19b301df32ec9f9c806c6ed8b643d4391"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajdLRE1CNUl1RGJGVGUvNWlFenVFTWp3Z3ZhNFhELzVBNHEzS2xINmhrdjZGOE5CVWkyVW1Heml0UURvWE5nVWNuMlZSRnhFZ1hpMEs4SjRXbGk0aHc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NjA0MTA2CWZpbGU6QWl4IENvZGVfMC4yNS4xX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjI1LjEKNGZYTVdObHdpUGhwcjh6TmRLajV3bWFoU2x2QmJNQUJ3RlU5VHJPdlJLL1IvOU1uUlZUaEc0Tm1wcFlEWnVVQXJnRUgxUDlucE1HaDlCL2pkY0RVQUE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.1/aix-code-0.25.1-x64.msi",
+      "sha256": "f1df7a0d93b98b077c8e91b6fc77c938598c75b05d8c29d2e33120d10886ba2d"
     }
   }
 }

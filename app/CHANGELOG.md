@@ -1,5 +1,22 @@
 # Changelog
 
+## v0.25.1 — 2026-11-13
+
+- **Open long chats tail-first.** SQLite previews read the recent page directly, with bounded
+  decoded rows/bytes, instead of loading the entire active and compacted archive before showing
+  160 items. Older pages load on demand. Account/settings previews and recent composer recall no
+  longer pull the full archive into memory either. Legacy JSON remains supported with a streaming,
+  bounded-memory scan. Agent/model context and saved history are unchanged.
+- **Keep scrolling responsive during long runs.** The transcript has a two-ended rendered window
+  even while reading older messages; offscreen rich rows are not eagerly parsed. Large Markdown,
+  code, output and diff blocks use bounded readable pages with full-source copy. Syntax highlighting
+  runs in a capped worker, and diagram work is deferred/bounded instead of blocking scroll input.
+- Background UI transcript tails and orphan tool-event queues are bounded; opening a trimmed chat
+  reloads its recent page. Unanswered prompts and their drafts remain available. This changes UI
+  caching only, not what is saved or sent to the model.
+- Shared paging/storage work ships in aix v2.27.1, including cursor validation that permits live
+  appends while rejecting stale rewind/truncation targets.
+
 ## v0.25.0 — 2026-11-13
 
 - Fix Gemini / Antigravity compaction failing with `The input token count exceeds the maximum
