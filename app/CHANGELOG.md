@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.25.2 — 2026-11-14
+
+- Fix Gemini/Carbon responses staying **Working…** after they have already finished. The shared
+  reader honors terminal SSE markers and final usage instead of waiting for a connection to close;
+  a bounded trailer drain preserves late usage and thought/tool signatures. Unspecified finish/block
+  reasons are not mistaken for completion or refusal. Genuine long reasoning is not timed out.
+- Recognize wrapped/array Gemini responses and nested stream errors rather than silently ignoring
+  them. Antigravity client metadata matches the installed 2.32.1 protocol reference.
+- Distinguish **model capacity busy** / prefill overload from account quota. Busy capacity does not
+  rotate accounts; matching model requests share a retry that respects the provider's delay. With no
+  hint, capacity backs off 5–30 seconds, not a made-up five-minute quota reset. Unknown quota reset
+  times are also labeled as retry countdowns, not promises of when Google will restore service.
+- Main/helper banners, notifications, the terminal and shared viewers use consistent pause wording.
+  Shared provider fixes ship in aix v2.27.2. Google-side capacity and Carbon High reasoning latency
+  remain outside Aix's control; selected effort and model/account choices are not silently changed.
+
 ## v0.25.1 — 2026-11-13
 
 - **Open long chats tail-first.** SQLite previews read the recent page directly, with bounded
