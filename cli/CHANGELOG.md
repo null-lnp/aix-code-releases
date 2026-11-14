@@ -1,5 +1,18 @@
 # Changelog
 
+## v2.27.2 — 2026-11-14
+
+- Fix Gemini/Carbon streams waiting on an open HTTP connection after terminal markers or final
+  finish/usage data. Preserve delayed usage/signatures with a bounded terminal drain; normal long
+  thinking remains allowed. Handle nested errors, array envelopes and unspecified enum values.
+- Distinguish Google's `MODEL_CAPACITY_EXHAUSTED` / `PREFILL_QUEUE_OVERLOADED` from account quota.
+  Capacity retries stay on the selected account, are shared per provider/model, respect server retry
+  delays, and use a 5–30 second fallback rather than the quota backoff. No quota bypass is attempted.
+- TUI/helper/shared-view pauses distinguish capacity from quota. Unknown reset times are presented
+  as retries, not guaranteed resets. Aix Code v0.25.2 carries the same behavior and desktop banners.
+- Match Antigravity 2.32.1 client metadata. Protocol notes and offline regression cases document the
+  installed-client comparison; no vendor implementation or credentials are copied into aix.
+
 ## v2.27.1 — 2026-11-13
 
 - Add a bounded, read-only session preview/page reader used by Aix Code v0.25.1. It opens recent

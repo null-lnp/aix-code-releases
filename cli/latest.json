@@ -1,14 +1,14 @@
 {
   "product": "cli",
-  "version": "2.27.1",
-  "notes": "- Add a bounded, read-only session preview/page reader used by Aix Code v0.25.1. It opens recent\n  SQLite conversation rows without decoding the full compacted archive or forcing a foreground\n  index migration. Optional per-row layout counts improve exact counts for new writes; older\n  previews can defer turn totals rather than inventing them. Legacy JSON is scanned with a bounded\n  rolling tail, and full history is still hydrated only when inference or an explicit history action\n  needs it.\n- Earlier-page cursors remain valid through append-only work and compaction preserving visible\n  history, but reject stale rewinds/changed boundary content. Marked input IDs remain exact; legacy\n  preview targets resolve and validate lazily on rewind/fork. Pending-message previews hydrate their\n  runtime only when acted on, without changing journal/restore safety.\n- Desktop rendering is bounded/lazy for rich long chats, with worker syntax highlighting and\n  paged large sources; background UI caches are bounded too. No saved messages, model context,\n  inference behavior or tool results are discarded.",
-  "pub_date": "2026-11-13T20:59:48.148Z",
-  "tag": "cli-v2.27.1",
+  "version": "2.27.2",
+  "notes": "- Fix Gemini/Carbon streams waiting on an open HTTP connection after terminal markers or final\n  finish/usage data. Preserve delayed usage/signatures with a bounded terminal drain; normal long\n  thinking remains allowed. Handle nested errors, array envelopes and unspecified enum values.\n- Distinguish Google's `MODEL_CAPACITY_EXHAUSTED` / `PREFILL_QUEUE_OVERLOADED` from account quota.\n  Capacity retries stay on the selected account, are shared per provider/model, respect server retry\n  delays, and use a 5–30 second fallback rather than the quota backoff. No quota bypass is attempted.\n- TUI/helper/shared-view pauses distinguish capacity from quota. Unknown reset times are presented\n  as retries, not guaranteed resets. Aix Code v0.25.2 carries the same behavior and desktop banners.\n- Match Antigravity 2.32.1 client metadata. Protocol notes and offline regression cases document the\n  installed-client comparison; no vendor implementation or credentials are copied into aix.",
+  "pub_date": "2026-11-14T20:13:24.288Z",
+  "tag": "cli-v2.27.2",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajZrbzdpb0l0cGdneCtXRVdibXZ4U0c2VXlKQXFlcFJqTVUzUjUyNDhEKzBTM0hKcHF6ZTFZTlRpQ09EN3VablZYR1JGOVIvQU04S1NmSEZna2kyRWdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NjAzNTg4CWZpbGU6YWl4LTIuMjcuMS13aW5kb3dzLXg4Nl82NC5leGUKdlNlOFJjSndFT1Z0TlgxM3A2c0MybS9VVUlqOEZYNldmUTFXbk9DNXFGb2ZGd0FiYURXNzVWTXBDSXIvOC9xSW4wdUhDd1c0eXVMZ2d4ZFdGcVg4QVE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.27.1/aix-2.27.1-windows-x86_64.exe",
-      "sha256": "8c72999b134b7bbccee4655b635eff6487a01cfd4549812f54265d09bc49ef5d"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajlBWFFYRUxRVUozdzY2YXZXRC9Mek5zbko2UjB4Ym8wZHRBQlowd1lCWlFJSXZlOXNrUXZPQ2hMTzlvMlR3YU84M0lqaFhjZlBvTjFCMXNRK3hRaXdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0Njg3MjA0CWZpbGU6YWl4LTIuMjcuMi13aW5kb3dzLXg4Nl82NC5leGUKVlBCcjkyVkhkSU9FTytYb2h6aVhRdFp3eWs3T0x5cVJyTHRCd2xOaXBCR1lWRkVBcWZzM3JCbTV3QVVsWXB4My8vcW4yS1JMNVRzRnhQRUN0ckJwQnc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.27.2/aix-2.27.2-windows-x86_64.exe",
+      "sha256": "0a56fad3ac9b6215074895398d53bded7ea71955db04b4323abc910ee108e71b"
     }
   }
 }
