@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.25.4 — 2026-11-14
+
+- Restore complete ↑/↓ message recall when reopening a large session. Preload only this session's
+  user-message text, including compacted turns, without loading assistant responses, tool output
+  or image data. History arriving during a recall walk becomes available without starting over.
+- Keep loading earlier messages as you scroll upward, including at the top edge and immediately
+  after another page loads. Preserve the visible row, coalesce repeated input, and keep the manual
+  load button available. Rendering and transcript requests remain bounded.
+- The lightweight stored-history reader ships in aix v2.27.4; terminal recall already walks the
+  session's complete user history. Add native, legacy and real-UI regression coverage.
+- Speed up Gemini/Carbon compaction without changing the chat's model or account. Use low
+  reasoning for summarization, start with bounded 128k-token slices instead of 64k, and request
+  concise partial summaries with expandable output budgets. Skip redundant single-slice merges
+  and apply any throttle-driven size reduction to all remaining slices. No saved history is lost.
+
 ## v0.25.3 — 2026-11-14
 
 - Fix oversized Antigravity/Gemini compaction repeatedly receiving HTTP 429 despite remaining

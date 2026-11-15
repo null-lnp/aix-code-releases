@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.25.3",
-  "notes": "- Fix oversized Antigravity/Gemini compaction repeatedly receiving HTTP 429 despite remaining\n  subscription quota. Summarize the full active transcript in bounded batches, shrink throttled\n  batches, and install the combined summary only after every batch succeeds. Cancellation,\n  incomplete output or persistent throttling preserves the original conversation and saved history.\n- Read Google's actual five-hour and weekly quota-summary API. Providers & accounts shows remaining\n  percentages and reset times separately for Gemini and Claude/GPT groups; the session's usage ring\n  follows its selected account and model group. Refreshes are cached and bounded.\n- Distinguish a generic request throttle with freshly confirmed remaining quota from account\n  exhaustion. Do not rotate accounts for that throttle or claim its retry timer is a quota reset.\n  Explicit quota failures keep their existing handling. Carbon's legacy bare gateway alias resolves\n  to a valid low/medium/high model; native Gemini API IDs remain unchanged.\n- Shared fixes ship in aix v2.27.3, including terminal account usage. Verified against one authorized\n  diagnostic replay: the old approximately 953k-token compaction received a generic 429 while small\n  Carbon requests worked. Google's server-side limits still apply; no quota bypass is attempted.",
-  "pub_date": "2026-11-15T00:28:16.661Z",
-  "tag": "app-v0.25.3",
+  "version": "0.25.4",
+  "notes": "- Restore complete ↑/↓ message recall when reopening a large session. Preload only this session's\n  user-message text, including compacted turns, without loading assistant responses, tool output\n  or image data. History arriving during a recall walk becomes available without starting over.\n- Keep loading earlier messages as you scroll upward, including at the top edge and immediately\n  after another page loads. Preserve the visible row, coalesce repeated input, and keep the manual\n  load button available. Rendering and transcript requests remain bounded.\n- The lightweight stored-history reader ships in aix v2.27.4; terminal recall already walks the\n  session's complete user history. Add native, legacy and real-UI regression coverage.\n- Speed up Gemini/Carbon compaction without changing the chat's model or account. Use low\n  reasoning for summarization, start with bounded 128k-token slices instead of 64k, and request\n  concise partial summaries with expandable output budgets. Skip redundant single-slice merges\n  and apply any throttle-driven size reduction to all remaining slices. No saved history is lost.",
+  "pub_date": "2026-11-15T01:26:46.958Z",
+  "tag": "app-v0.25.4",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajNObWRCTFVKUDE0ejZmcllSM2JQMjZXenFINGs4akthYWxNTjV1K2dibjRrWnBEOU9JQUtiREZhdTZTM2Z4dnlycDFNa3NBdlNKREJqWUgveVRkQndNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NzAyNDk2CWZpbGU6QWl4IENvZGVfMC4yNS4zX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI1LjMKVy8raDNBUXMwM21DdkNDc21NK3Zsb29KaCtjZGtTb1A2Tjh4eWhKUnF0bWF4T1BkcXMxbjlZbTZWaFM0WW10eU5hZFh5SzJzOGRsbFBsYVlndnFhQ1E9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.3/aix-code-0.25.3-x64-setup.exe",
-      "sha256": "65c9149573349abb686116920b9210c53bac06324256381f932074ca4f9dd02f"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aai9tVzZoczRGcDhUNGQ0OGhHbitOSmN3QUJ4S2FqangxWXZxajdSOTZwV00wd29rajlqMkxmMjNRdzZWK0l3RmltckpmOXRkZTdZNW02TlV6WTV6ZndJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NzA2MDAyCWZpbGU6QWl4IENvZGVfMC4yNS40X3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI1LjQKTHZOcmMrcm52M1pJV2szdHJMblVrcFFNWGFDdnlWeG5UZFdmYkNybFFVaExZSUpRaUNOMkZjazRtL2luK3BWUnlpMmZkMkxJR3YvNW45cUViKzBKRHc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.4/aix-code-0.25.4-x64-setup.exe",
+      "sha256": "ed2804eb48563b71f5c0d12a1ac702f84f9aef55128d28ca71d71a964e0b784d"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajNObWRCTFVKUDE0ejZmcllSM2JQMjZXenFINGs4akthYWxNTjV1K2dibjRrWnBEOU9JQUtiREZhdTZTM2Z4dnlycDFNa3NBdlNKREJqWUgveVRkQndNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NzAyNDk2CWZpbGU6QWl4IENvZGVfMC4yNS4zX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI1LjMKVy8raDNBUXMwM21DdkNDc21NK3Zsb29KaCtjZGtTb1A2Tjh4eWhKUnF0bWF4T1BkcXMxbjlZbTZWaFM0WW10eU5hZFh5SzJzOGRsbFBsYVlndnFhQ1E9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.3/aix-code-0.25.3-x64-setup.exe",
-      "sha256": "65c9149573349abb686116920b9210c53bac06324256381f932074ca4f9dd02f"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aai9tVzZoczRGcDhUNGQ0OGhHbitOSmN3QUJ4S2FqangxWXZxajdSOTZwV00wd29rajlqMkxmMjNRdzZWK0l3RmltckpmOXRkZTdZNW02TlV6WTV6ZndJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NzA2MDAyCWZpbGU6QWl4IENvZGVfMC4yNS40X3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI1LjQKTHZOcmMrcm52M1pJV2szdHJMblVrcFFNWGFDdnlWeG5UZFdmYkNybFFVaExZSUpRaUNOMkZjazRtL2luK3BWUnlpMmZkMkxJR3YvNW45cUViKzBKRHc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.4/aix-code-0.25.4-x64-setup.exe",
+      "sha256": "ed2804eb48563b71f5c0d12a1ac702f84f9aef55128d28ca71d71a964e0b784d"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanhtUzB6MW5mQlJpRWsvQ25Dc29LVW9yYjVWMExRTzB6T0Q2SWdiYnk4dW5nQ3JkMHVrZTM3R0RxMlhTc2NjWUwrMC94OTBBOEJVS1dCcmE4RFdUQVFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NzAyNDk2CWZpbGU6QWl4IENvZGVfMC4yNS4zX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjI1LjMKTnZjWlpXdEVhWm4yVm9oOUI5elNtS1hFM0grTFFONlpXSnRBLzlJdldSci9mNXZ0UmE5ZE85OWpCNjl2aVMwWEcrb1p1eWtsSk12SzRhN0t2ZjdrQUE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.3/aix-code-0.25.3-x64.msi",
-      "sha256": "46cdb98ff72b0aa36c251ac99386848b4ba5a099cd69b0720c6241131fbe742a"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajlaV200amljUzlXd0ErazZQL1RsY3lucWg2cjNFcWxtdGJHUFgxTFZPQlhLLzM0VU9RelJvc3pLaUd3UHREeXNmdmFqMzZhbjl6Um90QU1pb2pmbFFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NzA2MDAyCWZpbGU6QWl4IENvZGVfMC4yNS40X3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjI1LjQKdkdhMWRqNEkzQ0M5MlFOSVBYczhyZVVVaFR3aDlHdXNjUCs1ckVPdnQrelZpRGFHN2V2MDVIZlBkSTRLdCtiTnl1WW5qQjVYRGJoM0owYTdEbU5wQ2c9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.4/aix-code-0.25.4-x64.msi",
+      "sha256": "0cf172b09617987173e24956a650b705825e0b3917111439fe8482d6d3f096ed"
     }
   }
 }
