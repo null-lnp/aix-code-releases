@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.25.4",
-  "notes": "- Restore complete ↑/↓ message recall when reopening a large session. Preload only this session's\n  user-message text, including compacted turns, without loading assistant responses, tool output\n  or image data. History arriving during a recall walk becomes available without starting over.\n- Keep loading earlier messages as you scroll upward, including at the top edge and immediately\n  after another page loads. Preserve the visible row, coalesce repeated input, and keep the manual\n  load button available. Rendering and transcript requests remain bounded.\n- The lightweight stored-history reader ships in aix v2.27.4; terminal recall already walks the\n  session's complete user history. Add native, legacy and real-UI regression coverage.\n- Speed up Gemini/Carbon compaction without changing the chat's model or account. Use low\n  reasoning for summarization, start with bounded 128k-token slices instead of 64k, and request\n  concise partial summaries with expandable output budgets. Skip redundant single-slice merges\n  and apply any throttle-driven size reduction to all remaining slices. No saved history is lost.",
-  "pub_date": "2026-11-15T01:26:46.958Z",
-  "tag": "app-v0.25.4",
+  "version": "0.25.5",
+  "notes": "- Fix Gemini/Antigravity requests receiving immediate HTTP 429 despite remaining account\n  allowance. Prefer the daily model endpoint for Google's built-in gateways and revise one\n  default coding-instruction sentence while preserving Aix's identity and user overrides.\n- Verified through Aix's provider with a user-authorized copy of the affected conversation:\n  Carbon High, Argon High and Hydrogen High all returned successful tool-call responses.\n  The original conversation was untouched; no returned tools were executed.\n- Stop repeated unexplained request rejections after three attempts instead of leaving chats\n  and helpers paused indefinitely. Explain that the cause is unknown rather than claiming the\n  account is out of quota. Explicit quota failures and model-capacity waits keep their handling.\n- Shared fixes ship in aix v2.27.5. Custom endpoints remain isolated; no vendor implementation\n  is copied and no claim of complete Antigravity protocol parity is made.",
+  "pub_date": "2026-11-15T03:18:18.791Z",
+  "tag": "app-v0.25.5",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aai9tVzZoczRGcDhUNGQ0OGhHbitOSmN3QUJ4S2FqangxWXZxajdSOTZwV00wd29rajlqMkxmMjNRdzZWK0l3RmltckpmOXRkZTdZNW02TlV6WTV6ZndJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NzA2MDAyCWZpbGU6QWl4IENvZGVfMC4yNS40X3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI1LjQKTHZOcmMrcm52M1pJV2szdHJMblVrcFFNWGFDdnlWeG5UZFdmYkNybFFVaExZSUpRaUNOMkZjazRtL2luK3BWUnlpMmZkMkxJR3YvNW45cUViKzBKRHc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.4/aix-code-0.25.4-x64-setup.exe",
-      "sha256": "ed2804eb48563b71f5c0d12a1ac702f84f9aef55128d28ca71d71a964e0b784d"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanlQMEtzTlZlQ3Joc2JBb0wrZmk4dmZXMXl3MlVsb3hibmZFakcraUZBMWxMMFBYVlJ5Z0lrOThIb3ZkQ1g1R1dBUDlVNHJIcDlNY1JzKzRudk1OZ2cwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NzEyNjc5CWZpbGU6QWl4IENvZGVfMC4yNS41X3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI1LjUKT1BsRGR4VW40bVRwekpuU0VtbHRjWFUrVlJlWlMyTjVBcWNpOVJrY0VxeEtJdFJDKzJYYXE2ME1qSTBqZndtMzRuck5Lblh6ZlZCTXlTWGpiblFrQ1E9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.5/aix-code-0.25.5-x64-setup.exe",
+      "sha256": "770d27c8cbfa1e4443e14688b505c1824c401cf6cd22065a98913931e1f19c43"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aai9tVzZoczRGcDhUNGQ0OGhHbitOSmN3QUJ4S2FqangxWXZxajdSOTZwV00wd29rajlqMkxmMjNRdzZWK0l3RmltckpmOXRkZTdZNW02TlV6WTV6ZndJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NzA2MDAyCWZpbGU6QWl4IENvZGVfMC4yNS40X3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI1LjQKTHZOcmMrcm52M1pJV2szdHJMblVrcFFNWGFDdnlWeG5UZFdmYkNybFFVaExZSUpRaUNOMkZjazRtL2luK3BWUnlpMmZkMkxJR3YvNW45cUViKzBKRHc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.4/aix-code-0.25.4-x64-setup.exe",
-      "sha256": "ed2804eb48563b71f5c0d12a1ac702f84f9aef55128d28ca71d71a964e0b784d"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanlQMEtzTlZlQ3Joc2JBb0wrZmk4dmZXMXl3MlVsb3hibmZFakcraUZBMWxMMFBYVlJ5Z0lrOThIb3ZkQ1g1R1dBUDlVNHJIcDlNY1JzKzRudk1OZ2cwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NzEyNjc5CWZpbGU6QWl4IENvZGVfMC4yNS41X3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI1LjUKT1BsRGR4VW40bVRwekpuU0VtbHRjWFUrVlJlWlMyTjVBcWNpOVJrY0VxeEtJdFJDKzJYYXE2ME1qSTBqZndtMzRuck5Lblh6ZlZCTXlTWGpiblFrQ1E9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.5/aix-code-0.25.5-x64-setup.exe",
+      "sha256": "770d27c8cbfa1e4443e14688b505c1824c401cf6cd22065a98913931e1f19c43"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajlaV200amljUzlXd0ErazZQL1RsY3lucWg2cjNFcWxtdGJHUFgxTFZPQlhLLzM0VU9RelJvc3pLaUd3UHREeXNmdmFqMzZhbjl6Um90QU1pb2pmbFFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NzA2MDAyCWZpbGU6QWl4IENvZGVfMC4yNS40X3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjI1LjQKdkdhMWRqNEkzQ0M5MlFOSVBYczhyZVVVaFR3aDlHdXNjUCs1ckVPdnQrelZpRGFHN2V2MDVIZlBkSTRLdCtiTnl1WW5qQjVYRGJoM0owYTdEbU5wQ2c9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.4/aix-code-0.25.4-x64.msi",
-      "sha256": "0cf172b09617987173e24956a650b705825e0b3917111439fe8482d6d3f096ed"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aait5WmlwZ2dLaHRjTmhHS1hES0d5YkM1SVljZzNMUVdISURZU0FCZFR5LzlPOHlLeHRsb0dMRGVFamR2UGdTclpERDREVHNjWHFIOWFIVDY5L0Zoc3dBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NzEyNjgwCWZpbGU6QWl4IENvZGVfMC4yNS41X3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjI1LjUKVERKY3psY2xpMWkxdVNlbmVYb0NwcjExMFg3VlFkLzhxMnEzMTE3d3h2N3BGd0VEbmdMMVZ4enVBRVZ4Qlk2OFFWSWNsRHlEM2pIMmY4WDJpTVRQREE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.5/aix-code-0.25.5-x64.msi",
+      "sha256": "3332ae3f5b5844a3d972154403b997e1743349c98f6552161911e609f7c5d153"
     }
   }
 }

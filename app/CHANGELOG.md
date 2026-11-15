@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.25.5 — 2026-11-14
+
+- Fix Gemini/Antigravity requests receiving immediate HTTP 429 despite remaining account
+  allowance. Prefer the daily model endpoint for Google's built-in gateways and revise one
+  default coding-instruction sentence while preserving Aix's identity and user overrides.
+- Verified through Aix's provider with a user-authorized copy of the affected conversation:
+  Carbon High, Argon High and Hydrogen High all returned successful tool-call responses.
+  The original conversation was untouched; no returned tools were executed.
+- Stop repeated unexplained request rejections after three attempts instead of leaving chats
+  and helpers paused indefinitely. Explain that the cause is unknown rather than claiming the
+  account is out of quota. Explicit quota failures and model-capacity waits keep their handling.
+- Shared fixes ship in aix v2.27.5. Custom endpoints remain isolated; no vendor implementation
+  is copied and no claim of complete Antigravity protocol parity is made.
+
 ## v0.25.4 — 2026-11-14
 
 - Restore complete ↑/↓ message recall when reopening a large session. Preload only this session's
