@@ -1,5 +1,18 @@
 # Changelog
 
+## v2.27.4 — 2026-11-14
+
+- Add a read-only user-message projection for stored sessions, including compacted archives.
+  Indexed SQLite sessions skip assistant/tool records; older databases and legacy JSON use a
+  text-only fallback without building an index, loading a runtime or restoring full model context.
+- Aix Code v0.25.4 uses that projection for complete ↑/↓ recall while keeping the transcript paged,
+  and continues loading earlier messages as the reader scrolls upward. Terminal recall already
+  covers the complete resumed session; its interaction remains unchanged.
+- Reduce Gemini/Carbon compaction latency: summarize at low reasoning, start with bounded 128k
+  slices rather than 64k, use concise partial summaries with expandable output budgets, and skip
+  redundant single-slice merges. Throttle-driven shrinking applies to every remaining slice,
+  not one oversized request at a time. Model/account selection and atomic history updates remain.
+
 ## v2.27.3 — 2026-11-14
 
 - Bound Antigravity/Gemini compaction to small transcript-summary batches instead of near-million-token

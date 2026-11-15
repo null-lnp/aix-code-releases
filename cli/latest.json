@@ -1,14 +1,14 @@
 {
   "product": "cli",
-  "version": "2.27.3",
-  "notes": "- Bound Antigravity/Gemini compaction to small transcript-summary batches instead of near-million-token\n  requests. Shrink batches when Google throttles a request despite confirmed remaining quota. Install\n  the final summary atomically; failures, truncation and cancellation preserve the original history.\n- Fetch Google's real five-hour/weekly quota summaries, grouped by Gemini versus Claude/GPT and\n  isolated by saved account. `/accounts` reports remaining quota; session usage uses the matching\n  model group. Cached, bounded refreshes retain unknown values instead of inventing percentages.\n- Generic request throttles with freshly confirmed quota no longer rotate accounts or claim a reset\n  time. True quota failures retain existing failover behavior. Resolve the legacy bare Carbon gateway\n  alias to a supported variant without changing native Gemini API IDs.\n- Aix Code v0.25.3 exposes the same quota data and request-throttling status. An authorized read-only\n  replay reproduced a generic 429 on the old approximately 953k-token compaction request while small\n  requests worked; the new compaction strategy is covered by offline regression tests.",
-  "pub_date": "2026-11-15T00:18:58.489Z",
-  "tag": "cli-v2.27.3",
+  "version": "2.27.4",
+  "notes": "- Add a read-only user-message projection for stored sessions, including compacted archives.\n  Indexed SQLite sessions skip assistant/tool records; older databases and legacy JSON use a\n  text-only fallback without building an index, loading a runtime or restoring full model context.\n- Aix Code v0.25.4 uses that projection for complete ↑/↓ recall while keeping the transcript paged,\n  and continues loading earlier messages as the reader scrolls upward. Terminal recall already\n  covers the complete resumed session; its interaction remains unchanged.\n- Reduce Gemini/Carbon compaction latency: summarize at low reasoning, start with bounded 128k\n  slices rather than 64k, use concise partial summaries with expandable output budgets, and skip\n  redundant single-slice merges. Throttle-driven shrinking applies to every remaining slice,\n  not one oversized request at a time. Model/account selection and atomic history updates remain.",
+  "pub_date": "2026-11-15T01:19:11.646Z",
+  "tag": "cli-v2.27.4",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajdtTi9RRFJzbjl3TGp0VTJHWUV5eEthVVRxUGZGQ1ZydGRPeGYra1ZmN0NPKzBYdDBOdS92RXJIKzZxRk9yTFlmWFBlbU1hd1BFaHEzRTJoZGxvQlFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NzAxOTM4CWZpbGU6YWl4LTIuMjcuMy13aW5kb3dzLXg4Nl82NC5leGUKQWhSMnQ4VUlwdGxaQ2ZEL1FiUFgwTk9BTVlSYzI0aENHR20xdU51dERIL0FWTkJWbmluV0VJYUNNb2h3TjFHNEtwSjB6Qjk4VTBWa3d3b2NZd3c3Q2c9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.27.3/aix-2.27.3-windows-x86_64.exe",
-      "sha256": "cddbb0bf49bf42c86b8cd05ef466bf6ed63da6aa493127a02d7bf24e0d739019"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajhha09MKzJPMmpYM3VMRjBoblFkb2dOS1Z3RnNOQ1lxZ09UUlhpUzZDcVJaaElrOVRBbG5ra1lhMlJEUDlDYm5zdEtuclIyQWVLT2pURTZuL05IVndNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NzA1NTUxCWZpbGU6YWl4LTIuMjcuNC13aW5kb3dzLXg4Nl82NC5leGUKM3AzNFF2WlJqY0dWd2Rmc1diSllaUlB5T3pHTEVvblNrTWhWZ2YvVll1cE5mOEF0cHRiNnhnaWFkMkpPSEVPa3VGdXdrSHJXNUxYZitFRENVdmEzQmc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.27.4/aix-2.27.4-windows-x86_64.exe",
+      "sha256": "0f894e5610b5fe2051a04cdbf8c5c92993d257c0688d8a4bf67fc1892d5e99db"
     }
   }
 }
