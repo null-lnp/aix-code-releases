@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.25.2",
-  "notes": "- Fix Gemini/Carbon responses staying **Working…** after they have already finished. The shared\n  reader honors terminal SSE markers and final usage instead of waiting for a connection to close;\n  a bounded trailer drain preserves late usage and thought/tool signatures. Unspecified finish/block\n  reasons are not mistaken for completion or refusal. Genuine long reasoning is not timed out.\n- Recognize wrapped/array Gemini responses and nested stream errors rather than silently ignoring\n  them. Antigravity client metadata matches the installed 2.32.1 protocol reference.\n- Distinguish **model capacity busy** / prefill overload from account quota. Busy capacity does not\n  rotate accounts; matching model requests share a retry that respects the provider's delay. With no\n  hint, capacity backs off 5–30 seconds, not a made-up five-minute quota reset. Unknown quota reset\n  times are also labeled as retry countdowns, not promises of when Google will restore service.\n- Main/helper banners, notifications, the terminal and shared viewers use consistent pause wording.\n  Shared provider fixes ship in aix v2.27.2. Google-side capacity and Carbon High reasoning latency\n  remain outside Aix's control; selected effort and model/account choices are not silently changed.",
-  "pub_date": "2026-11-14T20:25:18.896Z",
-  "tag": "app-v0.25.2",
+  "version": "0.25.3",
+  "notes": "- Fix oversized Antigravity/Gemini compaction repeatedly receiving HTTP 429 despite remaining\n  subscription quota. Summarize the full active transcript in bounded batches, shrink throttled\n  batches, and install the combined summary only after every batch succeeds. Cancellation,\n  incomplete output or persistent throttling preserves the original conversation and saved history.\n- Read Google's actual five-hour and weekly quota-summary API. Providers & accounts shows remaining\n  percentages and reset times separately for Gemini and Claude/GPT groups; the session's usage ring\n  follows its selected account and model group. Refreshes are cached and bounded.\n- Distinguish a generic request throttle with freshly confirmed remaining quota from account\n  exhaustion. Do not rotate accounts for that throttle or claim its retry timer is a quota reset.\n  Explicit quota failures keep their existing handling. Carbon's legacy bare gateway alias resolves\n  to a valid low/medium/high model; native Gemini API IDs remain unchanged.\n- Shared fixes ship in aix v2.27.3, including terminal account usage. Verified against one authorized\n  diagnostic replay: the old approximately 953k-token compaction received a generic 429 while small\n  Carbon requests worked. Google's server-side limits still apply; no quota bypass is attempted.",
+  "pub_date": "2026-11-15T00:28:16.661Z",
+  "tag": "app-v0.25.3",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajJUMGRSUTZyUms5RE9Ydkd5MFhJSE90dktUeURSLzdQenJDRHJXQUZPVUhVUXRMVk9tZ3JpS2FvVHU1QU9CV2FmNkhORUF4YWJLaTNxNnJKRWo2dlFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0Njg3ODg3CWZpbGU6QWl4IENvZGVfMC4yNS4yX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI1LjIKK2x1amhwVHBuWFEyTTAzd2RNc1BLb295dGNRSzJjQ09pVFYyTnBUQUpSN1V3UE90bXNMYXBrSUlCNFNBUkRFZERBa2h4TDlUd3hFSkpYNnUxQVJnQnc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.2/aix-code-0.25.2-x64-setup.exe",
-      "sha256": "9aecaa784e381055f9aca277406f1ec9c2555f1b9f3b996e89c8d902b329e2c1"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajNObWRCTFVKUDE0ejZmcllSM2JQMjZXenFINGs4akthYWxNTjV1K2dibjRrWnBEOU9JQUtiREZhdTZTM2Z4dnlycDFNa3NBdlNKREJqWUgveVRkQndNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NzAyNDk2CWZpbGU6QWl4IENvZGVfMC4yNS4zX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI1LjMKVy8raDNBUXMwM21DdkNDc21NK3Zsb29KaCtjZGtTb1A2Tjh4eWhKUnF0bWF4T1BkcXMxbjlZbTZWaFM0WW10eU5hZFh5SzJzOGRsbFBsYVlndnFhQ1E9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.3/aix-code-0.25.3-x64-setup.exe",
+      "sha256": "65c9149573349abb686116920b9210c53bac06324256381f932074ca4f9dd02f"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajJUMGRSUTZyUms5RE9Ydkd5MFhJSE90dktUeURSLzdQenJDRHJXQUZPVUhVUXRMVk9tZ3JpS2FvVHU1QU9CV2FmNkhORUF4YWJLaTNxNnJKRWo2dlFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0Njg3ODg3CWZpbGU6QWl4IENvZGVfMC4yNS4yX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI1LjIKK2x1amhwVHBuWFEyTTAzd2RNc1BLb295dGNRSzJjQ09pVFYyTnBUQUpSN1V3UE90bXNMYXBrSUlCNFNBUkRFZERBa2h4TDlUd3hFSkpYNnUxQVJnQnc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.2/aix-code-0.25.2-x64-setup.exe",
-      "sha256": "9aecaa784e381055f9aca277406f1ec9c2555f1b9f3b996e89c8d902b329e2c1"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajNObWRCTFVKUDE0ejZmcllSM2JQMjZXenFINGs4akthYWxNTjV1K2dibjRrWnBEOU9JQUtiREZhdTZTM2Z4dnlycDFNa3NBdlNKREJqWUgveVRkQndNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NzAyNDk2CWZpbGU6QWl4IENvZGVfMC4yNS4zX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI1LjMKVy8raDNBUXMwM21DdkNDc21NK3Zsb29KaCtjZGtTb1A2Tjh4eWhKUnF0bWF4T1BkcXMxbjlZbTZWaFM0WW10eU5hZFh5SzJzOGRsbFBsYVlndnFhQ1E9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.3/aix-code-0.25.3-x64-setup.exe",
+      "sha256": "65c9149573349abb686116920b9210c53bac06324256381f932074ca4f9dd02f"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajdzdDZwT0pyU0lIV3ZMS2tnRW00QngzNjRRZFhPczVKKzFESS9nSG42WEhRTU8yaXdsajlFeW9jUXh5RTNKMzBUSnRHWXlHemNDYXdJRmtnMktBRmdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0Njg3ODg3CWZpbGU6QWl4IENvZGVfMC4yNS4yX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjI1LjIKditiVXpGMVZGRWhiUzJQWHVsZm9XRmdSZzdRaGV5aS90WGNBUlJkUWhmZHhKaTB4Tjdsamo3MzdDRE1CQjBTekI4M1k2S21GY3MzdHo4bFBXWHhVQUE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.2/aix-code-0.25.2-x64.msi",
-      "sha256": "feaf292c1dceb65ea45504e13b09f478851d29f2dcddd815427605b2fe213284"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanhtUzB6MW5mQlJpRWsvQ25Dc29LVW9yYjVWMExRTzB6T0Q2SWdiYnk4dW5nQ3JkMHVrZTM3R0RxMlhTc2NjWUwrMC94OTBBOEJVS1dCcmE4RFdUQVFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NzAyNDk2CWZpbGU6QWl4IENvZGVfMC4yNS4zX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjI1LjMKTnZjWlpXdEVhWm4yVm9oOUI5elNtS1hFM0grTFFONlpXSnRBLzlJdldSci9mNXZ0UmE5ZE85OWpCNjl2aVMwWEcrb1p1eWtsSk12SzRhN0t2ZjdrQUE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.3/aix-code-0.25.3-x64.msi",
+      "sha256": "46cdb98ff72b0aa36c251ac99386848b4ba5a099cd69b0720c6241131fbe742a"
     }
   }
 }

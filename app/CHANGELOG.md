@@ -1,5 +1,22 @@
 # Changelog
 
+## v0.25.3 — 2026-11-14
+
+- Fix oversized Antigravity/Gemini compaction repeatedly receiving HTTP 429 despite remaining
+  subscription quota. Summarize the full active transcript in bounded batches, shrink throttled
+  batches, and install the combined summary only after every batch succeeds. Cancellation,
+  incomplete output or persistent throttling preserves the original conversation and saved history.
+- Read Google's actual five-hour and weekly quota-summary API. Providers & accounts shows remaining
+  percentages and reset times separately for Gemini and Claude/GPT groups; the session's usage ring
+  follows its selected account and model group. Refreshes are cached and bounded.
+- Distinguish a generic request throttle with freshly confirmed remaining quota from account
+  exhaustion. Do not rotate accounts for that throttle or claim its retry timer is a quota reset.
+  Explicit quota failures keep their existing handling. Carbon's legacy bare gateway alias resolves
+  to a valid low/medium/high model; native Gemini API IDs remain unchanged.
+- Shared fixes ship in aix v2.27.3, including terminal account usage. Verified against one authorized
+  diagnostic replay: the old approximately 953k-token compaction received a generic 429 while small
+  Carbon requests worked. Google's server-side limits still apply; no quota bypass is attempted.
+
 ## v0.25.2 — 2026-11-14
 
 - Fix Gemini/Carbon responses staying **Working…** after they have already finished. The shared
