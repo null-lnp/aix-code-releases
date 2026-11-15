@@ -1,14 +1,14 @@
 {
   "product": "cli",
-  "version": "2.27.2",
-  "notes": "- Fix Gemini/Carbon streams waiting on an open HTTP connection after terminal markers or final\n  finish/usage data. Preserve delayed usage/signatures with a bounded terminal drain; normal long\n  thinking remains allowed. Handle nested errors, array envelopes and unspecified enum values.\n- Distinguish Google's `MODEL_CAPACITY_EXHAUSTED` / `PREFILL_QUEUE_OVERLOADED` from account quota.\n  Capacity retries stay on the selected account, are shared per provider/model, respect server retry\n  delays, and use a 5–30 second fallback rather than the quota backoff. No quota bypass is attempted.\n- TUI/helper/shared-view pauses distinguish capacity from quota. Unknown reset times are presented\n  as retries, not guaranteed resets. Aix Code v0.25.2 carries the same behavior and desktop banners.\n- Match Antigravity 2.32.1 client metadata. Protocol notes and offline regression cases document the\n  installed-client comparison; no vendor implementation or credentials are copied into aix.",
-  "pub_date": "2026-11-14T20:13:24.288Z",
-  "tag": "cli-v2.27.2",
+  "version": "2.27.3",
+  "notes": "- Bound Antigravity/Gemini compaction to small transcript-summary batches instead of near-million-token\n  requests. Shrink batches when Google throttles a request despite confirmed remaining quota. Install\n  the final summary atomically; failures, truncation and cancellation preserve the original history.\n- Fetch Google's real five-hour/weekly quota summaries, grouped by Gemini versus Claude/GPT and\n  isolated by saved account. `/accounts` reports remaining quota; session usage uses the matching\n  model group. Cached, bounded refreshes retain unknown values instead of inventing percentages.\n- Generic request throttles with freshly confirmed quota no longer rotate accounts or claim a reset\n  time. True quota failures retain existing failover behavior. Resolve the legacy bare Carbon gateway\n  alias to a supported variant without changing native Gemini API IDs.\n- Aix Code v0.25.3 exposes the same quota data and request-throttling status. An authorized read-only\n  replay reproduced a generic 429 on the old approximately 953k-token compaction request while small\n  requests worked; the new compaction strategy is covered by offline regression tests.",
+  "pub_date": "2026-11-15T00:18:58.489Z",
+  "tag": "cli-v2.27.3",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajlBWFFYRUxRVUozdzY2YXZXRC9Mek5zbko2UjB4Ym8wZHRBQlowd1lCWlFJSXZlOXNrUXZPQ2hMTzlvMlR3YU84M0lqaFhjZlBvTjFCMXNRK3hRaXdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0Njg3MjA0CWZpbGU6YWl4LTIuMjcuMi13aW5kb3dzLXg4Nl82NC5leGUKVlBCcjkyVkhkSU9FTytYb2h6aVhRdFp3eWs3T0x5cVJyTHRCd2xOaXBCR1lWRkVBcWZzM3JCbTV3QVVsWXB4My8vcW4yS1JMNVRzRnhQRUN0ckJwQnc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.27.2/aix-2.27.2-windows-x86_64.exe",
-      "sha256": "0a56fad3ac9b6215074895398d53bded7ea71955db04b4323abc910ee108e71b"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajdtTi9RRFJzbjl3TGp0VTJHWUV5eEthVVRxUGZGQ1ZydGRPeGYra1ZmN0NPKzBYdDBOdS92RXJIKzZxRk9yTFlmWFBlbU1hd1BFaHEzRTJoZGxvQlFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NzAxOTM4CWZpbGU6YWl4LTIuMjcuMy13aW5kb3dzLXg4Nl82NC5leGUKQWhSMnQ4VUlwdGxaQ2ZEL1FiUFgwTk9BTVlSYzI0aENHR20xdU51dERIL0FWTkJWbmluV0VJYUNNb2h3TjFHNEtwSjB6Qjk4VTBWa3d3b2NZd3c3Q2c9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.27.3/aix-2.27.3-windows-x86_64.exe",
+      "sha256": "cddbb0bf49bf42c86b8cd05ef466bf6ed63da6aa493127a02d7bf24e0d739019"
     }
   }
 }

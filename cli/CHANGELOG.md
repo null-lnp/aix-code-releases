@@ -1,5 +1,20 @@
 # Changelog
 
+## v2.27.3 — 2026-11-14
+
+- Bound Antigravity/Gemini compaction to small transcript-summary batches instead of near-million-token
+  requests. Shrink batches when Google throttles a request despite confirmed remaining quota. Install
+  the final summary atomically; failures, truncation and cancellation preserve the original history.
+- Fetch Google's real five-hour/weekly quota summaries, grouped by Gemini versus Claude/GPT and
+  isolated by saved account. `/accounts` reports remaining quota; session usage uses the matching
+  model group. Cached, bounded refreshes retain unknown values instead of inventing percentages.
+- Generic request throttles with freshly confirmed quota no longer rotate accounts or claim a reset
+  time. True quota failures retain existing failover behavior. Resolve the legacy bare Carbon gateway
+  alias to a supported variant without changing native Gemini API IDs.
+- Aix Code v0.25.3 exposes the same quota data and request-throttling status. An authorized read-only
+  replay reproduced a generic 429 on the old approximately 953k-token compaction request while small
+  requests worked; the new compaction strategy is covered by offline regression tests.
+
 ## v2.27.2 — 2026-11-14
 
 - Fix Gemini/Carbon streams waiting on an open HTTP connection after terminal markers or final
