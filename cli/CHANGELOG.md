@@ -1,5 +1,18 @@
 # Changelog
 
+## v2.27.5 — 2026-11-14
+
+- Fix immediate Gemini/Antigravity HTTP 429s with allowance remaining: Google's built-in
+  gateways prefer the daily model endpoint, and the default coding-instruction introduction
+  uses equivalent wording verified with the affected copied conversation. Custom endpoints
+  are not rerouted, and custom system instructions are never rewritten.
+- Bound repeated unexplained request rejections to three attempts. Preserve conversation
+  history and unrelated pauses; request-setting changes reset the counter. Real quota and
+  capacity errors retain their existing handling. Terminal and desktop explain unknown causes.
+- Aix Code v0.25.5 includes the shared fixes. Authorized live replay through the actual provider
+  succeeded on Carbon High, Argon High and Hydrogen High without executing returned tools or
+  modifying the original session. Follow-up regression tests remain offline.
+
 ## v2.27.4 — 2026-11-14
 
 - Add a read-only user-message projection for stored sessions, including compacted archives.
