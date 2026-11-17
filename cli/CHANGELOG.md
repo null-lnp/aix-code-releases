@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.28.0 — 2026-11-17
+
+- Add `/swarm <task>`: coordinate real Aix subagents in the current workspace. A fresh assignment gets its own conversation and brief; a successful worker can take a new brief in the same conversation. Existing model selection, account settings and tool approvals still apply.
+- Workers can read an ordered board, post to teammates, and park without polling. Reports wake the manager; if every remaining worker is waiting, the manager gets a chance to unblock them. Limits are four simultaneous workers and twelve assignments per run.
+- `/swarm status` shows the latest run, including while busy. The session retains the roster and last 64 posts; individual worker transcripts are saved separately. Esc stops the team, and reopening a session never automatically reruns interrupted work. Also available in Aix Code v0.26.0.
+
 ## v2.27.6 — 2026-11-17
 
 - Add GPT-6.2 Sol (`gpt-6.2-sol`) and Astra (`gpt-6.2-astra`) to the shared model catalogs used by

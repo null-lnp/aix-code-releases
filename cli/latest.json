@@ -1,14 +1,14 @@
 {
   "product": "cli",
-  "version": "2.27.6",
-  "notes": "- Add GPT-6.2 Sol (`gpt-6.2-sol`) and Astra (`gpt-6.2-astra`) to the shared model catalogs used by\n  `/model`, helper model selection, and Aix Code's picker, including ChatGPT offline, incomplete,\n  and hidden-model fallbacks. Newest-first ordering places Astra then Sol ahead of older GPTs.\n- Include Fast/Ultrafast support with the existing GPT-6 context and effort defaults. Live model\n  metadata still takes precedence; existing model selections and defaults are unchanged.\n- Aix Code v0.25.6 includes the same shared model support.",
-  "pub_date": "2026-11-17T19:36:55.045Z",
-  "tag": "cli-v2.27.6",
+  "version": "2.28.0",
+  "notes": "- Add `/swarm <task>`: coordinate real Aix subagents in the current workspace. A fresh assignment gets its own conversation and brief; a successful worker can take a new brief in the same conversation. Existing model selection, account settings and tool approvals still apply.\n- Workers can read an ordered board, post to teammates, and park without polling. Reports wake the manager; if every remaining worker is waiting, the manager gets a chance to unblock them. Limits are four simultaneous workers and twelve assignments per run.\n- `/swarm status` shows the latest run, including while busy. The session retains the roster and last 64 posts; individual worker transcripts are saved separately. Esc stops the team, and reopening a session never automatically reruns interrupted work. Also available in Aix Code v0.26.0.",
+  "pub_date": "2026-11-17T22:25:28.254Z",
+  "tag": "cli-v2.28.0",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajVMTjNhaElQZjYzb3ptL2dwdmF2RUlreENTR2N2L3FuR0RWMEwxeUNpT3NDV24xUURNaVBOODZYWEVRQ25rbWNsSFdIeHdGSHRyMWQ2MUEyaHhuckEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTQ0MjE0CWZpbGU6YWl4LTIuMjcuNi13aW5kb3dzLXg4Nl82NC5leGUKekhmWGkvZ2d5WWlnOXBVVmNDS0c2UE1xbHA3ZXluYnhuaU1QUlk5Ym1LT2hRSWFzOHM5RytuZitLYk9ZT0liOFVKY3pwWEpOVWh4bTRJL2NpNWdLQ1E9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.27.6/aix-2.27.6-windows-x86_64.exe",
-      "sha256": "dd4a7e1253a224d8f36d942ffb28fe91fcf21f87831b32cda624715fa7d9ea6a"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajJQRTVCTWwrZ0Y3NFViSVpKSnUzOEp4WHB3N3JBRm5xQUFYcklMUWZEZlMxNWI4TVdnaENZMFh6Z056U3M5YllPYXJvNXhDOTdUUnZhbUNianh6YkFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTU0MzI4CWZpbGU6YWl4LTIuMjguMC13aW5kb3dzLXg4Nl82NC5leGUKNTZhZnR6SW42VEZFcVhsdElmN1p1azc1VElyNmtSeEdjTWl1VzM3VG4xcENaTTlTUmMzMXdRSVRRWVlPYmM2VzlwazZyd09oUlZGOHVHWkVYYmRrQVE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.28.0/aix-2.28.0-windows-x86_64.exe",
+      "sha256": "0ba51b29dbfcb9f3cd3d3308549a1ddc0cda9efec7d0ff7368f4fa6ecda4616e"
     }
   }
 }
