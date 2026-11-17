@@ -1,14 +1,14 @@
 {
   "product": "cli",
-  "version": "2.27.5",
-  "notes": "- Fix immediate Gemini/Antigravity HTTP 429s with allowance remaining: Google's built-in\n  gateways prefer the daily model endpoint, and the default coding-instruction introduction\n  uses equivalent wording verified with the affected copied conversation. Custom endpoints\n  are not rerouted, and custom system instructions are never rewritten.\n- Bound repeated unexplained request rejections to three attempts. Preserve conversation\n  history and unrelated pauses; request-setting changes reset the counter. Real quota and\n  capacity errors retain their existing handling. Terminal and desktop explain unknown causes.\n- Aix Code v0.25.5 includes the shared fixes. Authorized live replay through the actual provider\n  succeeded on Carbon High, Argon High and Hydrogen High without executing returned tools or\n  modifying the original session. Follow-up regression tests remain offline.",
-  "pub_date": "2026-11-15T03:09:18.032Z",
-  "tag": "cli-v2.27.5",
+  "version": "2.27.6",
+  "notes": "- Add GPT-6.2 Sol (`gpt-6.2-sol`) and Astra (`gpt-6.2-astra`) to the shared model catalogs used by\n  `/model`, helper model selection, and Aix Code's picker, including ChatGPT offline, incomplete,\n  and hidden-model fallbacks. Newest-first ordering places Astra then Sol ahead of older GPTs.\n- Include Fast/Ultrafast support with the existing GPT-6 context and effort defaults. Live model\n  metadata still takes precedence; existing model selections and defaults are unchanged.\n- Aix Code v0.25.6 includes the same shared model support.",
+  "pub_date": "2026-11-17T19:36:55.045Z",
+  "tag": "cli-v2.27.6",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajhPRnc0OXZ5NlgrZE51MWk2SjhGblVUdTJiVVZISjRaNEZDV2d5aW1aK3hmWnpPc3pOajltanZHZk1la29hRHNDTkdEN1hlY2g2RnJvcFlINmc5aXdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NzEyMTU3CWZpbGU6YWl4LTIuMjcuNS13aW5kb3dzLXg4Nl82NC5leGUKUEwxdjFqMmNWSDZhOU1KdngyZjd2bnJZb3p0dDBPcXNWbkNGdDhlNFhQV0pzQVkyZnh0N2FpcGw1NDNtTUFtdlQ4VHBncWIrcG1hNEorOUNmUW16Q0E9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.27.5/aix-2.27.5-windows-x86_64.exe",
-      "sha256": "04d3ee98643692355c09dc761132a7885ca668c18f37ff56e6e1bba24e6b33b2"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajVMTjNhaElQZjYzb3ptL2dwdmF2RUlreENTR2N2L3FuR0RWMEwxeUNpT3NDV24xUURNaVBOODZYWEVRQ25rbWNsSFdIeHdGSHRyMWQ2MUEyaHhuckEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTQ0MjE0CWZpbGU6YWl4LTIuMjcuNi13aW5kb3dzLXg4Nl82NC5leGUKekhmWGkvZ2d5WWlnOXBVVmNDS0c2UE1xbHA3ZXluYnhuaU1QUlk5Ym1LT2hRSWFzOHM5RytuZitLYk9ZT0liOFVKY3pwWEpOVWh4bTRJL2NpNWdLQ1E9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.27.6/aix-2.27.6-windows-x86_64.exe",
+      "sha256": "dd4a7e1253a224d8f36d942ffb28fe91fcf21f87831b32cda624715fa7d9ea6a"
     }
   }
 }

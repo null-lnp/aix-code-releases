@@ -1,5 +1,14 @@
 # Changelog
 
+## v2.27.6 — 2026-11-17
+
+- Add GPT-6.2 Sol (`gpt-6.2-sol`) and Astra (`gpt-6.2-astra`) to the shared model catalogs used by
+  `/model`, helper model selection, and Aix Code's picker, including ChatGPT offline, incomplete,
+  and hidden-model fallbacks. Newest-first ordering places Astra then Sol ahead of older GPTs.
+- Include Fast/Ultrafast support with the existing GPT-6 context and effort defaults. Live model
+  metadata still takes precedence; existing model selections and defaults are unchanged.
+- Aix Code v0.25.6 includes the same shared model support.
+
 ## v2.27.5 — 2026-11-14
 
 - Fix immediate Gemini/Antigravity HTTP 429s with allowance remaining: Google's built-in
