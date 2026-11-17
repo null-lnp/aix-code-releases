@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.25.6",
-  "notes": "- Add GPT-6.2 Sol (`gpt-6.2-sol`) and Astra (`gpt-6.2-astra`) to the shared model catalogs used by\n  the picker, `/model`, and helper model selection. Keep them available when ChatGPT's catalog\n  is offline, incomplete, or marks them hidden during a staged rollout.\n- Sort the new models ahead of older GPT models and include Fast/Ultrafast support alongside\n  existing GPT-6 context and effort defaults. Live catalog metadata still takes precedence;\n  existing model selections and defaults are unchanged. Shared support ships in aix v2.27.6.",
-  "pub_date": "2026-11-17T19:33:07.162Z",
-  "tag": "app-v0.25.6",
+  "version": "0.26.0",
+  "notes": "- Add `/swarm <task>` on the start page and in chat. Aix coordinates its own workers: each has a separate conversation, can wait for an addressed board post, and can take follow-up work without repeating its first assignment. No Antigravity service is involved in orchestration.\n- Inspect workers in the Office or use `/swarm status` for the latest roster and board. A run allows four concurrent workers and twelve assignments, stays under the session's normal tool approvals, and stops the team on Esc. Reopening a session does not replay interrupted work.\n- Let job events drive the desktop working indicator so a fast slash-command completion cannot leave it stuck. The shared swarm engine also ships in aix v2.28.0.",
+  "pub_date": "2026-11-17T22:35:14.079Z",
+  "tag": "app-v0.26.0",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajFNaGNVOW1KZTZUZUZqTmdVcm5OK3paajNmdlRnY3N0SEdvTzJjOGMvaXNQSzZsekp6SXM2Yi9PdWVYOHVtaDJmWVpxaE9xWFJCWnppVWsxZmFBQ2dBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTQzOTA4CWZpbGU6QWl4IENvZGVfMC4yNS42X3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI1LjYKQ2xKUWhUQVJ3OCtSd0JqNHVmRFlxRGtUcWNsSXJ2WlhzTkdOeFkvL1BIRHhua2tLYS94Uk5qNGdTbmNjRjZreTNHVkZyaC8vcFVIZHRLOWZXVFRNQmc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.6/aix-code-0.25.6-x64-setup.exe",
-      "sha256": "ff8d60650ea1920b079a752375bb03e6c6143c01a5d5dc257a283700d9ed2e2f"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajlUZ21pQytUc1QzaTc4U09ObjQrUmNBV0ZhUmw5TXQydWliZWI5MG9LUERkd0VLL0RsU0xBTGZRSEc4UEpIaFRpUVdnM0pGVmJMVG5rb2pTb1FxUWdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTU0OTA1CWZpbGU6QWl4IENvZGVfMC4yNi4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI2LjAKdTd4MHZOeVB2ekkzNnBRYU54dzlyaFgxVXBJMEhlN3BhUmxjbmcvQlZTMlZCYjRzMnNyRHF1c2xUYUcvZzdFamFPd2FMM0tzQnJkNmY2R3pLM2JTQWc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.26.0/aix-code-0.26.0-x64-setup.exe",
+      "sha256": "0ae433337827a12a5d4757e4443f09338ce77b56ee446f19009e8f8ca1e13aca"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajFNaGNVOW1KZTZUZUZqTmdVcm5OK3paajNmdlRnY3N0SEdvTzJjOGMvaXNQSzZsekp6SXM2Yi9PdWVYOHVtaDJmWVpxaE9xWFJCWnppVWsxZmFBQ2dBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTQzOTA4CWZpbGU6QWl4IENvZGVfMC4yNS42X3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI1LjYKQ2xKUWhUQVJ3OCtSd0JqNHVmRFlxRGtUcWNsSXJ2WlhzTkdOeFkvL1BIRHhua2tLYS94Uk5qNGdTbmNjRjZreTNHVkZyaC8vcFVIZHRLOWZXVFRNQmc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.6/aix-code-0.25.6-x64-setup.exe",
-      "sha256": "ff8d60650ea1920b079a752375bb03e6c6143c01a5d5dc257a283700d9ed2e2f"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajlUZ21pQytUc1QzaTc4U09ObjQrUmNBV0ZhUmw5TXQydWliZWI5MG9LUERkd0VLL0RsU0xBTGZRSEc4UEpIaFRpUVdnM0pGVmJMVG5rb2pTb1FxUWdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTU0OTA1CWZpbGU6QWl4IENvZGVfMC4yNi4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI2LjAKdTd4MHZOeVB2ekkzNnBRYU54dzlyaFgxVXBJMEhlN3BhUmxjbmcvQlZTMlZCYjRzMnNyRHF1c2xUYUcvZzdFamFPd2FMM0tzQnJkNmY2R3pLM2JTQWc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.26.0/aix-code-0.26.0-x64-setup.exe",
+      "sha256": "0ae433337827a12a5d4757e4443f09338ce77b56ee446f19009e8f8ca1e13aca"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajB0dVhPUWY5bm80WElhWk1EWEhnYnVacUl4WGxJZXVLZ3d1TWxhc3ZYR1ZSUmhCTW5iYnFUdHg5eEJPT1d5aVJTdTNjdXJFeWFkZnVxL21aM0tDVHdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTQzOTA4CWZpbGU6QWl4IENvZGVfMC4yNS42X3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjI1LjYKT3BBekJ5RTNySkw1eEN4c0lodGV6Z21HMkt0VTJNZGVpaEZ1cnRGc3ZnUWlKWkpMMkJxemcxSHFjUHNNY2VONFRlelh3bjMrOWcyc2pESFNrUXNUQUE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.6/aix-code-0.25.6-x64.msi",
-      "sha256": "c91dc1b078e9e17667b26890bdb92a7b725c17c548394a8b6dc8542b336654ff"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajZ3MTFvSEtveC9NUWVLWlUrMlJ0YWFPQ2dORXByNDdaZ0Y1QllIN2taVW5KRTcwQWlvVjZ4aEdtY0NjamRsenlHVDM1Y3FqTUEweHNIa2pSY2JEbHdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTU0OTA1CWZpbGU6QWl4IENvZGVfMC4yNi4wX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjI2LjAKTEpiWUlPV2VtU2lUYmMrZHRMRE9TYktjRDNSMUlmdkdWREUrVWxqWjk5TnZCZlNaTllsUlFjdll5Wk5LM2VEbkVlcnA0WXM4b1ZzMmpNdkVRLzl6Q1E9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.26.0/aix-code-0.26.0-x64.msi",
+      "sha256": "a9c1e5c8d0d183101c1f505e15f5987ad179affbca9bec67ba012670111d0bb8"
     }
   }
 }

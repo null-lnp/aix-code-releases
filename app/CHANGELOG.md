@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.26.0 — 2026-11-17
+
+- Add `/swarm <task>` on the start page and in chat. Aix coordinates its own workers: each has a separate conversation, can wait for an addressed board post, and can take follow-up work without repeating its first assignment. No Antigravity service is involved in orchestration.
+- Inspect workers in the Office or use `/swarm status` for the latest roster and board. A run allows four concurrent workers and twelve assignments, stays under the session's normal tool approvals, and stops the team on Esc. Reopening a session does not replay interrupted work.
+- Let job events drive the desktop working indicator so a fast slash-command completion cannot leave it stuck. The shared swarm engine also ships in aix v2.28.0.
+
 ## v0.25.6 — 2026-11-17
 
 - Add GPT-6.2 Sol (`gpt-6.2-sol`) and Astra (`gpt-6.2-astra`) to the shared model catalogs used by
