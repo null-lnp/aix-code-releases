@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.25.6 — 2026-11-17
+
+- Add GPT-6.2 Sol (`gpt-6.2-sol`) and Astra (`gpt-6.2-astra`) to the shared model catalogs used by
+  the picker, `/model`, and helper model selection. Keep them available when ChatGPT's catalog
+  is offline, incomplete, or marks them hidden during a staged rollout.
+- Sort the new models ahead of older GPT models and include Fast/Ultrafast support alongside
+  existing GPT-6 context and effort defaults. Live catalog metadata still takes precedence;
+  existing model selections and defaults are unchanged. Shared support ships in aix v2.27.6.
+
 ## v0.25.5 — 2026-11-14
 
 - Fix Gemini/Antigravity requests receiving immediate HTTP 429 despite remaining account

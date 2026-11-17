@@ -9,7 +9,7 @@ update manifests both apps read.
 <!-- latest:start -->
 | Product | Version | Released | Downloads |
 | --- | --- | --- | --- |
-| Aix Code | [0.25.5](https://github.com/null-lnp/aix-code-releases/releases/tag/app-v0.25.5) | 2026-11-15 | [aix-code-0.25.5-x64-setup.exe](https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.5/aix-code-0.25.5-x64-setup.exe) · [aix-code-0.25.5-x64.msi](https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.5/aix-code-0.25.5-x64.msi) |
+| Aix Code | [0.25.6](https://github.com/null-lnp/aix-code-releases/releases/tag/app-v0.25.6) | 2026-11-17 | [aix-code-0.25.6-x64-setup.exe](https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.6/aix-code-0.25.6-x64-setup.exe) · [aix-code-0.25.6-x64.msi](https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.6/aix-code-0.25.6-x64.msi) |
 | aix CLI | [2.27.5](https://github.com/null-lnp/aix-code-releases/releases/tag/cli-v2.27.5) | 2026-11-15 | [aix-2.27.5-windows-x86_64.exe](https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.27.5/aix-2.27.5-windows-x86_64.exe) |
 <!-- latest:end -->
 

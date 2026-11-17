@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.25.5",
-  "notes": "- Fix Gemini/Antigravity requests receiving immediate HTTP 429 despite remaining account\n  allowance. Prefer the daily model endpoint for Google's built-in gateways and revise one\n  default coding-instruction sentence while preserving Aix's identity and user overrides.\n- Verified through Aix's provider with a user-authorized copy of the affected conversation:\n  Carbon High, Argon High and Hydrogen High all returned successful tool-call responses.\n  The original conversation was untouched; no returned tools were executed.\n- Stop repeated unexplained request rejections after three attempts instead of leaving chats\n  and helpers paused indefinitely. Explain that the cause is unknown rather than claiming the\n  account is out of quota. Explicit quota failures and model-capacity waits keep their handling.\n- Shared fixes ship in aix v2.27.5. Custom endpoints remain isolated; no vendor implementation\n  is copied and no claim of complete Antigravity protocol parity is made.",
-  "pub_date": "2026-11-15T03:18:18.791Z",
-  "tag": "app-v0.25.5",
+  "version": "0.25.6",
+  "notes": "- Add GPT-6.2 Sol (`gpt-6.2-sol`) and Astra (`gpt-6.2-astra`) to the shared model catalogs used by\n  the picker, `/model`, and helper model selection. Keep them available when ChatGPT's catalog\n  is offline, incomplete, or marks them hidden during a staged rollout.\n- Sort the new models ahead of older GPT models and include Fast/Ultrafast support alongside\n  existing GPT-6 context and effort defaults. Live catalog metadata still takes precedence;\n  existing model selections and defaults are unchanged. Shared support ships in aix v2.27.6.",
+  "pub_date": "2026-11-17T19:33:07.162Z",
+  "tag": "app-v0.25.6",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanlQMEtzTlZlQ3Joc2JBb0wrZmk4dmZXMXl3MlVsb3hibmZFakcraUZBMWxMMFBYVlJ5Z0lrOThIb3ZkQ1g1R1dBUDlVNHJIcDlNY1JzKzRudk1OZ2cwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NzEyNjc5CWZpbGU6QWl4IENvZGVfMC4yNS41X3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI1LjUKT1BsRGR4VW40bVRwekpuU0VtbHRjWFUrVlJlWlMyTjVBcWNpOVJrY0VxeEtJdFJDKzJYYXE2ME1qSTBqZndtMzRuck5Lblh6ZlZCTXlTWGpiblFrQ1E9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.5/aix-code-0.25.5-x64-setup.exe",
-      "sha256": "770d27c8cbfa1e4443e14688b505c1824c401cf6cd22065a98913931e1f19c43"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajFNaGNVOW1KZTZUZUZqTmdVcm5OK3paajNmdlRnY3N0SEdvTzJjOGMvaXNQSzZsekp6SXM2Yi9PdWVYOHVtaDJmWVpxaE9xWFJCWnppVWsxZmFBQ2dBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTQzOTA4CWZpbGU6QWl4IENvZGVfMC4yNS42X3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI1LjYKQ2xKUWhUQVJ3OCtSd0JqNHVmRFlxRGtUcWNsSXJ2WlhzTkdOeFkvL1BIRHhua2tLYS94Uk5qNGdTbmNjRjZreTNHVkZyaC8vcFVIZHRLOWZXVFRNQmc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.6/aix-code-0.25.6-x64-setup.exe",
+      "sha256": "ff8d60650ea1920b079a752375bb03e6c6143c01a5d5dc257a283700d9ed2e2f"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanlQMEtzTlZlQ3Joc2JBb0wrZmk4dmZXMXl3MlVsb3hibmZFakcraUZBMWxMMFBYVlJ5Z0lrOThIb3ZkQ1g1R1dBUDlVNHJIcDlNY1JzKzRudk1OZ2cwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NzEyNjc5CWZpbGU6QWl4IENvZGVfMC4yNS41X3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI1LjUKT1BsRGR4VW40bVRwekpuU0VtbHRjWFUrVlJlWlMyTjVBcWNpOVJrY0VxeEtJdFJDKzJYYXE2ME1qSTBqZndtMzRuck5Lblh6ZlZCTXlTWGpiblFrQ1E9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.5/aix-code-0.25.5-x64-setup.exe",
-      "sha256": "770d27c8cbfa1e4443e14688b505c1824c401cf6cd22065a98913931e1f19c43"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajFNaGNVOW1KZTZUZUZqTmdVcm5OK3paajNmdlRnY3N0SEdvTzJjOGMvaXNQSzZsekp6SXM2Yi9PdWVYOHVtaDJmWVpxaE9xWFJCWnppVWsxZmFBQ2dBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTQzOTA4CWZpbGU6QWl4IENvZGVfMC4yNS42X3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI1LjYKQ2xKUWhUQVJ3OCtSd0JqNHVmRFlxRGtUcWNsSXJ2WlhzTkdOeFkvL1BIRHhua2tLYS94Uk5qNGdTbmNjRjZreTNHVkZyaC8vcFVIZHRLOWZXVFRNQmc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.6/aix-code-0.25.6-x64-setup.exe",
+      "sha256": "ff8d60650ea1920b079a752375bb03e6c6143c01a5d5dc257a283700d9ed2e2f"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aait5WmlwZ2dLaHRjTmhHS1hES0d5YkM1SVljZzNMUVdISURZU0FCZFR5LzlPOHlLeHRsb0dMRGVFamR2UGdTclpERDREVHNjWHFIOWFIVDY5L0Zoc3dBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NzEyNjgwCWZpbGU6QWl4IENvZGVfMC4yNS41X3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjI1LjUKVERKY3psY2xpMWkxdVNlbmVYb0NwcjExMFg3VlFkLzhxMnEzMTE3d3h2N3BGd0VEbmdMMVZ4enVBRVZ4Qlk2OFFWSWNsRHlEM2pIMmY4WDJpTVRQREE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.5/aix-code-0.25.5-x64.msi",
-      "sha256": "3332ae3f5b5844a3d972154403b997e1743349c98f6552161911e609f7c5d153"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajB0dVhPUWY5bm80WElhWk1EWEhnYnVacUl4WGxJZXVLZ3d1TWxhc3ZYR1ZSUmhCTW5iYnFUdHg5eEJPT1d5aVJTdTNjdXJFeWFkZnVxL21aM0tDVHdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTQzOTA4CWZpbGU6QWl4IENvZGVfMC4yNS42X3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjI1LjYKT3BBekJ5RTNySkw1eEN4c0lodGV6Z21HMkt0VTJNZGVpaEZ1cnRGc3ZnUWlKWkpMMkJxemcxSHFjUHNNY2VONFRlelh3bjMrOWcyc2pESFNrUXNUQUE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.25.6/aix-code-0.25.6-x64.msi",
+      "sha256": "c91dc1b078e9e17667b26890bdb92a7b725c17c548394a8b6dc8542b336654ff"
     }
   }
 }
