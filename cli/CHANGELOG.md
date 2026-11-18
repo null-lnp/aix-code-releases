@@ -1,5 +1,23 @@
 # Changelog
 
+Desktop companion note: Aix Code v0.29.1 simplifies the graphical composer and adds file-type glyphs, highlights and a swarm Office shortcut. No CLI runtime or terminal key binding changes.
+
+## v2.31.0 — 2026-11-18
+
+- `/tasks` lists this chat’s workers and background command IDs. `/tasks <id>` shows recent output without stealing it from `write_stdin`. Helper activity preserves the last meaningful tool action while thinking.
+- Preserve TeX as text in the terminal; advertise local equation rendering to desktop sessions. Use the desktop’s near-black dark tone in the read-only share viewer. Aix Code v0.29.0 adds rich formula layout and compact/expanded transcript controls.
+
+## v2.30.0 — 2026-11-18
+
+- Distinguish completing an assignment from leaving a swarm. Workers remain addressable until the run ends; directed mail, named board posts and `@mentions` wake the same worker without polling. Idle workers release their active slot. Stop still tears down the entire team; reopening never replays work.
+- Persist `/agent-chat on|off` per session, including in Aix Code. Manager mail is still allowed when peer mail is off. See the [lifecycle comparison](docs/swarm-lifecycle.md).
+
+## v2.29.0 — 2026-11-18
+
+- Stop Anthropic streams at `message_stop`; detect ping-only stalls and interrupted tool batches. Retrying an incomplete response is bounded and cancelable and does not replay partial tool calls. Keep final usage corrections and signed thinking blocks.
+- Use a 1M context window, 128K output ceiling and always-on adaptive thinking for Mythos 5.2 when live metadata is unavailable. Limit output to the remaining window even after a previous escalation. Keep the original conversation if compaction returns no summary.
+- Add session-backed `task_create`, `task_get`, `task_list`, and `task_update` with stable IDs, owners and prerequisites. Existing `update_plan` calls still work. Replace per-tool and end-of-turn nags with a quiet, turn-spaced cue on an existing request; unfinished work no longer forces another turn. Shared with Aix Code v0.27.0.
+
 ## v2.28.1 — 2026-11-17
 
 - Require the `/swarm` coordinator to choose a name for each new worker. Names are unique within the run, including parallel spawns, and stay with the worker on follow-up assignments. Existing worker IDs, non-swarm helper names and lifecycle behavior are unchanged. Also in Aix Code v0.26.1.

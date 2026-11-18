@@ -1,14 +1,14 @@
 {
   "product": "cli",
-  "version": "2.28.1",
-  "notes": "- Require the `/swarm` coordinator to choose a name for each new worker. Names are unique within the run, including parallel spawns, and stay with the worker on follow-up assignments. Existing worker IDs, non-swarm helper names and lifecycle behavior are unchanged. Also in Aix Code v0.26.1.",
-  "pub_date": "2026-11-18T00:42:18.642Z",
-  "tag": "cli-v2.28.1",
+  "version": "2.31.0",
+  "notes": "- `/tasks` lists this chat’s workers and background command IDs. `/tasks <id>` shows recent output without stealing it from `write_stdin`. Helper activity preserves the last meaningful tool action while thinking.\n- Preserve TeX as text in the terminal; advertise local equation rendering to desktop sessions. Use the desktop’s near-black dark tone in the read-only share viewer. Aix Code v0.29.0 adds rich formula layout and compact/expanded transcript controls.",
+  "pub_date": "2026-11-18T10:50:42.825Z",
+  "tag": "cli-v2.31.0",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajMrdk9rVmF4dTNZNkh4bFVPZ3lXckNqZzVzbGR1ckE1bUgyZ0lsc3kybWk4amptdng2a25nQ0h0YlhHWW5leC9sb1Q2L3VibFFyOGk3TnAwekZXT3cwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTYyNTM4CWZpbGU6YWl4LTIuMjguMS13aW5kb3dzLXg4Nl82NC5leGUKSWtHOHZEMldTZFFrZWNPL2Y2QXlpcGJ1ckJnSk9ldkltUXZNbmhwNnhRUFRqcmk2dHZsSnNpYzNhZWZ4N0NkOURJTTdabVF2K09JKzlRRlpKWGxQREE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.28.1/aix-2.28.1-windows-x86_64.exe",
-      "sha256": "a2dd6739f48415b10159136ee2fcb20a6bbe5d0f1b2a6a2810c5d74b37b63336"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajI3YkVXbDhFSXRKQ1l6MXk1MWg4cVY5dXp2dS9kd1JqQXZIQnJKMTVYYytlRkpYbkVpOEt1OGVQNWxWNjFlNFBxekRKTlE4eGJTUkVoV2M1SGlxdGdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTk5MDQyCWZpbGU6YWl4LTIuMzEuMC13aW5kb3dzLXg4Nl82NC5leGUKbkpWcFVSQTFEMmsrTHk3d2dOMGk5U3RmdCt0Z1ZENU01b3JBSVNaTHg5Zk5QUlVuZXY4WW1MUklBeUpDaS9mVHZobG4xOUNZclA5VDhYUkV4SjlRQ3c9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.31.0/aix-2.31.0-windows-x86_64.exe",
+      "sha256": "60e966a7914f1b5e979bf58beadc40d6ab165abf142871882d7698a0a704354d"
     }
   }
 }
