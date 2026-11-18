@@ -1,5 +1,27 @@
 # Changelog
 
+## v0.29.1 — 2026-11-18
+
+- Reduce the composer footer to a single responsive row. Keep permissions, model and account accessible; group workspace, generation settings and live metrics in **Controls**. Keyboard dismissal, focus restoration and reduced-motion settings work in the panel.
+- File references read as filenames, not web links: neutral text with full-color Material Icon Theme artwork (including Rust and Markdown), a resolved path on hover, and single-click opening through the configured file opener. Icons also identify tool targets and Changes. Code blocks and equations are unchanged. Add opt-in `==highlights==` and a Swarm Office shortcut. Desktop presentation only; no agent or permission behavior changed.
+
+## v0.29.0 — 2026-11-18
+
+- Typeset inline and display equations locally, including in worker replies. Keep code literal, preserve Markdown for copying, and show readable source for unsupported formulas. Use a near-black dark theme with distinct inline code; light mode keeps its existing palette.
+- Switch between compact chat and expanded tool activity with **Show tool details**, `/transcript`, or `Ctrl/⌘+O`. The transcript still pages and virtualizes long sessions.
+- `/tasks` opens workers and background commands for this chat. Inspect a bounded, read-only output tail without consuming the next tool result. Worker activity retains its last useful tool summary between calls. Shared task support is in aix v2.31.0.
+
+## v0.28.0 — 2026-11-18
+
+- Keep reported swarm workers seated in both Office views as **Available** until the run ends. Addressed mail and board mentions wake the same conversation; an ordinary board update does not. Ordinary helpers still leave after reporting.
+- Save **Agents can talk in this chat** with the session. Changing one Office no longer changes the other open chats or new sessions. Shared with aix v2.30.0.
+
+## v0.27.0 — 2026-11-18
+
+- Finish Anthropic replies at `message_stop`, even if the connection stays open. Interrupted or ping-only streams have bounded, cancelable retries; incomplete tool input is not executed.
+- Correct Mythos 5.2's offline limits (1M context, 128K output) and preserve signed thinking across tool calls. Output caps shrink as input grows; an empty compaction summary leaves history intact.
+- The checklist dock tracks individual tasks by stable ID and shows owners, current activity and unfinished prerequisites. A quiet cue during ongoing work replaces visible checklist nags. Unchecked tasks alone never start another model request. Shared with aix v2.29.0.
+
 ## v0.26.1 — 2026-11-17
 
 - The `/swarm` coordinator now chooses each new worker's name instead of drawing from the fixed helper list. The Office, board and reports use that name, including on follow-up assignments. Duplicate names are rejected before a worker starts. Existing sessions and worker lifetimes are unchanged. Also in aix v2.28.1.
