@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.28.1 — 2026-11-17
+
+- Require the `/swarm` coordinator to choose a name for each new worker. Names are unique within the run, including parallel spawns, and stay with the worker on follow-up assignments. Existing worker IDs, non-swarm helper names and lifecycle behavior are unchanged. Also in Aix Code v0.26.1.
+
 ## v2.28.0 — 2026-11-17
 
 - Add `/swarm <task>`: coordinate real Aix subagents in the current workspace. A fresh assignment gets its own conversation and brief; a successful worker can take a new brief in the same conversation. Existing model selection, account settings and tool approvals still apply.
