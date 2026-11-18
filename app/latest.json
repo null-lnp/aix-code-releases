@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.26.0",
-  "notes": "- Add `/swarm <task>` on the start page and in chat. Aix coordinates its own workers: each has a separate conversation, can wait for an addressed board post, and can take follow-up work without repeating its first assignment. No Antigravity service is involved in orchestration.\n- Inspect workers in the Office or use `/swarm status` for the latest roster and board. A run allows four concurrent workers and twelve assignments, stays under the session's normal tool approvals, and stops the team on Esc. Reopening a session does not replay interrupted work.\n- Let job events drive the desktop working indicator so a fast slash-command completion cannot leave it stuck. The shared swarm engine also ships in aix v2.28.0.",
-  "pub_date": "2026-11-17T22:35:14.079Z",
-  "tag": "app-v0.26.0",
+  "version": "0.26.1",
+  "notes": "- The `/swarm` coordinator now chooses each new worker's name instead of drawing from the fixed helper list. The Office, board and reports use that name, including on follow-up assignments. Duplicate names are rejected before a worker starts. Existing sessions and worker lifetimes are unchanged. Also in aix v2.28.1.",
+  "pub_date": "2026-11-18T00:52:29.094Z",
+  "tag": "app-v0.26.1",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajlUZ21pQytUc1QzaTc4U09ObjQrUmNBV0ZhUmw5TXQydWliZWI5MG9LUERkd0VLL0RsU0xBTGZRSEc4UEpIaFRpUVdnM0pGVmJMVG5rb2pTb1FxUWdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTU0OTA1CWZpbGU6QWl4IENvZGVfMC4yNi4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI2LjAKdTd4MHZOeVB2ekkzNnBRYU54dzlyaFgxVXBJMEhlN3BhUmxjbmcvQlZTMlZCYjRzMnNyRHF1c2xUYUcvZzdFamFPd2FMM0tzQnJkNmY2R3pLM2JTQWc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.26.0/aix-code-0.26.0-x64-setup.exe",
-      "sha256": "0ae433337827a12a5d4757e4443f09338ce77b56ee446f19009e8f8ca1e13aca"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajJCeTEydjFMQVRsK0pTbTVrL04vWFRDNnlHdUFySzdBU2RQLzg4TVg2NzBja1pRSGRYMXZtL2doaTFwUTN6bkkycG11VUxpZkxITkFOOWdGNE9Id2dRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTYzMTQ2CWZpbGU6QWl4IENvZGVfMC4yNi4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI2LjEKcUFzbDgvdVU4YlRjTmRmT2FDMjJNT2NIMEZDZlR0ODlrdlVsWEgySHF6YmZtRkhsclVPVmxwWjFQTmUvejBnRG9CNVN4RGxnNFF0eW81WHFSNlVqRHc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.26.1/aix-code-0.26.1-x64-setup.exe",
+      "sha256": "0b85af5c30e6e7eb8d110177b768dd305340c8b7d6ff80f1920c23464d0fbff8"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajlUZ21pQytUc1QzaTc4U09ObjQrUmNBV0ZhUmw5TXQydWliZWI5MG9LUERkd0VLL0RsU0xBTGZRSEc4UEpIaFRpUVdnM0pGVmJMVG5rb2pTb1FxUWdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTU0OTA1CWZpbGU6QWl4IENvZGVfMC4yNi4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI2LjAKdTd4MHZOeVB2ekkzNnBRYU54dzlyaFgxVXBJMEhlN3BhUmxjbmcvQlZTMlZCYjRzMnNyRHF1c2xUYUcvZzdFamFPd2FMM0tzQnJkNmY2R3pLM2JTQWc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.26.0/aix-code-0.26.0-x64-setup.exe",
-      "sha256": "0ae433337827a12a5d4757e4443f09338ce77b56ee446f19009e8f8ca1e13aca"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajJCeTEydjFMQVRsK0pTbTVrL04vWFRDNnlHdUFySzdBU2RQLzg4TVg2NzBja1pRSGRYMXZtL2doaTFwUTN6bkkycG11VUxpZkxITkFOOWdGNE9Id2dRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTYzMTQ2CWZpbGU6QWl4IENvZGVfMC4yNi4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjI2LjEKcUFzbDgvdVU4YlRjTmRmT2FDMjJNT2NIMEZDZlR0ODlrdlVsWEgySHF6YmZtRkhsclVPVmxwWjFQTmUvejBnRG9CNVN4RGxnNFF0eW81WHFSNlVqRHc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.26.1/aix-code-0.26.1-x64-setup.exe",
+      "sha256": "0b85af5c30e6e7eb8d110177b768dd305340c8b7d6ff80f1920c23464d0fbff8"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajZ3MTFvSEtveC9NUWVLWlUrMlJ0YWFPQ2dORXByNDdaZ0Y1QllIN2taVW5KRTcwQWlvVjZ4aEdtY0NjamRsenlHVDM1Y3FqTUEweHNIa2pSY2JEbHdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTU0OTA1CWZpbGU6QWl4IENvZGVfMC4yNi4wX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjI2LjAKTEpiWUlPV2VtU2lUYmMrZHRMRE9TYktjRDNSMUlmdkdWREUrVWxqWjk5TnZCZlNaTllsUlFjdll5Wk5LM2VEbkVlcnA0WXM4b1ZzMmpNdkVRLzl6Q1E9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.26.0/aix-code-0.26.0-x64.msi",
-      "sha256": "a9c1e5c8d0d183101c1f505e15f5987ad179affbca9bec67ba012670111d0bb8"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajJsajZOL1F1eU5VTytZQmFPeXFYMGpBdnZFN0JoVzdGUk04TjhpVjVMeGJlSkVRWWQwZHNxR201c3FkRG56KzJTQjBDeDlJNkNLc1pzQ043cFBQaWdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTYzMTQ2CWZpbGU6QWl4IENvZGVfMC4yNi4xX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjI2LjEKbE92RURYUmZoRlZhMGVkTjFvY1VESHJkTURuR2EvWVY5MyszL2NwbG4rdWFIUVZ1YlpaYmtyMk12cWJVSlV6bW1QeVQxTFQzdlNCb2QyM3Z6eFFPRGc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.26.1/aix-code-0.26.1-x64.msi",
+      "sha256": "81ca674c1f985ee6c5ca4309b9b5a3202e237371116eff942eeb11fdcaef92e3"
     }
   }
 }

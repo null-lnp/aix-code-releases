@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.26.1 — 2026-11-17
+
+- The `/swarm` coordinator now chooses each new worker's name instead of drawing from the fixed helper list. The Office, board and reports use that name, including on follow-up assignments. Duplicate names are rejected before a worker starts. Existing sessions and worker lifetimes are unchanged. Also in aix v2.28.1.
+
 ## v0.26.0 — 2026-11-17
 
 - Add `/swarm <task>` on the start page and in chat. Aix coordinates its own workers: each has a separate conversation, can wait for an addressed board post, and can take follow-up work without repeating its first assignment. No Antigravity service is involved in orchestration.
