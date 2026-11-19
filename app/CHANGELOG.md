@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.30.0 — 2026-11-19
+
+- Open **Office → Board** to see the current chat’s latest swarm, its assignments, reports, board posts and delivered messages in order. Inspect a worker or write to a live desk. Swarm specialists have task-oriented names and editable tags. A manager’s model change takes effect after the current tool step, or on the next assignment if the worker reports first; in-flight replies are not interrupted.
+- The Google Antigravity picker follows the account selected for this chat. Gemini 4 Neon is offered when the account’s catalog includes it; its Extra variant keeps the exact advertised ID. An empty or denied catalog is not a list of enabled models.
+- Checklists show step positions, not lifetime task IDs. Reordering or renaming steps no longer makes a four-step plan appear to have twelve tasks. Dependency labels use the same visible numbering; stored task IDs remain stable.
+
 ## v0.29.1 — 2026-11-18
 
 - Reduce the composer footer to a single responsive row. Keep permissions, model and account accessible; group workspace, generation settings and live metrics in **Controls**. Keyboard dismissal, focus restoration and reduced-motion settings work in the panel.
