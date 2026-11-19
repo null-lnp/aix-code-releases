@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.32.0 — 2026-11-19
+
+- `/swarm board` shows this chat’s latest team roster and retained history, including delivered direct messages. Managers assign task-oriented names and specialty tags, can retag a worker, and can change its model after the current tool step or on its next assignment. A change does not kill the worker, repeat a tool, or interrupt a reply.
+- `/model` uses the session’s selected Google account. List Gemini 4 Neon variants only when advertised, preserve the exact model ID and keep Extra distinct from High. Do not infer a Neon entitlement from a fallback list.
+- Show checklist positions and dependencies in order while preserving the persistent IDs used by `task_update`. A bulk plan edit can name an existing ID to retain its metadata when renaming it. Shared with Aix Code v0.30.0.
+
 Desktop companion note: Aix Code v0.29.1 simplifies the graphical composer and adds file-type glyphs, highlights and a swarm Office shortcut. No CLI runtime or terminal key binding changes.
 
 ## v2.31.0 — 2026-11-18

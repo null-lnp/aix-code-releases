@@ -1,14 +1,14 @@
 {
   "product": "cli",
-  "version": "2.31.0",
-  "notes": "- `/tasks` lists this chat’s workers and background command IDs. `/tasks <id>` shows recent output without stealing it from `write_stdin`. Helper activity preserves the last meaningful tool action while thinking.\n- Preserve TeX as text in the terminal; advertise local equation rendering to desktop sessions. Use the desktop’s near-black dark tone in the read-only share viewer. Aix Code v0.29.0 adds rich formula layout and compact/expanded transcript controls.",
-  "pub_date": "2026-11-18T10:50:42.825Z",
-  "tag": "cli-v2.31.0",
+  "version": "2.32.0",
+  "notes": "- `/swarm board` shows this chat’s latest team roster and retained history, including delivered direct messages. Managers assign task-oriented names and specialty tags, can retag a worker, and can change its model after the current tool step or on its next assignment. A change does not kill the worker, repeat a tool, or interrupt a reply.\n- `/model` uses the session’s selected Google account. List Gemini 4 Neon variants only when advertised, preserve the exact model ID and keep Extra distinct from High. Do not infer a Neon entitlement from a fallback list.\n- Show checklist positions and dependencies in order while preserving the persistent IDs used by `task_update`. A bulk plan edit can name an existing ID to retain its metadata when renaming it. Shared with Aix Code v0.30.0.\n\nDesktop companion note: Aix Code v0.29.1 simplifies the graphical composer and adds file-type glyphs, highlights and a swarm Office shortcut. No CLI runtime or terminal key binding changes.",
+  "pub_date": "2026-11-19T09:10:25.906Z",
+  "tag": "cli-v2.32.0",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajI3YkVXbDhFSXRKQ1l6MXk1MWg4cVY5dXp2dS9kd1JqQXZIQnJKMTVYYytlRkpYbkVpOEt1OGVQNWxWNjFlNFBxekRKTlE4eGJTUkVoV2M1SGlxdGdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTk5MDQyCWZpbGU6YWl4LTIuMzEuMC13aW5kb3dzLXg4Nl82NC5leGUKbkpWcFVSQTFEMmsrTHk3d2dOMGk5U3RmdCt0Z1ZENU01b3JBSVNaTHg5Zk5QUlVuZXY4WW1MUklBeUpDaS9mVHZobG4xOUNZclA5VDhYUkV4SjlRQ3c9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.31.0/aix-2.31.0-windows-x86_64.exe",
-      "sha256": "60e966a7914f1b5e979bf58beadc40d6ab165abf142871882d7698a0a704354d"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajVxVTFOVmNKblJQSUlhR1dIS01NY3VuMnE1L1JBTWtJMHU4V0JFSlBzNXgzU2FtQ0NFWHdEUFNVM1FQVXBEQm8wY2cvVGVHU2R3dXAwL0tXNVQ2K0FzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MDc5NDI1CWZpbGU6YWl4LTIuMzIuMC13aW5kb3dzLXg4Nl82NC5leGUKREJNWXlXaFFOTWFyNGw1NkJ1a25EYzl5OFdTT0wxOHNPWDdPQ0JQTGkrQTViMU1lWmNVTGN1VGx4T2k2MlZuYXdidnR0WmxHd29oaFRiZEI1YVZDRGc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.32.0/aix-2.32.0-windows-x86_64.exe",
+      "sha256": "d15c4e939303913a8847b8948293c9c82c6b3739ed485bf5b874156a7d549044"
     }
   }
 }
