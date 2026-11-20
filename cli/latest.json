@@ -1,14 +1,14 @@
 {
   "product": "cli",
-  "version": "2.32.0",
-  "notes": "- `/swarm board` shows this chat’s latest team roster and retained history, including delivered direct messages. Managers assign task-oriented names and specialty tags, can retag a worker, and can change its model after the current tool step or on its next assignment. A change does not kill the worker, repeat a tool, or interrupt a reply.\n- `/model` uses the session’s selected Google account. List Gemini 4 Neon variants only when advertised, preserve the exact model ID and keep Extra distinct from High. Do not infer a Neon entitlement from a fallback list.\n- Show checklist positions and dependencies in order while preserving the persistent IDs used by `task_update`. A bulk plan edit can name an existing ID to retain its metadata when renaming it. Shared with Aix Code v0.30.0.\n\nDesktop companion note: Aix Code v0.29.1 simplifies the graphical composer and adds file-type glyphs, highlights and a swarm Office shortcut. No CLI runtime or terminal key binding changes.",
-  "pub_date": "2026-11-19T09:10:25.906Z",
-  "tag": "cli-v2.32.0",
+  "version": "2.32.1",
+  "notes": "- Keep reported swarm workers addressable in the same live chat after the coordinator’s final answer. An idle desk does not occupy an execution slot or spend tokens. `/swarm stop` dismisses the team without changing successful reports to failures; opening a saved board does not replay work.\n- Add a resumable `deferred` checklist status. Explicit `Deferred:` items from older sessions are recognized; the displayed count excludes deferrals, but a deferred prerequisite still does not satisfy its dependents. On handoff, unfinished work is not marked done.\n- Distinguish durable user input identities from process-local delivery numbers. Desktop and terminal transcripts no longer redisplay old user text on a later queue or internal-mail acknowledgement. Shared with Aix Code v0.30.1.",
+  "pub_date": "2026-11-20T03:13:49.461Z",
+  "tag": "cli-v2.32.1",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajVxVTFOVmNKblJQSUlhR1dIS01NY3VuMnE1L1JBTWtJMHU4V0JFSlBzNXgzU2FtQ0NFWHdEUFNVM1FQVXBEQm8wY2cvVGVHU2R3dXAwL0tXNVQ2K0FzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MDc5NDI1CWZpbGU6YWl4LTIuMzIuMC13aW5kb3dzLXg4Nl82NC5leGUKREJNWXlXaFFOTWFyNGw1NkJ1a25EYzl5OFdTT0wxOHNPWDdPQ0JQTGkrQTViMU1lWmNVTGN1VGx4T2k2MlZuYXdidnR0WmxHd29oaFRiZEI1YVZDRGc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.32.0/aix-2.32.0-windows-x86_64.exe",
-      "sha256": "d15c4e939303913a8847b8948293c9c82c6b3739ed485bf5b874156a7d549044"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aanpWQnJBRWFjcytHMDFsTU9qdXRZc2VxSmxYRWZIMmZXcEIyRTBtS1Zyd2ROVXRrTGxmRWE1U1J6ZUdRSEFHamhoaGRBcTdQdWZQTFdaV3hvU2o5NkE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQ0NDI5CWZpbGU6YWl4LTIuMzIuMS13aW5kb3dzLXg4Nl82NC5leGUKazZUYWU3aERBRGc0bExDdnJwUGZvVEdLZ0EzcG4vZW9Qamx3YnVDTGd2Vm1wdklXOWpDR3AydC94cWVXUk8xY0ZRTklQMWVSeHYrTkM3RzhXNU83QUE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/cli-v2.32.1/aix-2.32.1-windows-x86_64.exe",
+      "sha256": "85433d3035735b69ef380bd92836fceda3e6640b8fb709a4d362ff91a7f1488b"
     }
   }
 }

@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.32.1 — 2026-11-19
+
+- Keep reported swarm workers addressable in the same live chat after the coordinator’s final answer. An idle desk does not occupy an execution slot or spend tokens. `/swarm stop` dismisses the team without changing successful reports to failures; opening a saved board does not replay work.
+- Add a resumable `deferred` checklist status. Explicit `Deferred:` items from older sessions are recognized; the displayed count excludes deferrals, but a deferred prerequisite still does not satisfy its dependents. On handoff, unfinished work is not marked done.
+- Distinguish durable user input identities from process-local delivery numbers. Desktop and terminal transcripts no longer redisplay old user text on a later queue or internal-mail acknowledgement. Shared with Aix Code v0.30.1.
+
 ## v2.32.0 — 2026-11-19
 
 - `/swarm board` shows this chat’s latest team roster and retained history, including delivered direct messages. Managers assign task-oriented names and specialty tags, can retag a worker, and can change its model after the current tool step or on its next assignment. A change does not kill the worker, repeat a tool, or interrupt a reply.
