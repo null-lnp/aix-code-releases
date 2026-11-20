@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.30.1 — 2026-11-19
+
+- A successful `/swarm` answer no longer dismisses its workers or labels their reports as failures. They stay **Available** in this chat’s Office, with the same conversations, until the team is explicitly stopped or replaced, or its runtime ends. `/swarm stop` dismisses them without deleting the board.
+- Checklists distinguish deferred work from outstanding work. Four completed steps and one explicitly deferred step no longer look like an unfinished five-step job. Unverified work is not automatically checked off.
+- A newly delivered message can no longer bring an old user bubble back to the bottom of the transcript because of a reused queue number. Intentional repeat messages still show separately.
+
 ## v0.30.0 — 2026-11-19
 
 - Open **Office → Board** to see the current chat’s latest swarm, its assignments, reports, board posts and delivered messages in order. Inspect a worker or write to a live desk. Swarm specialists have task-oriented names and editable tags. A manager’s model change takes effect after the current tool step, or on the next assignment if the worker reports first; in-flight replies are not interrupted.

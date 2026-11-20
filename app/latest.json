@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.30.0",
-  "notes": "- Open **Office → Board** to see the current chat’s latest swarm, its assignments, reports, board posts and delivered messages in order. Inspect a worker or write to a live desk. Swarm specialists have task-oriented names and editable tags. A manager’s model change takes effect after the current tool step, or on the next assignment if the worker reports first; in-flight replies are not interrupted.\n- The Google Antigravity picker follows the account selected for this chat. Gemini 4 Neon is offered when the account’s catalog includes it; its Extra variant keeps the exact advertised ID. An empty or denied catalog is not a list of enabled models.\n- Checklists show step positions, not lifetime task IDs. Reordering or renaming steps no longer makes a four-step plan appear to have twelve tasks. Dependency labels use the same visible numbering; stored task IDs remain stable.",
-  "pub_date": "2026-11-19T09:21:27.770Z",
-  "tag": "app-v0.30.0",
+  "version": "0.30.1",
+  "notes": "- A successful `/swarm` answer no longer dismisses its workers or labels their reports as failures. They stay **Available** in this chat’s Office, with the same conversations, until the team is explicitly stopped or replaced, or its runtime ends. `/swarm stop` dismisses them without deleting the board.\n- Checklists distinguish deferred work from outstanding work. Four completed steps and one explicitly deferred step no longer look like an unfinished five-step job. Unverified work is not automatically checked off.\n- A newly delivered message can no longer bring an old user bubble back to the bottom of the transcript because of a reused queue number. Intentional repeat messages still show separately.",
+  "pub_date": "2026-11-20T03:23:17.810Z",
+  "tag": "app-v0.30.1",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajVYSkVYdTh6YlhOdk5CTzM1NzQzTXdqa28vT1pwc0Z4c3dmTmI5dXM5N01oNkpSQUc0eEtYNUNSRkszSlpkS1VQUmlHblIxbTc3bzlvakV3ek5GREFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MDgwMDg3CWZpbGU6QWl4IENvZGVfMC4zMC4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjMwLjAKaThLNEFFL2pUb0RkN3Y2SFN4V3Ntd3I5VHlPazZTYS84aEI0MktXbnRhQmMrNUNaTEkxaHVsZkxaTzMzMDBnNDJsUGpwWURsZUxmaEQxcVdBNkZjRGc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.30.0/aix-code-0.30.0-x64-setup.exe",
-      "sha256": "cea1727910aeed1842c883e2f0af439ce5a5a6f5cd4a6426c067f0f002ddfc0f"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aai85K1E3NW1rcE5tWFhVQTFHelR3cmN5MkhCMXBhZ2VXRDRjRG1EU2lRNnhYajZWa2p0L2ZBL2NINmRXTzBiaC82VlpDR2VxVStmUytIYVhTS1hRRWdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQ0OTk3CWZpbGU6QWl4IENvZGVfMC4zMC4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjMwLjEKS0g1SkVQTUdxanp2ZlJQcGZMQXVnNXp6RkQ0WDVhMWtZZnJuV3JMWTc2TExoMmVYS1ZIZ3NLL3NwTklrakRPcEN6bk1lbDlFRmNLUnl1dEdtaFFBQnc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.30.1/aix-code-0.30.1-x64-setup.exe",
+      "sha256": "5fc067730f9e660b15e84cc57282c08b157fb832a4b65dc1494c01a1bce9aa2d"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajVYSkVYdTh6YlhOdk5CTzM1NzQzTXdqa28vT1pwc0Z4c3dmTmI5dXM5N01oNkpSQUc0eEtYNUNSRkszSlpkS1VQUmlHblIxbTc3bzlvakV3ek5GREFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MDgwMDg3CWZpbGU6QWl4IENvZGVfMC4zMC4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjMwLjAKaThLNEFFL2pUb0RkN3Y2SFN4V3Ntd3I5VHlPazZTYS84aEI0MktXbnRhQmMrNUNaTEkxaHVsZkxaTzMzMDBnNDJsUGpwWURsZUxmaEQxcVdBNkZjRGc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.30.0/aix-code-0.30.0-x64-setup.exe",
-      "sha256": "cea1727910aeed1842c883e2f0af439ce5a5a6f5cd4a6426c067f0f002ddfc0f"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aai85K1E3NW1rcE5tWFhVQTFHelR3cmN5MkhCMXBhZ2VXRDRjRG1EU2lRNnhYajZWa2p0L2ZBL2NINmRXTzBiaC82VlpDR2VxVStmUytIYVhTS1hRRWdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQ0OTk3CWZpbGU6QWl4IENvZGVfMC4zMC4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjMwLjEKS0g1SkVQTUdxanp2ZlJQcGZMQXVnNXp6RkQ0WDVhMWtZZnJuV3JMWTc2TExoMmVYS1ZIZ3NLL3NwTklrakRPcEN6bk1lbDlFRmNLUnl1dEdtaFFBQnc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.30.1/aix-code-0.30.1-x64-setup.exe",
+      "sha256": "5fc067730f9e660b15e84cc57282c08b157fb832a4b65dc1494c01a1bce9aa2d"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aait1dVQwQ1ZyUDYvWFdXNktmT1p4TjRkbXdlOTd3bmZFQm0wcEkxQ0hBL0pNZmJuL0pVRWRPbzZlUmd2aXRIOUQrdFVuZ1RGa1llK2p1cHRtOVl4WHdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MDgwMDg3CWZpbGU6QWl4IENvZGVfMC4zMC4wX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjMwLjAKZ0Q0TC9UenJMTXY1d0JmZFBQL2NGd3h3TVowdVlrWkMwb3pzbjJQUFdoUFlYbTRUVUt6VkJxaDU3dmpuRDN6eXMvckorZHgzZHRpT29Ldm5KdW9QRHc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.30.0/aix-code-0.30.0-x64.msi",
-      "sha256": "fae68850f88af927763d631fe533dae2227a25b7bf60550618827e9ce55d4996"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajVjajhWRm5rbUtaeStEVk9kbmxVSm9tVjN2UVZGNU80SEdYZ2dnY25Ud3NtTFBlNUxhc0xBNXpDb2xtYmRlV3l3TFpVbFFuT2I2dXVJSTYwQWo2ZXdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQ0OTk3CWZpbGU6QWl4IENvZGVfMC4zMC4xX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjMwLjEKTTRuSnFuakF6cWNDZGtKMCtnbmhUZVAwZGVZOTNZQVNHdi82SFlSVW82V2U0QXM0WGVLamtaVzFyNE5INUFsUXlkQ1RMdlNXbGVUQVR6N1BoN1NBQlE9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.30.1/aix-code-0.30.1-x64.msi",
+      "sha256": "d3aca04588770b8a5a54efb036530b2ce04ff24724ba66a8e36f2318a1cc8ea2"
     }
   }
 }
