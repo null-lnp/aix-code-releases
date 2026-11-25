@@ -1,24 +1,24 @@
 {
   "product": "app",
-  "version": "0.30.1",
-  "notes": "- A successful `/swarm` answer no longer dismisses its workers or labels their reports as failures. They stay **Available** in this chat’s Office, with the same conversations, until the team is explicitly stopped or replaced, or its runtime ends. `/swarm stop` dismisses them without deleting the board.\n- Checklists distinguish deferred work from outstanding work. Four completed steps and one explicitly deferred step no longer look like an unfinished five-step job. Unverified work is not automatically checked off.\n- A newly delivered message can no longer bring an old user bubble back to the bottom of the transcript because of a reused queue number. Intentional repeat messages still show separately.",
-  "pub_date": "2026-11-20T03:23:17.810Z",
-  "tag": "app-v0.30.1",
+  "version": "0.31.0",
+  "notes": "- The main chat shows **Waiting on agents** while ordinary helpers or swarm workers are still working. Available desks don’t count, and approvals and usage limits retain their own status.\n- Make the live Board specific to `/swarm`; ordinary helpers remain ordinary background work and still finish when they report. Swarm managers can release a worker while retaining its checkpoint, retarget its model or effort at a safe step, or explicitly retry a failed/interrupted checkpoint with `resume_id` without replaying completed tools. There is no hard-coded worker or follow-up count limit.\n- Compose `/goal` and `/swarm` with `/goal /swarm <task>` or `/swarm /goal <task>` to keep one team across goal rounds and audit worker evidence before completing the goal.\n- Keep model reasoning effort independent from delegation. `/effort ultra` selects native Ultra reasoning only where supported; `/ultra` enables proactive delegation, while `/delegate on` grants subagent permission for the session without enabling proactive delegation.",
+  "pub_date": "2026-11-25T16:37:58.389Z",
+  "tag": "app-v0.31.0",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aai85K1E3NW1rcE5tWFhVQTFHelR3cmN5MkhCMXBhZ2VXRDRjRG1EU2lRNnhYajZWa2p0L2ZBL2NINmRXTzBiaC82VlpDR2VxVStmUytIYVhTS1hRRWdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQ0OTk3CWZpbGU6QWl4IENvZGVfMC4zMC4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjMwLjEKS0g1SkVQTUdxanp2ZlJQcGZMQXVnNXp6RkQ0WDVhMWtZZnJuV3JMWTc2TExoMmVYS1ZIZ3NLL3NwTklrakRPcEN6bk1lbDlFRmNLUnl1dEdtaFFBQnc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.30.1/aix-code-0.30.1-x64-setup.exe",
-      "sha256": "5fc067730f9e660b15e84cc57282c08b157fb832a4b65dc1494c01a1bce9aa2d"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajNYZkJ6YTlnakhVby9sZHpLeW40TDJyNUFtYjRnOUJyYzVoVm90M0RwVnRac0RacGx3TXZPTWs2VEUzelRncXFvNEhCMmd0MzFuaGV3UnQ4TGo3eWdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NjI0MzY2CWZpbGU6QWl4IENvZGVfMC4zMS4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjMxLjAKUzZCR0JvZU9UU3U3bWR3QXdzTFNnY21JdWF0bnRpRWoxaG83NWhoM3FyOHVnaGFrS3FPYUROaGJnODQ5eVNNenNMMGpWejFOaVp0dm9uRUZZOFVQQmc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.31.0/aix-code-0.31.0-x64-setup.exe",
+      "sha256": "9dc3c39f553989645a96ea38fe5f19e63db887c18fcd7afc9f14163faf0f5eb6"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aai85K1E3NW1rcE5tWFhVQTFHelR3cmN5MkhCMXBhZ2VXRDRjRG1EU2lRNnhYajZWa2p0L2ZBL2NINmRXTzBiaC82VlpDR2VxVStmUytIYVhTS1hRRWdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQ0OTk3CWZpbGU6QWl4IENvZGVfMC4zMC4xX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjMwLjEKS0g1SkVQTUdxanp2ZlJQcGZMQXVnNXp6RkQ0WDVhMWtZZnJuV3JMWTc2TExoMmVYS1ZIZ3NLL3NwTklrakRPcEN6bk1lbDlFRmNLUnl1dEdtaFFBQnc9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.30.1/aix-code-0.30.1-x64-setup.exe",
-      "sha256": "5fc067730f9e660b15e84cc57282c08b157fb832a4b65dc1494c01a1bce9aa2d"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajNYZkJ6YTlnakhVby9sZHpLeW40TDJyNUFtYjRnOUJyYzVoVm90M0RwVnRac0RacGx3TXZPTWs2VEUzelRncXFvNEhCMmd0MzFuaGV3UnQ4TGo3eWdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NjI0MzY2CWZpbGU6QWl4IENvZGVfMC4zMS4wX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjMxLjAKUzZCR0JvZU9UU3U3bWR3QXdzTFNnY21JdWF0bnRpRWoxaG83NWhoM3FyOHVnaGFrS3FPYUROaGJnODQ5eVNNenNMMGpWejFOaVp0dm9uRUZZOFVQQmc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.31.0/aix-code-0.31.0-x64-setup.exe",
+      "sha256": "9dc3c39f553989645a96ea38fe5f19e63db887c18fcd7afc9f14163faf0f5eb6"
     },
     "windows-x86_64-msi": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajVjajhWRm5rbUtaeStEVk9kbmxVSm9tVjN2UVZGNU80SEdYZ2dnY25Ud3NtTFBlNUxhc0xBNXpDb2xtYmRlV3l3TFpVbFFuT2I2dXVJSTYwQWo2ZXdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTQ0OTk3CWZpbGU6QWl4IENvZGVfMC4zMC4xX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjMwLjEKTTRuSnFuakF6cWNDZGtKMCtnbmhUZVAwZGVZOTNZQVNHdi82SFlSVW82V2U0QXM0WGVLamtaVzFyNE5INUFsUXlkQ1RMdlNXbGVUQVR6N1BoN1NBQlE9PQo=",
-      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.30.1/aix-code-0.30.1-x64.msi",
-      "sha256": "d3aca04588770b8a5a54efb036530b2ce04ff24724ba66a8e36f2318a1cc8ea2"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSEZYYXFrdW5aajA4ODlSWXdyMnoxKzlBa1BhdFN3K3hVKy8yRGlBUTZkYXJXQkFQNEVHbWhUWlRkM0pnd2RSQW9LWkxzOXBGZHc0K3JhYndITXF5M3JpVW9VSGlrbXc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NjI0MzY2CWZpbGU6QWl4IENvZGVfMC4zMS4wX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjMxLjAKcmxWUVJnOGZNdGI5MFZqcmVWaFl4NFM1Y3pKalhrRjdMaXRBSm9yUDBJWTRVM3J2R0JRL0VzK04vUWh2UjZtbGRNcDRtc01XTGVJYW9nQy80WFZURHc9PQo=",
+      "url": "https://github.com/null-lnp/aix-code-releases/releases/download/app-v0.31.0/aix-code-0.31.0-x64.msi",
+      "sha256": "4f9189113185ae5bfb54aa982316df63a8ca74fe6ccd300f872f523f27fa4636"
     }
   }
 }

@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.31.0 — 2026-11-25
+
+- The main chat shows **Waiting on agents** while ordinary helpers or swarm workers are still working. Available desks don’t count, and approvals and usage limits retain their own status.
+- Make the live Board specific to `/swarm`; ordinary helpers remain ordinary background work and still finish when they report. Swarm managers can release a worker while retaining its checkpoint, retarget its model or effort at a safe step, or explicitly retry a failed/interrupted checkpoint with `resume_id` without replaying completed tools. There is no hard-coded worker or follow-up count limit.
+- Compose `/goal` and `/swarm` with `/goal /swarm <task>` or `/swarm /goal <task>` to keep one team across goal rounds and audit worker evidence before completing the goal.
+- Keep model reasoning effort independent from delegation. `/effort ultra` selects native Ultra reasoning only where supported; `/ultra` enables proactive delegation, while `/delegate on` grants subagent permission for the session without enabling proactive delegation.
+
 ## v0.30.1 — 2026-11-19
 
 - A successful `/swarm` answer no longer dismisses its workers or labels their reports as failures. They stay **Available** in this chat’s Office, with the same conversations, until the team is explicitly stopped or replaced, or its runtime ends. `/swarm stop` dismisses them without deleting the board.
