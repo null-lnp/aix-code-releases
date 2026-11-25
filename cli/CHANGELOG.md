@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.33.0 — 2026-11-25
+
+- Show **Waiting on agents** in the main chat when helpers are still working after the manager finishes its turn or while the swarm coordinator waits for reports. Idle desks do not count.
+- Scope the live Board to `/swarm`; ordinary `spawn_agent` helpers remain normal background work and finish when they report. Swarm managers can release workers while retaining checkpoints, retarget model or effort at a safe step, and explicitly retry failed/interrupted checkpoints with `resume_id` without replaying completed tools. There is no hard-coded worker or follow-up count limit.
+- Compose `/goal` and `/swarm` with `/goal /swarm <task>` or `/swarm /goal <task>` to keep one team across goal rounds and audit its evidence before completing the goal.
+- Keep reasoning effort separate from delegation: model-native `/effort ultra` is available only when supported; `/ultra` enables proactive delegation, while `/delegate on` grants permission for subagents in the session without enabling proactive delegation.
+
 ## v2.32.1 — 2026-11-19
 
 - Keep reported swarm workers addressable in the same live chat after the coordinator’s final answer. An idle desk does not occupy an execution slot or spend tokens. `/swarm stop` dismisses the team without changing successful reports to failures; opening a saved board does not replay work.
